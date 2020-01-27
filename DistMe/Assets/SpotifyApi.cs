@@ -7,7 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
 
-public class SpotiftyApi : MonoBehaviour
+public class SpotifyApi : MonoBehaviour
 {
 
     private string Token;
