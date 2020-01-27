@@ -665,6 +665,8 @@ struct CreateOutputMethod_tA7B649F49822FC5DD0B0D9F17247C73CAECB1CA3;
 struct PlayableBindingU5BU5D_t7EB322901D51EAB67BA4F711C87F3AC1CF5D89AB;
 // UnityEngine.PlayerConnectionInternal
 struct PlayerConnectionInternal_t4C39607D5FA0CC6DA7B22446F2542811F3EBAC43;
+// UnityEngine.PlayerPrefsException
+struct PlayerPrefsException_tFC087CD527E55947EEB584B893B96977392396DC;
 // UnityEngine.PreloadData
 struct PreloadData_t8B90BB489B4443F08031973939BDEC6624982A0A;
 // UnityEngine.Profiling.Memory.Experimental.MetaData
@@ -796,6 +798,7 @@ extern RuntimeClass* Playable_t4ABB910C374FCAB6B926DA4D34A85857A59950D0_il2cpp_T
 extern RuntimeClass* PlayerConnectionInternal_t4C39607D5FA0CC6DA7B22446F2542811F3EBAC43_il2cpp_TypeInfo_var;
 extern RuntimeClass* PlayerConnection_tFC3A80EAE06A41E9D3879144C86D87DE99EC56EA_il2cpp_TypeInfo_var;
 extern RuntimeClass* PlayerEditorConnectionEvents_t34FBEA62160A657924BC889C2F9FC4B0FC601D5A_il2cpp_TypeInfo_var;
+extern RuntimeClass* PlayerPrefsException_tFC087CD527E55947EEB584B893B96977392396DC_il2cpp_TypeInfo_var;
 extern RuntimeClass* Predicate_1_tF1969050567D17C36A2ECAF3F0C603D1F6489F6A_il2cpp_TypeInfo_var;
 extern RuntimeClass* PropertyName_t75EB843FEA2EC372093479A35C24364D2DF98529_il2cpp_TypeInfo_var;
 extern RuntimeClass* Quaternion_t319F3319A7D43FFA5D819AD6C0A98851F0095357_il2cpp_TypeInfo_var;
@@ -851,6 +854,7 @@ extern String_t* _stringLiteral6947818AC409551F11FBAA78F0EA6391960AA5B8;
 extern String_t* _stringLiteral72EE51B3261FF84C4F9B4F9BDB26FE92A8101CF1;
 extern String_t* _stringLiteral74576FED5C59241DD0FDF64D0CA13849CA887B85;
 extern String_t* _stringLiteral7E493E42997D8BF6BAD12EDC42A763008C83B810;
+extern String_t* _stringLiteral83F09981CC588C4A2C8FD7679CB93E6E79D98994;
 extern String_t* _stringLiteral87FCC6DBB03A66D222D43C3DDB39600F4225FF3B;
 extern String_t* _stringLiteral8E8CCB076D1F3450FC291530206E5ACB57BBEF5A;
 extern String_t* _stringLiteral92F9201EE50CA286022631136DE6385E481B8C77;
@@ -962,6 +966,7 @@ extern const RuntimeMethod* PlayerConnectionInternal_UnityEngine_IPlayerEditorCo
 extern const RuntimeMethod* PlayerConnection_MessageCallbackInternal_m3E9A847ED82FDA9ABB680F81595A876450EFB166_RuntimeMethod_var;
 extern const RuntimeMethod* PlayerConnection_Register_m9B203230984995ADF5E19E50C3D7DF7E21036FF2_RuntimeMethod_var;
 extern const RuntimeMethod* PlayerConnection_Send_m1CDF41319A60A5940B487D08ECE14D0B61EDE6AC_RuntimeMethod_var;
+extern const RuntimeMethod* PlayerPrefs_SetString_m7AC4E332A5DCA04E0AD91544AF836744BA8C2583_RuntimeMethod_var;
 extern const RuntimeMethod* Predicate_1__ctor_m0BF07A3A1C1DBB82B5F98ABC86FE98958CCB138B_RuntimeMethod_var;
 extern const RuntimeMethod* ScriptableObject_CreateInstance_TisPlayerConnection_tFC3A80EAE06A41E9D3879144C86D87DE99EC56EA_m1FDCEDF61516CC09EBC509C7C7A3CF581CEA0080_RuntimeMethod_var;
 extern const RuntimeMethod* U3CAddAndCreateU3Ec__AnonStorey1_U3CU3Em__0_m859E25575A1509158C78C36AEFFC10FC6833A255_RuntimeMethod_var;
@@ -1231,6 +1236,9 @@ extern const uint32_t PlayerEditorConnectionEvents_AddAndCreate_mB5A51595E4A5DA3
 extern const uint32_t PlayerEditorConnectionEvents_InvokeMessageIdSubscribers_mFA28BDF3B52AEF86161F33B52699253181800926_MetadataUsageId;
 extern const uint32_t PlayerEditorConnectionEvents_UnregisterManagedCallback_mFD3A444E636B079C03739DC96BAFFD5FD55C574A_MetadataUsageId;
 extern const uint32_t PlayerEditorConnectionEvents__ctor_m9BE616B901BCACAABEC9063A838BB803AB7EC2A7_MetadataUsageId;
+extern const uint32_t PlayerPrefsException__ctor_m1780F97210AE9B8FB0EE3DFAD6BB73A01E4A1CAB_MetadataUsageId;
+extern const uint32_t PlayerPrefs_GetString_m3031AD2D5DEAB97677A9EF629618541437F079F1_MetadataUsageId;
+extern const uint32_t PlayerPrefs_SetString_m7AC4E332A5DCA04E0AD91544AF836744BA8C2583_MetadataUsageId;
 extern const uint32_t PropertyName_Equals_mD2B2AD96A94DAFFAC506CF7E89C3493E5BA90CB1_MetadataUsageId;
 extern const uint32_t PropertyName_ToString_mBB9266CFD39F9DDF58BECC30B5C85467C55E21C8_MetadataUsageId;
 extern const uint32_t Quaternion_Equals_m099618C36B86DC63B2E7C89673C8566B18E5996E_MetadataUsageId;
@@ -4145,6 +4153,26 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // PLAYERCONNECTIONINTERNAL_T4C39607D5FA0CC6DA7B22446F2542811F3EBAC43_H
+#ifndef PLAYERPREFS_T6E16EDCF104A27E432EDE9AE648DFE7A0401C37C_H
+#define PLAYERPREFS_T6E16EDCF104A27E432EDE9AE648DFE7A0401C37C_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// UnityEngine.PlayerPrefs
+struct  PlayerPrefs_t6E16EDCF104A27E432EDE9AE648DFE7A0401C37C  : public RuntimeObject
+{
+public:
+
+public:
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // PLAYERPREFS_T6E16EDCF104A27E432EDE9AE648DFE7A0401C37C_H
 #ifndef MEMORYPROFILER_T677A743C10D777755A26A6D2B2832861E7C130DF_H
 #define MEMORYPROFILER_T677A743C10D777755A26A6D2B2832861E7C130DF_H
 #ifdef __clang__
@@ -10249,6 +10277,26 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // MATRIX4X4_T6BF60F70C9169DF14C9D2577672A44224B236ECA_H
+#ifndef PLAYERPREFSEXCEPTION_TFC087CD527E55947EEB584B893B96977392396DC_H
+#define PLAYERPREFSEXCEPTION_TFC087CD527E55947EEB584B893B96977392396DC_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// UnityEngine.PlayerPrefsException
+struct  PlayerPrefsException_tFC087CD527E55947EEB584B893B96977392396DC  : public Exception_t
+{
+public:
+
+public:
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // PLAYERPREFSEXCEPTION_TFC087CD527E55947EEB584B893B96977392396DC_H
 #ifndef PREFERBINARYSERIALIZATION_TB72B23C484386F00A6C3C4EC4F81B8E571B0C3D0_H
 #define PREFERBINARYSERIALIZATION_TB72B23C484386F00A6C3C4EC4F81B8E571B0C3D0_H
 #ifdef __clang__
@@ -17913,6 +17961,12 @@ extern "C" IL2CPP_METHOD_ATTR void PlayerConnectionInternal_Initialize_mB0E05590
 extern "C" IL2CPP_METHOD_ATTR bool PlayerConnectionInternal_IsConnected_m4AD0EABFF2FCE8DE9DE1A6B520C707F300721FB2 (const RuntimeMethod* method);
 // System.Void UnityEngine.PlayerConnectionInternal::DisconnectAll()
 extern "C" IL2CPP_METHOD_ATTR void PlayerConnectionInternal_DisconnectAll_m58AFB71131F174149D6AA98C312D9026C15C6090 (const RuntimeMethod* method);
+// System.Boolean UnityEngine.PlayerPrefs::TrySetSetString(System.String,System.String)
+extern "C" IL2CPP_METHOD_ATTR bool PlayerPrefs_TrySetSetString_m67AE78AFF61EABF374102466D40944DBA17E37AD (String_t* ___key0, String_t* ___value1, const RuntimeMethod* method);
+// System.Void UnityEngine.PlayerPrefsException::.ctor(System.String)
+extern "C" IL2CPP_METHOD_ATTR void PlayerPrefsException__ctor_m1780F97210AE9B8FB0EE3DFAD6BB73A01E4A1CAB (PlayerPrefsException_tFC087CD527E55947EEB584B893B96977392396DC * __this, String_t* ___error0, const RuntimeMethod* method);
+// System.String UnityEngine.PlayerPrefs::GetString(System.String,System.String)
+extern "C" IL2CPP_METHOD_ATTR String_t* PlayerPrefs_GetString_m83CA5F0D9E058C853254ACF9130C72108BE56C9B (String_t* ___key0, String_t* ___defaultValue1, const RuntimeMethod* method);
 // System.Void UnityEngine.Profiling.Memory.Experimental.MetaData::.ctor()
 extern "C" IL2CPP_METHOD_ATTR void MetaData__ctor_m1852CAF4EDFB43F1ABCE37819D9963CEE959A620 (MetaData_t8A5880BAD743B1ED7D9345DCF60600F1807E81CA * __this, const RuntimeMethod* method);
 // System.Void System.Action`1<UnityEngine.Profiling.Memory.Experimental.MetaData>::Invoke(!0)
@@ -18600,6 +18654,15 @@ extern "C" IL2CPP_METHOD_ATTR String_t* Application_get_persistentDataPath_m82E3
 	_il2cpp_icall_func = (Application_get_persistentDataPath_m82E34156D8BD0A55CAC258CDFE8317FAD6945F5B_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Application::get_persistentDataPath()");
 	String_t* retVal = _il2cpp_icall_func();
 	return retVal;
+}
+// System.Void UnityEngine.Application::OpenURL(System.String)
+extern "C" IL2CPP_METHOD_ATTR void Application_OpenURL_m2888DA5BDF68B1BC23E983469157783F390D7BC8 (String_t* ___url0, const RuntimeMethod* method)
+{
+	typedef void (*Application_OpenURL_m2888DA5BDF68B1BC23E983469157783F390D7BC8_ftn) (String_t*);
+	static Application_OpenURL_m2888DA5BDF68B1BC23E983469157783F390D7BC8_ftn _il2cpp_icall_func;
+	if (!_il2cpp_icall_func)
+	_il2cpp_icall_func = (Application_OpenURL_m2888DA5BDF68B1BC23E983469157783F390D7BC8_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Application::OpenURL(System.String)");
+	_il2cpp_icall_func(___url0);
 }
 // System.Void UnityEngine.Application::CallLowMemory()
 extern "C" IL2CPP_METHOD_ATTR void Application_CallLowMemory_m4C6693BD717D61DB33C2FB061FDA8CE055966E75 (const RuntimeMethod* method)
@@ -37810,6 +37873,119 @@ extern "C" IL2CPP_METHOD_ATTR void PlayerConnectionInternal_DisconnectAll_m58AFB
 	if (!_il2cpp_icall_func)
 	_il2cpp_icall_func = (PlayerConnectionInternal_DisconnectAll_m58AFB71131F174149D6AA98C312D9026C15C6090_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.PlayerConnectionInternal::DisconnectAll()");
 	_il2cpp_icall_func();
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// System.Boolean UnityEngine.PlayerPrefs::TrySetSetString(System.String,System.String)
+extern "C" IL2CPP_METHOD_ATTR bool PlayerPrefs_TrySetSetString_m67AE78AFF61EABF374102466D40944DBA17E37AD (String_t* ___key0, String_t* ___value1, const RuntimeMethod* method)
+{
+	typedef bool (*PlayerPrefs_TrySetSetString_m67AE78AFF61EABF374102466D40944DBA17E37AD_ftn) (String_t*, String_t*);
+	static PlayerPrefs_TrySetSetString_m67AE78AFF61EABF374102466D40944DBA17E37AD_ftn _il2cpp_icall_func;
+	if (!_il2cpp_icall_func)
+	_il2cpp_icall_func = (PlayerPrefs_TrySetSetString_m67AE78AFF61EABF374102466D40944DBA17E37AD_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.PlayerPrefs::TrySetSetString(System.String,System.String)");
+	bool retVal = _il2cpp_icall_func(___key0, ___value1);
+	return retVal;
+}
+// System.Void UnityEngine.PlayerPrefs::SetString(System.String,System.String)
+extern "C" IL2CPP_METHOD_ATTR void PlayerPrefs_SetString_m7AC4E332A5DCA04E0AD91544AF836744BA8C2583 (String_t* ___key0, String_t* ___value1, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (PlayerPrefs_SetString_m7AC4E332A5DCA04E0AD91544AF836744BA8C2583_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		String_t* L_0 = ___key0;
+		String_t* L_1 = ___value1;
+		bool L_2 = PlayerPrefs_TrySetSetString_m67AE78AFF61EABF374102466D40944DBA17E37AD(L_0, L_1, /*hidden argument*/NULL);
+		if (L_2)
+		{
+			goto IL_0018;
+		}
+	}
+	{
+		PlayerPrefsException_tFC087CD527E55947EEB584B893B96977392396DC * L_3 = (PlayerPrefsException_tFC087CD527E55947EEB584B893B96977392396DC *)il2cpp_codegen_object_new(PlayerPrefsException_tFC087CD527E55947EEB584B893B96977392396DC_il2cpp_TypeInfo_var);
+		PlayerPrefsException__ctor_m1780F97210AE9B8FB0EE3DFAD6BB73A01E4A1CAB(L_3, _stringLiteral83F09981CC588C4A2C8FD7679CB93E6E79D98994, /*hidden argument*/NULL);
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_3, NULL, PlayerPrefs_SetString_m7AC4E332A5DCA04E0AD91544AF836744BA8C2583_RuntimeMethod_var);
+	}
+
+IL_0018:
+	{
+		return;
+	}
+}
+// System.String UnityEngine.PlayerPrefs::GetString(System.String,System.String)
+extern "C" IL2CPP_METHOD_ATTR String_t* PlayerPrefs_GetString_m83CA5F0D9E058C853254ACF9130C72108BE56C9B (String_t* ___key0, String_t* ___defaultValue1, const RuntimeMethod* method)
+{
+	typedef String_t* (*PlayerPrefs_GetString_m83CA5F0D9E058C853254ACF9130C72108BE56C9B_ftn) (String_t*, String_t*);
+	static PlayerPrefs_GetString_m83CA5F0D9E058C853254ACF9130C72108BE56C9B_ftn _il2cpp_icall_func;
+	if (!_il2cpp_icall_func)
+	_il2cpp_icall_func = (PlayerPrefs_GetString_m83CA5F0D9E058C853254ACF9130C72108BE56C9B_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.PlayerPrefs::GetString(System.String,System.String)");
+	String_t* retVal = _il2cpp_icall_func(___key0, ___defaultValue1);
+	return retVal;
+}
+// System.String UnityEngine.PlayerPrefs::GetString(System.String)
+extern "C" IL2CPP_METHOD_ATTR String_t* PlayerPrefs_GetString_m3031AD2D5DEAB97677A9EF629618541437F079F1 (String_t* ___key0, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (PlayerPrefs_GetString_m3031AD2D5DEAB97677A9EF629618541437F079F1_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	String_t* V_0 = NULL;
+	{
+		String_t* L_0 = ___key0;
+		String_t* L_1 = PlayerPrefs_GetString_m83CA5F0D9E058C853254ACF9130C72108BE56C9B(L_0, _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709, /*hidden argument*/NULL);
+		V_0 = L_1;
+		goto IL_0012;
+	}
+
+IL_0012:
+	{
+		String_t* L_2 = V_0;
+		return L_2;
+	}
+}
+// System.Void UnityEngine.PlayerPrefs::Save()
+extern "C" IL2CPP_METHOD_ATTR void PlayerPrefs_Save_m6CC1FE22D4B10AC819F55802D725BE17EA2AD37B (const RuntimeMethod* method)
+{
+	typedef void (*PlayerPrefs_Save_m6CC1FE22D4B10AC819F55802D725BE17EA2AD37B_ftn) ();
+	static PlayerPrefs_Save_m6CC1FE22D4B10AC819F55802D725BE17EA2AD37B_ftn _il2cpp_icall_func;
+	if (!_il2cpp_icall_func)
+	_il2cpp_icall_func = (PlayerPrefs_Save_m6CC1FE22D4B10AC819F55802D725BE17EA2AD37B_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.PlayerPrefs::Save()");
+	_il2cpp_icall_func();
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// System.Void UnityEngine.PlayerPrefsException::.ctor(System.String)
+extern "C" IL2CPP_METHOD_ATTR void PlayerPrefsException__ctor_m1780F97210AE9B8FB0EE3DFAD6BB73A01E4A1CAB (PlayerPrefsException_tFC087CD527E55947EEB584B893B96977392396DC * __this, String_t* ___error0, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (PlayerPrefsException__ctor_m1780F97210AE9B8FB0EE3DFAD6BB73A01E4A1CAB_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		String_t* L_0 = ___error0;
+		IL2CPP_RUNTIME_CLASS_INIT(Exception_t_il2cpp_TypeInfo_var);
+		Exception__ctor_m89BADFF36C3B170013878726E07729D51AA9FBE0(__this, L_0, /*hidden argument*/NULL);
+		return;
+	}
 }
 #ifdef __clang__
 #pragma clang diagnostic pop

@@ -65,7 +65,7 @@
 		54E34BE899CAFF7EC85EF079 /* Il2CppCompilerCalculateTypeValues_29Table.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ABF4D9EB73A92BD8E1E4F6A /* Il2CppCompilerCalculateTypeValues_29Table.cpp */; };
 		5623C57617FDCB0800090B9E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		5623C57717FDCB0800090B9E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 830B5C100E5ED4C100C7819F /* UIKit.framework */; };
-		5623C57D17FDCB0900090B9E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5623C57B17FDCB0900090B9E /* InfoPlist.strings */; };
+		5623C57D17FDCB0900090B9E = {isa = PBXBuildFile; fileRef = 5623C57B17FDCB0900090B9E /* InfoPlist.strings */; };
 		5623C57F17FDCB0900090B9E /* Unity_iPhone_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5623C57E17FDCB0900090B9E /* Unity_iPhone_Tests.m */; };
 		56B7959B1442E0F20026B3DD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B7959A1442E0F20026B3DD /* CoreGraphics.framework */; };
 		56B7960F1442E1770026B3DD /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B795C11442E1100026B3DD /* CoreMotion.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -924,7 +924,8 @@
 				1D60588E0D05DD3D006BFB54 /* Sources */,
 				1D60588F0D05DD3D006BFB54 /* Frameworks */,
 				033966F41B18B03000ECD701 /* ShellScript */,
-				FA6146D5954CEBC4F067581A /* Process symbols */,
+				FA6146D5954CEBC4F067581A /* ShellScript */,
+				D44F4849992073EDBC896F89 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1015,7 +1016,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5623C57D17FDCB0900090B9E /* InfoPlist.strings in Resources */,
+				5623C57D17FDCB0900090B9E,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1035,13 +1036,26 @@
 			shellPath = /bin/sh;
 			shellScript = "\"$PROJECT_DIR/MapFileParser.sh\"";
 		};
-		FA6146D5954CEBC4F067581A /* Process symbols */ = {
+		D44F4849992073EDBC896F89 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				$DWARF_DSYM_FOLDER_PATH/$DWARF_DSYM_FILE_NAME/Contents/Resources/DWARF/$EXECUTABLE_NAME,
+				"$DWARF_DSYM_FOLDER_PATH/$DWARF_DSYM_FILE_NAME/Contents/Resources/DWARF/$EXECUTABLE_NAME",
+			);
+			name = "Process symbols";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PROJECT_DIR/process_symbols.sh\"";
+		};
+		FA6146D5954CEBC4F067581A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$DWARF_DSYM_FOLDER_PATH/$DWARF_DSYM_FILE_NAME/Contents/Resources/DWARF/$EXECUTABLE_NAME",
 			);
 			name = "Process symbols";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1266,10 +1280,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = (
-					armv7,
-					arm64,
-				);
+				ARCHS = "armv7 arm64";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
@@ -1333,7 +1344,7 @@
 				UNITY_CLOUD_PROJECT_ID = "575f10d5-ab0b-475c-9020-b2345088bf54";
 				UNITY_RUNTIME_VERSION = 2018.4.11f1;
 				UNITY_SCRIPTING_BACKEND = il2cpp;
-				USYM_UPLOAD_AUTH_TOKEN = c9db955ccde3a71a306b6a44170a6c02cb0f1108df09b0099f0c7f8b34b9e191;
+				USYM_UPLOAD_AUTH_TOKEN = 7b06d94ae5d574dadf080ecbf5b2aa7cffa216806751abaf5359bf349e9fcfd6;
 				USYM_UPLOAD_URL_SOURCE = "https://perf-events.cloud.unity3d.com/url";
 			};
 			name = Debug;
@@ -1342,10 +1353,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = (
-					armv7,
-					arm64,
-				);
+				ARCHS = "armv7 arm64";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
@@ -1406,7 +1414,7 @@
 				UNITY_CLOUD_PROJECT_ID = "575f10d5-ab0b-475c-9020-b2345088bf54";
 				UNITY_RUNTIME_VERSION = 2018.4.11f1;
 				UNITY_SCRIPTING_BACKEND = il2cpp;
-				USYM_UPLOAD_AUTH_TOKEN = c9db955ccde3a71a306b6a44170a6c02cb0f1108df09b0099f0c7f8b34b9e191;
+				USYM_UPLOAD_AUTH_TOKEN = 7b06d94ae5d574dadf080ecbf5b2aa7cffa216806751abaf5359bf349e9fcfd6;
 				USYM_UPLOAD_URL_SOURCE = "https://perf-events.cloud.unity3d.com/url";
 			};
 			name = Release;
@@ -1415,10 +1423,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = (
-					armv7,
-					arm64,
-				);
+				ARCHS = "armv7 arm64";
 				BUNDLE_LOADER = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/$(PRODUCT_NAME).app/$(PRODUCT_NAME)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -1460,7 +1465,7 @@
 				UNITY_CLOUD_PROJECT_ID = "575f10d5-ab0b-475c-9020-b2345088bf54";
 				UNITY_RUNTIME_VERSION = 2018.4.11f1;
 				UNITY_SCRIPTING_BACKEND = il2cpp;
-				USYM_UPLOAD_AUTH_TOKEN = c9db955ccde3a71a306b6a44170a6c02cb0f1108df09b0099f0c7f8b34b9e191;
+				USYM_UPLOAD_AUTH_TOKEN = 7b06d94ae5d574dadf080ecbf5b2aa7cffa216806751abaf5359bf349e9fcfd6;
 				USYM_UPLOAD_URL_SOURCE = "https://perf-events.cloud.unity3d.com/url";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = xctest;
@@ -1471,10 +1476,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = (
-					armv7,
-					arm64,
-				);
+				ARCHS = "armv7 arm64";
 				BUNDLE_LOADER = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/$(PRODUCT_NAME).app/$(PRODUCT_NAME)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -1523,7 +1525,7 @@
 				UNITY_CLOUD_PROJECT_ID = "575f10d5-ab0b-475c-9020-b2345088bf54";
 				UNITY_RUNTIME_VERSION = 2018.4.11f1;
 				UNITY_SCRIPTING_BACKEND = il2cpp;
-				USYM_UPLOAD_AUTH_TOKEN = c9db955ccde3a71a306b6a44170a6c02cb0f1108df09b0099f0c7f8b34b9e191;
+				USYM_UPLOAD_AUTH_TOKEN = 7b06d94ae5d574dadf080ecbf5b2aa7cffa216806751abaf5359bf349e9fcfd6;
 				USYM_UPLOAD_URL_SOURCE = "https://perf-events.cloud.unity3d.com/url";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -1547,7 +1549,7 @@
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
 				UNITY_CLOUD_PROJECT_ID = "575f10d5-ab0b-475c-9020-b2345088bf54";
-				USYM_UPLOAD_AUTH_TOKEN = c9db955ccde3a71a306b6a44170a6c02cb0f1108df09b0099f0c7f8b34b9e191;
+				USYM_UPLOAD_AUTH_TOKEN = 7b06d94ae5d574dadf080ecbf5b2aa7cffa216806751abaf5359bf349e9fcfd6;
 				USYM_UPLOAD_URL_SOURCE = "https://perf-events.cloud.unity3d.com/url";
 			};
 			name = ReleaseForRunning;
@@ -1556,10 +1558,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = (
-					armv7,
-					arm64,
-				);
+				ARCHS = "armv7 arm64";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
@@ -1620,7 +1619,7 @@
 				UNITY_CLOUD_PROJECT_ID = "575f10d5-ab0b-475c-9020-b2345088bf54";
 				UNITY_RUNTIME_VERSION = 2018.4.11f1;
 				UNITY_SCRIPTING_BACKEND = il2cpp;
-				USYM_UPLOAD_AUTH_TOKEN = c9db955ccde3a71a306b6a44170a6c02cb0f1108df09b0099f0c7f8b34b9e191;
+				USYM_UPLOAD_AUTH_TOKEN = 7b06d94ae5d574dadf080ecbf5b2aa7cffa216806751abaf5359bf349e9fcfd6;
 				USYM_UPLOAD_URL_SOURCE = "https://perf-events.cloud.unity3d.com/url";
 			};
 			name = ReleaseForRunning;
@@ -1629,10 +1628,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = (
-					armv7,
-					arm64,
-				);
+				ARCHS = "armv7 arm64";
 				BUNDLE_LOADER = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/$(PRODUCT_NAME).app/$(PRODUCT_NAME)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -1674,7 +1670,7 @@
 				UNITY_CLOUD_PROJECT_ID = "575f10d5-ab0b-475c-9020-b2345088bf54";
 				UNITY_RUNTIME_VERSION = 2018.4.11f1;
 				UNITY_SCRIPTING_BACKEND = il2cpp;
-				USYM_UPLOAD_AUTH_TOKEN = c9db955ccde3a71a306b6a44170a6c02cb0f1108df09b0099f0c7f8b34b9e191;
+				USYM_UPLOAD_AUTH_TOKEN = 7b06d94ae5d574dadf080ecbf5b2aa7cffa216806751abaf5359bf349e9fcfd6;
 				USYM_UPLOAD_URL_SOURCE = "https://perf-events.cloud.unity3d.com/url";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = xctest;
@@ -1699,7 +1695,7 @@
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
 				UNITY_CLOUD_PROJECT_ID = "575f10d5-ab0b-475c-9020-b2345088bf54";
-				USYM_UPLOAD_AUTH_TOKEN = c9db955ccde3a71a306b6a44170a6c02cb0f1108df09b0099f0c7f8b34b9e191;
+				USYM_UPLOAD_AUTH_TOKEN = 7b06d94ae5d574dadf080ecbf5b2aa7cffa216806751abaf5359bf349e9fcfd6;
 				USYM_UPLOAD_URL_SOURCE = "https://perf-events.cloud.unity3d.com/url";
 			};
 			name = ReleaseForProfiling;
@@ -1708,10 +1704,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = (
-					armv7,
-					arm64,
-				);
+				ARCHS = "armv7 arm64";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
@@ -1772,7 +1765,7 @@
 				UNITY_CLOUD_PROJECT_ID = "575f10d5-ab0b-475c-9020-b2345088bf54";
 				UNITY_RUNTIME_VERSION = 2018.4.11f1;
 				UNITY_SCRIPTING_BACKEND = il2cpp;
-				USYM_UPLOAD_AUTH_TOKEN = c9db955ccde3a71a306b6a44170a6c02cb0f1108df09b0099f0c7f8b34b9e191;
+				USYM_UPLOAD_AUTH_TOKEN = 7b06d94ae5d574dadf080ecbf5b2aa7cffa216806751abaf5359bf349e9fcfd6;
 				USYM_UPLOAD_URL_SOURCE = "https://perf-events.cloud.unity3d.com/url";
 			};
 			name = ReleaseForProfiling;
@@ -1781,10 +1774,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = (
-					armv7,
-					arm64,
-				);
+				ARCHS = "armv7 arm64";
 				BUNDLE_LOADER = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/$(PRODUCT_NAME).app/$(PRODUCT_NAME)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -1826,7 +1816,7 @@
 				UNITY_CLOUD_PROJECT_ID = "575f10d5-ab0b-475c-9020-b2345088bf54";
 				UNITY_RUNTIME_VERSION = 2018.4.11f1;
 				UNITY_SCRIPTING_BACKEND = il2cpp;
-				USYM_UPLOAD_AUTH_TOKEN = c9db955ccde3a71a306b6a44170a6c02cb0f1108df09b0099f0c7f8b34b9e191;
+				USYM_UPLOAD_AUTH_TOKEN = 7b06d94ae5d574dadf080ecbf5b2aa7cffa216806751abaf5359bf349e9fcfd6;
 				USYM_UPLOAD_URL_SOURCE = "https://perf-events.cloud.unity3d.com/url";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = xctest;
@@ -1853,7 +1843,7 @@
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
 				UNITY_CLOUD_PROJECT_ID = "575f10d5-ab0b-475c-9020-b2345088bf54";
-				USYM_UPLOAD_AUTH_TOKEN = c9db955ccde3a71a306b6a44170a6c02cb0f1108df09b0099f0c7f8b34b9e191;
+				USYM_UPLOAD_AUTH_TOKEN = 7b06d94ae5d574dadf080ecbf5b2aa7cffa216806751abaf5359bf349e9fcfd6;
 				USYM_UPLOAD_URL_SOURCE = "https://perf-events.cloud.unity3d.com/url";
 			};
 			name = Debug;
@@ -1876,7 +1866,7 @@
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
 				UNITY_CLOUD_PROJECT_ID = "575f10d5-ab0b-475c-9020-b2345088bf54";
-				USYM_UPLOAD_AUTH_TOKEN = c9db955ccde3a71a306b6a44170a6c02cb0f1108df09b0099f0c7f8b34b9e191;
+				USYM_UPLOAD_AUTH_TOKEN = 7b06d94ae5d574dadf080ecbf5b2aa7cffa216806751abaf5359bf349e9fcfd6;
 				USYM_UPLOAD_URL_SOURCE = "https://perf-events.cloud.unity3d.com/url";
 			};
 			name = Release;

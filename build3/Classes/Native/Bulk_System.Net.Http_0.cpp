@@ -692,7 +692,6 @@ extern RuntimeClass* BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040_il2
 extern RuntimeClass* ByteU5BU5D_tD06FDBE8142446525DF1C40351D523A228373821_il2cpp_TypeInfo_var;
 extern RuntimeClass* CacheControlHeaderValue_t198E32C9C8BDE34E39F3463BAD0AFEDB536C64FB_il2cpp_TypeInfo_var;
 extern RuntimeClass* CancellationTokenSource_tF480B7E74A032667AFBD31F0530D619FB43AD3FE_il2cpp_TypeInfo_var;
-extern RuntimeClass* CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB_il2cpp_TypeInfo_var;
 extern RuntimeClass* CharU5BU5D_t4CC6ABF0AD71BEC97E3C2F1E9C5677E46D3A75C2_il2cpp_TypeInfo_var;
 extern RuntimeClass* ContentDispositionHeaderValue_t424BAD39E99F23CE48CF86744B638923E2B539B0_il2cpp_TypeInfo_var;
 extern RuntimeClass* ContentRangeHeaderValue_t7910E521DFA28C03F4E0D9C89D87232B6882D11E_il2cpp_TypeInfo_var;
@@ -1113,7 +1112,6 @@ extern const RuntimeMethod* HttpHeaderValueCollection_1_Find_mF199288AA922B98B26
 extern const RuntimeMethod* HttpHeaders_AddInternal_m5506349FF524ECBFFCC28AD817A836429CC6C336_RuntimeMethod_var;
 extern const RuntimeMethod* HttpHeaders_AddOrRemove_TisAuthenticationHeaderValue_tC285A16C25538CA86FA59B88CC25E6999BB5F1A6_m2518D7ED14310120FF5522741E127D5E768C150C_RuntimeMethod_var;
 extern const RuntimeMethod* HttpHeaders_AddOrRemove_TisMediaTypeHeaderValue_tB4CFA361861F6A00B6F13F7BB5B4E7425415FDE1_mE0223C403B5B564390C4DB791D3A0300E3931F76_RuntimeMethod_var;
-extern const RuntimeMethod* HttpHeaders_Add_m37FEC70288C4DAB08C38EF0A7B39A6550A1F47A7_RuntimeMethod_var;
 extern const RuntimeMethod* HttpHeaders_CheckName_m50526A6CC63973FF5D3FBBA4B7BA0D061AA2A047_RuntimeMethod_var;
 extern const RuntimeMethod* HttpHeaders_GetKnownHeaderKind_m59CCA2C693511E6A30AF8115B5A027F68D338714_RuntimeMethod_var;
 extern const RuntimeMethod* HttpHeaders_GetValue_TisMediaTypeHeaderValue_tB4CFA361861F6A00B6F13F7BB5B4E7425415FDE1_mCF7EFA0AF3A41D98981516757442A18FF58F2D29_RuntimeMethod_var;
@@ -1319,11 +1317,9 @@ extern const uint32_t HttpClientHandler_MethodHasBody_m51E082651A0C0B9001C4CB597
 extern const uint32_t HttpClientHandler_SendAsync_m085FCB5C9C14B23E2904A005C9161B7AD9109DDC_MetadataUsageId;
 extern const uint32_t HttpClientHandler__ctor_m68CE713389E4F0B1549F182BCC2859E7404732C8_MetadataUsageId;
 extern const uint32_t HttpClientHandler_get_CookieContainer_mA0C918C1C2B34DB0BCD2592B456CFE8886F2887F_MetadataUsageId;
-extern const uint32_t HttpClient_GetAsync_mB979915E31872E80CA29D0724DB7F6239A914D99_MetadataUsageId;
-extern const uint32_t HttpClient_PutAsync_m600B18C3B5B9C424DD541EF1AAD0A248B24829E7_MetadataUsageId;
+extern const uint32_t HttpClient_GetAsync_m3D3DDCEB3022B5F6C9892B857374BFBE1DA54E4E_MetadataUsageId;
 extern const uint32_t HttpClient_SendAsyncWorker_m55F4C8238A2EC911E989D819C5B098C1CEB281D4_MetadataUsageId;
 extern const uint32_t HttpClient_SendAsync_m7E97D0E342056559AE16E2723AA2502D0440B9A2_MetadataUsageId;
-extern const uint32_t HttpClient_SendAsync_mF271621C7E6EAD6FC8DE115237A317BA14820254_MetadataUsageId;
 extern const uint32_t HttpClient__cctor_mF347646400A26C002A3B32C76F154B310FA6B3E7_MetadataUsageId;
 extern const uint32_t HttpClient__ctor_m179C3B29F7C664CDC5B5761E24EC2E9685385A1F_MetadataUsageId;
 extern const uint32_t HttpClient__ctor_mE0A34A8B356DA48F4D1F7A129EB458C4315A0AF7_MetadataUsageId;
@@ -1340,8 +1336,6 @@ extern const uint32_t HttpContent_ReadAsStringAsync_m499CCA8B02B3AFB793C0783D282
 extern const uint32_t HttpContent_get_Headers_mCCD2B7D5CA1C1AEE1A78DA2E9036A66A5BCCB942_MetadataUsageId;
 extern const uint32_t HttpContent_get_LoadedBufferLength_m63DED6C156F809214A1A860FFDD6A4431F1B539F_MetadataUsageId;
 extern const uint32_t HttpHeaders_AddInternal_m5506349FF524ECBFFCC28AD817A836429CC6C336_MetadataUsageId;
-extern const uint32_t HttpHeaders_Add_m37FEC70288C4DAB08C38EF0A7B39A6550A1F47A7_MetadataUsageId;
-extern const uint32_t HttpHeaders_Add_m41401B7E6B948DF760D603C2F43AC19ACC48D7FA_MetadataUsageId;
 extern const uint32_t HttpHeaders_CheckName_m50526A6CC63973FF5D3FBBA4B7BA0D061AA2A047_MetadataUsageId;
 extern const uint32_t HttpHeaders_GetAllHeaderValues_mBDD77048AA53F8D6D10EFF0D9C9F735B9670404A_MetadataUsageId;
 extern const uint32_t HttpHeaders_GetEnumerator_m913E186A588537E0EAFDA2380D2D8AF08D49EFF0_MetadataUsageId;
@@ -16965,12 +16959,6 @@ inline void Dictionary_2__ctor_m6032E5F83F9AD865313A112EC7B68C25F557DC6A (Dictio
 }
 // System.Void System.Net.Http.Headers.HttpHeaders::.ctor()
 extern "C" IL2CPP_METHOD_ATTR void HttpHeaders__ctor_m5FA02739E3437B7A5DE225F6F2B20F2E5EA174EA (HttpHeaders_tF0E0E01200BD0D8141489FB370D60A9F4DBF42A1 * __this, const RuntimeMethod* method);
-// System.Void System.Net.Http.Headers.HttpHeaders::Add(System.String,System.Collections.Generic.IEnumerable`1<System.String>)
-extern "C" IL2CPP_METHOD_ATTR void HttpHeaders_Add_m37FEC70288C4DAB08C38EF0A7B39A6550A1F47A7 (HttpHeaders_tF0E0E01200BD0D8141489FB370D60A9F4DBF42A1 * __this, String_t* ___name0, RuntimeObject* ___values1, const RuntimeMethod* method);
-// System.Net.Http.Headers.HeaderInfo System.Net.Http.Headers.HttpHeaders::CheckName(System.String)
-extern "C" IL2CPP_METHOD_ATTR HeaderInfo_t067D19E53F90FB324CA05965F2429843D223C61C * HttpHeaders_CheckName_m50526A6CC63973FF5D3FBBA4B7BA0D061AA2A047 (HttpHeaders_tF0E0E01200BD0D8141489FB370D60A9F4DBF42A1 * __this, String_t* ___name0, const RuntimeMethod* method);
-// System.Boolean System.Net.Http.Headers.HttpHeaders::AddInternal(System.String,System.Collections.Generic.IEnumerable`1<System.String>,System.Net.Http.Headers.HeaderInfo,System.Boolean)
-extern "C" IL2CPP_METHOD_ATTR bool HttpHeaders_AddInternal_m5506349FF524ECBFFCC28AD817A836429CC6C336 (HttpHeaders_tF0E0E01200BD0D8141489FB370D60A9F4DBF42A1 * __this, String_t* ___name0, RuntimeObject* ___values1, HeaderInfo_t067D19E53F90FB324CA05965F2429843D223C61C * ___headerInfo2, bool ___ignoreInvalid3, const RuntimeMethod* method);
 // System.Boolean System.Collections.Generic.Dictionary`2<System.String,System.Net.Http.Headers.HttpHeaders/HeaderBucket>::TryGetValue(!0,!1&)
 inline bool Dictionary_2_TryGetValue_m47FC226D912E3585828683160D11A91F74A2686F (Dictionary_2_t68C9612F2AAB4592A72574ECE587789329FFC1B3 * __this, String_t* p0, HeaderBucket_tB4D5217F305487EEBBB21B36236E85CFD40E036F ** p1, const RuntimeMethod* method)
 {
@@ -16993,6 +16981,8 @@ inline void Dictionary_2_Add_m29627041CB7B085AACBD4BC43C545958DA1D00DE (Dictiona
 }
 // System.Boolean System.Net.Http.Headers.HttpHeaders::TryCheckName(System.String,System.Net.Http.Headers.HeaderInfo&)
 extern "C" IL2CPP_METHOD_ATTR bool HttpHeaders_TryCheckName_m4669D05A88D86AA42F658E0467441FB21EE89BC9 (HttpHeaders_tF0E0E01200BD0D8141489FB370D60A9F4DBF42A1 * __this, String_t* ___name0, HeaderInfo_t067D19E53F90FB324CA05965F2429843D223C61C ** ___headerInfo1, const RuntimeMethod* method);
+// System.Boolean System.Net.Http.Headers.HttpHeaders::AddInternal(System.String,System.Collections.Generic.IEnumerable`1<System.String>,System.Net.Http.Headers.HeaderInfo,System.Boolean)
+extern "C" IL2CPP_METHOD_ATTR bool HttpHeaders_AddInternal_m5506349FF524ECBFFCC28AD817A836429CC6C336 (HttpHeaders_tF0E0E01200BD0D8141489FB370D60A9F4DBF42A1 * __this, String_t* ___name0, RuntimeObject* ___values1, HeaderInfo_t067D19E53F90FB324CA05965F2429843D223C61C * ___headerInfo2, bool ___ignoreInvalid3, const RuntimeMethod* method);
 // System.Void System.ArgumentException::.ctor(System.String)
 extern "C" IL2CPP_METHOD_ATTR void ArgumentException__ctor_m9A85EF7FEFEC21DDD525A67E831D77278E5165B7 (ArgumentException_tEDCD16F20A09ECE461C3DA766C16EDA8864057D1 * __this, String_t* p0, const RuntimeMethod* method);
 // System.Boolean System.Collections.Generic.Dictionary`2<System.String,System.Net.Http.Headers.HeaderInfo>::TryGetValue(!0,!1&)
@@ -17008,6 +16998,8 @@ extern "C" IL2CPP_METHOD_ATTR bool Token_TryCheck_mC41BF408E4D8BE091BBD3C8E0581A
 extern "C" IL2CPP_METHOD_ATTR void U3CGetEnumeratorU3Ed__19__ctor_mAB1A690123255A70214425873FEC37BAF923450C (U3CGetEnumeratorU3Ed__19_tA84EA98FFD73FFAB0621F7C20E8D8C0D560E6B4A * __this, int32_t ___U3CU3E1__state0, const RuntimeMethod* method);
 // System.Collections.Generic.IEnumerator`1<System.Collections.Generic.KeyValuePair`2<System.String,System.Collections.Generic.IEnumerable`1<System.String>>> System.Net.Http.Headers.HttpHeaders::GetEnumerator()
 extern "C" IL2CPP_METHOD_ATTR RuntimeObject* HttpHeaders_GetEnumerator_m913E186A588537E0EAFDA2380D2D8AF08D49EFF0 (HttpHeaders_tF0E0E01200BD0D8141489FB370D60A9F4DBF42A1 * __this, const RuntimeMethod* method);
+// System.Net.Http.Headers.HeaderInfo System.Net.Http.Headers.HttpHeaders::CheckName(System.String)
+extern "C" IL2CPP_METHOD_ATTR HeaderInfo_t067D19E53F90FB324CA05965F2429843D223C61C * HttpHeaders_CheckName_m50526A6CC63973FF5D3FBBA4B7BA0D061AA2A047 (HttpHeaders_tF0E0E01200BD0D8141489FB370D60A9F4DBF42A1 * __this, String_t* ___name0, const RuntimeMethod* method);
 // System.Boolean System.Collections.Generic.Dictionary`2<System.String,System.Net.Http.Headers.HttpHeaders/HeaderBucket>::Remove(!0)
 inline bool Dictionary_2_Remove_m13FF075198B368330AF9DD2B09AD0B7949F619CA (Dictionary_2_t68C9612F2AAB4592A72574ECE587789329FFC1B3 * __this, String_t* p0, const RuntimeMethod* method)
 {
@@ -17646,14 +17638,6 @@ extern "C" IL2CPP_METHOD_ATTR void HttpMessageInvoker_Dispose_mD98A4CFF4F687F4A6
 extern "C" IL2CPP_METHOD_ATTR HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220 * HttpMethod_get_Get_m4BB54EE88F1CF0F114717044DB4AF976538B191F (const RuntimeMethod* method);
 // System.Void System.Net.Http.HttpRequestMessage::.ctor(System.Net.Http.HttpMethod,System.String)
 extern "C" IL2CPP_METHOD_ATTR void HttpRequestMessage__ctor_m76A9F3C082E2D1C9B679E56DB32F2AA8ECE377C0 (HttpRequestMessage_tBBC9EBC5D6C1B7E30F9927AABBDB65792FFB5427 * __this, HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220 * ___method0, String_t* ___requestUri1, const RuntimeMethod* method);
-// System.Threading.Tasks.Task`1<System.Net.Http.HttpResponseMessage> System.Net.Http.HttpClient::SendAsync(System.Net.Http.HttpRequestMessage)
-extern "C" IL2CPP_METHOD_ATTR Task_1_t519CB3A303B53176BD616AC273201D66B84FF270 * HttpClient_SendAsync_mF271621C7E6EAD6FC8DE115237A317BA14820254 (HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7 * __this, HttpRequestMessage_tBBC9EBC5D6C1B7E30F9927AABBDB65792FFB5427 * ___request0, const RuntimeMethod* method);
-// System.Net.Http.HttpMethod System.Net.Http.HttpMethod::get_Put()
-extern "C" IL2CPP_METHOD_ATTR HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220 * HttpMethod_get_Put_m4BB0741A43A9B72F8E7EDAC626AEBF1CD8E45F87 (const RuntimeMethod* method);
-// System.Void System.Net.Http.HttpRequestMessage::set_Content(System.Net.Http.HttpContent)
-extern "C" IL2CPP_METHOD_ATTR void HttpRequestMessage_set_Content_mF926F55372E9ECD0E0987CE33C47648EDB23A78D (HttpRequestMessage_tBBC9EBC5D6C1B7E30F9927AABBDB65792FFB5427 * __this, HttpContent_t678722F60CA151DD19AFCA917657BE24F111A41D * ___value0, const RuntimeMethod* method);
-// System.Threading.CancellationToken System.Threading.CancellationToken::get_None()
-extern "C" IL2CPP_METHOD_ATTR CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  CancellationToken_get_None_m008D4CF5E11172703A6D781A3C30E6E537004F1D (const RuntimeMethod* method);
 // System.Threading.Tasks.Task`1<System.Net.Http.HttpResponseMessage> System.Net.Http.HttpClient::SendAsync(System.Net.Http.HttpRequestMessage,System.Net.Http.HttpCompletionOption,System.Threading.CancellationToken)
 extern "C" IL2CPP_METHOD_ATTR Task_1_t519CB3A303B53176BD616AC273201D66B84FF270 * HttpClient_SendAsync_m7E97D0E342056559AE16E2723AA2502D0440B9A2 (HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7 * __this, HttpRequestMessage_tBBC9EBC5D6C1B7E30F9927AABBDB65792FFB5427 * ___request0, int32_t ___completionOption1, CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  ___cancellationToken2, const RuntimeMethod* method);
 // System.Boolean System.Net.Http.HttpRequestMessage::SetIsUsed()
@@ -23110,59 +23094,6 @@ extern "C" IL2CPP_METHOD_ATTR void HttpHeaders__ctor_mF97201A2BBC41146428858AA54
 		HttpHeaders__ctor_m5FA02739E3437B7A5DE225F6F2B20F2E5EA174EA(__this, /*hidden argument*/NULL);
 		int32_t L_0 = ___headerKind0;
 		__this->set_HeaderKind_2(L_0);
-		return;
-	}
-}
-// System.Void System.Net.Http.Headers.HttpHeaders::Add(System.String,System.String)
-extern "C" IL2CPP_METHOD_ATTR void HttpHeaders_Add_m41401B7E6B948DF760D603C2F43AC19ACC48D7FA (HttpHeaders_tF0E0E01200BD0D8141489FB370D60A9F4DBF42A1 * __this, String_t* ___name0, String_t* ___value1, const RuntimeMethod* method)
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_method (HttpHeaders_Add_m41401B7E6B948DF760D603C2F43AC19ACC48D7FA_MetadataUsageId);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		String_t* L_0 = ___name0;
-		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_1 = (StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E*)SZArrayNew(StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E_il2cpp_TypeInfo_var, (uint32_t)1);
-		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2 = L_1;
-		String_t* L_3 = ___value1;
-		NullCheck(L_2);
-		ArrayElementTypeCheck (L_2, L_3);
-		(L_2)->SetAt(static_cast<il2cpp_array_size_t>(0), (String_t*)L_3);
-		HttpHeaders_Add_m37FEC70288C4DAB08C38EF0A7B39A6550A1F47A7(__this, L_0, (RuntimeObject*)(RuntimeObject*)L_2, /*hidden argument*/NULL);
-		return;
-	}
-}
-// System.Void System.Net.Http.Headers.HttpHeaders::Add(System.String,System.Collections.Generic.IEnumerable`1<System.String>)
-extern "C" IL2CPP_METHOD_ATTR void HttpHeaders_Add_m37FEC70288C4DAB08C38EF0A7B39A6550A1F47A7 (HttpHeaders_tF0E0E01200BD0D8141489FB370D60A9F4DBF42A1 * __this, String_t* ___name0, RuntimeObject* ___values1, const RuntimeMethod* method)
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_method (HttpHeaders_Add_m37FEC70288C4DAB08C38EF0A7B39A6550A1F47A7_MetadataUsageId);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		RuntimeObject* L_0 = ___values1;
-		if (L_0)
-		{
-			goto IL_000e;
-		}
-	}
-	{
-		ArgumentNullException_t581DF992B1F3E0EC6EFB30CC5DC43519A79B27AD * L_1 = (ArgumentNullException_t581DF992B1F3E0EC6EFB30CC5DC43519A79B27AD *)il2cpp_codegen_object_new(ArgumentNullException_t581DF992B1F3E0EC6EFB30CC5DC43519A79B27AD_il2cpp_TypeInfo_var);
-		ArgumentNullException__ctor_mEE0C0D6FCB2D08CD7967DBB1329A0854BBED49ED(L_1, _stringLiteral048B0CB1B94379C74E7E8C8EDE496E3EDBEA3386, /*hidden argument*/NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_1, NULL, HttpHeaders_Add_m37FEC70288C4DAB08C38EF0A7B39A6550A1F47A7_RuntimeMethod_var);
-	}
-
-IL_000e:
-	{
-		String_t* L_2 = ___name0;
-		RuntimeObject* L_3 = ___values1;
-		String_t* L_4 = ___name0;
-		HeaderInfo_t067D19E53F90FB324CA05965F2429843D223C61C * L_5 = HttpHeaders_CheckName_m50526A6CC63973FF5D3FBBA4B7BA0D061AA2A047(__this, L_4, /*hidden argument*/NULL);
-		HttpHeaders_AddInternal_m5506349FF524ECBFFCC28AD817A836429CC6C336(__this, L_2, L_3, L_5, (bool)0, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -33503,13 +33434,13 @@ IL_001d:
 		return;
 	}
 }
-// System.Threading.Tasks.Task`1<System.Net.Http.HttpResponseMessage> System.Net.Http.HttpClient::GetAsync(System.String)
-extern "C" IL2CPP_METHOD_ATTR Task_1_t519CB3A303B53176BD616AC273201D66B84FF270 * HttpClient_GetAsync_mB979915E31872E80CA29D0724DB7F6239A914D99 (HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7 * __this, String_t* ___requestUri0, const RuntimeMethod* method)
+// System.Threading.Tasks.Task`1<System.Net.Http.HttpResponseMessage> System.Net.Http.HttpClient::GetAsync(System.String,System.Threading.CancellationToken)
+extern "C" IL2CPP_METHOD_ATTR Task_1_t519CB3A303B53176BD616AC273201D66B84FF270 * HttpClient_GetAsync_m3D3DDCEB3022B5F6C9892B857374BFBE1DA54E4E (HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7 * __this, String_t* ___requestUri0, CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  ___cancellationToken1, const RuntimeMethod* method)
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_method (HttpClient_GetAsync_mB979915E31872E80CA29D0724DB7F6239A914D99_MetadataUsageId);
+		il2cpp_codegen_initialize_method (HttpClient_GetAsync_m3D3DDCEB3022B5F6C9892B857374BFBE1DA54E4E_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
 	{
@@ -33518,48 +33449,9 @@ extern "C" IL2CPP_METHOD_ATTR Task_1_t519CB3A303B53176BD616AC273201D66B84FF270 *
 		String_t* L_1 = ___requestUri0;
 		HttpRequestMessage_tBBC9EBC5D6C1B7E30F9927AABBDB65792FFB5427 * L_2 = (HttpRequestMessage_tBBC9EBC5D6C1B7E30F9927AABBDB65792FFB5427 *)il2cpp_codegen_object_new(HttpRequestMessage_tBBC9EBC5D6C1B7E30F9927AABBDB65792FFB5427_il2cpp_TypeInfo_var);
 		HttpRequestMessage__ctor_m76A9F3C082E2D1C9B679E56DB32F2AA8ECE377C0(L_2, L_0, L_1, /*hidden argument*/NULL);
-		Task_1_t519CB3A303B53176BD616AC273201D66B84FF270 * L_3 = HttpClient_SendAsync_mF271621C7E6EAD6FC8DE115237A317BA14820254(__this, L_2, /*hidden argument*/NULL);
-		return L_3;
-	}
-}
-// System.Threading.Tasks.Task`1<System.Net.Http.HttpResponseMessage> System.Net.Http.HttpClient::PutAsync(System.String,System.Net.Http.HttpContent)
-extern "C" IL2CPP_METHOD_ATTR Task_1_t519CB3A303B53176BD616AC273201D66B84FF270 * HttpClient_PutAsync_m600B18C3B5B9C424DD541EF1AAD0A248B24829E7 (HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7 * __this, String_t* ___requestUri0, HttpContent_t678722F60CA151DD19AFCA917657BE24F111A41D * ___content1, const RuntimeMethod* method)
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_method (HttpClient_PutAsync_m600B18C3B5B9C424DD541EF1AAD0A248B24829E7_MetadataUsageId);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		IL2CPP_RUNTIME_CLASS_INIT(HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220_il2cpp_TypeInfo_var);
-		HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220 * L_0 = HttpMethod_get_Put_m4BB0741A43A9B72F8E7EDAC626AEBF1CD8E45F87(/*hidden argument*/NULL);
-		String_t* L_1 = ___requestUri0;
-		HttpRequestMessage_tBBC9EBC5D6C1B7E30F9927AABBDB65792FFB5427 * L_2 = (HttpRequestMessage_tBBC9EBC5D6C1B7E30F9927AABBDB65792FFB5427 *)il2cpp_codegen_object_new(HttpRequestMessage_tBBC9EBC5D6C1B7E30F9927AABBDB65792FFB5427_il2cpp_TypeInfo_var);
-		HttpRequestMessage__ctor_m76A9F3C082E2D1C9B679E56DB32F2AA8ECE377C0(L_2, L_0, L_1, /*hidden argument*/NULL);
-		HttpRequestMessage_tBBC9EBC5D6C1B7E30F9927AABBDB65792FFB5427 * L_3 = L_2;
-		HttpContent_t678722F60CA151DD19AFCA917657BE24F111A41D * L_4 = ___content1;
-		NullCheck(L_3);
-		HttpRequestMessage_set_Content_mF926F55372E9ECD0E0987CE33C47648EDB23A78D(L_3, L_4, /*hidden argument*/NULL);
-		Task_1_t519CB3A303B53176BD616AC273201D66B84FF270 * L_5 = HttpClient_SendAsync_mF271621C7E6EAD6FC8DE115237A317BA14820254(__this, L_3, /*hidden argument*/NULL);
-		return L_5;
-	}
-}
-// System.Threading.Tasks.Task`1<System.Net.Http.HttpResponseMessage> System.Net.Http.HttpClient::SendAsync(System.Net.Http.HttpRequestMessage)
-extern "C" IL2CPP_METHOD_ATTR Task_1_t519CB3A303B53176BD616AC273201D66B84FF270 * HttpClient_SendAsync_mF271621C7E6EAD6FC8DE115237A317BA14820254 (HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7 * __this, HttpRequestMessage_tBBC9EBC5D6C1B7E30F9927AABBDB65792FFB5427 * ___request0, const RuntimeMethod* method)
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_method (HttpClient_SendAsync_mF271621C7E6EAD6FC8DE115237A317BA14820254_MetadataUsageId);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		HttpRequestMessage_tBBC9EBC5D6C1B7E30F9927AABBDB65792FFB5427 * L_0 = ___request0;
-		IL2CPP_RUNTIME_CLASS_INIT(CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB_il2cpp_TypeInfo_var);
-		CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  L_1 = CancellationToken_get_None_m008D4CF5E11172703A6D781A3C30E6E537004F1D(/*hidden argument*/NULL);
-		Task_1_t519CB3A303B53176BD616AC273201D66B84FF270 * L_2 = HttpClient_SendAsync_m7E97D0E342056559AE16E2723AA2502D0440B9A2(__this, L_0, 0, L_1, /*hidden argument*/NULL);
-		return L_2;
+		CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  L_3 = ___cancellationToken1;
+		Task_1_t519CB3A303B53176BD616AC273201D66B84FF270 * L_4 = VirtFuncInvoker2< Task_1_t519CB3A303B53176BD616AC273201D66B84FF270 *, HttpRequestMessage_tBBC9EBC5D6C1B7E30F9927AABBDB65792FFB5427 *, CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  >::Invoke(6 /* System.Threading.Tasks.Task`1<System.Net.Http.HttpResponseMessage> System.Net.Http.HttpMessageInvoker::SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken) */, __this, L_2, L_3);
+		return L_4;
 	}
 }
 // System.Threading.Tasks.Task`1<System.Net.Http.HttpResponseMessage> System.Net.Http.HttpClient::SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)

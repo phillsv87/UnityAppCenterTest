@@ -20,10 +20,12 @@
 #include "il2cpp-object-internals.h"
 
 
-// SpotiftyLogin
-struct SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B;
+// SpotifyApi
+struct SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2;
 // System.Action
 struct Action_t591D2A86165F896B4B800BB5C25CE18672A55579;
+// System.Action`1<System.Object>
+struct Action_1_t551A279CEADCF6EEAE8FA2B1E1E757D0D15290D0;
 // System.Action`1<System.String>
 struct Action_1_t19CAF500829927B30EC94F39939F749E4919669E;
 // System.AsyncCallback
@@ -56,6 +58,8 @@ struct DelegateU5BU5D_tDFCDEE2A6322F96C0FE49AF47E9ADB8C4B294E86;
 struct IAsyncResult_t8E194308510B375B42432981AE5E7488C458D598;
 // System.Net.Http.HttpClient
 struct HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7;
+// System.Net.Http.HttpMethod
+struct HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220;
 // System.Net.Http.HttpResponseMessage
 struct HttpResponseMessage_t619DB9FDC8E63CDF2D0A314B61A4C6609A43F904;
 // System.Reflection.MethodInfo
@@ -64,6 +68,10 @@ struct MethodInfo_t;
 struct IAsyncStateMachine_tEFDFBE18E061A6065AB2FF735F1425FB59F919BC;
 // System.String
 struct String_t;
+// System.String[]
+struct StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E;
+// System.Threading.CancellationTokenSource
+struct CancellationTokenSource_tF480B7E74A032667AFBD31F0530D619FB43AD3FE;
 // System.Threading.Tasks.Task`1<System.Net.Http.HttpResponseMessage>
 struct Task_1_t519CB3A303B53176BD616AC273201D66B84FF270;
 // System.Threading.Tasks.Task`1<System.String>
@@ -180,6 +188,26 @@ struct ValueType_t4D0C27076F7C36E76190FB3328E232BCB1CD1FFF_marshaled_com
 {
 };
 #endif // VALUETYPE_T4D0C27076F7C36E76190FB3328E232BCB1CD1FFF_H
+#ifndef TASKHELPER_TE5232ABE9AE82BFD6109DF8FA5C5ACFB91ACA09C_H
+#define TASKHELPER_TE5232ABE9AE82BFD6109DF8FA5C5ACFB91ACA09C_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// TaskHelper
+struct  TaskHelper_tE5232ABE9AE82BFD6109DF8FA5C5ACFB91ACA09C  : public RuntimeObject
+{
+public:
+
+public:
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // TASKHELPER_TE5232ABE9AE82BFD6109DF8FA5C5ACFB91ACA09C_H
 #ifndef U3CU3EC__DISPLAYCLASS116_0_T5D96BEB4D5AA3C288B4CAC28F112569DE73F53C8_H
 #define U3CU3EC__DISPLAYCLASS116_0_T5D96BEB4D5AA3C288B4CAC28F112569DE73F53C8_H
 #ifdef __clang__
@@ -750,6 +778,63 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // SINGLE_TDDDA9169C4E4E308AC6D7A824F9B28DC82204AE1_H
+#ifndef CANCELLATIONTOKEN_T9E956952F7F20908F2AE72EDF36D97E6C7DB63AB_H
+#define CANCELLATIONTOKEN_T9E956952F7F20908F2AE72EDF36D97E6C7DB63AB_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// System.Threading.CancellationToken
+struct  CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB 
+{
+public:
+	// System.Threading.CancellationTokenSource System.Threading.CancellationToken::m_source
+	CancellationTokenSource_tF480B7E74A032667AFBD31F0530D619FB43AD3FE * ___m_source_0;
+
+public:
+	inline static int32_t get_offset_of_m_source_0() { return static_cast<int32_t>(offsetof(CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB, ___m_source_0)); }
+	inline CancellationTokenSource_tF480B7E74A032667AFBD31F0530D619FB43AD3FE * get_m_source_0() const { return ___m_source_0; }
+	inline CancellationTokenSource_tF480B7E74A032667AFBD31F0530D619FB43AD3FE ** get_address_of_m_source_0() { return &___m_source_0; }
+	inline void set_m_source_0(CancellationTokenSource_tF480B7E74A032667AFBD31F0530D619FB43AD3FE * value)
+	{
+		___m_source_0 = value;
+		Il2CppCodeGenWriteBarrier((&___m_source_0), value);
+	}
+};
+
+struct CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB_StaticFields
+{
+public:
+	// System.Action`1<System.Object> System.Threading.CancellationToken::s_ActionToActionObjShunt
+	Action_1_t551A279CEADCF6EEAE8FA2B1E1E757D0D15290D0 * ___s_ActionToActionObjShunt_1;
+
+public:
+	inline static int32_t get_offset_of_s_ActionToActionObjShunt_1() { return static_cast<int32_t>(offsetof(CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB_StaticFields, ___s_ActionToActionObjShunt_1)); }
+	inline Action_1_t551A279CEADCF6EEAE8FA2B1E1E757D0D15290D0 * get_s_ActionToActionObjShunt_1() const { return ___s_ActionToActionObjShunt_1; }
+	inline Action_1_t551A279CEADCF6EEAE8FA2B1E1E757D0D15290D0 ** get_address_of_s_ActionToActionObjShunt_1() { return &___s_ActionToActionObjShunt_1; }
+	inline void set_s_ActionToActionObjShunt_1(Action_1_t551A279CEADCF6EEAE8FA2B1E1E757D0D15290D0 * value)
+	{
+		___s_ActionToActionObjShunt_1 = value;
+		Il2CppCodeGenWriteBarrier((&___s_ActionToActionObjShunt_1), value);
+	}
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+// Native definition for P/Invoke marshalling of System.Threading.CancellationToken
+struct CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB_marshaled_pinvoke
+{
+	CancellationTokenSource_tF480B7E74A032667AFBD31F0530D619FB43AD3FE * ___m_source_0;
+};
+// Native definition for COM marshalling of System.Threading.CancellationToken
+struct CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB_marshaled_com
+{
+	CancellationTokenSource_tF480B7E74A032667AFBD31F0530D619FB43AD3FE * ___m_source_0;
+};
+#endif // CANCELLATIONTOKEN_T9E956952F7F20908F2AE72EDF36D97E6C7DB63AB_H
 #ifndef VOID_T22962CB4C05B1D89B55A6E1139F0E87A90987017_H
 #define VOID_T22962CB4C05B1D89B55A6E1139F0E87A90987017_H
 #ifdef __clang__
@@ -1395,6 +1480,35 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // U3CPRIVATEIMPLEMENTATIONDETAILSU3E_TC8332394FBFEEB4B73459A35E182942340DA3537_H
+#ifndef SPOTIFYREPEATMODE_T808DBF4667005FCB3A97FCDA876C84B196E5E083_H
+#define SPOTIFYREPEATMODE_T808DBF4667005FCB3A97FCDA876C84B196E5E083_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// SpotifyRepeatMode
+struct  SpotifyRepeatMode_t808DBF4667005FCB3A97FCDA876C84B196E5E083 
+{
+public:
+	// System.Int32 SpotifyRepeatMode::value__
+	int32_t ___value___2;
+
+public:
+	inline static int32_t get_offset_of_value___2() { return static_cast<int32_t>(offsetof(SpotifyRepeatMode_t808DBF4667005FCB3A97FCDA876C84B196E5E083, ___value___2)); }
+	inline int32_t get_value___2() const { return ___value___2; }
+	inline int32_t* get_address_of_value___2() { return &___value___2; }
+	inline void set_value___2(int32_t value)
+	{
+		___value___2 = value;
+	}
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // SPOTIFYREPEATMODE_T808DBF4667005FCB3A97FCDA876C84B196E5E083_H
 #ifndef DELEGATE_T_H
 #define DELEGATE_T_H
 #ifdef __clang__
@@ -1558,6 +1672,63 @@ struct Delegate_t_marshaled_com
 	int32_t ___method_is_virtual_10;
 };
 #endif // DELEGATE_T_H
+#ifndef ASYNCTASKMETHODBUILDER_1_TC7B1E45031A96D1F2363C0491EC79BBE740BC10C_H
+#define ASYNCTASKMETHODBUILDER_1_TC7B1E45031A96D1F2363C0491EC79BBE740BC10C_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<System.String>
+struct  AsyncTaskMethodBuilder_1_tC7B1E45031A96D1F2363C0491EC79BBE740BC10C 
+{
+public:
+	// System.Runtime.CompilerServices.AsyncMethodBuilderCore System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1::m_coreState
+	AsyncMethodBuilderCore_t4CE6C1E4B0621A6EC45CF6E0E8F1F633FFF9FF01  ___m_coreState_1;
+	// System.Threading.Tasks.Task`1<TResult> System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1::m_task
+	Task_1_t4A75FEC8F36C5D4F8793BB8C94E4DAA7457D0286 * ___m_task_2;
+
+public:
+	inline static int32_t get_offset_of_m_coreState_1() { return static_cast<int32_t>(offsetof(AsyncTaskMethodBuilder_1_tC7B1E45031A96D1F2363C0491EC79BBE740BC10C, ___m_coreState_1)); }
+	inline AsyncMethodBuilderCore_t4CE6C1E4B0621A6EC45CF6E0E8F1F633FFF9FF01  get_m_coreState_1() const { return ___m_coreState_1; }
+	inline AsyncMethodBuilderCore_t4CE6C1E4B0621A6EC45CF6E0E8F1F633FFF9FF01 * get_address_of_m_coreState_1() { return &___m_coreState_1; }
+	inline void set_m_coreState_1(AsyncMethodBuilderCore_t4CE6C1E4B0621A6EC45CF6E0E8F1F633FFF9FF01  value)
+	{
+		___m_coreState_1 = value;
+	}
+
+	inline static int32_t get_offset_of_m_task_2() { return static_cast<int32_t>(offsetof(AsyncTaskMethodBuilder_1_tC7B1E45031A96D1F2363C0491EC79BBE740BC10C, ___m_task_2)); }
+	inline Task_1_t4A75FEC8F36C5D4F8793BB8C94E4DAA7457D0286 * get_m_task_2() const { return ___m_task_2; }
+	inline Task_1_t4A75FEC8F36C5D4F8793BB8C94E4DAA7457D0286 ** get_address_of_m_task_2() { return &___m_task_2; }
+	inline void set_m_task_2(Task_1_t4A75FEC8F36C5D4F8793BB8C94E4DAA7457D0286 * value)
+	{
+		___m_task_2 = value;
+		Il2CppCodeGenWriteBarrier((&___m_task_2), value);
+	}
+};
+
+struct AsyncTaskMethodBuilder_1_tC7B1E45031A96D1F2363C0491EC79BBE740BC10C_StaticFields
+{
+public:
+	// System.Threading.Tasks.Task`1<TResult> System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1::s_defaultResultTask
+	Task_1_t4A75FEC8F36C5D4F8793BB8C94E4DAA7457D0286 * ___s_defaultResultTask_0;
+
+public:
+	inline static int32_t get_offset_of_s_defaultResultTask_0() { return static_cast<int32_t>(offsetof(AsyncTaskMethodBuilder_1_tC7B1E45031A96D1F2363C0491EC79BBE740BC10C_StaticFields, ___s_defaultResultTask_0)); }
+	inline Task_1_t4A75FEC8F36C5D4F8793BB8C94E4DAA7457D0286 * get_s_defaultResultTask_0() const { return ___s_defaultResultTask_0; }
+	inline Task_1_t4A75FEC8F36C5D4F8793BB8C94E4DAA7457D0286 ** get_address_of_s_defaultResultTask_0() { return &___s_defaultResultTask_0; }
+	inline void set_s_defaultResultTask_0(Task_1_t4A75FEC8F36C5D4F8793BB8C94E4DAA7457D0286 * value)
+	{
+		___s_defaultResultTask_0 = value;
+		Il2CppCodeGenWriteBarrier((&___s_defaultResultTask_0), value);
+	}
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // ASYNCTASKMETHODBUILDER_1_TC7B1E45031A96D1F2363C0491EC79BBE740BC10C_H
 #ifndef ASYNCTASKMETHODBUILDER_1_T66ED1808B26B8081A2804D6A750D13386E360BD9_H
 #define ASYNCTASKMETHODBUILDER_1_T66ED1808B26B8081A2804D6A750D13386E360BD9_H
 #ifdef __clang__
@@ -2166,6 +2337,141 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // VERTEXHELPER_T27373EA2CF0F5810EC8CF873D0A6D6C0B23DAC3F_H
+#ifndef U3CSENDASYNCU3ED__18_TC88FAED363C09B2ADAAFD0E58095B20DCB7D3303_H
+#define U3CSENDASYNCU3ED__18_TC88FAED363C09B2ADAAFD0E58095B20DCB7D3303_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// SpotifyApi_<SendAsync>d__18
+struct  U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303 
+{
+public:
+	// System.Int32 SpotifyApi_<SendAsync>d__18::<>1__state
+	int32_t ___U3CU3E1__state_0;
+	// System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<System.String> SpotifyApi_<SendAsync>d__18::<>t__builder
+	AsyncTaskMethodBuilder_1_tC7B1E45031A96D1F2363C0491EC79BBE740BC10C  ___U3CU3Et__builder_1;
+	// SpotifyApi SpotifyApi_<SendAsync>d__18::<>4__this
+	SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * ___U3CU3E4__this_2;
+	// System.String SpotifyApi_<SendAsync>d__18::path
+	String_t* ___path_3;
+	// System.String SpotifyApi_<SendAsync>d__18::cmdName
+	String_t* ___cmdName_4;
+	// System.Net.Http.HttpMethod SpotifyApi_<SendAsync>d__18::method
+	HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220 * ___method_5;
+	// System.String SpotifyApi_<SendAsync>d__18::payload
+	String_t* ___payload_6;
+	// System.Threading.CancellationToken SpotifyApi_<SendAsync>d__18::cancel
+	CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  ___cancel_7;
+	// System.Net.Http.HttpResponseMessage SpotifyApi_<SendAsync>d__18::<r>5__2
+	HttpResponseMessage_t619DB9FDC8E63CDF2D0A314B61A4C6609A43F904 * ___U3CrU3E5__2_8;
+	// System.Runtime.CompilerServices.TaskAwaiter`1<System.Net.Http.HttpResponseMessage> SpotifyApi_<SendAsync>d__18::<>u__1
+	TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  ___U3CU3Eu__1_9;
+	// System.Runtime.CompilerServices.TaskAwaiter`1<System.String> SpotifyApi_<SendAsync>d__18::<>u__2
+	TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  ___U3CU3Eu__2_10;
+
+public:
+	inline static int32_t get_offset_of_U3CU3E1__state_0() { return static_cast<int32_t>(offsetof(U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303, ___U3CU3E1__state_0)); }
+	inline int32_t get_U3CU3E1__state_0() const { return ___U3CU3E1__state_0; }
+	inline int32_t* get_address_of_U3CU3E1__state_0() { return &___U3CU3E1__state_0; }
+	inline void set_U3CU3E1__state_0(int32_t value)
+	{
+		___U3CU3E1__state_0 = value;
+	}
+
+	inline static int32_t get_offset_of_U3CU3Et__builder_1() { return static_cast<int32_t>(offsetof(U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303, ___U3CU3Et__builder_1)); }
+	inline AsyncTaskMethodBuilder_1_tC7B1E45031A96D1F2363C0491EC79BBE740BC10C  get_U3CU3Et__builder_1() const { return ___U3CU3Et__builder_1; }
+	inline AsyncTaskMethodBuilder_1_tC7B1E45031A96D1F2363C0491EC79BBE740BC10C * get_address_of_U3CU3Et__builder_1() { return &___U3CU3Et__builder_1; }
+	inline void set_U3CU3Et__builder_1(AsyncTaskMethodBuilder_1_tC7B1E45031A96D1F2363C0491EC79BBE740BC10C  value)
+	{
+		___U3CU3Et__builder_1 = value;
+	}
+
+	inline static int32_t get_offset_of_U3CU3E4__this_2() { return static_cast<int32_t>(offsetof(U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303, ___U3CU3E4__this_2)); }
+	inline SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * get_U3CU3E4__this_2() const { return ___U3CU3E4__this_2; }
+	inline SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 ** get_address_of_U3CU3E4__this_2() { return &___U3CU3E4__this_2; }
+	inline void set_U3CU3E4__this_2(SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * value)
+	{
+		___U3CU3E4__this_2 = value;
+		Il2CppCodeGenWriteBarrier((&___U3CU3E4__this_2), value);
+	}
+
+	inline static int32_t get_offset_of_path_3() { return static_cast<int32_t>(offsetof(U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303, ___path_3)); }
+	inline String_t* get_path_3() const { return ___path_3; }
+	inline String_t** get_address_of_path_3() { return &___path_3; }
+	inline void set_path_3(String_t* value)
+	{
+		___path_3 = value;
+		Il2CppCodeGenWriteBarrier((&___path_3), value);
+	}
+
+	inline static int32_t get_offset_of_cmdName_4() { return static_cast<int32_t>(offsetof(U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303, ___cmdName_4)); }
+	inline String_t* get_cmdName_4() const { return ___cmdName_4; }
+	inline String_t** get_address_of_cmdName_4() { return &___cmdName_4; }
+	inline void set_cmdName_4(String_t* value)
+	{
+		___cmdName_4 = value;
+		Il2CppCodeGenWriteBarrier((&___cmdName_4), value);
+	}
+
+	inline static int32_t get_offset_of_method_5() { return static_cast<int32_t>(offsetof(U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303, ___method_5)); }
+	inline HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220 * get_method_5() const { return ___method_5; }
+	inline HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220 ** get_address_of_method_5() { return &___method_5; }
+	inline void set_method_5(HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220 * value)
+	{
+		___method_5 = value;
+		Il2CppCodeGenWriteBarrier((&___method_5), value);
+	}
+
+	inline static int32_t get_offset_of_payload_6() { return static_cast<int32_t>(offsetof(U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303, ___payload_6)); }
+	inline String_t* get_payload_6() const { return ___payload_6; }
+	inline String_t** get_address_of_payload_6() { return &___payload_6; }
+	inline void set_payload_6(String_t* value)
+	{
+		___payload_6 = value;
+		Il2CppCodeGenWriteBarrier((&___payload_6), value);
+	}
+
+	inline static int32_t get_offset_of_cancel_7() { return static_cast<int32_t>(offsetof(U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303, ___cancel_7)); }
+	inline CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  get_cancel_7() const { return ___cancel_7; }
+	inline CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB * get_address_of_cancel_7() { return &___cancel_7; }
+	inline void set_cancel_7(CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  value)
+	{
+		___cancel_7 = value;
+	}
+
+	inline static int32_t get_offset_of_U3CrU3E5__2_8() { return static_cast<int32_t>(offsetof(U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303, ___U3CrU3E5__2_8)); }
+	inline HttpResponseMessage_t619DB9FDC8E63CDF2D0A314B61A4C6609A43F904 * get_U3CrU3E5__2_8() const { return ___U3CrU3E5__2_8; }
+	inline HttpResponseMessage_t619DB9FDC8E63CDF2D0A314B61A4C6609A43F904 ** get_address_of_U3CrU3E5__2_8() { return &___U3CrU3E5__2_8; }
+	inline void set_U3CrU3E5__2_8(HttpResponseMessage_t619DB9FDC8E63CDF2D0A314B61A4C6609A43F904 * value)
+	{
+		___U3CrU3E5__2_8 = value;
+		Il2CppCodeGenWriteBarrier((&___U3CrU3E5__2_8), value);
+	}
+
+	inline static int32_t get_offset_of_U3CU3Eu__1_9() { return static_cast<int32_t>(offsetof(U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303, ___U3CU3Eu__1_9)); }
+	inline TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  get_U3CU3Eu__1_9() const { return ___U3CU3Eu__1_9; }
+	inline TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 * get_address_of_U3CU3Eu__1_9() { return &___U3CU3Eu__1_9; }
+	inline void set_U3CU3Eu__1_9(TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  value)
+	{
+		___U3CU3Eu__1_9 = value;
+	}
+
+	inline static int32_t get_offset_of_U3CU3Eu__2_10() { return static_cast<int32_t>(offsetof(U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303, ___U3CU3Eu__2_10)); }
+	inline TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  get_U3CU3Eu__2_10() const { return ___U3CU3Eu__2_10; }
+	inline TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 * get_address_of_U3CU3Eu__2_10() { return &___U3CU3Eu__2_10; }
+	inline void set_U3CU3Eu__2_10(TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  value)
+	{
+		___U3CU3Eu__2_10 = value;
+	}
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // U3CSENDASYNCU3ED__18_TC88FAED363C09B2ADAAFD0E58095B20DCB7D3303_H
 #ifndef MULTICASTDELEGATE_T_H
 #define MULTICASTDELEGATE_T_H
 #ifdef __clang__
@@ -2328,31 +2634,31 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // COMPONENT_T05064EF382ABCAF4B8C94F8A350EA85184C26621_H
-#ifndef U3CDOSIGNINASYNCU3ED__7_T374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2_H
-#define U3CDOSIGNINASYNCU3ED__7_T374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2_H
+#ifndef U3CPAUSEASYNCU3ED__29_TDEC85B2D09AA536D9ABA26C9948D506C674C0C84_H
+#define U3CPAUSEASYNCU3ED__29_TDEC85B2D09AA536D9ABA26C9948D506C674C0C84_H
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
-// SpotiftyLogin_<DoSignInAsync>d__7
-struct  U3CDoSignInAsyncU3Ed__7_t374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2 
+// SpotifyApi_<PauseAsync>d__29
+struct  U3CPauseAsyncU3Ed__29_tDEC85B2D09AA536D9ABA26C9948D506C674C0C84 
 {
 public:
-	// System.Int32 SpotiftyLogin_<DoSignInAsync>d__7::<>1__state
+	// System.Int32 SpotifyApi_<PauseAsync>d__29::<>1__state
 	int32_t ___U3CU3E1__state_0;
-	// System.Runtime.CompilerServices.AsyncTaskMethodBuilder SpotiftyLogin_<DoSignInAsync>d__7::<>t__builder
+	// System.Runtime.CompilerServices.AsyncTaskMethodBuilder SpotifyApi_<PauseAsync>d__29::<>t__builder
 	AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  ___U3CU3Et__builder_1;
-	// SpotiftyLogin SpotiftyLogin_<DoSignInAsync>d__7::<>4__this
-	SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * ___U3CU3E4__this_2;
-	// System.Runtime.CompilerServices.TaskAwaiter`1<System.Net.Http.HttpResponseMessage> SpotiftyLogin_<DoSignInAsync>d__7::<>u__1
-	TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  ___U3CU3Eu__1_3;
-	// System.Runtime.CompilerServices.TaskAwaiter`1<System.String> SpotiftyLogin_<DoSignInAsync>d__7::<>u__2
-	TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  ___U3CU3Eu__2_4;
+	// SpotifyApi SpotifyApi_<PauseAsync>d__29::<>4__this
+	SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * ___U3CU3E4__this_2;
+	// System.Threading.CancellationToken SpotifyApi_<PauseAsync>d__29::cancel
+	CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  ___cancel_3;
+	// System.Runtime.CompilerServices.TaskAwaiter`1<System.String> SpotifyApi_<PauseAsync>d__29::<>u__1
+	TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  ___U3CU3Eu__1_4;
 
 public:
-	inline static int32_t get_offset_of_U3CU3E1__state_0() { return static_cast<int32_t>(offsetof(U3CDoSignInAsyncU3Ed__7_t374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2, ___U3CU3E1__state_0)); }
+	inline static int32_t get_offset_of_U3CU3E1__state_0() { return static_cast<int32_t>(offsetof(U3CPauseAsyncU3Ed__29_tDEC85B2D09AA536D9ABA26C9948D506C674C0C84, ___U3CU3E1__state_0)); }
 	inline int32_t get_U3CU3E1__state_0() const { return ___U3CU3E1__state_0; }
 	inline int32_t* get_address_of_U3CU3E1__state_0() { return &___U3CU3E1__state_0; }
 	inline void set_U3CU3E1__state_0(int32_t value)
@@ -2360,7 +2666,7 @@ public:
 		___U3CU3E1__state_0 = value;
 	}
 
-	inline static int32_t get_offset_of_U3CU3Et__builder_1() { return static_cast<int32_t>(offsetof(U3CDoSignInAsyncU3Ed__7_t374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2, ___U3CU3Et__builder_1)); }
+	inline static int32_t get_offset_of_U3CU3Et__builder_1() { return static_cast<int32_t>(offsetof(U3CPauseAsyncU3Ed__29_tDEC85B2D09AA536D9ABA26C9948D506C674C0C84, ___U3CU3Et__builder_1)); }
 	inline AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  get_U3CU3Et__builder_1() const { return ___U3CU3Et__builder_1; }
 	inline AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * get_address_of_U3CU3Et__builder_1() { return &___U3CU3Et__builder_1; }
 	inline void set_U3CU3Et__builder_1(AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  value)
@@ -2368,61 +2674,61 @@ public:
 		___U3CU3Et__builder_1 = value;
 	}
 
-	inline static int32_t get_offset_of_U3CU3E4__this_2() { return static_cast<int32_t>(offsetof(U3CDoSignInAsyncU3Ed__7_t374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2, ___U3CU3E4__this_2)); }
-	inline SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * get_U3CU3E4__this_2() const { return ___U3CU3E4__this_2; }
-	inline SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B ** get_address_of_U3CU3E4__this_2() { return &___U3CU3E4__this_2; }
-	inline void set_U3CU3E4__this_2(SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * value)
+	inline static int32_t get_offset_of_U3CU3E4__this_2() { return static_cast<int32_t>(offsetof(U3CPauseAsyncU3Ed__29_tDEC85B2D09AA536D9ABA26C9948D506C674C0C84, ___U3CU3E4__this_2)); }
+	inline SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * get_U3CU3E4__this_2() const { return ___U3CU3E4__this_2; }
+	inline SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 ** get_address_of_U3CU3E4__this_2() { return &___U3CU3E4__this_2; }
+	inline void set_U3CU3E4__this_2(SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * value)
 	{
 		___U3CU3E4__this_2 = value;
 		Il2CppCodeGenWriteBarrier((&___U3CU3E4__this_2), value);
 	}
 
-	inline static int32_t get_offset_of_U3CU3Eu__1_3() { return static_cast<int32_t>(offsetof(U3CDoSignInAsyncU3Ed__7_t374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2, ___U3CU3Eu__1_3)); }
-	inline TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  get_U3CU3Eu__1_3() const { return ___U3CU3Eu__1_3; }
-	inline TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 * get_address_of_U3CU3Eu__1_3() { return &___U3CU3Eu__1_3; }
-	inline void set_U3CU3Eu__1_3(TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  value)
+	inline static int32_t get_offset_of_cancel_3() { return static_cast<int32_t>(offsetof(U3CPauseAsyncU3Ed__29_tDEC85B2D09AA536D9ABA26C9948D506C674C0C84, ___cancel_3)); }
+	inline CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  get_cancel_3() const { return ___cancel_3; }
+	inline CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB * get_address_of_cancel_3() { return &___cancel_3; }
+	inline void set_cancel_3(CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  value)
 	{
-		___U3CU3Eu__1_3 = value;
+		___cancel_3 = value;
 	}
 
-	inline static int32_t get_offset_of_U3CU3Eu__2_4() { return static_cast<int32_t>(offsetof(U3CDoSignInAsyncU3Ed__7_t374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2, ___U3CU3Eu__2_4)); }
-	inline TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  get_U3CU3Eu__2_4() const { return ___U3CU3Eu__2_4; }
-	inline TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 * get_address_of_U3CU3Eu__2_4() { return &___U3CU3Eu__2_4; }
-	inline void set_U3CU3Eu__2_4(TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  value)
+	inline static int32_t get_offset_of_U3CU3Eu__1_4() { return static_cast<int32_t>(offsetof(U3CPauseAsyncU3Ed__29_tDEC85B2D09AA536D9ABA26C9948D506C674C0C84, ___U3CU3Eu__1_4)); }
+	inline TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  get_U3CU3Eu__1_4() const { return ___U3CU3Eu__1_4; }
+	inline TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 * get_address_of_U3CU3Eu__1_4() { return &___U3CU3Eu__1_4; }
+	inline void set_U3CU3Eu__1_4(TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  value)
 	{
-		___U3CU3Eu__2_4 = value;
+		___U3CU3Eu__1_4 = value;
 	}
 };
 
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-#endif // U3CDOSIGNINASYNCU3ED__7_T374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2_H
-#ifndef U3CPAUSEU3ED__13_T7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3_H
-#define U3CPAUSEU3ED__13_T7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3_H
+#endif // U3CPAUSEASYNCU3ED__29_TDEC85B2D09AA536D9ABA26C9948D506C674C0C84_H
+#ifndef U3CPLAYASYNCU3ED__24_TB410B49C7C0816D2A5DD701A483FF046FA5C7777_H
+#define U3CPLAYASYNCU3ED__24_TB410B49C7C0816D2A5DD701A483FF046FA5C7777_H
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
-// SpotiftyLogin_<Pause>d__13
-struct  U3CPauseU3Ed__13_t7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3 
+// SpotifyApi_<PlayAsync>d__24
+struct  U3CPlayAsyncU3Ed__24_tB410B49C7C0816D2A5DD701A483FF046FA5C7777 
 {
 public:
-	// System.Int32 SpotiftyLogin_<Pause>d__13::<>1__state
+	// System.Int32 SpotifyApi_<PlayAsync>d__24::<>1__state
 	int32_t ___U3CU3E1__state_0;
-	// System.Runtime.CompilerServices.AsyncTaskMethodBuilder SpotiftyLogin_<Pause>d__13::<>t__builder
+	// System.Runtime.CompilerServices.AsyncTaskMethodBuilder SpotifyApi_<PlayAsync>d__24::<>t__builder
 	AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  ___U3CU3Et__builder_1;
-	// SpotiftyLogin SpotiftyLogin_<Pause>d__13::<>4__this
-	SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * ___U3CU3E4__this_2;
-	// System.Runtime.CompilerServices.TaskAwaiter`1<System.Net.Http.HttpResponseMessage> SpotiftyLogin_<Pause>d__13::<>u__1
-	TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  ___U3CU3Eu__1_3;
-	// System.Runtime.CompilerServices.TaskAwaiter`1<System.String> SpotiftyLogin_<Pause>d__13::<>u__2
-	TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  ___U3CU3Eu__2_4;
+	// SpotifyApi SpotifyApi_<PlayAsync>d__24::<>4__this
+	SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * ___U3CU3E4__this_2;
+	// System.Threading.CancellationToken SpotifyApi_<PlayAsync>d__24::cancel
+	CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  ___cancel_3;
+	// System.Runtime.CompilerServices.TaskAwaiter`1<System.String> SpotifyApi_<PlayAsync>d__24::<>u__1
+	TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  ___U3CU3Eu__1_4;
 
 public:
-	inline static int32_t get_offset_of_U3CU3E1__state_0() { return static_cast<int32_t>(offsetof(U3CPauseU3Ed__13_t7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3, ___U3CU3E1__state_0)); }
+	inline static int32_t get_offset_of_U3CU3E1__state_0() { return static_cast<int32_t>(offsetof(U3CPlayAsyncU3Ed__24_tB410B49C7C0816D2A5DD701A483FF046FA5C7777, ___U3CU3E1__state_0)); }
 	inline int32_t get_U3CU3E1__state_0() const { return ___U3CU3E1__state_0; }
 	inline int32_t* get_address_of_U3CU3E1__state_0() { return &___U3CU3E1__state_0; }
 	inline void set_U3CU3E1__state_0(int32_t value)
@@ -2430,7 +2736,7 @@ public:
 		___U3CU3E1__state_0 = value;
 	}
 
-	inline static int32_t get_offset_of_U3CU3Et__builder_1() { return static_cast<int32_t>(offsetof(U3CPauseU3Ed__13_t7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3, ___U3CU3Et__builder_1)); }
+	inline static int32_t get_offset_of_U3CU3Et__builder_1() { return static_cast<int32_t>(offsetof(U3CPlayAsyncU3Ed__24_tB410B49C7C0816D2A5DD701A483FF046FA5C7777, ___U3CU3Et__builder_1)); }
 	inline AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  get_U3CU3Et__builder_1() const { return ___U3CU3Et__builder_1; }
 	inline AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * get_address_of_U3CU3Et__builder_1() { return &___U3CU3Et__builder_1; }
 	inline void set_U3CU3Et__builder_1(AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  value)
@@ -2438,63 +2744,234 @@ public:
 		___U3CU3Et__builder_1 = value;
 	}
 
-	inline static int32_t get_offset_of_U3CU3E4__this_2() { return static_cast<int32_t>(offsetof(U3CPauseU3Ed__13_t7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3, ___U3CU3E4__this_2)); }
-	inline SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * get_U3CU3E4__this_2() const { return ___U3CU3E4__this_2; }
-	inline SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B ** get_address_of_U3CU3E4__this_2() { return &___U3CU3E4__this_2; }
-	inline void set_U3CU3E4__this_2(SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * value)
+	inline static int32_t get_offset_of_U3CU3E4__this_2() { return static_cast<int32_t>(offsetof(U3CPlayAsyncU3Ed__24_tB410B49C7C0816D2A5DD701A483FF046FA5C7777, ___U3CU3E4__this_2)); }
+	inline SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * get_U3CU3E4__this_2() const { return ___U3CU3E4__this_2; }
+	inline SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 ** get_address_of_U3CU3E4__this_2() { return &___U3CU3E4__this_2; }
+	inline void set_U3CU3E4__this_2(SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * value)
 	{
 		___U3CU3E4__this_2 = value;
 		Il2CppCodeGenWriteBarrier((&___U3CU3E4__this_2), value);
 	}
 
-	inline static int32_t get_offset_of_U3CU3Eu__1_3() { return static_cast<int32_t>(offsetof(U3CPauseU3Ed__13_t7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3, ___U3CU3Eu__1_3)); }
-	inline TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  get_U3CU3Eu__1_3() const { return ___U3CU3Eu__1_3; }
-	inline TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 * get_address_of_U3CU3Eu__1_3() { return &___U3CU3Eu__1_3; }
-	inline void set_U3CU3Eu__1_3(TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  value)
+	inline static int32_t get_offset_of_cancel_3() { return static_cast<int32_t>(offsetof(U3CPlayAsyncU3Ed__24_tB410B49C7C0816D2A5DD701A483FF046FA5C7777, ___cancel_3)); }
+	inline CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  get_cancel_3() const { return ___cancel_3; }
+	inline CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB * get_address_of_cancel_3() { return &___cancel_3; }
+	inline void set_cancel_3(CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  value)
 	{
-		___U3CU3Eu__1_3 = value;
+		___cancel_3 = value;
 	}
 
-	inline static int32_t get_offset_of_U3CU3Eu__2_4() { return static_cast<int32_t>(offsetof(U3CPauseU3Ed__13_t7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3, ___U3CU3Eu__2_4)); }
-	inline TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  get_U3CU3Eu__2_4() const { return ___U3CU3Eu__2_4; }
-	inline TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 * get_address_of_U3CU3Eu__2_4() { return &___U3CU3Eu__2_4; }
-	inline void set_U3CU3Eu__2_4(TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  value)
+	inline static int32_t get_offset_of_U3CU3Eu__1_4() { return static_cast<int32_t>(offsetof(U3CPlayAsyncU3Ed__24_tB410B49C7C0816D2A5DD701A483FF046FA5C7777, ___U3CU3Eu__1_4)); }
+	inline TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  get_U3CU3Eu__1_4() const { return ___U3CU3Eu__1_4; }
+	inline TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 * get_address_of_U3CU3Eu__1_4() { return &___U3CU3Eu__1_4; }
+	inline void set_U3CU3Eu__1_4(TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  value)
 	{
-		___U3CU3Eu__2_4 = value;
+		___U3CU3Eu__1_4 = value;
 	}
 };
 
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-#endif // U3CPAUSEU3ED__13_T7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3_H
-#ifndef U3CPLAYU3ED__12_T89A2EF9EF2800D6FB431D881738694CAE970089C_H
-#define U3CPLAYU3ED__12_T89A2EF9EF2800D6FB431D881738694CAE970089C_H
+#endif // U3CPLAYASYNCU3ED__24_TB410B49C7C0816D2A5DD701A483FF046FA5C7777_H
+#ifndef U3CPLAYURISASYNCU3ED__26_TF7BEEEB5E918E76C3B6F702D718B1110F5033C78_H
+#define U3CPLAYURISASYNCU3ED__26_TF7BEEEB5E918E76C3B6F702D718B1110F5033C78_H
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
-// SpotiftyLogin_<Play>d__12
-struct  U3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C 
+// SpotifyApi_<PlayUrisAsync>d__26
+struct  U3CPlayUrisAsyncU3Ed__26_tF7BEEEB5E918E76C3B6F702D718B1110F5033C78 
 {
 public:
-	// System.Int32 SpotiftyLogin_<Play>d__12::<>1__state
+	// System.Int32 SpotifyApi_<PlayUrisAsync>d__26::<>1__state
 	int32_t ___U3CU3E1__state_0;
-	// System.Runtime.CompilerServices.AsyncTaskMethodBuilder SpotiftyLogin_<Play>d__12::<>t__builder
+	// System.Runtime.CompilerServices.AsyncTaskMethodBuilder SpotifyApi_<PlayUrisAsync>d__26::<>t__builder
 	AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  ___U3CU3Et__builder_1;
-	// SpotiftyLogin SpotiftyLogin_<Play>d__12::<>4__this
-	SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * ___U3CU3E4__this_2;
-	// System.Net.Http.HttpResponseMessage SpotiftyLogin_<Play>d__12::<r>5__2
-	HttpResponseMessage_t619DB9FDC8E63CDF2D0A314B61A4C6609A43F904 * ___U3CrU3E5__2_3;
-	// System.Runtime.CompilerServices.TaskAwaiter`1<System.Net.Http.HttpResponseMessage> SpotiftyLogin_<Play>d__12::<>u__1
+	// SpotifyApi SpotifyApi_<PlayUrisAsync>d__26::<>4__this
+	SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * ___U3CU3E4__this_2;
+	// System.String[] SpotifyApi_<PlayUrisAsync>d__26::uris
+	StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* ___uris_3;
+	// System.Int32 SpotifyApi_<PlayUrisAsync>d__26::positionMs
+	int32_t ___positionMs_4;
+	// System.Threading.CancellationToken SpotifyApi_<PlayUrisAsync>d__26::cancel
+	CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  ___cancel_5;
+	// System.Runtime.CompilerServices.TaskAwaiter`1<System.String> SpotifyApi_<PlayUrisAsync>d__26::<>u__1
+	TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  ___U3CU3Eu__1_6;
+
+public:
+	inline static int32_t get_offset_of_U3CU3E1__state_0() { return static_cast<int32_t>(offsetof(U3CPlayUrisAsyncU3Ed__26_tF7BEEEB5E918E76C3B6F702D718B1110F5033C78, ___U3CU3E1__state_0)); }
+	inline int32_t get_U3CU3E1__state_0() const { return ___U3CU3E1__state_0; }
+	inline int32_t* get_address_of_U3CU3E1__state_0() { return &___U3CU3E1__state_0; }
+	inline void set_U3CU3E1__state_0(int32_t value)
+	{
+		___U3CU3E1__state_0 = value;
+	}
+
+	inline static int32_t get_offset_of_U3CU3Et__builder_1() { return static_cast<int32_t>(offsetof(U3CPlayUrisAsyncU3Ed__26_tF7BEEEB5E918E76C3B6F702D718B1110F5033C78, ___U3CU3Et__builder_1)); }
+	inline AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  get_U3CU3Et__builder_1() const { return ___U3CU3Et__builder_1; }
+	inline AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * get_address_of_U3CU3Et__builder_1() { return &___U3CU3Et__builder_1; }
+	inline void set_U3CU3Et__builder_1(AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  value)
+	{
+		___U3CU3Et__builder_1 = value;
+	}
+
+	inline static int32_t get_offset_of_U3CU3E4__this_2() { return static_cast<int32_t>(offsetof(U3CPlayUrisAsyncU3Ed__26_tF7BEEEB5E918E76C3B6F702D718B1110F5033C78, ___U3CU3E4__this_2)); }
+	inline SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * get_U3CU3E4__this_2() const { return ___U3CU3E4__this_2; }
+	inline SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 ** get_address_of_U3CU3E4__this_2() { return &___U3CU3E4__this_2; }
+	inline void set_U3CU3E4__this_2(SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * value)
+	{
+		___U3CU3E4__this_2 = value;
+		Il2CppCodeGenWriteBarrier((&___U3CU3E4__this_2), value);
+	}
+
+	inline static int32_t get_offset_of_uris_3() { return static_cast<int32_t>(offsetof(U3CPlayUrisAsyncU3Ed__26_tF7BEEEB5E918E76C3B6F702D718B1110F5033C78, ___uris_3)); }
+	inline StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* get_uris_3() const { return ___uris_3; }
+	inline StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E** get_address_of_uris_3() { return &___uris_3; }
+	inline void set_uris_3(StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* value)
+	{
+		___uris_3 = value;
+		Il2CppCodeGenWriteBarrier((&___uris_3), value);
+	}
+
+	inline static int32_t get_offset_of_positionMs_4() { return static_cast<int32_t>(offsetof(U3CPlayUrisAsyncU3Ed__26_tF7BEEEB5E918E76C3B6F702D718B1110F5033C78, ___positionMs_4)); }
+	inline int32_t get_positionMs_4() const { return ___positionMs_4; }
+	inline int32_t* get_address_of_positionMs_4() { return &___positionMs_4; }
+	inline void set_positionMs_4(int32_t value)
+	{
+		___positionMs_4 = value;
+	}
+
+	inline static int32_t get_offset_of_cancel_5() { return static_cast<int32_t>(offsetof(U3CPlayUrisAsyncU3Ed__26_tF7BEEEB5E918E76C3B6F702D718B1110F5033C78, ___cancel_5)); }
+	inline CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  get_cancel_5() const { return ___cancel_5; }
+	inline CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB * get_address_of_cancel_5() { return &___cancel_5; }
+	inline void set_cancel_5(CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  value)
+	{
+		___cancel_5 = value;
+	}
+
+	inline static int32_t get_offset_of_U3CU3Eu__1_6() { return static_cast<int32_t>(offsetof(U3CPlayUrisAsyncU3Ed__26_tF7BEEEB5E918E76C3B6F702D718B1110F5033C78, ___U3CU3Eu__1_6)); }
+	inline TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  get_U3CU3Eu__1_6() const { return ___U3CU3Eu__1_6; }
+	inline TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 * get_address_of_U3CU3Eu__1_6() { return &___U3CU3Eu__1_6; }
+	inline void set_U3CU3Eu__1_6(TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  value)
+	{
+		___U3CU3Eu__1_6 = value;
+	}
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // U3CPLAYURISASYNCU3ED__26_TF7BEEEB5E918E76C3B6F702D718B1110F5033C78_H
+#ifndef U3CREPEATASYNCU3ED__30_TBE6907D98B9974628F6181F8DB4B506D3DF1B509_H
+#define U3CREPEATASYNCU3ED__30_TBE6907D98B9974628F6181F8DB4B506D3DF1B509_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// SpotifyApi_<RepeatAsync>d__30
+struct  U3CRepeatAsyncU3Ed__30_tBE6907D98B9974628F6181F8DB4B506D3DF1B509 
+{
+public:
+	// System.Int32 SpotifyApi_<RepeatAsync>d__30::<>1__state
+	int32_t ___U3CU3E1__state_0;
+	// System.Runtime.CompilerServices.AsyncTaskMethodBuilder SpotifyApi_<RepeatAsync>d__30::<>t__builder
+	AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  ___U3CU3Et__builder_1;
+	// SpotifyApi SpotifyApi_<RepeatAsync>d__30::<>4__this
+	SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * ___U3CU3E4__this_2;
+	// SpotifyRepeatMode SpotifyApi_<RepeatAsync>d__30::mode
+	int32_t ___mode_3;
+	// System.Threading.CancellationToken SpotifyApi_<RepeatAsync>d__30::cancel
+	CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  ___cancel_4;
+	// System.Runtime.CompilerServices.TaskAwaiter`1<System.String> SpotifyApi_<RepeatAsync>d__30::<>u__1
+	TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  ___U3CU3Eu__1_5;
+
+public:
+	inline static int32_t get_offset_of_U3CU3E1__state_0() { return static_cast<int32_t>(offsetof(U3CRepeatAsyncU3Ed__30_tBE6907D98B9974628F6181F8DB4B506D3DF1B509, ___U3CU3E1__state_0)); }
+	inline int32_t get_U3CU3E1__state_0() const { return ___U3CU3E1__state_0; }
+	inline int32_t* get_address_of_U3CU3E1__state_0() { return &___U3CU3E1__state_0; }
+	inline void set_U3CU3E1__state_0(int32_t value)
+	{
+		___U3CU3E1__state_0 = value;
+	}
+
+	inline static int32_t get_offset_of_U3CU3Et__builder_1() { return static_cast<int32_t>(offsetof(U3CRepeatAsyncU3Ed__30_tBE6907D98B9974628F6181F8DB4B506D3DF1B509, ___U3CU3Et__builder_1)); }
+	inline AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  get_U3CU3Et__builder_1() const { return ___U3CU3Et__builder_1; }
+	inline AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * get_address_of_U3CU3Et__builder_1() { return &___U3CU3Et__builder_1; }
+	inline void set_U3CU3Et__builder_1(AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  value)
+	{
+		___U3CU3Et__builder_1 = value;
+	}
+
+	inline static int32_t get_offset_of_U3CU3E4__this_2() { return static_cast<int32_t>(offsetof(U3CRepeatAsyncU3Ed__30_tBE6907D98B9974628F6181F8DB4B506D3DF1B509, ___U3CU3E4__this_2)); }
+	inline SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * get_U3CU3E4__this_2() const { return ___U3CU3E4__this_2; }
+	inline SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 ** get_address_of_U3CU3E4__this_2() { return &___U3CU3E4__this_2; }
+	inline void set_U3CU3E4__this_2(SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * value)
+	{
+		___U3CU3E4__this_2 = value;
+		Il2CppCodeGenWriteBarrier((&___U3CU3E4__this_2), value);
+	}
+
+	inline static int32_t get_offset_of_mode_3() { return static_cast<int32_t>(offsetof(U3CRepeatAsyncU3Ed__30_tBE6907D98B9974628F6181F8DB4B506D3DF1B509, ___mode_3)); }
+	inline int32_t get_mode_3() const { return ___mode_3; }
+	inline int32_t* get_address_of_mode_3() { return &___mode_3; }
+	inline void set_mode_3(int32_t value)
+	{
+		___mode_3 = value;
+	}
+
+	inline static int32_t get_offset_of_cancel_4() { return static_cast<int32_t>(offsetof(U3CRepeatAsyncU3Ed__30_tBE6907D98B9974628F6181F8DB4B506D3DF1B509, ___cancel_4)); }
+	inline CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  get_cancel_4() const { return ___cancel_4; }
+	inline CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB * get_address_of_cancel_4() { return &___cancel_4; }
+	inline void set_cancel_4(CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  value)
+	{
+		___cancel_4 = value;
+	}
+
+	inline static int32_t get_offset_of_U3CU3Eu__1_5() { return static_cast<int32_t>(offsetof(U3CRepeatAsyncU3Ed__30_tBE6907D98B9974628F6181F8DB4B506D3DF1B509, ___U3CU3Eu__1_5)); }
+	inline TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  get_U3CU3Eu__1_5() const { return ___U3CU3Eu__1_5; }
+	inline TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 * get_address_of_U3CU3Eu__1_5() { return &___U3CU3Eu__1_5; }
+	inline void set_U3CU3Eu__1_5(TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  value)
+	{
+		___U3CU3Eu__1_5 = value;
+	}
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // U3CREPEATASYNCU3ED__30_TBE6907D98B9974628F6181F8DB4B506D3DF1B509_H
+#ifndef U3CSIGNINASYNCU3ED__14_T636917824EDF3D792DBEE5A007B28D06028DA896_H
+#define U3CSIGNINASYNCU3ED__14_T636917824EDF3D792DBEE5A007B28D06028DA896_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// SpotifyApi_<SignInAsync>d__14
+struct  U3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896 
+{
+public:
+	// System.Int32 SpotifyApi_<SignInAsync>d__14::<>1__state
+	int32_t ___U3CU3E1__state_0;
+	// System.Runtime.CompilerServices.AsyncTaskMethodBuilder SpotifyApi_<SignInAsync>d__14::<>t__builder
+	AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  ___U3CU3Et__builder_1;
+	// SpotifyApi SpotifyApi_<SignInAsync>d__14::<>4__this
+	SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * ___U3CU3E4__this_2;
+	// System.Threading.CancellationToken SpotifyApi_<SignInAsync>d__14::cancel
+	CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  ___cancel_3;
+	// System.Runtime.CompilerServices.TaskAwaiter`1<System.Net.Http.HttpResponseMessage> SpotifyApi_<SignInAsync>d__14::<>u__1
 	TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  ___U3CU3Eu__1_4;
-	// System.Runtime.CompilerServices.TaskAwaiter`1<System.String> SpotiftyLogin_<Play>d__12::<>u__2
+	// System.Runtime.CompilerServices.TaskAwaiter`1<System.String> SpotifyApi_<SignInAsync>d__14::<>u__2
 	TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  ___U3CU3Eu__2_5;
 
 public:
-	inline static int32_t get_offset_of_U3CU3E1__state_0() { return static_cast<int32_t>(offsetof(U3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C, ___U3CU3E1__state_0)); }
+	inline static int32_t get_offset_of_U3CU3E1__state_0() { return static_cast<int32_t>(offsetof(U3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896, ___U3CU3E1__state_0)); }
 	inline int32_t get_U3CU3E1__state_0() const { return ___U3CU3E1__state_0; }
 	inline int32_t* get_address_of_U3CU3E1__state_0() { return &___U3CU3E1__state_0; }
 	inline void set_U3CU3E1__state_0(int32_t value)
@@ -2502,7 +2979,7 @@ public:
 		___U3CU3E1__state_0 = value;
 	}
 
-	inline static int32_t get_offset_of_U3CU3Et__builder_1() { return static_cast<int32_t>(offsetof(U3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C, ___U3CU3Et__builder_1)); }
+	inline static int32_t get_offset_of_U3CU3Et__builder_1() { return static_cast<int32_t>(offsetof(U3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896, ___U3CU3Et__builder_1)); }
 	inline AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  get_U3CU3Et__builder_1() const { return ___U3CU3Et__builder_1; }
 	inline AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * get_address_of_U3CU3Et__builder_1() { return &___U3CU3Et__builder_1; }
 	inline void set_U3CU3Et__builder_1(AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  value)
@@ -2510,25 +2987,24 @@ public:
 		___U3CU3Et__builder_1 = value;
 	}
 
-	inline static int32_t get_offset_of_U3CU3E4__this_2() { return static_cast<int32_t>(offsetof(U3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C, ___U3CU3E4__this_2)); }
-	inline SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * get_U3CU3E4__this_2() const { return ___U3CU3E4__this_2; }
-	inline SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B ** get_address_of_U3CU3E4__this_2() { return &___U3CU3E4__this_2; }
-	inline void set_U3CU3E4__this_2(SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * value)
+	inline static int32_t get_offset_of_U3CU3E4__this_2() { return static_cast<int32_t>(offsetof(U3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896, ___U3CU3E4__this_2)); }
+	inline SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * get_U3CU3E4__this_2() const { return ___U3CU3E4__this_2; }
+	inline SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 ** get_address_of_U3CU3E4__this_2() { return &___U3CU3E4__this_2; }
+	inline void set_U3CU3E4__this_2(SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * value)
 	{
 		___U3CU3E4__this_2 = value;
 		Il2CppCodeGenWriteBarrier((&___U3CU3E4__this_2), value);
 	}
 
-	inline static int32_t get_offset_of_U3CrU3E5__2_3() { return static_cast<int32_t>(offsetof(U3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C, ___U3CrU3E5__2_3)); }
-	inline HttpResponseMessage_t619DB9FDC8E63CDF2D0A314B61A4C6609A43F904 * get_U3CrU3E5__2_3() const { return ___U3CrU3E5__2_3; }
-	inline HttpResponseMessage_t619DB9FDC8E63CDF2D0A314B61A4C6609A43F904 ** get_address_of_U3CrU3E5__2_3() { return &___U3CrU3E5__2_3; }
-	inline void set_U3CrU3E5__2_3(HttpResponseMessage_t619DB9FDC8E63CDF2D0A314B61A4C6609A43F904 * value)
+	inline static int32_t get_offset_of_cancel_3() { return static_cast<int32_t>(offsetof(U3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896, ___cancel_3)); }
+	inline CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  get_cancel_3() const { return ___cancel_3; }
+	inline CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB * get_address_of_cancel_3() { return &___cancel_3; }
+	inline void set_cancel_3(CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  value)
 	{
-		___U3CrU3E5__2_3 = value;
-		Il2CppCodeGenWriteBarrier((&___U3CrU3E5__2_3), value);
+		___cancel_3 = value;
 	}
 
-	inline static int32_t get_offset_of_U3CU3Eu__1_4() { return static_cast<int32_t>(offsetof(U3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C, ___U3CU3Eu__1_4)); }
+	inline static int32_t get_offset_of_U3CU3Eu__1_4() { return static_cast<int32_t>(offsetof(U3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896, ___U3CU3Eu__1_4)); }
 	inline TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  get_U3CU3Eu__1_4() const { return ___U3CU3Eu__1_4; }
 	inline TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 * get_address_of_U3CU3Eu__1_4() { return &___U3CU3Eu__1_4; }
 	inline void set_U3CU3Eu__1_4(TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  value)
@@ -2536,7 +3012,7 @@ public:
 		___U3CU3Eu__1_4 = value;
 	}
 
-	inline static int32_t get_offset_of_U3CU3Eu__2_5() { return static_cast<int32_t>(offsetof(U3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C, ___U3CU3Eu__2_5)); }
+	inline static int32_t get_offset_of_U3CU3Eu__2_5() { return static_cast<int32_t>(offsetof(U3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896, ___U3CU3Eu__2_5)); }
 	inline TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  get_U3CU3Eu__2_5() const { return ___U3CU3Eu__2_5; }
 	inline TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 * get_address_of_U3CU3Eu__2_5() { return &___U3CU3Eu__2_5; }
 	inline void set_U3CU3Eu__2_5(TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  value)
@@ -2548,36 +3024,36 @@ public:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-#endif // U3CPLAYU3ED__12_T89A2EF9EF2800D6FB431D881738694CAE970089C_H
-#ifndef U3CWAITFORCALLBACKU3ED__8_T6C2EC894924B135435275582071A1B6835524257_H
-#define U3CWAITFORCALLBACKU3ED__8_T6C2EC894924B135435275582071A1B6835524257_H
+#endif // U3CSIGNINASYNCU3ED__14_T636917824EDF3D792DBEE5A007B28D06028DA896_H
+#ifndef U3CWAITFORCALLBACKU3ED__15_T5DC4AB18EE9765DD43E51540F62A1B33A92FC85A_H
+#define U3CWAITFORCALLBACKU3ED__15_T5DC4AB18EE9765DD43E51540F62A1B33A92FC85A_H
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
-// SpotiftyLogin_<WaitForCallback>d__8
-struct  U3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257 
+// SpotifyApi_<WaitForCallback>d__15
+struct  U3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A 
 {
 public:
-	// System.Int32 SpotiftyLogin_<WaitForCallback>d__8::<>1__state
+	// System.Int32 SpotifyApi_<WaitForCallback>d__15::<>1__state
 	int32_t ___U3CU3E1__state_0;
-	// System.Runtime.CompilerServices.AsyncTaskMethodBuilder SpotiftyLogin_<WaitForCallback>d__8::<>t__builder
+	// System.Runtime.CompilerServices.AsyncTaskMethodBuilder SpotifyApi_<WaitForCallback>d__15::<>t__builder
 	AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  ___U3CU3Et__builder_1;
-	// System.Net.Http.HttpClient SpotiftyLogin_<WaitForCallback>d__8::client
-	HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7 * ___client_2;
-	// SpotiftyLogin SpotiftyLogin_<WaitForCallback>d__8::<>4__this
-	SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * ___U3CU3E4__this_3;
-	// System.String SpotiftyLogin_<WaitForCallback>d__8::state
-	String_t* ___state_4;
-	// System.Runtime.CompilerServices.TaskAwaiter`1<System.Net.Http.HttpResponseMessage> SpotiftyLogin_<WaitForCallback>d__8::<>u__1
+	// SpotifyApi SpotifyApi_<WaitForCallback>d__15::<>4__this
+	SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * ___U3CU3E4__this_2;
+	// System.String SpotifyApi_<WaitForCallback>d__15::state
+	String_t* ___state_3;
+	// System.Threading.CancellationToken SpotifyApi_<WaitForCallback>d__15::cancel
+	CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  ___cancel_4;
+	// System.Runtime.CompilerServices.TaskAwaiter`1<System.Net.Http.HttpResponseMessage> SpotifyApi_<WaitForCallback>d__15::<>u__1
 	TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  ___U3CU3Eu__1_5;
-	// System.Runtime.CompilerServices.TaskAwaiter`1<System.String> SpotiftyLogin_<WaitForCallback>d__8::<>u__2
+	// System.Runtime.CompilerServices.TaskAwaiter`1<System.String> SpotifyApi_<WaitForCallback>d__15::<>u__2
 	TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  ___U3CU3Eu__2_6;
 
 public:
-	inline static int32_t get_offset_of_U3CU3E1__state_0() { return static_cast<int32_t>(offsetof(U3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257, ___U3CU3E1__state_0)); }
+	inline static int32_t get_offset_of_U3CU3E1__state_0() { return static_cast<int32_t>(offsetof(U3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A, ___U3CU3E1__state_0)); }
 	inline int32_t get_U3CU3E1__state_0() const { return ___U3CU3E1__state_0; }
 	inline int32_t* get_address_of_U3CU3E1__state_0() { return &___U3CU3E1__state_0; }
 	inline void set_U3CU3E1__state_0(int32_t value)
@@ -2585,7 +3061,7 @@ public:
 		___U3CU3E1__state_0 = value;
 	}
 
-	inline static int32_t get_offset_of_U3CU3Et__builder_1() { return static_cast<int32_t>(offsetof(U3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257, ___U3CU3Et__builder_1)); }
+	inline static int32_t get_offset_of_U3CU3Et__builder_1() { return static_cast<int32_t>(offsetof(U3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A, ___U3CU3Et__builder_1)); }
 	inline AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  get_U3CU3Et__builder_1() const { return ___U3CU3Et__builder_1; }
 	inline AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * get_address_of_U3CU3Et__builder_1() { return &___U3CU3Et__builder_1; }
 	inline void set_U3CU3Et__builder_1(AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  value)
@@ -2593,34 +3069,33 @@ public:
 		___U3CU3Et__builder_1 = value;
 	}
 
-	inline static int32_t get_offset_of_client_2() { return static_cast<int32_t>(offsetof(U3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257, ___client_2)); }
-	inline HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7 * get_client_2() const { return ___client_2; }
-	inline HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7 ** get_address_of_client_2() { return &___client_2; }
-	inline void set_client_2(HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7 * value)
+	inline static int32_t get_offset_of_U3CU3E4__this_2() { return static_cast<int32_t>(offsetof(U3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A, ___U3CU3E4__this_2)); }
+	inline SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * get_U3CU3E4__this_2() const { return ___U3CU3E4__this_2; }
+	inline SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 ** get_address_of_U3CU3E4__this_2() { return &___U3CU3E4__this_2; }
+	inline void set_U3CU3E4__this_2(SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * value)
 	{
-		___client_2 = value;
-		Il2CppCodeGenWriteBarrier((&___client_2), value);
+		___U3CU3E4__this_2 = value;
+		Il2CppCodeGenWriteBarrier((&___U3CU3E4__this_2), value);
 	}
 
-	inline static int32_t get_offset_of_U3CU3E4__this_3() { return static_cast<int32_t>(offsetof(U3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257, ___U3CU3E4__this_3)); }
-	inline SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * get_U3CU3E4__this_3() const { return ___U3CU3E4__this_3; }
-	inline SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B ** get_address_of_U3CU3E4__this_3() { return &___U3CU3E4__this_3; }
-	inline void set_U3CU3E4__this_3(SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * value)
+	inline static int32_t get_offset_of_state_3() { return static_cast<int32_t>(offsetof(U3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A, ___state_3)); }
+	inline String_t* get_state_3() const { return ___state_3; }
+	inline String_t** get_address_of_state_3() { return &___state_3; }
+	inline void set_state_3(String_t* value)
 	{
-		___U3CU3E4__this_3 = value;
-		Il2CppCodeGenWriteBarrier((&___U3CU3E4__this_3), value);
+		___state_3 = value;
+		Il2CppCodeGenWriteBarrier((&___state_3), value);
 	}
 
-	inline static int32_t get_offset_of_state_4() { return static_cast<int32_t>(offsetof(U3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257, ___state_4)); }
-	inline String_t* get_state_4() const { return ___state_4; }
-	inline String_t** get_address_of_state_4() { return &___state_4; }
-	inline void set_state_4(String_t* value)
+	inline static int32_t get_offset_of_cancel_4() { return static_cast<int32_t>(offsetof(U3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A, ___cancel_4)); }
+	inline CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  get_cancel_4() const { return ___cancel_4; }
+	inline CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB * get_address_of_cancel_4() { return &___cancel_4; }
+	inline void set_cancel_4(CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  value)
 	{
-		___state_4 = value;
-		Il2CppCodeGenWriteBarrier((&___state_4), value);
+		___cancel_4 = value;
 	}
 
-	inline static int32_t get_offset_of_U3CU3Eu__1_5() { return static_cast<int32_t>(offsetof(U3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257, ___U3CU3Eu__1_5)); }
+	inline static int32_t get_offset_of_U3CU3Eu__1_5() { return static_cast<int32_t>(offsetof(U3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A, ___U3CU3Eu__1_5)); }
 	inline TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  get_U3CU3Eu__1_5() const { return ___U3CU3Eu__1_5; }
 	inline TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 * get_address_of_U3CU3Eu__1_5() { return &___U3CU3Eu__1_5; }
 	inline void set_U3CU3Eu__1_5(TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  value)
@@ -2628,7 +3103,7 @@ public:
 		___U3CU3Eu__1_5 = value;
 	}
 
-	inline static int32_t get_offset_of_U3CU3Eu__2_6() { return static_cast<int32_t>(offsetof(U3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257, ___U3CU3Eu__2_6)); }
+	inline static int32_t get_offset_of_U3CU3Eu__2_6() { return static_cast<int32_t>(offsetof(U3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A, ___U3CU3Eu__2_6)); }
 	inline TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  get_U3CU3Eu__2_6() const { return ___U3CU3Eu__2_6; }
 	inline TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 * get_address_of_U3CU3Eu__2_6() { return &___U3CU3Eu__2_6; }
 	inline void set_U3CU3Eu__2_6(TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  value)
@@ -2640,7 +3115,7 @@ public:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-#endif // U3CWAITFORCALLBACKU3ED__8_T6C2EC894924B135435275582071A1B6835524257_H
+#endif // U3CWAITFORCALLBACKU3ED__15_T5DC4AB18EE9765DD43E51540F62A1B33A92FC85A_H
 #ifndef KEYCODERECEIVEDDELEGATE_TA8930CEAF69FA713516FC48F6899262B9E8E1C6C_H
 #define KEYCODERECEIVEDDELEGATE_TA8930CEAF69FA713516FC48F6899262B9E8E1C6C_H
 #ifdef __clang__
@@ -3021,90 +3496,142 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // SPIN_TD4DFECB24A365A6C4C12E9848949153EDA1F1EBB_H
-#ifndef SPOTIFTYLOGIN_T4A08281A3B749813DFC009D01820F3E8F332CD1B_H
-#define SPOTIFTYLOGIN_T4A08281A3B749813DFC009D01820F3E8F332CD1B_H
+#ifndef SPOTIFYAPI_T26EE204B4409E86787EA330E26A6479E5826D4F2_H
+#define SPOTIFYAPI_T26EE204B4409E86787EA330E26A6479E5826D4F2_H
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
-// SpotiftyLogin
-struct  SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B  : public MonoBehaviour_t4A60845CF505405AF8BE8C61CC07F75CADEF6429
+// SpotifyApi
+struct  SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2  : public MonoBehaviour_t4A60845CF505405AF8BE8C61CC07F75CADEF6429
 {
 public:
-	// UniWebView SpotiftyLogin::webView
-	UniWebView_t70C5C5815FC5A948185238830E0AB8B221E34BBB * ___webView_4;
-	// System.String SpotiftyLogin::Token
-	String_t* ___Token_5;
-	// System.String SpotiftyLogin::ApiBaseUrl
-	String_t* ___ApiBaseUrl_6;
-	// System.Net.Http.HttpClient SpotiftyLogin::client
-	HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7 * ___client_7;
-	// System.Boolean SpotiftyLogin::IsPaused
-	bool ___IsPaused_8;
-	// System.String SpotiftyLogin::DeviceId
-	String_t* ___DeviceId_9;
+	// System.String SpotifyApi::Token
+	String_t* ___Token_4;
+	// System.String SpotifyApi::ApiBaseUrl
+	String_t* ___ApiBaseUrl_5;
+	// System.String SpotifyApi::SpotifyApiBaseUrl
+	String_t* ___SpotifyApiBaseUrl_6;
+	// System.Boolean SpotifyApi::AlwaysShowSignIn
+	bool ___AlwaysShowSignIn_7;
+	// System.Boolean SpotifyApi::UseKeyboard
+	bool ___UseKeyboard_8;
+	// System.Boolean SpotifyApi::UseSystemOpen
+	bool ___UseSystemOpen_9;
+	// System.String SpotifyApi::DeviceId
+	String_t* ___DeviceId_10;
+	// System.Net.Http.HttpClient SpotifyApi::client
+	HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7 * ___client_11;
+	// UniWebView SpotifyApi::webView
+	UniWebView_t70C5C5815FC5A948185238830E0AB8B221E34BBB * ___webView_12;
+	// System.Boolean SpotifyApi::IsPaused
+	bool ___IsPaused_13;
+	// System.String[] SpotifyApi::Scopes
+	StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* ___Scopes_14;
 
 public:
-	inline static int32_t get_offset_of_webView_4() { return static_cast<int32_t>(offsetof(SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B, ___webView_4)); }
-	inline UniWebView_t70C5C5815FC5A948185238830E0AB8B221E34BBB * get_webView_4() const { return ___webView_4; }
-	inline UniWebView_t70C5C5815FC5A948185238830E0AB8B221E34BBB ** get_address_of_webView_4() { return &___webView_4; }
-	inline void set_webView_4(UniWebView_t70C5C5815FC5A948185238830E0AB8B221E34BBB * value)
+	inline static int32_t get_offset_of_Token_4() { return static_cast<int32_t>(offsetof(SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2, ___Token_4)); }
+	inline String_t* get_Token_4() const { return ___Token_4; }
+	inline String_t** get_address_of_Token_4() { return &___Token_4; }
+	inline void set_Token_4(String_t* value)
 	{
-		___webView_4 = value;
-		Il2CppCodeGenWriteBarrier((&___webView_4), value);
+		___Token_4 = value;
+		Il2CppCodeGenWriteBarrier((&___Token_4), value);
 	}
 
-	inline static int32_t get_offset_of_Token_5() { return static_cast<int32_t>(offsetof(SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B, ___Token_5)); }
-	inline String_t* get_Token_5() const { return ___Token_5; }
-	inline String_t** get_address_of_Token_5() { return &___Token_5; }
-	inline void set_Token_5(String_t* value)
+	inline static int32_t get_offset_of_ApiBaseUrl_5() { return static_cast<int32_t>(offsetof(SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2, ___ApiBaseUrl_5)); }
+	inline String_t* get_ApiBaseUrl_5() const { return ___ApiBaseUrl_5; }
+	inline String_t** get_address_of_ApiBaseUrl_5() { return &___ApiBaseUrl_5; }
+	inline void set_ApiBaseUrl_5(String_t* value)
 	{
-		___Token_5 = value;
-		Il2CppCodeGenWriteBarrier((&___Token_5), value);
+		___ApiBaseUrl_5 = value;
+		Il2CppCodeGenWriteBarrier((&___ApiBaseUrl_5), value);
 	}
 
-	inline static int32_t get_offset_of_ApiBaseUrl_6() { return static_cast<int32_t>(offsetof(SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B, ___ApiBaseUrl_6)); }
-	inline String_t* get_ApiBaseUrl_6() const { return ___ApiBaseUrl_6; }
-	inline String_t** get_address_of_ApiBaseUrl_6() { return &___ApiBaseUrl_6; }
-	inline void set_ApiBaseUrl_6(String_t* value)
+	inline static int32_t get_offset_of_SpotifyApiBaseUrl_6() { return static_cast<int32_t>(offsetof(SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2, ___SpotifyApiBaseUrl_6)); }
+	inline String_t* get_SpotifyApiBaseUrl_6() const { return ___SpotifyApiBaseUrl_6; }
+	inline String_t** get_address_of_SpotifyApiBaseUrl_6() { return &___SpotifyApiBaseUrl_6; }
+	inline void set_SpotifyApiBaseUrl_6(String_t* value)
 	{
-		___ApiBaseUrl_6 = value;
-		Il2CppCodeGenWriteBarrier((&___ApiBaseUrl_6), value);
+		___SpotifyApiBaseUrl_6 = value;
+		Il2CppCodeGenWriteBarrier((&___SpotifyApiBaseUrl_6), value);
 	}
 
-	inline static int32_t get_offset_of_client_7() { return static_cast<int32_t>(offsetof(SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B, ___client_7)); }
-	inline HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7 * get_client_7() const { return ___client_7; }
-	inline HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7 ** get_address_of_client_7() { return &___client_7; }
-	inline void set_client_7(HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7 * value)
+	inline static int32_t get_offset_of_AlwaysShowSignIn_7() { return static_cast<int32_t>(offsetof(SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2, ___AlwaysShowSignIn_7)); }
+	inline bool get_AlwaysShowSignIn_7() const { return ___AlwaysShowSignIn_7; }
+	inline bool* get_address_of_AlwaysShowSignIn_7() { return &___AlwaysShowSignIn_7; }
+	inline void set_AlwaysShowSignIn_7(bool value)
 	{
-		___client_7 = value;
-		Il2CppCodeGenWriteBarrier((&___client_7), value);
+		___AlwaysShowSignIn_7 = value;
 	}
 
-	inline static int32_t get_offset_of_IsPaused_8() { return static_cast<int32_t>(offsetof(SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B, ___IsPaused_8)); }
-	inline bool get_IsPaused_8() const { return ___IsPaused_8; }
-	inline bool* get_address_of_IsPaused_8() { return &___IsPaused_8; }
-	inline void set_IsPaused_8(bool value)
+	inline static int32_t get_offset_of_UseKeyboard_8() { return static_cast<int32_t>(offsetof(SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2, ___UseKeyboard_8)); }
+	inline bool get_UseKeyboard_8() const { return ___UseKeyboard_8; }
+	inline bool* get_address_of_UseKeyboard_8() { return &___UseKeyboard_8; }
+	inline void set_UseKeyboard_8(bool value)
 	{
-		___IsPaused_8 = value;
+		___UseKeyboard_8 = value;
 	}
 
-	inline static int32_t get_offset_of_DeviceId_9() { return static_cast<int32_t>(offsetof(SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B, ___DeviceId_9)); }
-	inline String_t* get_DeviceId_9() const { return ___DeviceId_9; }
-	inline String_t** get_address_of_DeviceId_9() { return &___DeviceId_9; }
-	inline void set_DeviceId_9(String_t* value)
+	inline static int32_t get_offset_of_UseSystemOpen_9() { return static_cast<int32_t>(offsetof(SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2, ___UseSystemOpen_9)); }
+	inline bool get_UseSystemOpen_9() const { return ___UseSystemOpen_9; }
+	inline bool* get_address_of_UseSystemOpen_9() { return &___UseSystemOpen_9; }
+	inline void set_UseSystemOpen_9(bool value)
 	{
-		___DeviceId_9 = value;
-		Il2CppCodeGenWriteBarrier((&___DeviceId_9), value);
+		___UseSystemOpen_9 = value;
+	}
+
+	inline static int32_t get_offset_of_DeviceId_10() { return static_cast<int32_t>(offsetof(SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2, ___DeviceId_10)); }
+	inline String_t* get_DeviceId_10() const { return ___DeviceId_10; }
+	inline String_t** get_address_of_DeviceId_10() { return &___DeviceId_10; }
+	inline void set_DeviceId_10(String_t* value)
+	{
+		___DeviceId_10 = value;
+		Il2CppCodeGenWriteBarrier((&___DeviceId_10), value);
+	}
+
+	inline static int32_t get_offset_of_client_11() { return static_cast<int32_t>(offsetof(SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2, ___client_11)); }
+	inline HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7 * get_client_11() const { return ___client_11; }
+	inline HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7 ** get_address_of_client_11() { return &___client_11; }
+	inline void set_client_11(HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7 * value)
+	{
+		___client_11 = value;
+		Il2CppCodeGenWriteBarrier((&___client_11), value);
+	}
+
+	inline static int32_t get_offset_of_webView_12() { return static_cast<int32_t>(offsetof(SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2, ___webView_12)); }
+	inline UniWebView_t70C5C5815FC5A948185238830E0AB8B221E34BBB * get_webView_12() const { return ___webView_12; }
+	inline UniWebView_t70C5C5815FC5A948185238830E0AB8B221E34BBB ** get_address_of_webView_12() { return &___webView_12; }
+	inline void set_webView_12(UniWebView_t70C5C5815FC5A948185238830E0AB8B221E34BBB * value)
+	{
+		___webView_12 = value;
+		Il2CppCodeGenWriteBarrier((&___webView_12), value);
+	}
+
+	inline static int32_t get_offset_of_IsPaused_13() { return static_cast<int32_t>(offsetof(SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2, ___IsPaused_13)); }
+	inline bool get_IsPaused_13() const { return ___IsPaused_13; }
+	inline bool* get_address_of_IsPaused_13() { return &___IsPaused_13; }
+	inline void set_IsPaused_13(bool value)
+	{
+		___IsPaused_13 = value;
+	}
+
+	inline static int32_t get_offset_of_Scopes_14() { return static_cast<int32_t>(offsetof(SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2, ___Scopes_14)); }
+	inline StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* get_Scopes_14() const { return ___Scopes_14; }
+	inline StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E** get_address_of_Scopes_14() { return &___Scopes_14; }
+	inline void set_Scopes_14(StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* value)
+	{
+		___Scopes_14 = value;
+		Il2CppCodeGenWriteBarrier((&___Scopes_14), value);
 	}
 };
 
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-#endif // SPOTIFTYLOGIN_T4A08281A3B749813DFC009D01820F3E8F332CD1B_H
+#endif // SPOTIFYAPI_T26EE204B4409E86787EA330E26A6479E5826D4F2_H
 #ifndef UNIWEBVIEW_T70C5C5815FC5A948185238830E0AB8B221E34BBB_H
 #define UNIWEBVIEW_T70C5C5815FC5A948185238830E0AB8B221E34BBB_H
 #ifdef __clang__
@@ -3585,22 +4112,29 @@ public:
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3100 = { 0, 0, 0, 0 };
-extern const int32_t g_FieldOffsetTable3100[2] = 
-{
-	0,
-	0,
-};
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3100 = { 0, -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3101 = { 0, 0, 0, 0 };
-extern const int32_t g_FieldOffsetTable3101[4] = 
+extern const int32_t g_FieldOffsetTable3101[2] = 
+{
+	0,
+	0,
+};
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3102 = { 0, 0, 0, 0 };
+extern const int32_t g_FieldOffsetTable3102[2] = 
+{
+	0,
+	0,
+};
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3103 = { 0, 0, 0, 0 };
+extern const int32_t g_FieldOffsetTable3103[4] = 
 {
 	0,
 	0,
 	0,
 	0,
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3102 = { sizeof (ReflectionMethodsCache_tBDADDC80D50C5F10BD00965217980B9A8D24BE8A), -1, sizeof(ReflectionMethodsCache_tBDADDC80D50C5F10BD00965217980B9A8D24BE8A_StaticFields), 0 };
-extern const int32_t g_FieldOffsetTable3102[7] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3104 = { sizeof (ReflectionMethodsCache_tBDADDC80D50C5F10BD00965217980B9A8D24BE8A), -1, sizeof(ReflectionMethodsCache_tBDADDC80D50C5F10BD00965217980B9A8D24BE8A_StaticFields), 0 };
+extern const int32_t g_FieldOffsetTable3104[7] = 
 {
 	ReflectionMethodsCache_tBDADDC80D50C5F10BD00965217980B9A8D24BE8A::get_offset_of_raycast3D_0(),
 	ReflectionMethodsCache_tBDADDC80D50C5F10BD00965217980B9A8D24BE8A::get_offset_of_raycast3DAll_1(),
@@ -3610,14 +4144,14 @@ extern const int32_t g_FieldOffsetTable3102[7] =
 	ReflectionMethodsCache_tBDADDC80D50C5F10BD00965217980B9A8D24BE8A::get_offset_of_getRaycastNonAlloc_5(),
 	ReflectionMethodsCache_tBDADDC80D50C5F10BD00965217980B9A8D24BE8A_StaticFields::get_offset_of_s_ReflectionMethodsCache_6(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3103 = { sizeof (Raycast3DCallback_t83483916473C9710AEDB316A65CBE62C58935C5F), sizeof(Il2CppMethodPointer), 0, 0 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3104 = { sizeof (Raycast2DCallback_tE99ABF9ABC3A380677949E8C05A3E477889B82BE), sizeof(Il2CppMethodPointer), 0, 0 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3105 = { sizeof (RaycastAllCallback_t751407A44270E02FAA43D0846A58EE6A8C4AE1CE), sizeof(Il2CppMethodPointer), 0, 0 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3106 = { sizeof (GetRayIntersectionAllCallback_t68C2581CCF05E868297EBD3F3361274954845095), sizeof(Il2CppMethodPointer), 0, 0 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3107 = { sizeof (GetRayIntersectionAllNonAllocCallback_tAD7508D45DB6679B6394983579AD18D967CC2AD4), sizeof(Il2CppMethodPointer), 0, 0 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3108 = { sizeof (GetRaycastNonAllocCallback_tC13D9767CFF00EAB26E9FCC4BDD505F0721A2B4D), sizeof(Il2CppMethodPointer), 0, 0 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3109 = { sizeof (VertexHelper_t27373EA2CF0F5810EC8CF873D0A6D6C0B23DAC3F), -1, sizeof(VertexHelper_t27373EA2CF0F5810EC8CF873D0A6D6C0B23DAC3F_StaticFields), 0 };
-extern const int32_t g_FieldOffsetTable3109[12] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3105 = { sizeof (Raycast3DCallback_t83483916473C9710AEDB316A65CBE62C58935C5F), sizeof(Il2CppMethodPointer), 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3106 = { sizeof (Raycast2DCallback_tE99ABF9ABC3A380677949E8C05A3E477889B82BE), sizeof(Il2CppMethodPointer), 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3107 = { sizeof (RaycastAllCallback_t751407A44270E02FAA43D0846A58EE6A8C4AE1CE), sizeof(Il2CppMethodPointer), 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3108 = { sizeof (GetRayIntersectionAllCallback_t68C2581CCF05E868297EBD3F3361274954845095), sizeof(Il2CppMethodPointer), 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3109 = { sizeof (GetRayIntersectionAllNonAllocCallback_tAD7508D45DB6679B6394983579AD18D967CC2AD4), sizeof(Il2CppMethodPointer), 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3110 = { sizeof (GetRaycastNonAllocCallback_tC13D9767CFF00EAB26E9FCC4BDD505F0721A2B4D), sizeof(Il2CppMethodPointer), 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3111 = { sizeof (VertexHelper_t27373EA2CF0F5810EC8CF873D0A6D6C0B23DAC3F), -1, sizeof(VertexHelper_t27373EA2CF0F5810EC8CF873D0A6D6C0B23DAC3F_StaticFields), 0 };
+extern const int32_t g_FieldOffsetTable3111[12] = 
 {
 	VertexHelper_t27373EA2CF0F5810EC8CF873D0A6D6C0B23DAC3F::get_offset_of_m_Positions_0(),
 	VertexHelper_t27373EA2CF0F5810EC8CF873D0A6D6C0B23DAC3F::get_offset_of_m_Colors_1(),
@@ -3632,92 +4166,143 @@ extern const int32_t g_FieldOffsetTable3109[12] =
 	VertexHelper_t27373EA2CF0F5810EC8CF873D0A6D6C0B23DAC3F_StaticFields::get_offset_of_s_DefaultNormal_10(),
 	VertexHelper_t27373EA2CF0F5810EC8CF873D0A6D6C0B23DAC3F::get_offset_of_m_ListsInitalized_11(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3110 = { sizeof (VertexHelperExtension_t593AF80A941B7208D2CC88AE671873CE6E2AA8E3), -1, 0, 0 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3111 = { sizeof (BaseVertexEffect_t1EF95AB1FC33A027710E7DC86D19F700156C4F6A), -1, 0, 0 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3112 = { sizeof (BaseMeshEffect_t72759F31F9D204D7EFB6B45097873809D4524BA5), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable3112[1] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3112 = { sizeof (VertexHelperExtension_t593AF80A941B7208D2CC88AE671873CE6E2AA8E3), -1, 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3113 = { sizeof (BaseVertexEffect_t1EF95AB1FC33A027710E7DC86D19F700156C4F6A), -1, 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3114 = { sizeof (BaseMeshEffect_t72759F31F9D204D7EFB6B45097873809D4524BA5), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable3114[1] = 
 {
 	BaseMeshEffect_t72759F31F9D204D7EFB6B45097873809D4524BA5::get_offset_of_m_Graphic_4(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3113 = { 0, -1, 0, 0 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3114 = { 0, -1, 0, 0 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3115 = { sizeof (Outline_tB750E496976B072E79142D51C0A991AC20183095), -1, 0, 0 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3116 = { sizeof (PositionAsUV1_t26F06E879E7B8DD2F93B8B3643053534D82F684A), -1, 0, 0 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3117 = { sizeof (Shadow_tA03D2493843CDF8E64569F985AEB3FEEEEB412E1), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable3117[4] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3115 = { 0, -1, 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3116 = { 0, -1, 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3117 = { sizeof (Outline_tB750E496976B072E79142D51C0A991AC20183095), -1, 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3118 = { sizeof (PositionAsUV1_t26F06E879E7B8DD2F93B8B3643053534D82F684A), -1, 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3119 = { sizeof (Shadow_tA03D2493843CDF8E64569F985AEB3FEEEEB412E1), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable3119[4] = 
 {
 	Shadow_tA03D2493843CDF8E64569F985AEB3FEEEEB412E1::get_offset_of_m_EffectColor_5(),
 	Shadow_tA03D2493843CDF8E64569F985AEB3FEEEEB412E1::get_offset_of_m_EffectDistance_6(),
 	Shadow_tA03D2493843CDF8E64569F985AEB3FEEEEB412E1::get_offset_of_m_UseGraphicAlpha_7(),
 	0,
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3118 = { sizeof (U3CPrivateImplementationDetailsU3E_tC8332394FBFEEB4B73459A35E182942340DA3537), -1, sizeof(U3CPrivateImplementationDetailsU3E_tC8332394FBFEEB4B73459A35E182942340DA3537_StaticFields), 0 };
-extern const int32_t g_FieldOffsetTable3118[1] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3120 = { sizeof (U3CPrivateImplementationDetailsU3E_tC8332394FBFEEB4B73459A35E182942340DA3537), -1, sizeof(U3CPrivateImplementationDetailsU3E_tC8332394FBFEEB4B73459A35E182942340DA3537_StaticFields), 0 };
+extern const int32_t g_FieldOffsetTable3120[1] = 
 {
 	U3CPrivateImplementationDetailsU3E_tC8332394FBFEEB4B73459A35E182942340DA3537_StaticFields::get_offset_of_U24fieldU2D7BBE37982E6C057ED87163CAFC7FD6E5E42EEA46_0(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3119 = { sizeof (U24ArrayTypeU3D12_t25F5D2FC4CFB01F181ED6F7A7F68C39C5D73E199)+ sizeof (RuntimeObject), sizeof(U24ArrayTypeU3D12_t25F5D2FC4CFB01F181ED6F7A7F68C39C5D73E199 ), 0, 0 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3120 = { sizeof (U3CModuleU3E_t6CDDDF959E7E18A6744E43B613F41CDAC780256A), -1, 0, 0 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3121 = { sizeof (Spin_tD4DFECB24A365A6C4C12E9848949153EDA1F1EBB), -1, 0, 0 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3122 = { sizeof (SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable3122[6] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3121 = { sizeof (U24ArrayTypeU3D12_t25F5D2FC4CFB01F181ED6F7A7F68C39C5D73E199)+ sizeof (RuntimeObject), sizeof(U24ArrayTypeU3D12_t25F5D2FC4CFB01F181ED6F7A7F68C39C5D73E199 ), 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3122 = { sizeof (U3CModuleU3E_t6CDDDF959E7E18A6744E43B613F41CDAC780256A), -1, 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3123 = { sizeof (Spin_tD4DFECB24A365A6C4C12E9848949153EDA1F1EBB), -1, 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3124 = { sizeof (SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable3124[12] = 
 {
-	SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B::get_offset_of_webView_4(),
-	SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B::get_offset_of_Token_5(),
-	SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B::get_offset_of_ApiBaseUrl_6(),
-	SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B::get_offset_of_client_7(),
-	SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B::get_offset_of_IsPaused_8(),
-	SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B::get_offset_of_DeviceId_9(),
+	SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2::get_offset_of_Token_4(),
+	SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2::get_offset_of_ApiBaseUrl_5(),
+	SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2::get_offset_of_SpotifyApiBaseUrl_6(),
+	SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2::get_offset_of_AlwaysShowSignIn_7(),
+	SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2::get_offset_of_UseKeyboard_8(),
+	SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2::get_offset_of_UseSystemOpen_9(),
+	SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2::get_offset_of_DeviceId_10(),
+	SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2::get_offset_of_client_11(),
+	SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2::get_offset_of_webView_12(),
+	SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2::get_offset_of_IsPaused_13(),
+	SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2::get_offset_of_Scopes_14(),
+	0,
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3123 = { sizeof (U3CDoSignInAsyncU3Ed__7_t374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2)+ sizeof (RuntimeObject), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable3123[5] = 
-{
-	U3CDoSignInAsyncU3Ed__7_t374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2::get_offset_of_U3CU3E1__state_0() + static_cast<int32_t>(sizeof(RuntimeObject)),
-	U3CDoSignInAsyncU3Ed__7_t374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2::get_offset_of_U3CU3Et__builder_1() + static_cast<int32_t>(sizeof(RuntimeObject)),
-	U3CDoSignInAsyncU3Ed__7_t374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2::get_offset_of_U3CU3E4__this_2() + static_cast<int32_t>(sizeof(RuntimeObject)),
-	U3CDoSignInAsyncU3Ed__7_t374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2::get_offset_of_U3CU3Eu__1_3() + static_cast<int32_t>(sizeof(RuntimeObject)),
-	U3CDoSignInAsyncU3Ed__7_t374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2::get_offset_of_U3CU3Eu__2_4() + static_cast<int32_t>(sizeof(RuntimeObject)),
-};
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3124 = { sizeof (U3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257)+ sizeof (RuntimeObject), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable3124[7] = 
-{
-	U3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257::get_offset_of_U3CU3E1__state_0() + static_cast<int32_t>(sizeof(RuntimeObject)),
-	U3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257::get_offset_of_U3CU3Et__builder_1() + static_cast<int32_t>(sizeof(RuntimeObject)),
-	U3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257::get_offset_of_client_2() + static_cast<int32_t>(sizeof(RuntimeObject)),
-	U3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257::get_offset_of_U3CU3E4__this_3() + static_cast<int32_t>(sizeof(RuntimeObject)),
-	U3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257::get_offset_of_state_4() + static_cast<int32_t>(sizeof(RuntimeObject)),
-	U3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257::get_offset_of_U3CU3Eu__1_5() + static_cast<int32_t>(sizeof(RuntimeObject)),
-	U3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257::get_offset_of_U3CU3Eu__2_6() + static_cast<int32_t>(sizeof(RuntimeObject)),
-};
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3125 = { sizeof (U3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C)+ sizeof (RuntimeObject), -1, 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3125 = { sizeof (U3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896)+ sizeof (RuntimeObject), -1, 0, 0 };
 extern const int32_t g_FieldOffsetTable3125[6] = 
 {
-	U3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C::get_offset_of_U3CU3E1__state_0() + static_cast<int32_t>(sizeof(RuntimeObject)),
-	U3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C::get_offset_of_U3CU3Et__builder_1() + static_cast<int32_t>(sizeof(RuntimeObject)),
-	U3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C::get_offset_of_U3CU3E4__this_2() + static_cast<int32_t>(sizeof(RuntimeObject)),
-	U3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C::get_offset_of_U3CrU3E5__2_3() + static_cast<int32_t>(sizeof(RuntimeObject)),
-	U3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C::get_offset_of_U3CU3Eu__1_4() + static_cast<int32_t>(sizeof(RuntimeObject)),
-	U3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C::get_offset_of_U3CU3Eu__2_5() + static_cast<int32_t>(sizeof(RuntimeObject)),
+	U3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896::get_offset_of_U3CU3E1__state_0() + static_cast<int32_t>(sizeof(RuntimeObject)),
+	U3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896::get_offset_of_U3CU3Et__builder_1() + static_cast<int32_t>(sizeof(RuntimeObject)),
+	U3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896::get_offset_of_U3CU3E4__this_2() + static_cast<int32_t>(sizeof(RuntimeObject)),
+	U3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896::get_offset_of_cancel_3() + static_cast<int32_t>(sizeof(RuntimeObject)),
+	U3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896::get_offset_of_U3CU3Eu__1_4() + static_cast<int32_t>(sizeof(RuntimeObject)),
+	U3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896::get_offset_of_U3CU3Eu__2_5() + static_cast<int32_t>(sizeof(RuntimeObject)),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3126 = { sizeof (U3CPauseU3Ed__13_t7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3)+ sizeof (RuntimeObject), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable3126[5] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3126 = { sizeof (U3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A)+ sizeof (RuntimeObject), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable3126[7] = 
 {
-	U3CPauseU3Ed__13_t7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3::get_offset_of_U3CU3E1__state_0() + static_cast<int32_t>(sizeof(RuntimeObject)),
-	U3CPauseU3Ed__13_t7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3::get_offset_of_U3CU3Et__builder_1() + static_cast<int32_t>(sizeof(RuntimeObject)),
-	U3CPauseU3Ed__13_t7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3::get_offset_of_U3CU3E4__this_2() + static_cast<int32_t>(sizeof(RuntimeObject)),
-	U3CPauseU3Ed__13_t7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3::get_offset_of_U3CU3Eu__1_3() + static_cast<int32_t>(sizeof(RuntimeObject)),
-	U3CPauseU3Ed__13_t7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3::get_offset_of_U3CU3Eu__2_4() + static_cast<int32_t>(sizeof(RuntimeObject)),
+	U3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A::get_offset_of_U3CU3E1__state_0() + static_cast<int32_t>(sizeof(RuntimeObject)),
+	U3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A::get_offset_of_U3CU3Et__builder_1() + static_cast<int32_t>(sizeof(RuntimeObject)),
+	U3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A::get_offset_of_U3CU3E4__this_2() + static_cast<int32_t>(sizeof(RuntimeObject)),
+	U3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A::get_offset_of_state_3() + static_cast<int32_t>(sizeof(RuntimeObject)),
+	U3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A::get_offset_of_cancel_4() + static_cast<int32_t>(sizeof(RuntimeObject)),
+	U3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A::get_offset_of_U3CU3Eu__1_5() + static_cast<int32_t>(sizeof(RuntimeObject)),
+	U3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A::get_offset_of_U3CU3Eu__2_6() + static_cast<int32_t>(sizeof(RuntimeObject)),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3127 = { sizeof (UniWebViewAndroidStaticListener_t9987AA383ACDCD75BF174C6A87CBC88B83414A79), -1, 0, 0 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3128 = { sizeof (UniWebViewInterface_tE89E48E7F735126B06DE035E92DEFEFCA294E2CF), -1, sizeof(UniWebViewInterface_tE89E48E7F735126B06DE035E92DEFEFCA294E2CF_StaticFields), 0 };
-extern const int32_t g_FieldOffsetTable3128[2] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3127 = { sizeof (U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303)+ sizeof (RuntimeObject), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable3127[11] = 
+{
+	U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303::get_offset_of_U3CU3E1__state_0() + static_cast<int32_t>(sizeof(RuntimeObject)),
+	U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303::get_offset_of_U3CU3Et__builder_1() + static_cast<int32_t>(sizeof(RuntimeObject)),
+	U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303::get_offset_of_U3CU3E4__this_2() + static_cast<int32_t>(sizeof(RuntimeObject)),
+	U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303::get_offset_of_path_3() + static_cast<int32_t>(sizeof(RuntimeObject)),
+	U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303::get_offset_of_cmdName_4() + static_cast<int32_t>(sizeof(RuntimeObject)),
+	U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303::get_offset_of_method_5() + static_cast<int32_t>(sizeof(RuntimeObject)),
+	U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303::get_offset_of_payload_6() + static_cast<int32_t>(sizeof(RuntimeObject)),
+	U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303::get_offset_of_cancel_7() + static_cast<int32_t>(sizeof(RuntimeObject)),
+	U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303::get_offset_of_U3CrU3E5__2_8() + static_cast<int32_t>(sizeof(RuntimeObject)),
+	U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303::get_offset_of_U3CU3Eu__1_9() + static_cast<int32_t>(sizeof(RuntimeObject)),
+	U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303::get_offset_of_U3CU3Eu__2_10() + static_cast<int32_t>(sizeof(RuntimeObject)),
+};
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3128 = { sizeof (U3CPlayAsyncU3Ed__24_tB410B49C7C0816D2A5DD701A483FF046FA5C7777)+ sizeof (RuntimeObject), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable3128[5] = 
+{
+	U3CPlayAsyncU3Ed__24_tB410B49C7C0816D2A5DD701A483FF046FA5C7777::get_offset_of_U3CU3E1__state_0() + static_cast<int32_t>(sizeof(RuntimeObject)),
+	U3CPlayAsyncU3Ed__24_tB410B49C7C0816D2A5DD701A483FF046FA5C7777::get_offset_of_U3CU3Et__builder_1() + static_cast<int32_t>(sizeof(RuntimeObject)),
+	U3CPlayAsyncU3Ed__24_tB410B49C7C0816D2A5DD701A483FF046FA5C7777::get_offset_of_U3CU3E4__this_2() + static_cast<int32_t>(sizeof(RuntimeObject)),
+	U3CPlayAsyncU3Ed__24_tB410B49C7C0816D2A5DD701A483FF046FA5C7777::get_offset_of_cancel_3() + static_cast<int32_t>(sizeof(RuntimeObject)),
+	U3CPlayAsyncU3Ed__24_tB410B49C7C0816D2A5DD701A483FF046FA5C7777::get_offset_of_U3CU3Eu__1_4() + static_cast<int32_t>(sizeof(RuntimeObject)),
+};
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3129 = { sizeof (U3CPlayUrisAsyncU3Ed__26_tF7BEEEB5E918E76C3B6F702D718B1110F5033C78)+ sizeof (RuntimeObject), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable3129[7] = 
+{
+	U3CPlayUrisAsyncU3Ed__26_tF7BEEEB5E918E76C3B6F702D718B1110F5033C78::get_offset_of_U3CU3E1__state_0() + static_cast<int32_t>(sizeof(RuntimeObject)),
+	U3CPlayUrisAsyncU3Ed__26_tF7BEEEB5E918E76C3B6F702D718B1110F5033C78::get_offset_of_U3CU3Et__builder_1() + static_cast<int32_t>(sizeof(RuntimeObject)),
+	U3CPlayUrisAsyncU3Ed__26_tF7BEEEB5E918E76C3B6F702D718B1110F5033C78::get_offset_of_U3CU3E4__this_2() + static_cast<int32_t>(sizeof(RuntimeObject)),
+	U3CPlayUrisAsyncU3Ed__26_tF7BEEEB5E918E76C3B6F702D718B1110F5033C78::get_offset_of_uris_3() + static_cast<int32_t>(sizeof(RuntimeObject)),
+	U3CPlayUrisAsyncU3Ed__26_tF7BEEEB5E918E76C3B6F702D718B1110F5033C78::get_offset_of_positionMs_4() + static_cast<int32_t>(sizeof(RuntimeObject)),
+	U3CPlayUrisAsyncU3Ed__26_tF7BEEEB5E918E76C3B6F702D718B1110F5033C78::get_offset_of_cancel_5() + static_cast<int32_t>(sizeof(RuntimeObject)),
+	U3CPlayUrisAsyncU3Ed__26_tF7BEEEB5E918E76C3B6F702D718B1110F5033C78::get_offset_of_U3CU3Eu__1_6() + static_cast<int32_t>(sizeof(RuntimeObject)),
+};
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3130 = { sizeof (U3CPauseAsyncU3Ed__29_tDEC85B2D09AA536D9ABA26C9948D506C674C0C84)+ sizeof (RuntimeObject), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable3130[5] = 
+{
+	U3CPauseAsyncU3Ed__29_tDEC85B2D09AA536D9ABA26C9948D506C674C0C84::get_offset_of_U3CU3E1__state_0() + static_cast<int32_t>(sizeof(RuntimeObject)),
+	U3CPauseAsyncU3Ed__29_tDEC85B2D09AA536D9ABA26C9948D506C674C0C84::get_offset_of_U3CU3Et__builder_1() + static_cast<int32_t>(sizeof(RuntimeObject)),
+	U3CPauseAsyncU3Ed__29_tDEC85B2D09AA536D9ABA26C9948D506C674C0C84::get_offset_of_U3CU3E4__this_2() + static_cast<int32_t>(sizeof(RuntimeObject)),
+	U3CPauseAsyncU3Ed__29_tDEC85B2D09AA536D9ABA26C9948D506C674C0C84::get_offset_of_cancel_3() + static_cast<int32_t>(sizeof(RuntimeObject)),
+	U3CPauseAsyncU3Ed__29_tDEC85B2D09AA536D9ABA26C9948D506C674C0C84::get_offset_of_U3CU3Eu__1_4() + static_cast<int32_t>(sizeof(RuntimeObject)),
+};
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3131 = { sizeof (U3CRepeatAsyncU3Ed__30_tBE6907D98B9974628F6181F8DB4B506D3DF1B509)+ sizeof (RuntimeObject), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable3131[6] = 
+{
+	U3CRepeatAsyncU3Ed__30_tBE6907D98B9974628F6181F8DB4B506D3DF1B509::get_offset_of_U3CU3E1__state_0() + static_cast<int32_t>(sizeof(RuntimeObject)),
+	U3CRepeatAsyncU3Ed__30_tBE6907D98B9974628F6181F8DB4B506D3DF1B509::get_offset_of_U3CU3Et__builder_1() + static_cast<int32_t>(sizeof(RuntimeObject)),
+	U3CRepeatAsyncU3Ed__30_tBE6907D98B9974628F6181F8DB4B506D3DF1B509::get_offset_of_U3CU3E4__this_2() + static_cast<int32_t>(sizeof(RuntimeObject)),
+	U3CRepeatAsyncU3Ed__30_tBE6907D98B9974628F6181F8DB4B506D3DF1B509::get_offset_of_mode_3() + static_cast<int32_t>(sizeof(RuntimeObject)),
+	U3CRepeatAsyncU3Ed__30_tBE6907D98B9974628F6181F8DB4B506D3DF1B509::get_offset_of_cancel_4() + static_cast<int32_t>(sizeof(RuntimeObject)),
+	U3CRepeatAsyncU3Ed__30_tBE6907D98B9974628F6181F8DB4B506D3DF1B509::get_offset_of_U3CU3Eu__1_5() + static_cast<int32_t>(sizeof(RuntimeObject)),
+};
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3132 = { sizeof (TaskHelper_tE5232ABE9AE82BFD6109DF8FA5C5ACFB91ACA09C), -1, 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3133 = { sizeof (SpotifyRepeatMode_t808DBF4667005FCB3A97FCDA876C84B196E5E083)+ sizeof (RuntimeObject), sizeof(int32_t), 0, 0 };
+extern const int32_t g_FieldOffsetTable3133[4] = 
+{
+	SpotifyRepeatMode_t808DBF4667005FCB3A97FCDA876C84B196E5E083::get_offset_of_value___2() + static_cast<int32_t>(sizeof(RuntimeObject)),
+	0,
+	0,
+	0,
+};
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3134 = { sizeof (UniWebViewAndroidStaticListener_t9987AA383ACDCD75BF174C6A87CBC88B83414A79), -1, 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3135 = { sizeof (UniWebViewInterface_tE89E48E7F735126B06DE035E92DEFEFCA294E2CF), -1, sizeof(UniWebViewInterface_tE89E48E7F735126B06DE035E92DEFEFCA294E2CF_StaticFields), 0 };
+extern const int32_t g_FieldOffsetTable3135[2] = 
 {
 	0,
 	UniWebViewInterface_tE89E48E7F735126B06DE035E92DEFEFCA294E2CF_StaticFields::get_offset_of_correctPlatform_1(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3129 = { sizeof (UnitySendMessageDelegate_t5D9F2A1448208AB6DB8BD0A4862C82C85C3F5D68), sizeof(Il2CppMethodPointer), 0, 0 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3130 = { sizeof (UniWebView_t70C5C5815FC5A948185238830E0AB8B221E34BBB), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable3130[23] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3136 = { sizeof (UnitySendMessageDelegate_t5D9F2A1448208AB6DB8BD0A4862C82C85C3F5D68), sizeof(Il2CppMethodPointer), 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3137 = { sizeof (UniWebView_t70C5C5815FC5A948185238830E0AB8B221E34BBB), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable3137[23] = 
 {
 	UniWebView_t70C5C5815FC5A948185238830E0AB8B221E34BBB::get_offset_of_OnPageStarted_4(),
 	UniWebView_t70C5C5815FC5A948185238830E0AB8B221E34BBB::get_offset_of_OnPageFinished_5(),
@@ -3743,22 +4328,22 @@ extern const int32_t g_FieldOffsetTable3130[23] =
 	UniWebView_t70C5C5815FC5A948185238830E0AB8B221E34BBB::get_offset_of_backgroundColor_25(),
 	UniWebView_t70C5C5815FC5A948185238830E0AB8B221E34BBB::get_offset_of_OnOreintationChanged_26(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3131 = { sizeof (PageStartedDelegate_t249FC70F5F447EFE3E8A30439569A96F05602E78), sizeof(Il2CppMethodPointer), 0, 0 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3132 = { sizeof (PageFinishedDelegate_t86B321BA20AE98611CA5520C46D556970FF31702), sizeof(Il2CppMethodPointer), 0, 0 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3133 = { sizeof (PageErrorReceivedDelegate_t091963788F14CE6459BBB18AC29566778DE8CB4E), sizeof(Il2CppMethodPointer), 0, 0 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3134 = { sizeof (MessageReceivedDelegate_t30F573625B3F4C806D9073C9FB6773DC92922582), sizeof(Il2CppMethodPointer), 0, 0 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3135 = { sizeof (ShouldCloseDelegate_t2E3349B793354B80E34E5AF4CB035C2370160998), sizeof(Il2CppMethodPointer), 0, 0 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3136 = { sizeof (KeyCodeReceivedDelegate_tA8930CEAF69FA713516FC48F6899262B9E8E1C6C), sizeof(Il2CppMethodPointer), 0, 0 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3137 = { sizeof (OrientationChangedDelegate_t3D6957C9CC92E9341E30FCB84901049E0E8DA482), sizeof(Il2CppMethodPointer), 0, 0 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3138 = { sizeof (OnWebContentProcessTerminatedDelegate_tAE07B0FEE5481D5653C82395ADAA3DF1A0DA2ECD), sizeof(Il2CppMethodPointer), 0, 0 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3139 = { sizeof (OreintationChangedDelegate_t42B38D7E92042A4E7C93015C2C675A483D7238E7), sizeof(Il2CppMethodPointer), 0, 0 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3140 = { sizeof (U3CU3Ec__DisplayClass116_0_t5D96BEB4D5AA3C288B4CAC28F112569DE73F53C8), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable3140[1] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3138 = { sizeof (PageStartedDelegate_t249FC70F5F447EFE3E8A30439569A96F05602E78), sizeof(Il2CppMethodPointer), 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3139 = { sizeof (PageFinishedDelegate_t86B321BA20AE98611CA5520C46D556970FF31702), sizeof(Il2CppMethodPointer), 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3140 = { sizeof (PageErrorReceivedDelegate_t091963788F14CE6459BBB18AC29566778DE8CB4E), sizeof(Il2CppMethodPointer), 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3141 = { sizeof (MessageReceivedDelegate_t30F573625B3F4C806D9073C9FB6773DC92922582), sizeof(Il2CppMethodPointer), 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3142 = { sizeof (ShouldCloseDelegate_t2E3349B793354B80E34E5AF4CB035C2370160998), sizeof(Il2CppMethodPointer), 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3143 = { sizeof (KeyCodeReceivedDelegate_tA8930CEAF69FA713516FC48F6899262B9E8E1C6C), sizeof(Il2CppMethodPointer), 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3144 = { sizeof (OrientationChangedDelegate_t3D6957C9CC92E9341E30FCB84901049E0E8DA482), sizeof(Il2CppMethodPointer), 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3145 = { sizeof (OnWebContentProcessTerminatedDelegate_tAE07B0FEE5481D5653C82395ADAA3DF1A0DA2ECD), sizeof(Il2CppMethodPointer), 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3146 = { sizeof (OreintationChangedDelegate_t42B38D7E92042A4E7C93015C2C675A483D7238E7), sizeof(Il2CppMethodPointer), 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3147 = { sizeof (U3CU3Ec__DisplayClass116_0_t5D96BEB4D5AA3C288B4CAC28F112569DE73F53C8), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable3147[1] = 
 {
 	U3CU3Ec__DisplayClass116_0_t5D96BEB4D5AA3C288B4CAC28F112569DE73F53C8::get_offset_of_handler_0(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3141 = { sizeof (UniWebViewContentInsetAdjustmentBehavior_t8904EE64EB078E94C3BF45CC31C56C1AC83D6AEC)+ sizeof (RuntimeObject), sizeof(int32_t), 0, 0 };
-extern const int32_t g_FieldOffsetTable3141[5] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3148 = { sizeof (UniWebViewContentInsetAdjustmentBehavior_t8904EE64EB078E94C3BF45CC31C56C1AC83D6AEC)+ sizeof (RuntimeObject), sizeof(int32_t), 0, 0 };
+extern const int32_t g_FieldOffsetTable3148[5] = 
 {
 	UniWebViewContentInsetAdjustmentBehavior_t8904EE64EB078E94C3BF45CC31C56C1AC83D6AEC::get_offset_of_value___2() + static_cast<int32_t>(sizeof(RuntimeObject)),
 	0,
@@ -3766,15 +4351,15 @@ extern const int32_t g_FieldOffsetTable3141[5] =
 	0,
 	0,
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3142 = { sizeof (UniWebViewHelper_t8768407D2ECCF39080CB4D426A7AD65CC6F7A2D3), -1, 0, 0 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3143 = { sizeof (UniWebViewLogger_tE1C8304AB4AFC816AB06B4B2E032DCB4F4C05D36), -1, sizeof(UniWebViewLogger_tE1C8304AB4AFC816AB06B4B2E032DCB4F4C05D36_StaticFields), 0 };
-extern const int32_t g_FieldOffsetTable3143[2] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3149 = { sizeof (UniWebViewHelper_t8768407D2ECCF39080CB4D426A7AD65CC6F7A2D3), -1, 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3150 = { sizeof (UniWebViewLogger_tE1C8304AB4AFC816AB06B4B2E032DCB4F4C05D36), -1, sizeof(UniWebViewLogger_tE1C8304AB4AFC816AB06B4B2E032DCB4F4C05D36_StaticFields), 0 };
+extern const int32_t g_FieldOffsetTable3150[2] = 
 {
 	UniWebViewLogger_tE1C8304AB4AFC816AB06B4B2E032DCB4F4C05D36_StaticFields::get_offset_of_instance_0(),
 	UniWebViewLogger_tE1C8304AB4AFC816AB06B4B2E032DCB4F4C05D36::get_offset_of_level_1(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3144 = { sizeof (Level_tB3797A8D0D24AF315855A7B3D8DF86C22DFF2875)+ sizeof (RuntimeObject), sizeof(int32_t), 0, 0 };
-extern const int32_t g_FieldOffsetTable3144[6] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3151 = { sizeof (Level_tB3797A8D0D24AF315855A7B3D8DF86C22DFF2875)+ sizeof (RuntimeObject), sizeof(int32_t), 0, 0 };
+extern const int32_t g_FieldOffsetTable3151[6] = 
 {
 	Level_tB3797A8D0D24AF315855A7B3D8DF86C22DFF2875::get_offset_of_value___2() + static_cast<int32_t>(sizeof(RuntimeObject)),
 	0,
@@ -3783,36 +4368,36 @@ extern const int32_t g_FieldOffsetTable3144[6] =
 	0,
 	0,
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3145 = { sizeof (UniWebViewMessage_tAC6CC5EC4233D8B92FB19548180D216E36A42EC3)+ sizeof (RuntimeObject), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable3145[4] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3152 = { sizeof (UniWebViewMessage_tAC6CC5EC4233D8B92FB19548180D216E36A42EC3)+ sizeof (RuntimeObject), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable3152[4] = 
 {
 	UniWebViewMessage_tAC6CC5EC4233D8B92FB19548180D216E36A42EC3::get_offset_of_U3CRawMessageU3Ek__BackingField_0() + static_cast<int32_t>(sizeof(RuntimeObject)),
 	UniWebViewMessage_tAC6CC5EC4233D8B92FB19548180D216E36A42EC3::get_offset_of_U3CSchemeU3Ek__BackingField_1() + static_cast<int32_t>(sizeof(RuntimeObject)),
 	UniWebViewMessage_tAC6CC5EC4233D8B92FB19548180D216E36A42EC3::get_offset_of_U3CPathU3Ek__BackingField_2() + static_cast<int32_t>(sizeof(RuntimeObject)),
 	UniWebViewMessage_tAC6CC5EC4233D8B92FB19548180D216E36A42EC3::get_offset_of_U3CArgsU3Ek__BackingField_3() + static_cast<int32_t>(sizeof(RuntimeObject)),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3146 = { sizeof (UniWebViewNativeListener_tFED75D47CB6B119CB39D323A1B14EDE2BD5CDBDD), -1, sizeof(UniWebViewNativeListener_tFED75D47CB6B119CB39D323A1B14EDE2BD5CDBDD_StaticFields), 0 };
-extern const int32_t g_FieldOffsetTable3146[2] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3153 = { sizeof (UniWebViewNativeListener_tFED75D47CB6B119CB39D323A1B14EDE2BD5CDBDD), -1, sizeof(UniWebViewNativeListener_tFED75D47CB6B119CB39D323A1B14EDE2BD5CDBDD_StaticFields), 0 };
+extern const int32_t g_FieldOffsetTable3153[2] = 
 {
 	UniWebViewNativeListener_tFED75D47CB6B119CB39D323A1B14EDE2BD5CDBDD_StaticFields::get_offset_of_listeners_4(),
 	UniWebViewNativeListener_tFED75D47CB6B119CB39D323A1B14EDE2BD5CDBDD::get_offset_of_webView_5(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3147 = { sizeof (UniWebViewNativeResultPayload_t3A9397FEF18D4CB032484A81370D6BC52767730C), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable3147[3] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3154 = { sizeof (UniWebViewNativeResultPayload_t3A9397FEF18D4CB032484A81370D6BC52767730C), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable3154[3] = 
 {
 	UniWebViewNativeResultPayload_t3A9397FEF18D4CB032484A81370D6BC52767730C::get_offset_of_identifier_0(),
 	UniWebViewNativeResultPayload_t3A9397FEF18D4CB032484A81370D6BC52767730C::get_offset_of_resultCode_1(),
 	UniWebViewNativeResultPayload_t3A9397FEF18D4CB032484A81370D6BC52767730C::get_offset_of_data_2(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3148 = { sizeof (UniWebViewToolbarPosition_t32937D05C62981C715E721005693AC89DE374110)+ sizeof (RuntimeObject), sizeof(int32_t), 0, 0 };
-extern const int32_t g_FieldOffsetTable3148[3] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3155 = { sizeof (UniWebViewToolbarPosition_t32937D05C62981C715E721005693AC89DE374110)+ sizeof (RuntimeObject), sizeof(int32_t), 0, 0 };
+extern const int32_t g_FieldOffsetTable3155[3] = 
 {
 	UniWebViewToolbarPosition_t32937D05C62981C715E721005693AC89DE374110::get_offset_of_value___2() + static_cast<int32_t>(sizeof(RuntimeObject)),
 	0,
 	0,
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3149 = { sizeof (UniWebViewTransitionEdge_t5DEFB71C1BEC8B01AB5C58ACAE4B10B6253B70F3)+ sizeof (RuntimeObject), sizeof(int32_t), 0, 0 };
-extern const int32_t g_FieldOffsetTable3149[6] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3156 = { sizeof (UniWebViewTransitionEdge_t5DEFB71C1BEC8B01AB5C58ACAE4B10B6253B70F3)+ sizeof (RuntimeObject), sizeof(int32_t), 0, 0 };
+extern const int32_t g_FieldOffsetTable3156[6] = 
 {
 	UniWebViewTransitionEdge_t5DEFB71C1BEC8B01AB5C58ACAE4B10B6253B70F3::get_offset_of_value___2() + static_cast<int32_t>(sizeof(RuntimeObject)),
 	0,

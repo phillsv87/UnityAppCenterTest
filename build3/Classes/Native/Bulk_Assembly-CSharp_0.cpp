@@ -19,6 +19,28 @@
 #include "codegen/il2cpp-codegen.h"
 #include "il2cpp-object-internals.h"
 
+template <typename R>
+struct VirtFuncInvoker0
+{
+	typedef R (*Func)(void*, const RuntimeMethod*);
+
+	static inline R Invoke (Il2CppMethodSlot slot, RuntimeObject* obj)
+	{
+		const VirtualInvokeData& invokeData = il2cpp_codegen_get_virtual_invoke_data(slot, obj);
+		return ((Func)invokeData.methodPtr)(obj, invokeData.method);
+	}
+};
+template <typename R, typename T1, typename T2>
+struct VirtFuncInvoker2
+{
+	typedef R (*Func)(void*, T1, T2, const RuntimeMethod*);
+
+	static inline R Invoke (Il2CppMethodSlot slot, RuntimeObject* obj, T1 p1, T2 p2)
+	{
+		const VirtualInvokeData& invokeData = il2cpp_codegen_get_virtual_invoke_data(slot, obj);
+		return ((Func)invokeData.methodPtr)(obj, p1, p2, invokeData.method);
+	}
+};
 template <typename T1>
 struct VirtActionInvoker1
 {
@@ -60,17 +82,6 @@ struct VirtActionInvoker3
 	{
 		const VirtualInvokeData& invokeData = il2cpp_codegen_get_virtual_invoke_data(slot, obj);
 		((Action)invokeData.methodPtr)(obj, p1, p2, p3, invokeData.method);
-	}
-};
-template <typename R>
-struct VirtFuncInvoker0
-{
-	typedef R (*Func)(void*, const RuntimeMethod*);
-
-	static inline R Invoke (Il2CppMethodSlot slot, RuntimeObject* obj)
-	{
-		const VirtualInvokeData& invokeData = il2cpp_codegen_get_virtual_invoke_data(slot, obj);
-		return ((Func)invokeData.methodPtr)(obj, invokeData.method);
 	}
 };
 template <typename R, typename T1>
@@ -294,8 +305,8 @@ struct GenericInterfaceFuncInvoker1
 
 // Spin
 struct Spin_tD4DFECB24A365A6C4C12E9848949153EDA1F1EBB;
-// SpotiftyLogin
-struct SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B;
+// SpotifyApi
+struct SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2;
 // System.Action
 struct Action_t591D2A86165F896B4B800BB5C25CE18672A55579;
 // System.Action`1<System.Object>
@@ -382,8 +393,6 @@ struct InvalidOperationException_t0530E734D823F78310CAFAFA424CA5164D93A1F1;
 struct AuthenticationHeaderValue_tC285A16C25538CA86FA59B88CC25E6999BB5F1A6;
 // System.Net.Http.Headers.HttpContentHeaders
 struct HttpContentHeaders_t98D8657573ADACD807B6C941F46E6D69EDFD13A0;
-// System.Net.Http.Headers.HttpHeaders
-struct HttpHeaders_tF0E0E01200BD0D8141489FB370D60A9F4DBF42A1;
 // System.Net.Http.Headers.HttpRequestHeaders
 struct HttpRequestHeaders_tD29E9D795891A7A0D4FE8C8AA7BF0E756FCA40D4;
 // System.Net.Http.Headers.HttpResponseHeaders
@@ -398,6 +407,8 @@ struct FixedMemoryStream_t181662654A3A2002A1F5D33E7747A9E12DAD139C;
 struct HttpMessageHandler_t0094EF2850CF6420CBFC3952ED337AD381644894;
 // System.Net.Http.HttpMessageInvoker
 struct HttpMessageInvoker_t7270E2BED3201CE430D6C4BECF923454AA526A72;
+// System.Net.Http.HttpMethod
+struct HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220;
 // System.Net.Http.HttpRequestMessage
 struct HttpRequestMessage_tBBC9EBC5D6C1B7E30F9927AABBDB65792FFB5427;
 // System.Net.Http.HttpResponseMessage
@@ -526,8 +537,10 @@ struct Transform_tBB9E78A2766C3C83599A8F66EDE7D1FCAFC66EDA;
 struct Vector3U5BU5D_tB9EC3346CC4A0EA5447D968E84A9AC1F6F372C28;
 
 extern RuntimeClass* Action_1_t8EC8542A14B338E47DC15B6835D141446E6F83AD_il2cpp_TypeInfo_var;
+extern RuntimeClass* AsyncTaskMethodBuilder_1_tC7B1E45031A96D1F2363C0491EC79BBE740BC10C_il2cpp_TypeInfo_var;
 extern RuntimeClass* AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487_il2cpp_TypeInfo_var;
 extern RuntimeClass* AuthenticationHeaderValue_tC285A16C25538CA86FA59B88CC25E6999BB5F1A6_il2cpp_TypeInfo_var;
+extern RuntimeClass* CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB_il2cpp_TypeInfo_var;
 extern RuntimeClass* CharU5BU5D_t4CC6ABF0AD71BEC97E3C2F1E9C5677E46D3A75C2_il2cpp_TypeInfo_var;
 extern RuntimeClass* Debug_t7B5FCB117E2FD63B6838BC52821B252E2BFB61C4_il2cpp_TypeInfo_var;
 extern RuntimeClass* Dictionary_2_t6869420B5ACFF0569A65586D45920B0F608DDB45_il2cpp_TypeInfo_var;
@@ -538,6 +551,8 @@ extern RuntimeClass* Exception_t_il2cpp_TypeInfo_var;
 extern RuntimeClass* GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F_il2cpp_TypeInfo_var;
 extern RuntimeClass* Guid_t_il2cpp_TypeInfo_var;
 extern RuntimeClass* HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7_il2cpp_TypeInfo_var;
+extern RuntimeClass* HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220_il2cpp_TypeInfo_var;
+extern RuntimeClass* HttpRequestMessage_tBBC9EBC5D6C1B7E30F9927AABBDB65792FFB5427_il2cpp_TypeInfo_var;
 extern RuntimeClass* Int32_t585191389E07734F19F3156FF88FB3EF4800D102_il2cpp_TypeInfo_var;
 extern RuntimeClass* IntPtr_t_il2cpp_TypeInfo_var;
 extern RuntimeClass* InvalidOperationException_t0530E734D823F78310CAFAFA424CA5164D93A1F1_il2cpp_TypeInfo_var;
@@ -556,8 +571,10 @@ extern RuntimeClass* Path_t0B99A4B924A6FDF08814FFA8DD4CD121ED1A0752_il2cpp_TypeI
 extern RuntimeClass* RuntimePlatform_tD5F5737C1BBBCBB115EB104DF2B7876387E80132_il2cpp_TypeInfo_var;
 extern RuntimeClass* ScreenOrientation_t4AB8E2E02033B0EAEA0260B05B1D88DA8058BB51_il2cpp_TypeInfo_var;
 extern RuntimeClass* ShouldCloseDelegate_t2E3349B793354B80E34E5AF4CB035C2370160998_il2cpp_TypeInfo_var;
+extern RuntimeClass* SpotifyRepeatMode_t808DBF4667005FCB3A97FCDA876C84B196E5E083_il2cpp_TypeInfo_var;
 extern RuntimeClass* StringContent_t0E49805143AA8BCE4640914150158663B9061079_il2cpp_TypeInfo_var;
 extern RuntimeClass* StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E_il2cpp_TypeInfo_var;
+extern RuntimeClass* String_t_il2cpp_TypeInfo_var;
 extern RuntimeClass* Type_t_il2cpp_TypeInfo_var;
 extern RuntimeClass* U3CU3Ec__DisplayClass116_0_t5D96BEB4D5AA3C288B4CAC28F112569DE73F53C8_il2cpp_TypeInfo_var;
 extern RuntimeClass* UniWebViewInterface_tE89E48E7F735126B06DE035E92DEFEFCA294E2CF_il2cpp_TypeInfo_var;
@@ -570,66 +587,81 @@ extern RuntimeClass* Vector3U5BU5D_tB9EC3346CC4A0EA5447D968E84A9AC1F6F372C28_il2
 extern RuntimeClass* Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720_il2cpp_TypeInfo_var;
 extern String_t* _stringLiteral00491CF0C8B39BC43165DF7F9594FA3F2FF4671E;
 extern String_t* _stringLiteral06B74BC77BC139B54EA6631F98B79177AD2A78CB;
-extern String_t* _stringLiteral0727C5584851CE551EAB519A195EC4C1DA48EBF5;
 extern String_t* _stringLiteral07C342BE6E560E7F43842E2E21B774E61D85F047;
 extern String_t* _stringLiteral117E9159A146DF4F4331086DE92E4F83AA1B0132;
 extern String_t* _stringLiteral146030492EBA1AA0EB73B5D9C16DCED999DAEDBB;
 extern String_t* _stringLiteral1A697AE208D81FDAD82F19579E60E4ACFF6F1D77;
 extern String_t* _stringLiteral1FD124FEEF5DB8D5C4D26DCF6CBF0006BC793334;
-extern String_t* _stringLiteral20AE2117886DAEA45AD17FAE5272B38A530F7F95;
 extern String_t* _stringLiteral21606782C65E44CAC7AFBB90977D8B6F82140E76;
-extern String_t* _stringLiteral22CA7BEB9A08D067CF5F7298B11507321D496458;
 extern String_t* _stringLiteral23E752D68C1EBE11AEF33CC41950EFF47F3BD1CD;
+extern String_t* _stringLiteral277A756AC1FE07420ABEE5E20FD9463C5F746D82;
 extern String_t* _stringLiteral27D8065B51E8577B2ED34800B1C74E812539FC84;
 extern String_t* _stringLiteral2C035AC06ADD3F441D7B835885958B03DEAC3D50;
 extern String_t* _stringLiteral2D5B6C3B30DE3100C51BB52EC659A4C468E2F1D3;
-extern String_t* _stringLiteral30F9F91F5CF7A0B6F4D11D0BCD16A5F9D4A1CAED;
 extern String_t* _stringLiteral310C3A2FA52D468C1A69568D9E3448429DC7B705;
+extern String_t* _stringLiteral320145F7531C13390577682EE0BADD8B11AB8FD1;
+extern String_t* _stringLiteral35C2A600B9980540586FBD11981AD1D136373C0A;
 extern String_t* _stringLiteral3872A3ED2ED0AAB18F1FB010F044E192B38A8AF5;
-extern String_t* _stringLiteral3D9E765D7BA857C78A48E394812257CD7794C617;
+extern String_t* _stringLiteral3A310F6EC721E6B362FCD22772B57F36A2FE6BB2;
+extern String_t* _stringLiteral3DBEFA1C508D53E429B88C35CF47D16834416F5A;
+extern String_t* _stringLiteral46D879CE296624142E8E1B8B317A99540429EFF5;
 extern String_t* _stringLiteral4BC81818A1FADD05909E6673403338B061B25752;
 extern String_t* _stringLiteral4E3E67EBFAB65BF150827CC64823FCC9BB68D9D3;
 extern String_t* _stringLiteral516B9783FCA517EECBD1D064DA2D165310B19759;
+extern String_t* _stringLiteral51C1EC11AE063653881DF94B129117681A1791DB;
 extern String_t* _stringLiteral5733C6F9B29CE8F97BC318286D8452BED793E93C;
 extern String_t* _stringLiteral57D9243BDF4ED04808C32AAB0A521113CAFA87CE;
+extern String_t* _stringLiteral5828DD995E7E6304B98583BFADFCF0F146C26243;
 extern String_t* _stringLiteral5BAB61EB53176449E25C2C82F172B82CB13FFB9D;
 extern String_t* _stringLiteral5C10B5B2CD673A0616D529AA5234B12EE7153808;
-extern String_t* _stringLiteral5D12BD53552CAFC41CA6146C04870DF2E1574E13;
+extern String_t* _stringLiteral5FFE533B830F08A0326348A9160AFAFC8ADA44DB;
 extern String_t* _stringLiteral602D3E503D008B8748F9A02F2273CD3FED413783;
 extern String_t* _stringLiteral63BF13C36CDB29DF80295EBF2EEC4B9CDF8F4969;
+extern String_t* _stringLiteral6405670567C1F2A6C961588E7C174287D06D3436;
+extern String_t* _stringLiteral659EBA121958F4A29FAB3D29D61CEDC55A892334;
 extern String_t* _stringLiteral67A8741EAD44382DFF99FAE66966F536E211ECBF;
+extern String_t* _stringLiteral6CCF7E6CFEF9AC2F6A9CB34269A214EF73D4B854;
 extern String_t* _stringLiteral735BB596C7191AC87A3C4965F95D305B76E49F17;
 extern String_t* _stringLiteral755FF1EC321A750FAD1BC3B789A4AB51EAB45B0B;
 extern String_t* _stringLiteral75A25C2BE83FDFA0BB221B04CF3A4525E9F1203A;
 extern String_t* _stringLiteral77371EBC2D84DFF90E5FD1358DFA40AB94D93920;
-extern String_t* _stringLiteral77D12B97BA61FFCCB079E0DD2EF6809C1E957255;
 extern String_t* _stringLiteral781961BC81C25697841ECCE5D4D9DAD9F6B261C6;
 extern String_t* _stringLiteral7C4D33785DAA5C2370201FFA236B427AA37C9996;
+extern String_t* _stringLiteral7CB6EFB98BA5972A9B5090DC2E517FE14D12CB04;
+extern String_t* _stringLiteral814513A21468075BD4B7D44F3E2981132C6214C1;
 extern String_t* _stringLiteral8E54285CFC41A77DC6AF23178CC201C8A0C7FA60;
 extern String_t* _stringLiteral924A23119CEAA3C9BC0782972948AC8F65C78193;
 extern String_t* _stringLiteral92D9989B9E7EDF35CDAA9FE01DC36CF20A3476EF;
 extern String_t* _stringLiteral978F75E0698BA219DE24F838CC4BCEB79D8D0163;
 extern String_t* _stringLiteral9805AC55B9E584DBE26361DAAFBC0DADD634CE0A;
+extern String_t* _stringLiteral986F2ED15C79ED805000ECCD85519810B2DB2A93;
 extern String_t* _stringLiteral9A78211436F6D425EC38F5C4E02270801F3524F8;
 extern String_t* _stringLiteral9B286A82D61E16262C03E954B59AF89C982C8308;
 extern String_t* _stringLiteral9EBE43907E69A2FCE402E6EF94731B9B09AC09D1;
 extern String_t* _stringLiteralA69FD1A951C4B6C646992B2F8CD84CCAA6B382B3;
 extern String_t* _stringLiteralA79EA984C4186FB47F4F5D431390C66A2B08D039;
 extern String_t* _stringLiteralA91E4897CA9F429677AFC57ED00D90DE8D3C7001;
+extern String_t* _stringLiteralACA66D422486FBEA6F091DB58FF34ACCA5323CCF;
 extern String_t* _stringLiteralAE1B86951A163D0885F05B3FD743DF1045BA07A5;
+extern String_t* _stringLiteralAE902E64FFA01CAE1C59362708C8A15E1E76CAB6;
 extern String_t* _stringLiteralAFB3FC10898D2E7FEFC8E88C89E38D46DC7E5E2F;
+extern String_t* _stringLiteralB3DDF8D8E21A454CC53A99706BCF63A54E2C92B3;
 extern String_t* _stringLiteralB40BD825C866BFCE0122BB6B52982C2FA328767D;
+extern String_t* _stringLiteralB5321B1D1E8ECB0999835BE5CD69DF9FE39B8ABA;
+extern String_t* _stringLiteralB858CB282617FB0956D960215C8E84D1CCF909C6;
 extern String_t* _stringLiteralBD8A770F1B123F4C889784E9069EAA3D76724ECE;
 extern String_t* _stringLiteralBF21A9E8FBC5A3846FB05B4FA0859E0917B2202F;
+extern String_t* _stringLiteralC2B7DF6201FDD3362399091F0A29550DF3505B6A;
 extern String_t* _stringLiteralC4ACB1398FC901DE499C0A5927410EB3733DD8F6;
 extern String_t* _stringLiteralC4D081E5B8099F8DAFF1DEE346CACDBD2D5177F5;
 extern String_t* _stringLiteralC9676FD8E9D709F5F3BFFF46289CB1676A78C99C;
-extern String_t* _stringLiteralCA9FD0B2414177B79AC2EA7AD76252E4EF6DD65C;
 extern String_t* _stringLiteralCAB1283BE997E1412A790AF7C749C371CD62086E;
 extern String_t* _stringLiteralCBCD4F405598B17B773CA6C140F710DCFEE3AF31;
 extern String_t* _stringLiteralCD99426E1DF5926674D76369611D1512D2535774;
-extern String_t* _stringLiteralCDE1EB2FE366B2C13B8B9C56597730709C974A4C;
 extern String_t* _stringLiteralCF1AD600BAD94AA9A997B61D9569D46E3DCC5EE7;
+extern String_t* _stringLiteralD32E45A6EAAF5E311CC1971B69734F18DF1D2403;
+extern String_t* _stringLiteralD62692107CA63BAA9FB765B1344404D3D5A9F3BF;
+extern String_t* _stringLiteralD81F651171032FE421EA7D6DAC4484E0F54CE077;
 extern String_t* _stringLiteralD847EB0A6EC97CC9921F88B196872CF96005C5A9;
 extern String_t* _stringLiteralD85D73531E449DFC50EFAFF09A15700083F68759;
 extern String_t* _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709;
@@ -639,22 +671,35 @@ extern String_t* _stringLiteralE3B36486FA4754A07B231BCFECB196BC098D2B91;
 extern String_t* _stringLiteralEB3EF5B64FEA70627EE286D5AD0C95AF4DE65A7C;
 extern String_t* _stringLiteralEBD149AA42DF2C7170A5F9C8125CC974F3993211;
 extern String_t* _stringLiteralEF81042E1E86ACB765718EA37393A1292452BBCC;
-extern String_t* _stringLiteralFBAA357ACBCB9D448868F8AB1D86F48D4AAEFD11;
+extern String_t* _stringLiteralF106334790426732FBC8DB58C50A4F4D4CFC6ECB;
+extern String_t* _stringLiteralF315A6A539D1C0581326F753DFD66EF461ED53A7;
+extern String_t* _stringLiteralFA4A01053A330CFD3A678EFC8AFD7C2426888589;
+extern String_t* _stringLiteralFC02E199EAA2A6900AEC454AD22BAA13B6E8F8E6;
 extern const RuntimeMethod* Action_1_Invoke_m8C199C95ECF35C974DA12746E7E408FA36A66523_RuntimeMethod_var;
 extern const RuntimeMethod* Action_1_Invoke_mFF05822BE96997345A8FCC3A1C54F7E8D08E3276_RuntimeMethod_var;
 extern const RuntimeMethod* Action_1__ctor_m92FA084476B2BED9E68F7C879639A420BBEDD6A6_RuntimeMethod_var;
-extern const RuntimeMethod* AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86_TisU3CDoSignInAsyncU3Ed__7_t374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2_mA05BBE8EB654A813785564578AD6A2B3A5EEE8D2_RuntimeMethod_var;
-extern const RuntimeMethod* AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86_TisU3CPauseU3Ed__13_t7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3_m5D6BE89DCCED75301497F9998148B85EE8135C35_RuntimeMethod_var;
-extern const RuntimeMethod* AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86_TisU3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C_mD4115B988D4E229C42FF1CA2CAE29CC5518015E5_RuntimeMethod_var;
-extern const RuntimeMethod* AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86_TisU3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257_m803944ED22822FD2A20B37214871D084C007DD96_RuntimeMethod_var;
-extern const RuntimeMethod* AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483_TisU3CDoSignInAsyncU3Ed__7_t374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2_mBC8F8A17181CC5DD63F7ED3EB599D28FC6D087FE_RuntimeMethod_var;
-extern const RuntimeMethod* AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483_TisU3CPauseU3Ed__13_t7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3_mBEBCE726EC238FCE181D231A149EAD42A94CF250_RuntimeMethod_var;
-extern const RuntimeMethod* AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483_TisU3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C_m6A99DEB927FE2720A7A013F154D0D4775CAEEC27_RuntimeMethod_var;
-extern const RuntimeMethod* AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483_TisU3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257_m37C373317E7D5EE46545F0D2F7F86C264263E62A_RuntimeMethod_var;
-extern const RuntimeMethod* AsyncTaskMethodBuilder_Start_TisU3CDoSignInAsyncU3Ed__7_t374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2_m2C1F1C4A3C36AC3AF6A6933666FF50FB22562668_RuntimeMethod_var;
-extern const RuntimeMethod* AsyncTaskMethodBuilder_Start_TisU3CPauseU3Ed__13_t7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3_mBEF76E010AA1628E6C30816358ADF786CF5A22A9_RuntimeMethod_var;
-extern const RuntimeMethod* AsyncTaskMethodBuilder_Start_TisU3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C_mDD7D66C4C1749D6D33B99988591C77949AFCF88E_RuntimeMethod_var;
-extern const RuntimeMethod* AsyncTaskMethodBuilder_Start_TisU3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257_m7DC605016D0DA8AC47C4C811AAD78B6BBBCF2BD8_RuntimeMethod_var;
+extern const RuntimeMethod* AsyncTaskMethodBuilder_1_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86_TisU3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303_m6F091BA0BFBAFFACF7A021178E9ABD35A5DDAC3D_RuntimeMethod_var;
+extern const RuntimeMethod* AsyncTaskMethodBuilder_1_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483_TisU3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303_m3E1DDF8398F7C7A367A1EB213C076FC091852CC1_RuntimeMethod_var;
+extern const RuntimeMethod* AsyncTaskMethodBuilder_1_Create_m4CACDA7CCC96C431E5426E670B268CC6FDF86695_RuntimeMethod_var;
+extern const RuntimeMethod* AsyncTaskMethodBuilder_1_SetException_m7EC0D7D4B3431CA02400760ADA732A416EAEFB2D_RuntimeMethod_var;
+extern const RuntimeMethod* AsyncTaskMethodBuilder_1_SetResult_m44836E9953D99A304CCB8725A8E47453725FFE9B_RuntimeMethod_var;
+extern const RuntimeMethod* AsyncTaskMethodBuilder_1_SetStateMachine_m83945BA8843F53C1C9ED18D4B312FFF9A24BB9EB_RuntimeMethod_var;
+extern const RuntimeMethod* AsyncTaskMethodBuilder_1_Start_TisU3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303_m3C7FC54B6BF0CDB29DF944CD6956AEFFD576C856_RuntimeMethod_var;
+extern const RuntimeMethod* AsyncTaskMethodBuilder_1_get_Task_mB005567F7203FC44DD0AE1150FFC92706B8E2BB4_RuntimeMethod_var;
+extern const RuntimeMethod* AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86_TisU3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896_mCE850206315E5139E460F35715A25A6FED2BB57A_RuntimeMethod_var;
+extern const RuntimeMethod* AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86_TisU3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A_mF6C481713B4692EEA025E7B6471D6AC3CD5045C8_RuntimeMethod_var;
+extern const RuntimeMethod* AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483_TisU3CPauseAsyncU3Ed__29_tDEC85B2D09AA536D9ABA26C9948D506C674C0C84_m55D555D3DF52314F0D75BD409E3026F256D67C34_RuntimeMethod_var;
+extern const RuntimeMethod* AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483_TisU3CPlayAsyncU3Ed__24_tB410B49C7C0816D2A5DD701A483FF046FA5C7777_m388A695289A08AF6642AAAB510902EB9ADFD2425_RuntimeMethod_var;
+extern const RuntimeMethod* AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483_TisU3CPlayUrisAsyncU3Ed__26_tF7BEEEB5E918E76C3B6F702D718B1110F5033C78_mC18A337FD73A92592626FB0834CBA684C6C45DB4_RuntimeMethod_var;
+extern const RuntimeMethod* AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483_TisU3CRepeatAsyncU3Ed__30_tBE6907D98B9974628F6181F8DB4B506D3DF1B509_m16EA31FFBA6C8B1D27E06B62D8BED02D30C09D3B_RuntimeMethod_var;
+extern const RuntimeMethod* AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483_TisU3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896_m3EF55D1FCBF886F4A691B0C2B1D46E9B55196193_RuntimeMethod_var;
+extern const RuntimeMethod* AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483_TisU3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A_m73D75404FD39BD92B0C22BE96021C09BEFC0ACBF_RuntimeMethod_var;
+extern const RuntimeMethod* AsyncTaskMethodBuilder_Start_TisU3CPauseAsyncU3Ed__29_tDEC85B2D09AA536D9ABA26C9948D506C674C0C84_mEDA9CBFB05D8917D9366929232742BD2F5A92D7D_RuntimeMethod_var;
+extern const RuntimeMethod* AsyncTaskMethodBuilder_Start_TisU3CPlayAsyncU3Ed__24_tB410B49C7C0816D2A5DD701A483FF046FA5C7777_m237320EDBBD41A7593D1B06CFD9A57F7F9268C85_RuntimeMethod_var;
+extern const RuntimeMethod* AsyncTaskMethodBuilder_Start_TisU3CPlayUrisAsyncU3Ed__26_tF7BEEEB5E918E76C3B6F702D718B1110F5033C78_mD0E2F8936C3265082F8DA99A13006EFF541B15D6_RuntimeMethod_var;
+extern const RuntimeMethod* AsyncTaskMethodBuilder_Start_TisU3CRepeatAsyncU3Ed__30_tBE6907D98B9974628F6181F8DB4B506D3DF1B509_m8147E856AC14D1D91575708DBDE5105C1D55ABFB_RuntimeMethod_var;
+extern const RuntimeMethod* AsyncTaskMethodBuilder_Start_TisU3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896_m4902196730A0D1D385EE1EA23EC42608A70B41E5_RuntimeMethod_var;
+extern const RuntimeMethod* AsyncTaskMethodBuilder_Start_TisU3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A_m7BEAD734C24A2840A2C92C91ACC060BEA3013CCB_RuntimeMethod_var;
 extern const RuntimeMethod* Component_GetComponentInParent_TisCanvas_tBC28BF1DD8D8499A89B5781505833D3728CF8591_mD91B8112B5688783ACAEA46BB2C82C6EC4C4B33B_RuntimeMethod_var;
 extern const RuntimeMethod* Dictionary_2_Add_m04273DEA69EA43CCF49FEE87E80CD5E760FE0FB7_RuntimeMethod_var;
 extern const RuntimeMethod* Dictionary_2_Add_m96F0A15AFA91061BF6A27AE7DE7734BD5EA48322_RuntimeMethod_var;
@@ -675,7 +720,7 @@ extern const RuntimeMethod* Dictionary_2_set_Item_m597918251624A4BF2910432449014
 extern const RuntimeMethod* GameObject_AddComponent_TisUniWebViewNativeListener_tFED75D47CB6B119CB39D323A1B14EDE2BD5CDBDD_m9113CDBF5813015A5B852B62661579E1CAA9C54F_RuntimeMethod_var;
 extern const RuntimeMethod* GameObject_AddComponent_TisUniWebView_t70C5C5815FC5A948185238830E0AB8B221E34BBB_m333454E40F1E6B59EA21CB600871CEAEA814667A_RuntimeMethod_var;
 extern const RuntimeMethod* JsonUtility_FromJson_TisUniWebViewNativeResultPayload_t3A9397FEF18D4CB032484A81370D6BC52767730C_m404DF40C69B6F5FE7BB4D66307C862F7481B27BE_RuntimeMethod_var;
-extern const RuntimeMethod* SpotiftyLogin_U3CStartU3Eb__5_0_mD46D41AE18AE0DC76D7A602E85B3CB120EFA14B5_RuntimeMethod_var;
+extern const RuntimeMethod* SpotifyApi_U3CStartU3Eb__12_0_mA7A11EDC2688CDE8B598BC4632EF0A65097FA805_RuntimeMethod_var;
 extern const RuntimeMethod* TaskAwaiter_1_GetResult_m2CE622156E52C41B443C3751AB08398ECC3CA3F3_RuntimeMethod_var;
 extern const RuntimeMethod* TaskAwaiter_1_GetResult_m706665648BB29D83FD0C72CFA6279966143192A2_RuntimeMethod_var;
 extern const RuntimeMethod* TaskAwaiter_1_get_IsCompleted_m087FA74E453B58AB5AAD0A64BEDDB49070C6CE94_RuntimeMethod_var;
@@ -693,19 +738,35 @@ extern const uint32_t OrientationChangedDelegate_BeginInvoke_mE4F08537C45D015E99
 extern const uint32_t PageErrorReceivedDelegate_BeginInvoke_m848DD5531FAE3B228469C1D09959E7FB0CD6C2B6_MetadataUsageId;
 extern const uint32_t PageFinishedDelegate_BeginInvoke_mD4E0D96649C40B223B6BD0C2594AA4CF859E0102_MetadataUsageId;
 extern const uint32_t Spin_Update_m16D68BD7DB10ACF2E53EBCC005971DDB458FF22C_MetadataUsageId;
-extern const uint32_t SpotiftyLogin_CloseWebView_m75F327DD482F4839DE3B12A80AD3D5F41344DA21_MetadataUsageId;
-extern const uint32_t SpotiftyLogin_DoSignInAsync_m063D3947DA59864F4DABD1920AF41A83709B202B_MetadataUsageId;
-extern const uint32_t SpotiftyLogin_Pause_mEA99580E9179AD71470FD390C64FCF8A19FF080D_MetadataUsageId;
-extern const uint32_t SpotiftyLogin_Play_m2F4F3137D6BDFC563905895703C89CC520CAEE7B_MetadataUsageId;
-extern const uint32_t SpotiftyLogin_Start_mF0CB5B3938011A276846D921A9B50A031AAF059D_MetadataUsageId;
-extern const uint32_t SpotiftyLogin_Update_m76FC82398B78D0F3B41DE54E4DAF377D11F4E1F0_MetadataUsageId;
-extern const uint32_t SpotiftyLogin_WaitForCallback_m8728D0B5560ADC5D230DECB90AF9829E08BA8BF6_MetadataUsageId;
-extern const uint32_t SpotiftyLogin__ctor_m42C9C49987DD419902AB87EC0FEC3804E081FC25_MetadataUsageId;
-extern const uint32_t U3CDoSignInAsyncU3Ed__7_MoveNext_mA623832C4C1226069800A1B3F9874017B26A0EB4_MetadataUsageId;
-extern const uint32_t U3CPauseU3Ed__13_MoveNext_mE89FC1E787DB329D3706DA25D843D1377E23E7F8_MetadataUsageId;
-extern const uint32_t U3CPlayU3Ed__12_MoveNext_m92D0C2A3162EB0837371FA384EB8670F4AE3E429_MetadataUsageId;
+extern const uint32_t SpotifyApi_CloseWebView_m8B8E9DD1E8B936D1370D5EA2C22ECC650EC313E9_MetadataUsageId;
+extern const uint32_t SpotifyApi_GetDeviceIdQuery_m9C58CB91093EAA829734A7F04F950F725110C69E_MetadataUsageId;
+extern const uint32_t SpotifyApi_PauseAsync_mB065B364963D93EC6B3351665286BCF7ECD51A27_MetadataUsageId;
+extern const uint32_t SpotifyApi_Pause_m252C9A09573167A0F05891F8B9FC40B16A132ACB_MetadataUsageId;
+extern const uint32_t SpotifyApi_PlayAsync_mEB86600C559C735DCC952B2DA1EDAAB2436E1ADB_MetadataUsageId;
+extern const uint32_t SpotifyApi_PlayTrack_mB9935DADCFB89EFB157DD20F8EC6765314C7CA1C_MetadataUsageId;
+extern const uint32_t SpotifyApi_PlayUrisAsync_m7E158D3A3670EEF0893A512D3C4A2F7EC3E69078_MetadataUsageId;
+extern const uint32_t SpotifyApi_PlayUris_mACB2D59068277E3D10BEC6345D07A1F6D7E8C2FB_MetadataUsageId;
+extern const uint32_t SpotifyApi_Play_m83B465EC0829797C07F7A66FA86B4AB440254ED5_MetadataUsageId;
+extern const uint32_t SpotifyApi_RepeatAsync_m847A36DE9791182FC65569065F9D21C27661DC7E_MetadataUsageId;
+extern const uint32_t SpotifyApi_RepeatOff_mD07B88DE997E76F3CF89AF554FFC4A519576701B_MetadataUsageId;
+extern const uint32_t SpotifyApi_RepeatTrack_mCEC8D00975F32158785803B9EB407AC9F448CB10_MetadataUsageId;
+extern const uint32_t SpotifyApi_Repeat_m3A0BE694087A5D4A6EC7ABE085C4726353B882CA_MetadataUsageId;
+extern const uint32_t SpotifyApi_SendAsync_m5AD966C901F4391600A0955814F18F9A59C8D430_MetadataUsageId;
+extern const uint32_t SpotifyApi_SignInAsync_mB50ABB95EAFCB342E015322187A34C086F49B3F2_MetadataUsageId;
+extern const uint32_t SpotifyApi_SignIn_m41AF859A4217D51DB6FAE03E61C0E10866BC04FE_MetadataUsageId;
+extern const uint32_t SpotifyApi_Start_m05176A6081B6753046F08F31AB6E6F43CB4D1F15_MetadataUsageId;
+extern const uint32_t SpotifyApi_Update_m4A4260975F9DBEDC5919BB9A7C05C48258BF8586_MetadataUsageId;
+extern const uint32_t SpotifyApi_WaitForCallback_mCF7845CDED16C66D0641E30C3F63E00269F36FE1_MetadataUsageId;
+extern const uint32_t SpotifyApi__ctor_m6110C8193EBEAF4D56E218A1E059921ED9FF0AA8_MetadataUsageId;
+extern const uint32_t U3CPauseAsyncU3Ed__29_MoveNext_m901FBFBEC78C7F620D549AEF3D5B7DB78C71FA6F_MetadataUsageId;
+extern const uint32_t U3CPlayAsyncU3Ed__24_MoveNext_mF019B2A18E86907A55AC5EA8227F951FE3152B59_MetadataUsageId;
+extern const uint32_t U3CPlayUrisAsyncU3Ed__26_MoveNext_m1D53EECD7B7D798205493B7C042BC8F90E017FC1_MetadataUsageId;
+extern const uint32_t U3CRepeatAsyncU3Ed__30_MoveNext_m44002A5F00382C41B07B32F3D1A5A7045FDCAB19_MetadataUsageId;
+extern const uint32_t U3CSendAsyncU3Ed__18_MoveNext_m8600ECFE98273D8826DE4523DC47E6840622D348_MetadataUsageId;
+extern const uint32_t U3CSendAsyncU3Ed__18_SetStateMachine_m0245215E83678D57673618FA7FC5F7D256A3F02D_MetadataUsageId;
+extern const uint32_t U3CSignInAsyncU3Ed__14_MoveNext_mC70205135B57FFDD05C4593240F3210B5770757A_MetadataUsageId;
 extern const uint32_t U3CU3Ec__DisplayClass116_0_U3CGetHTMLContentU3Eb__0_m1F02C7561CC2EC79CB8EDCD44B2347B6337537A6_MetadataUsageId;
-extern const uint32_t U3CWaitForCallbackU3Ed__8_MoveNext_m57D5F79AD33858368B51F01D61A2A820F7716432_MetadataUsageId;
+extern const uint32_t U3CWaitForCallbackU3Ed__15_MoveNext_m6885AE5AA0B62C9850C182E0237F35BC76A5BA96_MetadataUsageId;
 extern const uint32_t UniWebViewAndroidStaticListener_Awake_m73D37CD41247F5214E73929115991F57F41AE6EC_MetadataUsageId;
 extern const uint32_t UniWebViewAndroidStaticListener_OnJavaMessage_m1F4138E7CC1D0BFF727E1DD4BD27E6016E2C1243_MetadataUsageId;
 extern const uint32_t UniWebViewHelper_PersistentDataURLForPath_mB598A5B27D9BA73209B60B852ED276D97E0B7506_MetadataUsageId;
@@ -1807,6 +1868,213 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // HTTPMESSAGEINVOKER_T7270E2BED3201CE430D6C4BECF923454AA526A72_H
+#ifndef HTTPMETHOD_TC762DCC43B5B2C08E8744B8C1C866D8E55CF6220_H
+#define HTTPMETHOD_TC762DCC43B5B2C08E8744B8C1C866D8E55CF6220_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// System.Net.Http.HttpMethod
+struct  HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220  : public RuntimeObject
+{
+public:
+	// System.String System.Net.Http.HttpMethod::method
+	String_t* ___method_7;
+
+public:
+	inline static int32_t get_offset_of_method_7() { return static_cast<int32_t>(offsetof(HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220, ___method_7)); }
+	inline String_t* get_method_7() const { return ___method_7; }
+	inline String_t** get_address_of_method_7() { return &___method_7; }
+	inline void set_method_7(String_t* value)
+	{
+		___method_7 = value;
+		Il2CppCodeGenWriteBarrier((&___method_7), value);
+	}
+};
+
+struct HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220_StaticFields
+{
+public:
+	// System.Net.Http.HttpMethod System.Net.Http.HttpMethod::delete_method
+	HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220 * ___delete_method_0;
+	// System.Net.Http.HttpMethod System.Net.Http.HttpMethod::get_method
+	HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220 * ___get_method_1;
+	// System.Net.Http.HttpMethod System.Net.Http.HttpMethod::head_method
+	HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220 * ___head_method_2;
+	// System.Net.Http.HttpMethod System.Net.Http.HttpMethod::options_method
+	HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220 * ___options_method_3;
+	// System.Net.Http.HttpMethod System.Net.Http.HttpMethod::post_method
+	HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220 * ___post_method_4;
+	// System.Net.Http.HttpMethod System.Net.Http.HttpMethod::put_method
+	HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220 * ___put_method_5;
+	// System.Net.Http.HttpMethod System.Net.Http.HttpMethod::trace_method
+	HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220 * ___trace_method_6;
+
+public:
+	inline static int32_t get_offset_of_delete_method_0() { return static_cast<int32_t>(offsetof(HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220_StaticFields, ___delete_method_0)); }
+	inline HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220 * get_delete_method_0() const { return ___delete_method_0; }
+	inline HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220 ** get_address_of_delete_method_0() { return &___delete_method_0; }
+	inline void set_delete_method_0(HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220 * value)
+	{
+		___delete_method_0 = value;
+		Il2CppCodeGenWriteBarrier((&___delete_method_0), value);
+	}
+
+	inline static int32_t get_offset_of_get_method_1() { return static_cast<int32_t>(offsetof(HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220_StaticFields, ___get_method_1)); }
+	inline HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220 * get_get_method_1() const { return ___get_method_1; }
+	inline HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220 ** get_address_of_get_method_1() { return &___get_method_1; }
+	inline void set_get_method_1(HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220 * value)
+	{
+		___get_method_1 = value;
+		Il2CppCodeGenWriteBarrier((&___get_method_1), value);
+	}
+
+	inline static int32_t get_offset_of_head_method_2() { return static_cast<int32_t>(offsetof(HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220_StaticFields, ___head_method_2)); }
+	inline HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220 * get_head_method_2() const { return ___head_method_2; }
+	inline HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220 ** get_address_of_head_method_2() { return &___head_method_2; }
+	inline void set_head_method_2(HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220 * value)
+	{
+		___head_method_2 = value;
+		Il2CppCodeGenWriteBarrier((&___head_method_2), value);
+	}
+
+	inline static int32_t get_offset_of_options_method_3() { return static_cast<int32_t>(offsetof(HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220_StaticFields, ___options_method_3)); }
+	inline HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220 * get_options_method_3() const { return ___options_method_3; }
+	inline HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220 ** get_address_of_options_method_3() { return &___options_method_3; }
+	inline void set_options_method_3(HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220 * value)
+	{
+		___options_method_3 = value;
+		Il2CppCodeGenWriteBarrier((&___options_method_3), value);
+	}
+
+	inline static int32_t get_offset_of_post_method_4() { return static_cast<int32_t>(offsetof(HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220_StaticFields, ___post_method_4)); }
+	inline HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220 * get_post_method_4() const { return ___post_method_4; }
+	inline HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220 ** get_address_of_post_method_4() { return &___post_method_4; }
+	inline void set_post_method_4(HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220 * value)
+	{
+		___post_method_4 = value;
+		Il2CppCodeGenWriteBarrier((&___post_method_4), value);
+	}
+
+	inline static int32_t get_offset_of_put_method_5() { return static_cast<int32_t>(offsetof(HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220_StaticFields, ___put_method_5)); }
+	inline HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220 * get_put_method_5() const { return ___put_method_5; }
+	inline HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220 ** get_address_of_put_method_5() { return &___put_method_5; }
+	inline void set_put_method_5(HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220 * value)
+	{
+		___put_method_5 = value;
+		Il2CppCodeGenWriteBarrier((&___put_method_5), value);
+	}
+
+	inline static int32_t get_offset_of_trace_method_6() { return static_cast<int32_t>(offsetof(HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220_StaticFields, ___trace_method_6)); }
+	inline HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220 * get_trace_method_6() const { return ___trace_method_6; }
+	inline HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220 ** get_address_of_trace_method_6() { return &___trace_method_6; }
+	inline void set_trace_method_6(HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220 * value)
+	{
+		___trace_method_6 = value;
+		Il2CppCodeGenWriteBarrier((&___trace_method_6), value);
+	}
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // HTTPMETHOD_TC762DCC43B5B2C08E8744B8C1C866D8E55CF6220_H
+#ifndef HTTPREQUESTMESSAGE_TBBC9EBC5D6C1B7E30F9927AABBDB65792FFB5427_H
+#define HTTPREQUESTMESSAGE_TBBC9EBC5D6C1B7E30F9927AABBDB65792FFB5427_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// System.Net.Http.HttpRequestMessage
+struct  HttpRequestMessage_tBBC9EBC5D6C1B7E30F9927AABBDB65792FFB5427  : public RuntimeObject
+{
+public:
+	// System.Net.Http.Headers.HttpRequestHeaders System.Net.Http.HttpRequestMessage::headers
+	HttpRequestHeaders_tD29E9D795891A7A0D4FE8C8AA7BF0E756FCA40D4 * ___headers_0;
+	// System.Net.Http.HttpMethod System.Net.Http.HttpRequestMessage::method
+	HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220 * ___method_1;
+	// System.Version System.Net.Http.HttpRequestMessage::version
+	Version_tDBE6876C59B6F56D4F8CAA03851177ABC6FE0DFD * ___version_2;
+	// System.Uri System.Net.Http.HttpRequestMessage::uri
+	Uri_t87E4A94B2901F5EEDD18AA72C3DB1B00E672D68E * ___uri_3;
+	// System.Boolean System.Net.Http.HttpRequestMessage::is_used
+	bool ___is_used_4;
+	// System.Boolean System.Net.Http.HttpRequestMessage::disposed
+	bool ___disposed_5;
+	// System.Net.Http.HttpContent System.Net.Http.HttpRequestMessage::<Content>k__BackingField
+	HttpContent_t678722F60CA151DD19AFCA917657BE24F111A41D * ___U3CContentU3Ek__BackingField_6;
+
+public:
+	inline static int32_t get_offset_of_headers_0() { return static_cast<int32_t>(offsetof(HttpRequestMessage_tBBC9EBC5D6C1B7E30F9927AABBDB65792FFB5427, ___headers_0)); }
+	inline HttpRequestHeaders_tD29E9D795891A7A0D4FE8C8AA7BF0E756FCA40D4 * get_headers_0() const { return ___headers_0; }
+	inline HttpRequestHeaders_tD29E9D795891A7A0D4FE8C8AA7BF0E756FCA40D4 ** get_address_of_headers_0() { return &___headers_0; }
+	inline void set_headers_0(HttpRequestHeaders_tD29E9D795891A7A0D4FE8C8AA7BF0E756FCA40D4 * value)
+	{
+		___headers_0 = value;
+		Il2CppCodeGenWriteBarrier((&___headers_0), value);
+	}
+
+	inline static int32_t get_offset_of_method_1() { return static_cast<int32_t>(offsetof(HttpRequestMessage_tBBC9EBC5D6C1B7E30F9927AABBDB65792FFB5427, ___method_1)); }
+	inline HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220 * get_method_1() const { return ___method_1; }
+	inline HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220 ** get_address_of_method_1() { return &___method_1; }
+	inline void set_method_1(HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220 * value)
+	{
+		___method_1 = value;
+		Il2CppCodeGenWriteBarrier((&___method_1), value);
+	}
+
+	inline static int32_t get_offset_of_version_2() { return static_cast<int32_t>(offsetof(HttpRequestMessage_tBBC9EBC5D6C1B7E30F9927AABBDB65792FFB5427, ___version_2)); }
+	inline Version_tDBE6876C59B6F56D4F8CAA03851177ABC6FE0DFD * get_version_2() const { return ___version_2; }
+	inline Version_tDBE6876C59B6F56D4F8CAA03851177ABC6FE0DFD ** get_address_of_version_2() { return &___version_2; }
+	inline void set_version_2(Version_tDBE6876C59B6F56D4F8CAA03851177ABC6FE0DFD * value)
+	{
+		___version_2 = value;
+		Il2CppCodeGenWriteBarrier((&___version_2), value);
+	}
+
+	inline static int32_t get_offset_of_uri_3() { return static_cast<int32_t>(offsetof(HttpRequestMessage_tBBC9EBC5D6C1B7E30F9927AABBDB65792FFB5427, ___uri_3)); }
+	inline Uri_t87E4A94B2901F5EEDD18AA72C3DB1B00E672D68E * get_uri_3() const { return ___uri_3; }
+	inline Uri_t87E4A94B2901F5EEDD18AA72C3DB1B00E672D68E ** get_address_of_uri_3() { return &___uri_3; }
+	inline void set_uri_3(Uri_t87E4A94B2901F5EEDD18AA72C3DB1B00E672D68E * value)
+	{
+		___uri_3 = value;
+		Il2CppCodeGenWriteBarrier((&___uri_3), value);
+	}
+
+	inline static int32_t get_offset_of_is_used_4() { return static_cast<int32_t>(offsetof(HttpRequestMessage_tBBC9EBC5D6C1B7E30F9927AABBDB65792FFB5427, ___is_used_4)); }
+	inline bool get_is_used_4() const { return ___is_used_4; }
+	inline bool* get_address_of_is_used_4() { return &___is_used_4; }
+	inline void set_is_used_4(bool value)
+	{
+		___is_used_4 = value;
+	}
+
+	inline static int32_t get_offset_of_disposed_5() { return static_cast<int32_t>(offsetof(HttpRequestMessage_tBBC9EBC5D6C1B7E30F9927AABBDB65792FFB5427, ___disposed_5)); }
+	inline bool get_disposed_5() const { return ___disposed_5; }
+	inline bool* get_address_of_disposed_5() { return &___disposed_5; }
+	inline void set_disposed_5(bool value)
+	{
+		___disposed_5 = value;
+	}
+
+	inline static int32_t get_offset_of_U3CContentU3Ek__BackingField_6() { return static_cast<int32_t>(offsetof(HttpRequestMessage_tBBC9EBC5D6C1B7E30F9927AABBDB65792FFB5427, ___U3CContentU3Ek__BackingField_6)); }
+	inline HttpContent_t678722F60CA151DD19AFCA917657BE24F111A41D * get_U3CContentU3Ek__BackingField_6() const { return ___U3CContentU3Ek__BackingField_6; }
+	inline HttpContent_t678722F60CA151DD19AFCA917657BE24F111A41D ** get_address_of_U3CContentU3Ek__BackingField_6() { return &___U3CContentU3Ek__BackingField_6; }
+	inline void set_U3CContentU3Ek__BackingField_6(HttpContent_t678722F60CA151DD19AFCA917657BE24F111A41D * value)
+	{
+		___U3CContentU3Ek__BackingField_6 = value;
+		Il2CppCodeGenWriteBarrier((&___U3CContentU3Ek__BackingField_6), value);
+	}
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // HTTPREQUESTMESSAGE_TBBC9EBC5D6C1B7E30F9927AABBDB65792FFB5427_H
 #ifndef MEMBERINFO_T_H
 #define MEMBERINFO_T_H
 #ifdef __clang__
@@ -1911,6 +2179,26 @@ struct ValueType_t4D0C27076F7C36E76190FB3328E232BCB1CD1FFF_marshaled_com
 {
 };
 #endif // VALUETYPE_T4D0C27076F7C36E76190FB3328E232BCB1CD1FFF_H
+#ifndef TASKHELPER_TE5232ABE9AE82BFD6109DF8FA5C5ACFB91ACA09C_H
+#define TASKHELPER_TE5232ABE9AE82BFD6109DF8FA5C5ACFB91ACA09C_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// TaskHelper
+struct  TaskHelper_tE5232ABE9AE82BFD6109DF8FA5C5ACFB91ACA09C  : public RuntimeObject
+{
+public:
+
+public:
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // TASKHELPER_TE5232ABE9AE82BFD6109DF8FA5C5ACFB91ACA09C_H
 #ifndef U3CU3EC__DISPLAYCLASS116_0_T5D96BEB4D5AA3C288B4CAC28F112569DE73F53C8_H
 #define U3CU3EC__DISPLAYCLASS116_0_T5D96BEB4D5AA3C288B4CAC28F112569DE73F53C8_H
 #ifdef __clang__
@@ -2739,6 +3027,63 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // SYSTEMEXCEPTION_T5380468142AA850BE4A341D7AF3EAB9C78746782_H
+#ifndef CANCELLATIONTOKEN_T9E956952F7F20908F2AE72EDF36D97E6C7DB63AB_H
+#define CANCELLATIONTOKEN_T9E956952F7F20908F2AE72EDF36D97E6C7DB63AB_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// System.Threading.CancellationToken
+struct  CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB 
+{
+public:
+	// System.Threading.CancellationTokenSource System.Threading.CancellationToken::m_source
+	CancellationTokenSource_tF480B7E74A032667AFBD31F0530D619FB43AD3FE * ___m_source_0;
+
+public:
+	inline static int32_t get_offset_of_m_source_0() { return static_cast<int32_t>(offsetof(CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB, ___m_source_0)); }
+	inline CancellationTokenSource_tF480B7E74A032667AFBD31F0530D619FB43AD3FE * get_m_source_0() const { return ___m_source_0; }
+	inline CancellationTokenSource_tF480B7E74A032667AFBD31F0530D619FB43AD3FE ** get_address_of_m_source_0() { return &___m_source_0; }
+	inline void set_m_source_0(CancellationTokenSource_tF480B7E74A032667AFBD31F0530D619FB43AD3FE * value)
+	{
+		___m_source_0 = value;
+		Il2CppCodeGenWriteBarrier((&___m_source_0), value);
+	}
+};
+
+struct CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB_StaticFields
+{
+public:
+	// System.Action`1<System.Object> System.Threading.CancellationToken::s_ActionToActionObjShunt
+	Action_1_t551A279CEADCF6EEAE8FA2B1E1E757D0D15290D0 * ___s_ActionToActionObjShunt_1;
+
+public:
+	inline static int32_t get_offset_of_s_ActionToActionObjShunt_1() { return static_cast<int32_t>(offsetof(CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB_StaticFields, ___s_ActionToActionObjShunt_1)); }
+	inline Action_1_t551A279CEADCF6EEAE8FA2B1E1E757D0D15290D0 * get_s_ActionToActionObjShunt_1() const { return ___s_ActionToActionObjShunt_1; }
+	inline Action_1_t551A279CEADCF6EEAE8FA2B1E1E757D0D15290D0 ** get_address_of_s_ActionToActionObjShunt_1() { return &___s_ActionToActionObjShunt_1; }
+	inline void set_s_ActionToActionObjShunt_1(Action_1_t551A279CEADCF6EEAE8FA2B1E1E757D0D15290D0 * value)
+	{
+		___s_ActionToActionObjShunt_1 = value;
+		Il2CppCodeGenWriteBarrier((&___s_ActionToActionObjShunt_1), value);
+	}
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+// Native definition for P/Invoke marshalling of System.Threading.CancellationToken
+struct CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB_marshaled_pinvoke
+{
+	CancellationTokenSource_tF480B7E74A032667AFBD31F0530D619FB43AD3FE * ___m_source_0;
+};
+// Native definition for COM marshalling of System.Threading.CancellationToken
+struct CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB_marshaled_com
+{
+	CancellationTokenSource_tF480B7E74A032667AFBD31F0530D619FB43AD3FE * ___m_source_0;
+};
+#endif // CANCELLATIONTOKEN_T9E956952F7F20908F2AE72EDF36D97E6C7DB63AB_H
 #ifndef VOID_T22962CB4C05B1D89B55A6E1139F0E87A90987017_H
 #define VOID_T22962CB4C05B1D89B55A6E1139F0E87A90987017_H
 #ifdef __clang__
@@ -3118,6 +3463,35 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // VECTOR3_TDCF05E21F632FE2BA260C06E0D10CA81513E6720_H
+#ifndef SPOTIFYREPEATMODE_T808DBF4667005FCB3A97FCDA876C84B196E5E083_H
+#define SPOTIFYREPEATMODE_T808DBF4667005FCB3A97FCDA876C84B196E5E083_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// SpotifyRepeatMode
+struct  SpotifyRepeatMode_t808DBF4667005FCB3A97FCDA876C84B196E5E083 
+{
+public:
+	// System.Int32 SpotifyRepeatMode::value__
+	int32_t ___value___2;
+
+public:
+	inline static int32_t get_offset_of_value___2() { return static_cast<int32_t>(offsetof(SpotifyRepeatMode_t808DBF4667005FCB3A97FCDA876C84B196E5E083, ___value___2)); }
+	inline int32_t get_value___2() const { return ___value___2; }
+	inline int32_t* get_address_of_value___2() { return &___value___2; }
+	inline void set_value___2(int32_t value)
+	{
+		___value___2 = value;
+	}
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // SPOTIFYREPEATMODE_T808DBF4667005FCB3A97FCDA876C84B196E5E083_H
 #ifndef DELEGATE_T_H
 #define DELEGATE_T_H
 #ifdef __clang__
@@ -3428,6 +3802,120 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // METHODINFO_T_H
+#ifndef ASYNCTASKMETHODBUILDER_1_T2A9513A084F4B19851B91EF1F22BB57776D35663_H
+#define ASYNCTASKMETHODBUILDER_1_T2A9513A084F4B19851B91EF1F22BB57776D35663_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<System.Object>
+struct  AsyncTaskMethodBuilder_1_t2A9513A084F4B19851B91EF1F22BB57776D35663 
+{
+public:
+	// System.Runtime.CompilerServices.AsyncMethodBuilderCore System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1::m_coreState
+	AsyncMethodBuilderCore_t4CE6C1E4B0621A6EC45CF6E0E8F1F633FFF9FF01  ___m_coreState_1;
+	// System.Threading.Tasks.Task`1<TResult> System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1::m_task
+	Task_1_tA56001ED5270173CA1432EDFCD84EABB1024BC09 * ___m_task_2;
+
+public:
+	inline static int32_t get_offset_of_m_coreState_1() { return static_cast<int32_t>(offsetof(AsyncTaskMethodBuilder_1_t2A9513A084F4B19851B91EF1F22BB57776D35663, ___m_coreState_1)); }
+	inline AsyncMethodBuilderCore_t4CE6C1E4B0621A6EC45CF6E0E8F1F633FFF9FF01  get_m_coreState_1() const { return ___m_coreState_1; }
+	inline AsyncMethodBuilderCore_t4CE6C1E4B0621A6EC45CF6E0E8F1F633FFF9FF01 * get_address_of_m_coreState_1() { return &___m_coreState_1; }
+	inline void set_m_coreState_1(AsyncMethodBuilderCore_t4CE6C1E4B0621A6EC45CF6E0E8F1F633FFF9FF01  value)
+	{
+		___m_coreState_1 = value;
+	}
+
+	inline static int32_t get_offset_of_m_task_2() { return static_cast<int32_t>(offsetof(AsyncTaskMethodBuilder_1_t2A9513A084F4B19851B91EF1F22BB57776D35663, ___m_task_2)); }
+	inline Task_1_tA56001ED5270173CA1432EDFCD84EABB1024BC09 * get_m_task_2() const { return ___m_task_2; }
+	inline Task_1_tA56001ED5270173CA1432EDFCD84EABB1024BC09 ** get_address_of_m_task_2() { return &___m_task_2; }
+	inline void set_m_task_2(Task_1_tA56001ED5270173CA1432EDFCD84EABB1024BC09 * value)
+	{
+		___m_task_2 = value;
+		Il2CppCodeGenWriteBarrier((&___m_task_2), value);
+	}
+};
+
+struct AsyncTaskMethodBuilder_1_t2A9513A084F4B19851B91EF1F22BB57776D35663_StaticFields
+{
+public:
+	// System.Threading.Tasks.Task`1<TResult> System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1::s_defaultResultTask
+	Task_1_tA56001ED5270173CA1432EDFCD84EABB1024BC09 * ___s_defaultResultTask_0;
+
+public:
+	inline static int32_t get_offset_of_s_defaultResultTask_0() { return static_cast<int32_t>(offsetof(AsyncTaskMethodBuilder_1_t2A9513A084F4B19851B91EF1F22BB57776D35663_StaticFields, ___s_defaultResultTask_0)); }
+	inline Task_1_tA56001ED5270173CA1432EDFCD84EABB1024BC09 * get_s_defaultResultTask_0() const { return ___s_defaultResultTask_0; }
+	inline Task_1_tA56001ED5270173CA1432EDFCD84EABB1024BC09 ** get_address_of_s_defaultResultTask_0() { return &___s_defaultResultTask_0; }
+	inline void set_s_defaultResultTask_0(Task_1_tA56001ED5270173CA1432EDFCD84EABB1024BC09 * value)
+	{
+		___s_defaultResultTask_0 = value;
+		Il2CppCodeGenWriteBarrier((&___s_defaultResultTask_0), value);
+	}
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // ASYNCTASKMETHODBUILDER_1_T2A9513A084F4B19851B91EF1F22BB57776D35663_H
+#ifndef ASYNCTASKMETHODBUILDER_1_TC7B1E45031A96D1F2363C0491EC79BBE740BC10C_H
+#define ASYNCTASKMETHODBUILDER_1_TC7B1E45031A96D1F2363C0491EC79BBE740BC10C_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<System.String>
+struct  AsyncTaskMethodBuilder_1_tC7B1E45031A96D1F2363C0491EC79BBE740BC10C 
+{
+public:
+	// System.Runtime.CompilerServices.AsyncMethodBuilderCore System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1::m_coreState
+	AsyncMethodBuilderCore_t4CE6C1E4B0621A6EC45CF6E0E8F1F633FFF9FF01  ___m_coreState_1;
+	// System.Threading.Tasks.Task`1<TResult> System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1::m_task
+	Task_1_t4A75FEC8F36C5D4F8793BB8C94E4DAA7457D0286 * ___m_task_2;
+
+public:
+	inline static int32_t get_offset_of_m_coreState_1() { return static_cast<int32_t>(offsetof(AsyncTaskMethodBuilder_1_tC7B1E45031A96D1F2363C0491EC79BBE740BC10C, ___m_coreState_1)); }
+	inline AsyncMethodBuilderCore_t4CE6C1E4B0621A6EC45CF6E0E8F1F633FFF9FF01  get_m_coreState_1() const { return ___m_coreState_1; }
+	inline AsyncMethodBuilderCore_t4CE6C1E4B0621A6EC45CF6E0E8F1F633FFF9FF01 * get_address_of_m_coreState_1() { return &___m_coreState_1; }
+	inline void set_m_coreState_1(AsyncMethodBuilderCore_t4CE6C1E4B0621A6EC45CF6E0E8F1F633FFF9FF01  value)
+	{
+		___m_coreState_1 = value;
+	}
+
+	inline static int32_t get_offset_of_m_task_2() { return static_cast<int32_t>(offsetof(AsyncTaskMethodBuilder_1_tC7B1E45031A96D1F2363C0491EC79BBE740BC10C, ___m_task_2)); }
+	inline Task_1_t4A75FEC8F36C5D4F8793BB8C94E4DAA7457D0286 * get_m_task_2() const { return ___m_task_2; }
+	inline Task_1_t4A75FEC8F36C5D4F8793BB8C94E4DAA7457D0286 ** get_address_of_m_task_2() { return &___m_task_2; }
+	inline void set_m_task_2(Task_1_t4A75FEC8F36C5D4F8793BB8C94E4DAA7457D0286 * value)
+	{
+		___m_task_2 = value;
+		Il2CppCodeGenWriteBarrier((&___m_task_2), value);
+	}
+};
+
+struct AsyncTaskMethodBuilder_1_tC7B1E45031A96D1F2363C0491EC79BBE740BC10C_StaticFields
+{
+public:
+	// System.Threading.Tasks.Task`1<TResult> System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1::s_defaultResultTask
+	Task_1_t4A75FEC8F36C5D4F8793BB8C94E4DAA7457D0286 * ___s_defaultResultTask_0;
+
+public:
+	inline static int32_t get_offset_of_s_defaultResultTask_0() { return static_cast<int32_t>(offsetof(AsyncTaskMethodBuilder_1_tC7B1E45031A96D1F2363C0491EC79BBE740BC10C_StaticFields, ___s_defaultResultTask_0)); }
+	inline Task_1_t4A75FEC8F36C5D4F8793BB8C94E4DAA7457D0286 * get_s_defaultResultTask_0() const { return ___s_defaultResultTask_0; }
+	inline Task_1_t4A75FEC8F36C5D4F8793BB8C94E4DAA7457D0286 ** get_address_of_s_defaultResultTask_0() { return &___s_defaultResultTask_0; }
+	inline void set_s_defaultResultTask_0(Task_1_t4A75FEC8F36C5D4F8793BB8C94E4DAA7457D0286 * value)
+	{
+		___s_defaultResultTask_0 = value;
+		Il2CppCodeGenWriteBarrier((&___s_defaultResultTask_0), value);
+	}
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // ASYNCTASKMETHODBUILDER_1_TC7B1E45031A96D1F2363C0491EC79BBE740BC10C_H
 #ifndef ASYNCTASKMETHODBUILDER_1_T66ED1808B26B8081A2804D6A750D13386E360BD9_H
 #define ASYNCTASKMETHODBUILDER_1_T66ED1808B26B8081A2804D6A750D13386E360BD9_H
 #ifdef __clang__
@@ -4155,6 +4643,141 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // SCREENORIENTATION_T4AB8E2E02033B0EAEA0260B05B1D88DA8058BB51_H
+#ifndef U3CSENDASYNCU3ED__18_TC88FAED363C09B2ADAAFD0E58095B20DCB7D3303_H
+#define U3CSENDASYNCU3ED__18_TC88FAED363C09B2ADAAFD0E58095B20DCB7D3303_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// SpotifyApi_<SendAsync>d__18
+struct  U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303 
+{
+public:
+	// System.Int32 SpotifyApi_<SendAsync>d__18::<>1__state
+	int32_t ___U3CU3E1__state_0;
+	// System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<System.String> SpotifyApi_<SendAsync>d__18::<>t__builder
+	AsyncTaskMethodBuilder_1_tC7B1E45031A96D1F2363C0491EC79BBE740BC10C  ___U3CU3Et__builder_1;
+	// SpotifyApi SpotifyApi_<SendAsync>d__18::<>4__this
+	SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * ___U3CU3E4__this_2;
+	// System.String SpotifyApi_<SendAsync>d__18::path
+	String_t* ___path_3;
+	// System.String SpotifyApi_<SendAsync>d__18::cmdName
+	String_t* ___cmdName_4;
+	// System.Net.Http.HttpMethod SpotifyApi_<SendAsync>d__18::method
+	HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220 * ___method_5;
+	// System.String SpotifyApi_<SendAsync>d__18::payload
+	String_t* ___payload_6;
+	// System.Threading.CancellationToken SpotifyApi_<SendAsync>d__18::cancel
+	CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  ___cancel_7;
+	// System.Net.Http.HttpResponseMessage SpotifyApi_<SendAsync>d__18::<r>5__2
+	HttpResponseMessage_t619DB9FDC8E63CDF2D0A314B61A4C6609A43F904 * ___U3CrU3E5__2_8;
+	// System.Runtime.CompilerServices.TaskAwaiter`1<System.Net.Http.HttpResponseMessage> SpotifyApi_<SendAsync>d__18::<>u__1
+	TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  ___U3CU3Eu__1_9;
+	// System.Runtime.CompilerServices.TaskAwaiter`1<System.String> SpotifyApi_<SendAsync>d__18::<>u__2
+	TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  ___U3CU3Eu__2_10;
+
+public:
+	inline static int32_t get_offset_of_U3CU3E1__state_0() { return static_cast<int32_t>(offsetof(U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303, ___U3CU3E1__state_0)); }
+	inline int32_t get_U3CU3E1__state_0() const { return ___U3CU3E1__state_0; }
+	inline int32_t* get_address_of_U3CU3E1__state_0() { return &___U3CU3E1__state_0; }
+	inline void set_U3CU3E1__state_0(int32_t value)
+	{
+		___U3CU3E1__state_0 = value;
+	}
+
+	inline static int32_t get_offset_of_U3CU3Et__builder_1() { return static_cast<int32_t>(offsetof(U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303, ___U3CU3Et__builder_1)); }
+	inline AsyncTaskMethodBuilder_1_tC7B1E45031A96D1F2363C0491EC79BBE740BC10C  get_U3CU3Et__builder_1() const { return ___U3CU3Et__builder_1; }
+	inline AsyncTaskMethodBuilder_1_tC7B1E45031A96D1F2363C0491EC79BBE740BC10C * get_address_of_U3CU3Et__builder_1() { return &___U3CU3Et__builder_1; }
+	inline void set_U3CU3Et__builder_1(AsyncTaskMethodBuilder_1_tC7B1E45031A96D1F2363C0491EC79BBE740BC10C  value)
+	{
+		___U3CU3Et__builder_1 = value;
+	}
+
+	inline static int32_t get_offset_of_U3CU3E4__this_2() { return static_cast<int32_t>(offsetof(U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303, ___U3CU3E4__this_2)); }
+	inline SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * get_U3CU3E4__this_2() const { return ___U3CU3E4__this_2; }
+	inline SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 ** get_address_of_U3CU3E4__this_2() { return &___U3CU3E4__this_2; }
+	inline void set_U3CU3E4__this_2(SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * value)
+	{
+		___U3CU3E4__this_2 = value;
+		Il2CppCodeGenWriteBarrier((&___U3CU3E4__this_2), value);
+	}
+
+	inline static int32_t get_offset_of_path_3() { return static_cast<int32_t>(offsetof(U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303, ___path_3)); }
+	inline String_t* get_path_3() const { return ___path_3; }
+	inline String_t** get_address_of_path_3() { return &___path_3; }
+	inline void set_path_3(String_t* value)
+	{
+		___path_3 = value;
+		Il2CppCodeGenWriteBarrier((&___path_3), value);
+	}
+
+	inline static int32_t get_offset_of_cmdName_4() { return static_cast<int32_t>(offsetof(U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303, ___cmdName_4)); }
+	inline String_t* get_cmdName_4() const { return ___cmdName_4; }
+	inline String_t** get_address_of_cmdName_4() { return &___cmdName_4; }
+	inline void set_cmdName_4(String_t* value)
+	{
+		___cmdName_4 = value;
+		Il2CppCodeGenWriteBarrier((&___cmdName_4), value);
+	}
+
+	inline static int32_t get_offset_of_method_5() { return static_cast<int32_t>(offsetof(U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303, ___method_5)); }
+	inline HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220 * get_method_5() const { return ___method_5; }
+	inline HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220 ** get_address_of_method_5() { return &___method_5; }
+	inline void set_method_5(HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220 * value)
+	{
+		___method_5 = value;
+		Il2CppCodeGenWriteBarrier((&___method_5), value);
+	}
+
+	inline static int32_t get_offset_of_payload_6() { return static_cast<int32_t>(offsetof(U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303, ___payload_6)); }
+	inline String_t* get_payload_6() const { return ___payload_6; }
+	inline String_t** get_address_of_payload_6() { return &___payload_6; }
+	inline void set_payload_6(String_t* value)
+	{
+		___payload_6 = value;
+		Il2CppCodeGenWriteBarrier((&___payload_6), value);
+	}
+
+	inline static int32_t get_offset_of_cancel_7() { return static_cast<int32_t>(offsetof(U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303, ___cancel_7)); }
+	inline CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  get_cancel_7() const { return ___cancel_7; }
+	inline CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB * get_address_of_cancel_7() { return &___cancel_7; }
+	inline void set_cancel_7(CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  value)
+	{
+		___cancel_7 = value;
+	}
+
+	inline static int32_t get_offset_of_U3CrU3E5__2_8() { return static_cast<int32_t>(offsetof(U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303, ___U3CrU3E5__2_8)); }
+	inline HttpResponseMessage_t619DB9FDC8E63CDF2D0A314B61A4C6609A43F904 * get_U3CrU3E5__2_8() const { return ___U3CrU3E5__2_8; }
+	inline HttpResponseMessage_t619DB9FDC8E63CDF2D0A314B61A4C6609A43F904 ** get_address_of_U3CrU3E5__2_8() { return &___U3CrU3E5__2_8; }
+	inline void set_U3CrU3E5__2_8(HttpResponseMessage_t619DB9FDC8E63CDF2D0A314B61A4C6609A43F904 * value)
+	{
+		___U3CrU3E5__2_8 = value;
+		Il2CppCodeGenWriteBarrier((&___U3CrU3E5__2_8), value);
+	}
+
+	inline static int32_t get_offset_of_U3CU3Eu__1_9() { return static_cast<int32_t>(offsetof(U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303, ___U3CU3Eu__1_9)); }
+	inline TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  get_U3CU3Eu__1_9() const { return ___U3CU3Eu__1_9; }
+	inline TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 * get_address_of_U3CU3Eu__1_9() { return &___U3CU3Eu__1_9; }
+	inline void set_U3CU3Eu__1_9(TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  value)
+	{
+		___U3CU3Eu__1_9 = value;
+	}
+
+	inline static int32_t get_offset_of_U3CU3Eu__2_10() { return static_cast<int32_t>(offsetof(U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303, ___U3CU3Eu__2_10)); }
+	inline TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  get_U3CU3Eu__2_10() const { return ___U3CU3Eu__2_10; }
+	inline TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 * get_address_of_U3CU3Eu__2_10() { return &___U3CU3Eu__2_10; }
+	inline void set_U3CU3Eu__2_10(TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  value)
+	{
+		___U3CU3Eu__2_10 = value;
+	}
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // U3CSENDASYNCU3ED__18_TC88FAED363C09B2ADAAFD0E58095B20DCB7D3303_H
 #ifndef MULTICASTDELEGATE_T_H
 #define MULTICASTDELEGATE_T_H
 #ifdef __clang__
@@ -4833,31 +5456,31 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // GAMEOBJECT_TBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F_H
-#ifndef U3CDOSIGNINASYNCU3ED__7_T374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2_H
-#define U3CDOSIGNINASYNCU3ED__7_T374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2_H
+#ifndef U3CPAUSEASYNCU3ED__29_TDEC85B2D09AA536D9ABA26C9948D506C674C0C84_H
+#define U3CPAUSEASYNCU3ED__29_TDEC85B2D09AA536D9ABA26C9948D506C674C0C84_H
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
-// SpotiftyLogin_<DoSignInAsync>d__7
-struct  U3CDoSignInAsyncU3Ed__7_t374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2 
+// SpotifyApi_<PauseAsync>d__29
+struct  U3CPauseAsyncU3Ed__29_tDEC85B2D09AA536D9ABA26C9948D506C674C0C84 
 {
 public:
-	// System.Int32 SpotiftyLogin_<DoSignInAsync>d__7::<>1__state
+	// System.Int32 SpotifyApi_<PauseAsync>d__29::<>1__state
 	int32_t ___U3CU3E1__state_0;
-	// System.Runtime.CompilerServices.AsyncTaskMethodBuilder SpotiftyLogin_<DoSignInAsync>d__7::<>t__builder
+	// System.Runtime.CompilerServices.AsyncTaskMethodBuilder SpotifyApi_<PauseAsync>d__29::<>t__builder
 	AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  ___U3CU3Et__builder_1;
-	// SpotiftyLogin SpotiftyLogin_<DoSignInAsync>d__7::<>4__this
-	SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * ___U3CU3E4__this_2;
-	// System.Runtime.CompilerServices.TaskAwaiter`1<System.Net.Http.HttpResponseMessage> SpotiftyLogin_<DoSignInAsync>d__7::<>u__1
-	TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  ___U3CU3Eu__1_3;
-	// System.Runtime.CompilerServices.TaskAwaiter`1<System.String> SpotiftyLogin_<DoSignInAsync>d__7::<>u__2
-	TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  ___U3CU3Eu__2_4;
+	// SpotifyApi SpotifyApi_<PauseAsync>d__29::<>4__this
+	SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * ___U3CU3E4__this_2;
+	// System.Threading.CancellationToken SpotifyApi_<PauseAsync>d__29::cancel
+	CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  ___cancel_3;
+	// System.Runtime.CompilerServices.TaskAwaiter`1<System.String> SpotifyApi_<PauseAsync>d__29::<>u__1
+	TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  ___U3CU3Eu__1_4;
 
 public:
-	inline static int32_t get_offset_of_U3CU3E1__state_0() { return static_cast<int32_t>(offsetof(U3CDoSignInAsyncU3Ed__7_t374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2, ___U3CU3E1__state_0)); }
+	inline static int32_t get_offset_of_U3CU3E1__state_0() { return static_cast<int32_t>(offsetof(U3CPauseAsyncU3Ed__29_tDEC85B2D09AA536D9ABA26C9948D506C674C0C84, ___U3CU3E1__state_0)); }
 	inline int32_t get_U3CU3E1__state_0() const { return ___U3CU3E1__state_0; }
 	inline int32_t* get_address_of_U3CU3E1__state_0() { return &___U3CU3E1__state_0; }
 	inline void set_U3CU3E1__state_0(int32_t value)
@@ -4865,7 +5488,7 @@ public:
 		___U3CU3E1__state_0 = value;
 	}
 
-	inline static int32_t get_offset_of_U3CU3Et__builder_1() { return static_cast<int32_t>(offsetof(U3CDoSignInAsyncU3Ed__7_t374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2, ___U3CU3Et__builder_1)); }
+	inline static int32_t get_offset_of_U3CU3Et__builder_1() { return static_cast<int32_t>(offsetof(U3CPauseAsyncU3Ed__29_tDEC85B2D09AA536D9ABA26C9948D506C674C0C84, ___U3CU3Et__builder_1)); }
 	inline AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  get_U3CU3Et__builder_1() const { return ___U3CU3Et__builder_1; }
 	inline AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * get_address_of_U3CU3Et__builder_1() { return &___U3CU3Et__builder_1; }
 	inline void set_U3CU3Et__builder_1(AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  value)
@@ -4873,61 +5496,61 @@ public:
 		___U3CU3Et__builder_1 = value;
 	}
 
-	inline static int32_t get_offset_of_U3CU3E4__this_2() { return static_cast<int32_t>(offsetof(U3CDoSignInAsyncU3Ed__7_t374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2, ___U3CU3E4__this_2)); }
-	inline SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * get_U3CU3E4__this_2() const { return ___U3CU3E4__this_2; }
-	inline SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B ** get_address_of_U3CU3E4__this_2() { return &___U3CU3E4__this_2; }
-	inline void set_U3CU3E4__this_2(SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * value)
+	inline static int32_t get_offset_of_U3CU3E4__this_2() { return static_cast<int32_t>(offsetof(U3CPauseAsyncU3Ed__29_tDEC85B2D09AA536D9ABA26C9948D506C674C0C84, ___U3CU3E4__this_2)); }
+	inline SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * get_U3CU3E4__this_2() const { return ___U3CU3E4__this_2; }
+	inline SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 ** get_address_of_U3CU3E4__this_2() { return &___U3CU3E4__this_2; }
+	inline void set_U3CU3E4__this_2(SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * value)
 	{
 		___U3CU3E4__this_2 = value;
 		Il2CppCodeGenWriteBarrier((&___U3CU3E4__this_2), value);
 	}
 
-	inline static int32_t get_offset_of_U3CU3Eu__1_3() { return static_cast<int32_t>(offsetof(U3CDoSignInAsyncU3Ed__7_t374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2, ___U3CU3Eu__1_3)); }
-	inline TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  get_U3CU3Eu__1_3() const { return ___U3CU3Eu__1_3; }
-	inline TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 * get_address_of_U3CU3Eu__1_3() { return &___U3CU3Eu__1_3; }
-	inline void set_U3CU3Eu__1_3(TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  value)
+	inline static int32_t get_offset_of_cancel_3() { return static_cast<int32_t>(offsetof(U3CPauseAsyncU3Ed__29_tDEC85B2D09AA536D9ABA26C9948D506C674C0C84, ___cancel_3)); }
+	inline CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  get_cancel_3() const { return ___cancel_3; }
+	inline CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB * get_address_of_cancel_3() { return &___cancel_3; }
+	inline void set_cancel_3(CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  value)
 	{
-		___U3CU3Eu__1_3 = value;
+		___cancel_3 = value;
 	}
 
-	inline static int32_t get_offset_of_U3CU3Eu__2_4() { return static_cast<int32_t>(offsetof(U3CDoSignInAsyncU3Ed__7_t374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2, ___U3CU3Eu__2_4)); }
-	inline TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  get_U3CU3Eu__2_4() const { return ___U3CU3Eu__2_4; }
-	inline TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 * get_address_of_U3CU3Eu__2_4() { return &___U3CU3Eu__2_4; }
-	inline void set_U3CU3Eu__2_4(TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  value)
+	inline static int32_t get_offset_of_U3CU3Eu__1_4() { return static_cast<int32_t>(offsetof(U3CPauseAsyncU3Ed__29_tDEC85B2D09AA536D9ABA26C9948D506C674C0C84, ___U3CU3Eu__1_4)); }
+	inline TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  get_U3CU3Eu__1_4() const { return ___U3CU3Eu__1_4; }
+	inline TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 * get_address_of_U3CU3Eu__1_4() { return &___U3CU3Eu__1_4; }
+	inline void set_U3CU3Eu__1_4(TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  value)
 	{
-		___U3CU3Eu__2_4 = value;
+		___U3CU3Eu__1_4 = value;
 	}
 };
 
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-#endif // U3CDOSIGNINASYNCU3ED__7_T374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2_H
-#ifndef U3CPAUSEU3ED__13_T7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3_H
-#define U3CPAUSEU3ED__13_T7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3_H
+#endif // U3CPAUSEASYNCU3ED__29_TDEC85B2D09AA536D9ABA26C9948D506C674C0C84_H
+#ifndef U3CPLAYASYNCU3ED__24_TB410B49C7C0816D2A5DD701A483FF046FA5C7777_H
+#define U3CPLAYASYNCU3ED__24_TB410B49C7C0816D2A5DD701A483FF046FA5C7777_H
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
-// SpotiftyLogin_<Pause>d__13
-struct  U3CPauseU3Ed__13_t7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3 
+// SpotifyApi_<PlayAsync>d__24
+struct  U3CPlayAsyncU3Ed__24_tB410B49C7C0816D2A5DD701A483FF046FA5C7777 
 {
 public:
-	// System.Int32 SpotiftyLogin_<Pause>d__13::<>1__state
+	// System.Int32 SpotifyApi_<PlayAsync>d__24::<>1__state
 	int32_t ___U3CU3E1__state_0;
-	// System.Runtime.CompilerServices.AsyncTaskMethodBuilder SpotiftyLogin_<Pause>d__13::<>t__builder
+	// System.Runtime.CompilerServices.AsyncTaskMethodBuilder SpotifyApi_<PlayAsync>d__24::<>t__builder
 	AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  ___U3CU3Et__builder_1;
-	// SpotiftyLogin SpotiftyLogin_<Pause>d__13::<>4__this
-	SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * ___U3CU3E4__this_2;
-	// System.Runtime.CompilerServices.TaskAwaiter`1<System.Net.Http.HttpResponseMessage> SpotiftyLogin_<Pause>d__13::<>u__1
-	TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  ___U3CU3Eu__1_3;
-	// System.Runtime.CompilerServices.TaskAwaiter`1<System.String> SpotiftyLogin_<Pause>d__13::<>u__2
-	TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  ___U3CU3Eu__2_4;
+	// SpotifyApi SpotifyApi_<PlayAsync>d__24::<>4__this
+	SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * ___U3CU3E4__this_2;
+	// System.Threading.CancellationToken SpotifyApi_<PlayAsync>d__24::cancel
+	CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  ___cancel_3;
+	// System.Runtime.CompilerServices.TaskAwaiter`1<System.String> SpotifyApi_<PlayAsync>d__24::<>u__1
+	TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  ___U3CU3Eu__1_4;
 
 public:
-	inline static int32_t get_offset_of_U3CU3E1__state_0() { return static_cast<int32_t>(offsetof(U3CPauseU3Ed__13_t7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3, ___U3CU3E1__state_0)); }
+	inline static int32_t get_offset_of_U3CU3E1__state_0() { return static_cast<int32_t>(offsetof(U3CPlayAsyncU3Ed__24_tB410B49C7C0816D2A5DD701A483FF046FA5C7777, ___U3CU3E1__state_0)); }
 	inline int32_t get_U3CU3E1__state_0() const { return ___U3CU3E1__state_0; }
 	inline int32_t* get_address_of_U3CU3E1__state_0() { return &___U3CU3E1__state_0; }
 	inline void set_U3CU3E1__state_0(int32_t value)
@@ -4935,7 +5558,7 @@ public:
 		___U3CU3E1__state_0 = value;
 	}
 
-	inline static int32_t get_offset_of_U3CU3Et__builder_1() { return static_cast<int32_t>(offsetof(U3CPauseU3Ed__13_t7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3, ___U3CU3Et__builder_1)); }
+	inline static int32_t get_offset_of_U3CU3Et__builder_1() { return static_cast<int32_t>(offsetof(U3CPlayAsyncU3Ed__24_tB410B49C7C0816D2A5DD701A483FF046FA5C7777, ___U3CU3Et__builder_1)); }
 	inline AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  get_U3CU3Et__builder_1() const { return ___U3CU3Et__builder_1; }
 	inline AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * get_address_of_U3CU3Et__builder_1() { return &___U3CU3Et__builder_1; }
 	inline void set_U3CU3Et__builder_1(AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  value)
@@ -4943,63 +5566,234 @@ public:
 		___U3CU3Et__builder_1 = value;
 	}
 
-	inline static int32_t get_offset_of_U3CU3E4__this_2() { return static_cast<int32_t>(offsetof(U3CPauseU3Ed__13_t7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3, ___U3CU3E4__this_2)); }
-	inline SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * get_U3CU3E4__this_2() const { return ___U3CU3E4__this_2; }
-	inline SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B ** get_address_of_U3CU3E4__this_2() { return &___U3CU3E4__this_2; }
-	inline void set_U3CU3E4__this_2(SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * value)
+	inline static int32_t get_offset_of_U3CU3E4__this_2() { return static_cast<int32_t>(offsetof(U3CPlayAsyncU3Ed__24_tB410B49C7C0816D2A5DD701A483FF046FA5C7777, ___U3CU3E4__this_2)); }
+	inline SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * get_U3CU3E4__this_2() const { return ___U3CU3E4__this_2; }
+	inline SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 ** get_address_of_U3CU3E4__this_2() { return &___U3CU3E4__this_2; }
+	inline void set_U3CU3E4__this_2(SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * value)
 	{
 		___U3CU3E4__this_2 = value;
 		Il2CppCodeGenWriteBarrier((&___U3CU3E4__this_2), value);
 	}
 
-	inline static int32_t get_offset_of_U3CU3Eu__1_3() { return static_cast<int32_t>(offsetof(U3CPauseU3Ed__13_t7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3, ___U3CU3Eu__1_3)); }
-	inline TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  get_U3CU3Eu__1_3() const { return ___U3CU3Eu__1_3; }
-	inline TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 * get_address_of_U3CU3Eu__1_3() { return &___U3CU3Eu__1_3; }
-	inline void set_U3CU3Eu__1_3(TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  value)
+	inline static int32_t get_offset_of_cancel_3() { return static_cast<int32_t>(offsetof(U3CPlayAsyncU3Ed__24_tB410B49C7C0816D2A5DD701A483FF046FA5C7777, ___cancel_3)); }
+	inline CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  get_cancel_3() const { return ___cancel_3; }
+	inline CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB * get_address_of_cancel_3() { return &___cancel_3; }
+	inline void set_cancel_3(CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  value)
 	{
-		___U3CU3Eu__1_3 = value;
+		___cancel_3 = value;
 	}
 
-	inline static int32_t get_offset_of_U3CU3Eu__2_4() { return static_cast<int32_t>(offsetof(U3CPauseU3Ed__13_t7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3, ___U3CU3Eu__2_4)); }
-	inline TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  get_U3CU3Eu__2_4() const { return ___U3CU3Eu__2_4; }
-	inline TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 * get_address_of_U3CU3Eu__2_4() { return &___U3CU3Eu__2_4; }
-	inline void set_U3CU3Eu__2_4(TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  value)
+	inline static int32_t get_offset_of_U3CU3Eu__1_4() { return static_cast<int32_t>(offsetof(U3CPlayAsyncU3Ed__24_tB410B49C7C0816D2A5DD701A483FF046FA5C7777, ___U3CU3Eu__1_4)); }
+	inline TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  get_U3CU3Eu__1_4() const { return ___U3CU3Eu__1_4; }
+	inline TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 * get_address_of_U3CU3Eu__1_4() { return &___U3CU3Eu__1_4; }
+	inline void set_U3CU3Eu__1_4(TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  value)
 	{
-		___U3CU3Eu__2_4 = value;
+		___U3CU3Eu__1_4 = value;
 	}
 };
 
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-#endif // U3CPAUSEU3ED__13_T7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3_H
-#ifndef U3CPLAYU3ED__12_T89A2EF9EF2800D6FB431D881738694CAE970089C_H
-#define U3CPLAYU3ED__12_T89A2EF9EF2800D6FB431D881738694CAE970089C_H
+#endif // U3CPLAYASYNCU3ED__24_TB410B49C7C0816D2A5DD701A483FF046FA5C7777_H
+#ifndef U3CPLAYURISASYNCU3ED__26_TF7BEEEB5E918E76C3B6F702D718B1110F5033C78_H
+#define U3CPLAYURISASYNCU3ED__26_TF7BEEEB5E918E76C3B6F702D718B1110F5033C78_H
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
-// SpotiftyLogin_<Play>d__12
-struct  U3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C 
+// SpotifyApi_<PlayUrisAsync>d__26
+struct  U3CPlayUrisAsyncU3Ed__26_tF7BEEEB5E918E76C3B6F702D718B1110F5033C78 
 {
 public:
-	// System.Int32 SpotiftyLogin_<Play>d__12::<>1__state
+	// System.Int32 SpotifyApi_<PlayUrisAsync>d__26::<>1__state
 	int32_t ___U3CU3E1__state_0;
-	// System.Runtime.CompilerServices.AsyncTaskMethodBuilder SpotiftyLogin_<Play>d__12::<>t__builder
+	// System.Runtime.CompilerServices.AsyncTaskMethodBuilder SpotifyApi_<PlayUrisAsync>d__26::<>t__builder
 	AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  ___U3CU3Et__builder_1;
-	// SpotiftyLogin SpotiftyLogin_<Play>d__12::<>4__this
-	SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * ___U3CU3E4__this_2;
-	// System.Net.Http.HttpResponseMessage SpotiftyLogin_<Play>d__12::<r>5__2
-	HttpResponseMessage_t619DB9FDC8E63CDF2D0A314B61A4C6609A43F904 * ___U3CrU3E5__2_3;
-	// System.Runtime.CompilerServices.TaskAwaiter`1<System.Net.Http.HttpResponseMessage> SpotiftyLogin_<Play>d__12::<>u__1
+	// SpotifyApi SpotifyApi_<PlayUrisAsync>d__26::<>4__this
+	SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * ___U3CU3E4__this_2;
+	// System.String[] SpotifyApi_<PlayUrisAsync>d__26::uris
+	StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* ___uris_3;
+	// System.Int32 SpotifyApi_<PlayUrisAsync>d__26::positionMs
+	int32_t ___positionMs_4;
+	// System.Threading.CancellationToken SpotifyApi_<PlayUrisAsync>d__26::cancel
+	CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  ___cancel_5;
+	// System.Runtime.CompilerServices.TaskAwaiter`1<System.String> SpotifyApi_<PlayUrisAsync>d__26::<>u__1
+	TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  ___U3CU3Eu__1_6;
+
+public:
+	inline static int32_t get_offset_of_U3CU3E1__state_0() { return static_cast<int32_t>(offsetof(U3CPlayUrisAsyncU3Ed__26_tF7BEEEB5E918E76C3B6F702D718B1110F5033C78, ___U3CU3E1__state_0)); }
+	inline int32_t get_U3CU3E1__state_0() const { return ___U3CU3E1__state_0; }
+	inline int32_t* get_address_of_U3CU3E1__state_0() { return &___U3CU3E1__state_0; }
+	inline void set_U3CU3E1__state_0(int32_t value)
+	{
+		___U3CU3E1__state_0 = value;
+	}
+
+	inline static int32_t get_offset_of_U3CU3Et__builder_1() { return static_cast<int32_t>(offsetof(U3CPlayUrisAsyncU3Ed__26_tF7BEEEB5E918E76C3B6F702D718B1110F5033C78, ___U3CU3Et__builder_1)); }
+	inline AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  get_U3CU3Et__builder_1() const { return ___U3CU3Et__builder_1; }
+	inline AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * get_address_of_U3CU3Et__builder_1() { return &___U3CU3Et__builder_1; }
+	inline void set_U3CU3Et__builder_1(AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  value)
+	{
+		___U3CU3Et__builder_1 = value;
+	}
+
+	inline static int32_t get_offset_of_U3CU3E4__this_2() { return static_cast<int32_t>(offsetof(U3CPlayUrisAsyncU3Ed__26_tF7BEEEB5E918E76C3B6F702D718B1110F5033C78, ___U3CU3E4__this_2)); }
+	inline SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * get_U3CU3E4__this_2() const { return ___U3CU3E4__this_2; }
+	inline SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 ** get_address_of_U3CU3E4__this_2() { return &___U3CU3E4__this_2; }
+	inline void set_U3CU3E4__this_2(SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * value)
+	{
+		___U3CU3E4__this_2 = value;
+		Il2CppCodeGenWriteBarrier((&___U3CU3E4__this_2), value);
+	}
+
+	inline static int32_t get_offset_of_uris_3() { return static_cast<int32_t>(offsetof(U3CPlayUrisAsyncU3Ed__26_tF7BEEEB5E918E76C3B6F702D718B1110F5033C78, ___uris_3)); }
+	inline StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* get_uris_3() const { return ___uris_3; }
+	inline StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E** get_address_of_uris_3() { return &___uris_3; }
+	inline void set_uris_3(StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* value)
+	{
+		___uris_3 = value;
+		Il2CppCodeGenWriteBarrier((&___uris_3), value);
+	}
+
+	inline static int32_t get_offset_of_positionMs_4() { return static_cast<int32_t>(offsetof(U3CPlayUrisAsyncU3Ed__26_tF7BEEEB5E918E76C3B6F702D718B1110F5033C78, ___positionMs_4)); }
+	inline int32_t get_positionMs_4() const { return ___positionMs_4; }
+	inline int32_t* get_address_of_positionMs_4() { return &___positionMs_4; }
+	inline void set_positionMs_4(int32_t value)
+	{
+		___positionMs_4 = value;
+	}
+
+	inline static int32_t get_offset_of_cancel_5() { return static_cast<int32_t>(offsetof(U3CPlayUrisAsyncU3Ed__26_tF7BEEEB5E918E76C3B6F702D718B1110F5033C78, ___cancel_5)); }
+	inline CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  get_cancel_5() const { return ___cancel_5; }
+	inline CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB * get_address_of_cancel_5() { return &___cancel_5; }
+	inline void set_cancel_5(CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  value)
+	{
+		___cancel_5 = value;
+	}
+
+	inline static int32_t get_offset_of_U3CU3Eu__1_6() { return static_cast<int32_t>(offsetof(U3CPlayUrisAsyncU3Ed__26_tF7BEEEB5E918E76C3B6F702D718B1110F5033C78, ___U3CU3Eu__1_6)); }
+	inline TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  get_U3CU3Eu__1_6() const { return ___U3CU3Eu__1_6; }
+	inline TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 * get_address_of_U3CU3Eu__1_6() { return &___U3CU3Eu__1_6; }
+	inline void set_U3CU3Eu__1_6(TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  value)
+	{
+		___U3CU3Eu__1_6 = value;
+	}
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // U3CPLAYURISASYNCU3ED__26_TF7BEEEB5E918E76C3B6F702D718B1110F5033C78_H
+#ifndef U3CREPEATASYNCU3ED__30_TBE6907D98B9974628F6181F8DB4B506D3DF1B509_H
+#define U3CREPEATASYNCU3ED__30_TBE6907D98B9974628F6181F8DB4B506D3DF1B509_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// SpotifyApi_<RepeatAsync>d__30
+struct  U3CRepeatAsyncU3Ed__30_tBE6907D98B9974628F6181F8DB4B506D3DF1B509 
+{
+public:
+	// System.Int32 SpotifyApi_<RepeatAsync>d__30::<>1__state
+	int32_t ___U3CU3E1__state_0;
+	// System.Runtime.CompilerServices.AsyncTaskMethodBuilder SpotifyApi_<RepeatAsync>d__30::<>t__builder
+	AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  ___U3CU3Et__builder_1;
+	// SpotifyApi SpotifyApi_<RepeatAsync>d__30::<>4__this
+	SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * ___U3CU3E4__this_2;
+	// SpotifyRepeatMode SpotifyApi_<RepeatAsync>d__30::mode
+	int32_t ___mode_3;
+	// System.Threading.CancellationToken SpotifyApi_<RepeatAsync>d__30::cancel
+	CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  ___cancel_4;
+	// System.Runtime.CompilerServices.TaskAwaiter`1<System.String> SpotifyApi_<RepeatAsync>d__30::<>u__1
+	TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  ___U3CU3Eu__1_5;
+
+public:
+	inline static int32_t get_offset_of_U3CU3E1__state_0() { return static_cast<int32_t>(offsetof(U3CRepeatAsyncU3Ed__30_tBE6907D98B9974628F6181F8DB4B506D3DF1B509, ___U3CU3E1__state_0)); }
+	inline int32_t get_U3CU3E1__state_0() const { return ___U3CU3E1__state_0; }
+	inline int32_t* get_address_of_U3CU3E1__state_0() { return &___U3CU3E1__state_0; }
+	inline void set_U3CU3E1__state_0(int32_t value)
+	{
+		___U3CU3E1__state_0 = value;
+	}
+
+	inline static int32_t get_offset_of_U3CU3Et__builder_1() { return static_cast<int32_t>(offsetof(U3CRepeatAsyncU3Ed__30_tBE6907D98B9974628F6181F8DB4B506D3DF1B509, ___U3CU3Et__builder_1)); }
+	inline AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  get_U3CU3Et__builder_1() const { return ___U3CU3Et__builder_1; }
+	inline AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * get_address_of_U3CU3Et__builder_1() { return &___U3CU3Et__builder_1; }
+	inline void set_U3CU3Et__builder_1(AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  value)
+	{
+		___U3CU3Et__builder_1 = value;
+	}
+
+	inline static int32_t get_offset_of_U3CU3E4__this_2() { return static_cast<int32_t>(offsetof(U3CRepeatAsyncU3Ed__30_tBE6907D98B9974628F6181F8DB4B506D3DF1B509, ___U3CU3E4__this_2)); }
+	inline SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * get_U3CU3E4__this_2() const { return ___U3CU3E4__this_2; }
+	inline SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 ** get_address_of_U3CU3E4__this_2() { return &___U3CU3E4__this_2; }
+	inline void set_U3CU3E4__this_2(SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * value)
+	{
+		___U3CU3E4__this_2 = value;
+		Il2CppCodeGenWriteBarrier((&___U3CU3E4__this_2), value);
+	}
+
+	inline static int32_t get_offset_of_mode_3() { return static_cast<int32_t>(offsetof(U3CRepeatAsyncU3Ed__30_tBE6907D98B9974628F6181F8DB4B506D3DF1B509, ___mode_3)); }
+	inline int32_t get_mode_3() const { return ___mode_3; }
+	inline int32_t* get_address_of_mode_3() { return &___mode_3; }
+	inline void set_mode_3(int32_t value)
+	{
+		___mode_3 = value;
+	}
+
+	inline static int32_t get_offset_of_cancel_4() { return static_cast<int32_t>(offsetof(U3CRepeatAsyncU3Ed__30_tBE6907D98B9974628F6181F8DB4B506D3DF1B509, ___cancel_4)); }
+	inline CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  get_cancel_4() const { return ___cancel_4; }
+	inline CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB * get_address_of_cancel_4() { return &___cancel_4; }
+	inline void set_cancel_4(CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  value)
+	{
+		___cancel_4 = value;
+	}
+
+	inline static int32_t get_offset_of_U3CU3Eu__1_5() { return static_cast<int32_t>(offsetof(U3CRepeatAsyncU3Ed__30_tBE6907D98B9974628F6181F8DB4B506D3DF1B509, ___U3CU3Eu__1_5)); }
+	inline TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  get_U3CU3Eu__1_5() const { return ___U3CU3Eu__1_5; }
+	inline TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 * get_address_of_U3CU3Eu__1_5() { return &___U3CU3Eu__1_5; }
+	inline void set_U3CU3Eu__1_5(TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  value)
+	{
+		___U3CU3Eu__1_5 = value;
+	}
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // U3CREPEATASYNCU3ED__30_TBE6907D98B9974628F6181F8DB4B506D3DF1B509_H
+#ifndef U3CSIGNINASYNCU3ED__14_T636917824EDF3D792DBEE5A007B28D06028DA896_H
+#define U3CSIGNINASYNCU3ED__14_T636917824EDF3D792DBEE5A007B28D06028DA896_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// SpotifyApi_<SignInAsync>d__14
+struct  U3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896 
+{
+public:
+	// System.Int32 SpotifyApi_<SignInAsync>d__14::<>1__state
+	int32_t ___U3CU3E1__state_0;
+	// System.Runtime.CompilerServices.AsyncTaskMethodBuilder SpotifyApi_<SignInAsync>d__14::<>t__builder
+	AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  ___U3CU3Et__builder_1;
+	// SpotifyApi SpotifyApi_<SignInAsync>d__14::<>4__this
+	SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * ___U3CU3E4__this_2;
+	// System.Threading.CancellationToken SpotifyApi_<SignInAsync>d__14::cancel
+	CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  ___cancel_3;
+	// System.Runtime.CompilerServices.TaskAwaiter`1<System.Net.Http.HttpResponseMessage> SpotifyApi_<SignInAsync>d__14::<>u__1
 	TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  ___U3CU3Eu__1_4;
-	// System.Runtime.CompilerServices.TaskAwaiter`1<System.String> SpotiftyLogin_<Play>d__12::<>u__2
+	// System.Runtime.CompilerServices.TaskAwaiter`1<System.String> SpotifyApi_<SignInAsync>d__14::<>u__2
 	TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  ___U3CU3Eu__2_5;
 
 public:
-	inline static int32_t get_offset_of_U3CU3E1__state_0() { return static_cast<int32_t>(offsetof(U3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C, ___U3CU3E1__state_0)); }
+	inline static int32_t get_offset_of_U3CU3E1__state_0() { return static_cast<int32_t>(offsetof(U3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896, ___U3CU3E1__state_0)); }
 	inline int32_t get_U3CU3E1__state_0() const { return ___U3CU3E1__state_0; }
 	inline int32_t* get_address_of_U3CU3E1__state_0() { return &___U3CU3E1__state_0; }
 	inline void set_U3CU3E1__state_0(int32_t value)
@@ -5007,7 +5801,7 @@ public:
 		___U3CU3E1__state_0 = value;
 	}
 
-	inline static int32_t get_offset_of_U3CU3Et__builder_1() { return static_cast<int32_t>(offsetof(U3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C, ___U3CU3Et__builder_1)); }
+	inline static int32_t get_offset_of_U3CU3Et__builder_1() { return static_cast<int32_t>(offsetof(U3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896, ___U3CU3Et__builder_1)); }
 	inline AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  get_U3CU3Et__builder_1() const { return ___U3CU3Et__builder_1; }
 	inline AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * get_address_of_U3CU3Et__builder_1() { return &___U3CU3Et__builder_1; }
 	inline void set_U3CU3Et__builder_1(AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  value)
@@ -5015,25 +5809,24 @@ public:
 		___U3CU3Et__builder_1 = value;
 	}
 
-	inline static int32_t get_offset_of_U3CU3E4__this_2() { return static_cast<int32_t>(offsetof(U3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C, ___U3CU3E4__this_2)); }
-	inline SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * get_U3CU3E4__this_2() const { return ___U3CU3E4__this_2; }
-	inline SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B ** get_address_of_U3CU3E4__this_2() { return &___U3CU3E4__this_2; }
-	inline void set_U3CU3E4__this_2(SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * value)
+	inline static int32_t get_offset_of_U3CU3E4__this_2() { return static_cast<int32_t>(offsetof(U3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896, ___U3CU3E4__this_2)); }
+	inline SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * get_U3CU3E4__this_2() const { return ___U3CU3E4__this_2; }
+	inline SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 ** get_address_of_U3CU3E4__this_2() { return &___U3CU3E4__this_2; }
+	inline void set_U3CU3E4__this_2(SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * value)
 	{
 		___U3CU3E4__this_2 = value;
 		Il2CppCodeGenWriteBarrier((&___U3CU3E4__this_2), value);
 	}
 
-	inline static int32_t get_offset_of_U3CrU3E5__2_3() { return static_cast<int32_t>(offsetof(U3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C, ___U3CrU3E5__2_3)); }
-	inline HttpResponseMessage_t619DB9FDC8E63CDF2D0A314B61A4C6609A43F904 * get_U3CrU3E5__2_3() const { return ___U3CrU3E5__2_3; }
-	inline HttpResponseMessage_t619DB9FDC8E63CDF2D0A314B61A4C6609A43F904 ** get_address_of_U3CrU3E5__2_3() { return &___U3CrU3E5__2_3; }
-	inline void set_U3CrU3E5__2_3(HttpResponseMessage_t619DB9FDC8E63CDF2D0A314B61A4C6609A43F904 * value)
+	inline static int32_t get_offset_of_cancel_3() { return static_cast<int32_t>(offsetof(U3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896, ___cancel_3)); }
+	inline CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  get_cancel_3() const { return ___cancel_3; }
+	inline CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB * get_address_of_cancel_3() { return &___cancel_3; }
+	inline void set_cancel_3(CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  value)
 	{
-		___U3CrU3E5__2_3 = value;
-		Il2CppCodeGenWriteBarrier((&___U3CrU3E5__2_3), value);
+		___cancel_3 = value;
 	}
 
-	inline static int32_t get_offset_of_U3CU3Eu__1_4() { return static_cast<int32_t>(offsetof(U3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C, ___U3CU3Eu__1_4)); }
+	inline static int32_t get_offset_of_U3CU3Eu__1_4() { return static_cast<int32_t>(offsetof(U3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896, ___U3CU3Eu__1_4)); }
 	inline TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  get_U3CU3Eu__1_4() const { return ___U3CU3Eu__1_4; }
 	inline TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 * get_address_of_U3CU3Eu__1_4() { return &___U3CU3Eu__1_4; }
 	inline void set_U3CU3Eu__1_4(TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  value)
@@ -5041,7 +5834,7 @@ public:
 		___U3CU3Eu__1_4 = value;
 	}
 
-	inline static int32_t get_offset_of_U3CU3Eu__2_5() { return static_cast<int32_t>(offsetof(U3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C, ___U3CU3Eu__2_5)); }
+	inline static int32_t get_offset_of_U3CU3Eu__2_5() { return static_cast<int32_t>(offsetof(U3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896, ___U3CU3Eu__2_5)); }
 	inline TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  get_U3CU3Eu__2_5() const { return ___U3CU3Eu__2_5; }
 	inline TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 * get_address_of_U3CU3Eu__2_5() { return &___U3CU3Eu__2_5; }
 	inline void set_U3CU3Eu__2_5(TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  value)
@@ -5053,36 +5846,36 @@ public:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-#endif // U3CPLAYU3ED__12_T89A2EF9EF2800D6FB431D881738694CAE970089C_H
-#ifndef U3CWAITFORCALLBACKU3ED__8_T6C2EC894924B135435275582071A1B6835524257_H
-#define U3CWAITFORCALLBACKU3ED__8_T6C2EC894924B135435275582071A1B6835524257_H
+#endif // U3CSIGNINASYNCU3ED__14_T636917824EDF3D792DBEE5A007B28D06028DA896_H
+#ifndef U3CWAITFORCALLBACKU3ED__15_T5DC4AB18EE9765DD43E51540F62A1B33A92FC85A_H
+#define U3CWAITFORCALLBACKU3ED__15_T5DC4AB18EE9765DD43E51540F62A1B33A92FC85A_H
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
-// SpotiftyLogin_<WaitForCallback>d__8
-struct  U3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257 
+// SpotifyApi_<WaitForCallback>d__15
+struct  U3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A 
 {
 public:
-	// System.Int32 SpotiftyLogin_<WaitForCallback>d__8::<>1__state
+	// System.Int32 SpotifyApi_<WaitForCallback>d__15::<>1__state
 	int32_t ___U3CU3E1__state_0;
-	// System.Runtime.CompilerServices.AsyncTaskMethodBuilder SpotiftyLogin_<WaitForCallback>d__8::<>t__builder
+	// System.Runtime.CompilerServices.AsyncTaskMethodBuilder SpotifyApi_<WaitForCallback>d__15::<>t__builder
 	AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  ___U3CU3Et__builder_1;
-	// System.Net.Http.HttpClient SpotiftyLogin_<WaitForCallback>d__8::client
-	HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7 * ___client_2;
-	// SpotiftyLogin SpotiftyLogin_<WaitForCallback>d__8::<>4__this
-	SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * ___U3CU3E4__this_3;
-	// System.String SpotiftyLogin_<WaitForCallback>d__8::state
-	String_t* ___state_4;
-	// System.Runtime.CompilerServices.TaskAwaiter`1<System.Net.Http.HttpResponseMessage> SpotiftyLogin_<WaitForCallback>d__8::<>u__1
+	// SpotifyApi SpotifyApi_<WaitForCallback>d__15::<>4__this
+	SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * ___U3CU3E4__this_2;
+	// System.String SpotifyApi_<WaitForCallback>d__15::state
+	String_t* ___state_3;
+	// System.Threading.CancellationToken SpotifyApi_<WaitForCallback>d__15::cancel
+	CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  ___cancel_4;
+	// System.Runtime.CompilerServices.TaskAwaiter`1<System.Net.Http.HttpResponseMessage> SpotifyApi_<WaitForCallback>d__15::<>u__1
 	TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  ___U3CU3Eu__1_5;
-	// System.Runtime.CompilerServices.TaskAwaiter`1<System.String> SpotiftyLogin_<WaitForCallback>d__8::<>u__2
+	// System.Runtime.CompilerServices.TaskAwaiter`1<System.String> SpotifyApi_<WaitForCallback>d__15::<>u__2
 	TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  ___U3CU3Eu__2_6;
 
 public:
-	inline static int32_t get_offset_of_U3CU3E1__state_0() { return static_cast<int32_t>(offsetof(U3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257, ___U3CU3E1__state_0)); }
+	inline static int32_t get_offset_of_U3CU3E1__state_0() { return static_cast<int32_t>(offsetof(U3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A, ___U3CU3E1__state_0)); }
 	inline int32_t get_U3CU3E1__state_0() const { return ___U3CU3E1__state_0; }
 	inline int32_t* get_address_of_U3CU3E1__state_0() { return &___U3CU3E1__state_0; }
 	inline void set_U3CU3E1__state_0(int32_t value)
@@ -5090,7 +5883,7 @@ public:
 		___U3CU3E1__state_0 = value;
 	}
 
-	inline static int32_t get_offset_of_U3CU3Et__builder_1() { return static_cast<int32_t>(offsetof(U3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257, ___U3CU3Et__builder_1)); }
+	inline static int32_t get_offset_of_U3CU3Et__builder_1() { return static_cast<int32_t>(offsetof(U3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A, ___U3CU3Et__builder_1)); }
 	inline AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  get_U3CU3Et__builder_1() const { return ___U3CU3Et__builder_1; }
 	inline AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * get_address_of_U3CU3Et__builder_1() { return &___U3CU3Et__builder_1; }
 	inline void set_U3CU3Et__builder_1(AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  value)
@@ -5098,34 +5891,33 @@ public:
 		___U3CU3Et__builder_1 = value;
 	}
 
-	inline static int32_t get_offset_of_client_2() { return static_cast<int32_t>(offsetof(U3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257, ___client_2)); }
-	inline HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7 * get_client_2() const { return ___client_2; }
-	inline HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7 ** get_address_of_client_2() { return &___client_2; }
-	inline void set_client_2(HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7 * value)
+	inline static int32_t get_offset_of_U3CU3E4__this_2() { return static_cast<int32_t>(offsetof(U3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A, ___U3CU3E4__this_2)); }
+	inline SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * get_U3CU3E4__this_2() const { return ___U3CU3E4__this_2; }
+	inline SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 ** get_address_of_U3CU3E4__this_2() { return &___U3CU3E4__this_2; }
+	inline void set_U3CU3E4__this_2(SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * value)
 	{
-		___client_2 = value;
-		Il2CppCodeGenWriteBarrier((&___client_2), value);
+		___U3CU3E4__this_2 = value;
+		Il2CppCodeGenWriteBarrier((&___U3CU3E4__this_2), value);
 	}
 
-	inline static int32_t get_offset_of_U3CU3E4__this_3() { return static_cast<int32_t>(offsetof(U3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257, ___U3CU3E4__this_3)); }
-	inline SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * get_U3CU3E4__this_3() const { return ___U3CU3E4__this_3; }
-	inline SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B ** get_address_of_U3CU3E4__this_3() { return &___U3CU3E4__this_3; }
-	inline void set_U3CU3E4__this_3(SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * value)
+	inline static int32_t get_offset_of_state_3() { return static_cast<int32_t>(offsetof(U3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A, ___state_3)); }
+	inline String_t* get_state_3() const { return ___state_3; }
+	inline String_t** get_address_of_state_3() { return &___state_3; }
+	inline void set_state_3(String_t* value)
 	{
-		___U3CU3E4__this_3 = value;
-		Il2CppCodeGenWriteBarrier((&___U3CU3E4__this_3), value);
+		___state_3 = value;
+		Il2CppCodeGenWriteBarrier((&___state_3), value);
 	}
 
-	inline static int32_t get_offset_of_state_4() { return static_cast<int32_t>(offsetof(U3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257, ___state_4)); }
-	inline String_t* get_state_4() const { return ___state_4; }
-	inline String_t** get_address_of_state_4() { return &___state_4; }
-	inline void set_state_4(String_t* value)
+	inline static int32_t get_offset_of_cancel_4() { return static_cast<int32_t>(offsetof(U3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A, ___cancel_4)); }
+	inline CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  get_cancel_4() const { return ___cancel_4; }
+	inline CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB * get_address_of_cancel_4() { return &___cancel_4; }
+	inline void set_cancel_4(CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  value)
 	{
-		___state_4 = value;
-		Il2CppCodeGenWriteBarrier((&___state_4), value);
+		___cancel_4 = value;
 	}
 
-	inline static int32_t get_offset_of_U3CU3Eu__1_5() { return static_cast<int32_t>(offsetof(U3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257, ___U3CU3Eu__1_5)); }
+	inline static int32_t get_offset_of_U3CU3Eu__1_5() { return static_cast<int32_t>(offsetof(U3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A, ___U3CU3Eu__1_5)); }
 	inline TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  get_U3CU3Eu__1_5() const { return ___U3CU3Eu__1_5; }
 	inline TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 * get_address_of_U3CU3Eu__1_5() { return &___U3CU3Eu__1_5; }
 	inline void set_U3CU3Eu__1_5(TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  value)
@@ -5133,7 +5925,7 @@ public:
 		___U3CU3Eu__1_5 = value;
 	}
 
-	inline static int32_t get_offset_of_U3CU3Eu__2_6() { return static_cast<int32_t>(offsetof(U3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257, ___U3CU3Eu__2_6)); }
+	inline static int32_t get_offset_of_U3CU3Eu__2_6() { return static_cast<int32_t>(offsetof(U3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A, ___U3CU3Eu__2_6)); }
 	inline TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  get_U3CU3Eu__2_6() const { return ___U3CU3Eu__2_6; }
 	inline TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 * get_address_of_U3CU3Eu__2_6() { return &___U3CU3Eu__2_6; }
 	inline void set_U3CU3Eu__2_6(TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  value)
@@ -5145,7 +5937,7 @@ public:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-#endif // U3CWAITFORCALLBACKU3ED__8_T6C2EC894924B135435275582071A1B6835524257_H
+#endif // U3CWAITFORCALLBACKU3ED__15_T5DC4AB18EE9765DD43E51540F62A1B33A92FC85A_H
 #ifndef ACTION_T591D2A86165F896B4B800BB5C25CE18672A55579_H
 #define ACTION_T591D2A86165F896B4B800BB5C25CE18672A55579_H
 #ifdef __clang__
@@ -5255,26 +6047,6 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // HTTPREQUESTHEADERS_TD29E9D795891A7A0D4FE8C8AA7BF0E756FCA40D4_H
-#ifndef HTTPRESPONSEHEADERS_T51F7C46C9CE47E3B424A6137CE8F5BCA4E2B1D59_H
-#define HTTPRESPONSEHEADERS_T51F7C46C9CE47E3B424A6137CE8F5BCA4E2B1D59_H
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-
-// System.Net.Http.Headers.HttpResponseHeaders
-struct  HttpResponseHeaders_t51F7C46C9CE47E3B424A6137CE8F5BCA4E2B1D59  : public HttpHeaders_tF0E0E01200BD0D8141489FB370D60A9F4DBF42A1
-{
-public:
-
-public:
-};
-
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#endif // HTTPRESPONSEHEADERS_T51F7C46C9CE47E3B424A6137CE8F5BCA4E2B1D59_H
 #ifndef KEYCODERECEIVEDDELEGATE_TA8930CEAF69FA713516FC48F6899262B9E8E1C6C_H
 #define KEYCODERECEIVEDDELEGATE_TA8930CEAF69FA713516FC48F6899262B9E8E1C6C_H
 #ifdef __clang__
@@ -5688,90 +6460,142 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // SPIN_TD4DFECB24A365A6C4C12E9848949153EDA1F1EBB_H
-#ifndef SPOTIFTYLOGIN_T4A08281A3B749813DFC009D01820F3E8F332CD1B_H
-#define SPOTIFTYLOGIN_T4A08281A3B749813DFC009D01820F3E8F332CD1B_H
+#ifndef SPOTIFYAPI_T26EE204B4409E86787EA330E26A6479E5826D4F2_H
+#define SPOTIFYAPI_T26EE204B4409E86787EA330E26A6479E5826D4F2_H
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
-// SpotiftyLogin
-struct  SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B  : public MonoBehaviour_t4A60845CF505405AF8BE8C61CC07F75CADEF6429
+// SpotifyApi
+struct  SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2  : public MonoBehaviour_t4A60845CF505405AF8BE8C61CC07F75CADEF6429
 {
 public:
-	// UniWebView SpotiftyLogin::webView
-	UniWebView_t70C5C5815FC5A948185238830E0AB8B221E34BBB * ___webView_4;
-	// System.String SpotiftyLogin::Token
-	String_t* ___Token_5;
-	// System.String SpotiftyLogin::ApiBaseUrl
-	String_t* ___ApiBaseUrl_6;
-	// System.Net.Http.HttpClient SpotiftyLogin::client
-	HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7 * ___client_7;
-	// System.Boolean SpotiftyLogin::IsPaused
-	bool ___IsPaused_8;
-	// System.String SpotiftyLogin::DeviceId
-	String_t* ___DeviceId_9;
+	// System.String SpotifyApi::Token
+	String_t* ___Token_4;
+	// System.String SpotifyApi::ApiBaseUrl
+	String_t* ___ApiBaseUrl_5;
+	// System.String SpotifyApi::SpotifyApiBaseUrl
+	String_t* ___SpotifyApiBaseUrl_6;
+	// System.Boolean SpotifyApi::AlwaysShowSignIn
+	bool ___AlwaysShowSignIn_7;
+	// System.Boolean SpotifyApi::UseKeyboard
+	bool ___UseKeyboard_8;
+	// System.Boolean SpotifyApi::UseSystemOpen
+	bool ___UseSystemOpen_9;
+	// System.String SpotifyApi::DeviceId
+	String_t* ___DeviceId_10;
+	// System.Net.Http.HttpClient SpotifyApi::client
+	HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7 * ___client_11;
+	// UniWebView SpotifyApi::webView
+	UniWebView_t70C5C5815FC5A948185238830E0AB8B221E34BBB * ___webView_12;
+	// System.Boolean SpotifyApi::IsPaused
+	bool ___IsPaused_13;
+	// System.String[] SpotifyApi::Scopes
+	StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* ___Scopes_14;
 
 public:
-	inline static int32_t get_offset_of_webView_4() { return static_cast<int32_t>(offsetof(SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B, ___webView_4)); }
-	inline UniWebView_t70C5C5815FC5A948185238830E0AB8B221E34BBB * get_webView_4() const { return ___webView_4; }
-	inline UniWebView_t70C5C5815FC5A948185238830E0AB8B221E34BBB ** get_address_of_webView_4() { return &___webView_4; }
-	inline void set_webView_4(UniWebView_t70C5C5815FC5A948185238830E0AB8B221E34BBB * value)
+	inline static int32_t get_offset_of_Token_4() { return static_cast<int32_t>(offsetof(SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2, ___Token_4)); }
+	inline String_t* get_Token_4() const { return ___Token_4; }
+	inline String_t** get_address_of_Token_4() { return &___Token_4; }
+	inline void set_Token_4(String_t* value)
 	{
-		___webView_4 = value;
-		Il2CppCodeGenWriteBarrier((&___webView_4), value);
+		___Token_4 = value;
+		Il2CppCodeGenWriteBarrier((&___Token_4), value);
 	}
 
-	inline static int32_t get_offset_of_Token_5() { return static_cast<int32_t>(offsetof(SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B, ___Token_5)); }
-	inline String_t* get_Token_5() const { return ___Token_5; }
-	inline String_t** get_address_of_Token_5() { return &___Token_5; }
-	inline void set_Token_5(String_t* value)
+	inline static int32_t get_offset_of_ApiBaseUrl_5() { return static_cast<int32_t>(offsetof(SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2, ___ApiBaseUrl_5)); }
+	inline String_t* get_ApiBaseUrl_5() const { return ___ApiBaseUrl_5; }
+	inline String_t** get_address_of_ApiBaseUrl_5() { return &___ApiBaseUrl_5; }
+	inline void set_ApiBaseUrl_5(String_t* value)
 	{
-		___Token_5 = value;
-		Il2CppCodeGenWriteBarrier((&___Token_5), value);
+		___ApiBaseUrl_5 = value;
+		Il2CppCodeGenWriteBarrier((&___ApiBaseUrl_5), value);
 	}
 
-	inline static int32_t get_offset_of_ApiBaseUrl_6() { return static_cast<int32_t>(offsetof(SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B, ___ApiBaseUrl_6)); }
-	inline String_t* get_ApiBaseUrl_6() const { return ___ApiBaseUrl_6; }
-	inline String_t** get_address_of_ApiBaseUrl_6() { return &___ApiBaseUrl_6; }
-	inline void set_ApiBaseUrl_6(String_t* value)
+	inline static int32_t get_offset_of_SpotifyApiBaseUrl_6() { return static_cast<int32_t>(offsetof(SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2, ___SpotifyApiBaseUrl_6)); }
+	inline String_t* get_SpotifyApiBaseUrl_6() const { return ___SpotifyApiBaseUrl_6; }
+	inline String_t** get_address_of_SpotifyApiBaseUrl_6() { return &___SpotifyApiBaseUrl_6; }
+	inline void set_SpotifyApiBaseUrl_6(String_t* value)
 	{
-		___ApiBaseUrl_6 = value;
-		Il2CppCodeGenWriteBarrier((&___ApiBaseUrl_6), value);
+		___SpotifyApiBaseUrl_6 = value;
+		Il2CppCodeGenWriteBarrier((&___SpotifyApiBaseUrl_6), value);
 	}
 
-	inline static int32_t get_offset_of_client_7() { return static_cast<int32_t>(offsetof(SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B, ___client_7)); }
-	inline HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7 * get_client_7() const { return ___client_7; }
-	inline HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7 ** get_address_of_client_7() { return &___client_7; }
-	inline void set_client_7(HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7 * value)
+	inline static int32_t get_offset_of_AlwaysShowSignIn_7() { return static_cast<int32_t>(offsetof(SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2, ___AlwaysShowSignIn_7)); }
+	inline bool get_AlwaysShowSignIn_7() const { return ___AlwaysShowSignIn_7; }
+	inline bool* get_address_of_AlwaysShowSignIn_7() { return &___AlwaysShowSignIn_7; }
+	inline void set_AlwaysShowSignIn_7(bool value)
 	{
-		___client_7 = value;
-		Il2CppCodeGenWriteBarrier((&___client_7), value);
+		___AlwaysShowSignIn_7 = value;
 	}
 
-	inline static int32_t get_offset_of_IsPaused_8() { return static_cast<int32_t>(offsetof(SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B, ___IsPaused_8)); }
-	inline bool get_IsPaused_8() const { return ___IsPaused_8; }
-	inline bool* get_address_of_IsPaused_8() { return &___IsPaused_8; }
-	inline void set_IsPaused_8(bool value)
+	inline static int32_t get_offset_of_UseKeyboard_8() { return static_cast<int32_t>(offsetof(SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2, ___UseKeyboard_8)); }
+	inline bool get_UseKeyboard_8() const { return ___UseKeyboard_8; }
+	inline bool* get_address_of_UseKeyboard_8() { return &___UseKeyboard_8; }
+	inline void set_UseKeyboard_8(bool value)
 	{
-		___IsPaused_8 = value;
+		___UseKeyboard_8 = value;
 	}
 
-	inline static int32_t get_offset_of_DeviceId_9() { return static_cast<int32_t>(offsetof(SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B, ___DeviceId_9)); }
-	inline String_t* get_DeviceId_9() const { return ___DeviceId_9; }
-	inline String_t** get_address_of_DeviceId_9() { return &___DeviceId_9; }
-	inline void set_DeviceId_9(String_t* value)
+	inline static int32_t get_offset_of_UseSystemOpen_9() { return static_cast<int32_t>(offsetof(SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2, ___UseSystemOpen_9)); }
+	inline bool get_UseSystemOpen_9() const { return ___UseSystemOpen_9; }
+	inline bool* get_address_of_UseSystemOpen_9() { return &___UseSystemOpen_9; }
+	inline void set_UseSystemOpen_9(bool value)
 	{
-		___DeviceId_9 = value;
-		Il2CppCodeGenWriteBarrier((&___DeviceId_9), value);
+		___UseSystemOpen_9 = value;
+	}
+
+	inline static int32_t get_offset_of_DeviceId_10() { return static_cast<int32_t>(offsetof(SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2, ___DeviceId_10)); }
+	inline String_t* get_DeviceId_10() const { return ___DeviceId_10; }
+	inline String_t** get_address_of_DeviceId_10() { return &___DeviceId_10; }
+	inline void set_DeviceId_10(String_t* value)
+	{
+		___DeviceId_10 = value;
+		Il2CppCodeGenWriteBarrier((&___DeviceId_10), value);
+	}
+
+	inline static int32_t get_offset_of_client_11() { return static_cast<int32_t>(offsetof(SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2, ___client_11)); }
+	inline HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7 * get_client_11() const { return ___client_11; }
+	inline HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7 ** get_address_of_client_11() { return &___client_11; }
+	inline void set_client_11(HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7 * value)
+	{
+		___client_11 = value;
+		Il2CppCodeGenWriteBarrier((&___client_11), value);
+	}
+
+	inline static int32_t get_offset_of_webView_12() { return static_cast<int32_t>(offsetof(SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2, ___webView_12)); }
+	inline UniWebView_t70C5C5815FC5A948185238830E0AB8B221E34BBB * get_webView_12() const { return ___webView_12; }
+	inline UniWebView_t70C5C5815FC5A948185238830E0AB8B221E34BBB ** get_address_of_webView_12() { return &___webView_12; }
+	inline void set_webView_12(UniWebView_t70C5C5815FC5A948185238830E0AB8B221E34BBB * value)
+	{
+		___webView_12 = value;
+		Il2CppCodeGenWriteBarrier((&___webView_12), value);
+	}
+
+	inline static int32_t get_offset_of_IsPaused_13() { return static_cast<int32_t>(offsetof(SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2, ___IsPaused_13)); }
+	inline bool get_IsPaused_13() const { return ___IsPaused_13; }
+	inline bool* get_address_of_IsPaused_13() { return &___IsPaused_13; }
+	inline void set_IsPaused_13(bool value)
+	{
+		___IsPaused_13 = value;
+	}
+
+	inline static int32_t get_offset_of_Scopes_14() { return static_cast<int32_t>(offsetof(SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2, ___Scopes_14)); }
+	inline StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* get_Scopes_14() const { return ___Scopes_14; }
+	inline StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E** get_address_of_Scopes_14() { return &___Scopes_14; }
+	inline void set_Scopes_14(StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* value)
+	{
+		___Scopes_14 = value;
+		Il2CppCodeGenWriteBarrier((&___Scopes_14), value);
 	}
 };
 
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-#endif // SPOTIFTYLOGIN_T4A08281A3B749813DFC009D01820F3E8F332CD1B_H
+#endif // SPOTIFYAPI_T26EE204B4409E86787EA330E26A6479E5826D4F2_H
 #ifndef UNIWEBVIEW_T70C5C5815FC5A948185238830E0AB8B221E34BBB_H
 #define UNIWEBVIEW_T70C5C5815FC5A948185238830E0AB8B221E34BBB_H
 #ifdef __clang__
@@ -6140,6 +6964,43 @@ public:
 		Il2CppCodeGenWriteBarrier(m_Items + index, value);
 	}
 };
+// System.Object[]
+struct ObjectU5BU5D_t3C9242B5C88A48B2A5BD9FDA6CD0024E792AF08A  : public RuntimeArray
+{
+public:
+	ALIGN_FIELD (8) RuntimeObject * m_Items[1];
+
+public:
+	inline RuntimeObject * GetAt(il2cpp_array_size_t index) const
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		return m_Items[index];
+	}
+	inline RuntimeObject ** GetAddressAt(il2cpp_array_size_t index)
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		return m_Items + index;
+	}
+	inline void SetAt(il2cpp_array_size_t index, RuntimeObject * value)
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		m_Items[index] = value;
+		Il2CppCodeGenWriteBarrier(m_Items + index, value);
+	}
+	inline RuntimeObject * GetAtUnchecked(il2cpp_array_size_t index) const
+	{
+		return m_Items[index];
+	}
+	inline RuntimeObject ** GetAddressAtUnchecked(il2cpp_array_size_t index)
+	{
+		return m_Items + index;
+	}
+	inline void SetAtUnchecked(il2cpp_array_size_t index, RuntimeObject * value)
+	{
+		m_Items[index] = value;
+		Il2CppCodeGenWriteBarrier(m_Items + index, value);
+	}
+};
 // UnityEngine.Vector3[]
 struct Vector3U5BU5D_tB9EC3346CC4A0EA5447D968E84A9AC1F6F372C28  : public RuntimeArray
 {
@@ -6247,69 +7108,54 @@ public:
 		m_Items[index] = value;
 	}
 };
-// System.Object[]
-struct ObjectU5BU5D_t3C9242B5C88A48B2A5BD9FDA6CD0024E792AF08A  : public RuntimeArray
-{
-public:
-	ALIGN_FIELD (8) RuntimeObject * m_Items[1];
-
-public:
-	inline RuntimeObject * GetAt(il2cpp_array_size_t index) const
-	{
-		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
-		return m_Items[index];
-	}
-	inline RuntimeObject ** GetAddressAt(il2cpp_array_size_t index)
-	{
-		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
-		return m_Items + index;
-	}
-	inline void SetAt(il2cpp_array_size_t index, RuntimeObject * value)
-	{
-		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
-		m_Items[index] = value;
-		Il2CppCodeGenWriteBarrier(m_Items + index, value);
-	}
-	inline RuntimeObject * GetAtUnchecked(il2cpp_array_size_t index) const
-	{
-		return m_Items[index];
-	}
-	inline RuntimeObject ** GetAddressAtUnchecked(il2cpp_array_size_t index)
-	{
-		return m_Items + index;
-	}
-	inline void SetAtUnchecked(il2cpp_array_size_t index, RuntimeObject * value)
-	{
-		m_Items[index] = value;
-		Il2CppCodeGenWriteBarrier(m_Items + index, value);
-	}
-};
 
 
 // !!0 UnityEngine.GameObject::AddComponent<System.Object>()
 extern "C" IL2CPP_METHOD_ATTR RuntimeObject * GameObject_AddComponent_TisRuntimeObject_mCB8164FB05F8DCF99E098ADC5E13E96FEF6FC4E9_gshared (GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * __this, const RuntimeMethod* method);
-// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Start<SpotiftyLogin/<DoSignInAsync>d__7>(!!0&)
-extern "C" IL2CPP_METHOD_ATTR void AsyncTaskMethodBuilder_Start_TisU3CDoSignInAsyncU3Ed__7_t374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2_m2C1F1C4A3C36AC3AF6A6933666FF50FB22562668_gshared (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, U3CDoSignInAsyncU3Ed__7_t374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2 * p0, const RuntimeMethod* method);
-// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Start<SpotiftyLogin/<WaitForCallback>d__8>(!!0&)
-extern "C" IL2CPP_METHOD_ATTR void AsyncTaskMethodBuilder_Start_TisU3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257_m7DC605016D0DA8AC47C4C811AAD78B6BBBCF2BD8_gshared (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, U3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257 * p0, const RuntimeMethod* method);
-// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Start<SpotiftyLogin/<Play>d__12>(!!0&)
-extern "C" IL2CPP_METHOD_ATTR void AsyncTaskMethodBuilder_Start_TisU3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C_mDD7D66C4C1749D6D33B99988591C77949AFCF88E_gshared (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, U3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C * p0, const RuntimeMethod* method);
-// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Start<SpotiftyLogin/<Pause>d__13>(!!0&)
-extern "C" IL2CPP_METHOD_ATTR void AsyncTaskMethodBuilder_Start_TisU3CPauseU3Ed__13_t7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3_mBEF76E010AA1628E6C30816358ADF786CF5A22A9_gshared (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, U3CPauseU3Ed__13_t7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3 * p0, const RuntimeMethod* method);
+// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Start<SpotifyApi/<SignInAsync>d__14>(!!0&)
+extern "C" IL2CPP_METHOD_ATTR void AsyncTaskMethodBuilder_Start_TisU3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896_m4902196730A0D1D385EE1EA23EC42608A70B41E5_gshared (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, U3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896 * p0, const RuntimeMethod* method);
+// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Start<SpotifyApi/<WaitForCallback>d__15>(!!0&)
+extern "C" IL2CPP_METHOD_ATTR void AsyncTaskMethodBuilder_Start_TisU3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A_m7BEAD734C24A2840A2C92C91ACC060BEA3013CCB_gshared (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, U3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A * p0, const RuntimeMethod* method);
+// System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<System.Object>::Create()
+extern "C" IL2CPP_METHOD_ATTR AsyncTaskMethodBuilder_1_t2A9513A084F4B19851B91EF1F22BB57776D35663  AsyncTaskMethodBuilder_1_Create_mC7806A5C115ED2239A5073313AA3564D8244156E_gshared (const RuntimeMethod* method);
+// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<System.Object>::Start<SpotifyApi/<SendAsync>d__18>(!!0&)
+extern "C" IL2CPP_METHOD_ATTR void AsyncTaskMethodBuilder_1_Start_TisU3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303_m1A63B97B2C66CB0E39FC33261527C3969283EE70_gshared (AsyncTaskMethodBuilder_1_t2A9513A084F4B19851B91EF1F22BB57776D35663 * __this, U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303 * p0, const RuntimeMethod* method);
+// System.Threading.Tasks.Task`1<!0> System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<System.Object>::get_Task()
+extern "C" IL2CPP_METHOD_ATTR Task_1_tA56001ED5270173CA1432EDFCD84EABB1024BC09 * AsyncTaskMethodBuilder_1_get_Task_m19C5664D70C4FC799BEFB8D0FC98E687F97059FA_gshared (AsyncTaskMethodBuilder_1_t2A9513A084F4B19851B91EF1F22BB57776D35663 * __this, const RuntimeMethod* method);
+// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Start<SpotifyApi/<PlayAsync>d__24>(!!0&)
+extern "C" IL2CPP_METHOD_ATTR void AsyncTaskMethodBuilder_Start_TisU3CPlayAsyncU3Ed__24_tB410B49C7C0816D2A5DD701A483FF046FA5C7777_m237320EDBBD41A7593D1B06CFD9A57F7F9268C85_gshared (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, U3CPlayAsyncU3Ed__24_tB410B49C7C0816D2A5DD701A483FF046FA5C7777 * p0, const RuntimeMethod* method);
+// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Start<SpotifyApi/<PlayUrisAsync>d__26>(!!0&)
+extern "C" IL2CPP_METHOD_ATTR void AsyncTaskMethodBuilder_Start_TisU3CPlayUrisAsyncU3Ed__26_tF7BEEEB5E918E76C3B6F702D718B1110F5033C78_mD0E2F8936C3265082F8DA99A13006EFF541B15D6_gshared (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, U3CPlayUrisAsyncU3Ed__26_tF7BEEEB5E918E76C3B6F702D718B1110F5033C78 * p0, const RuntimeMethod* method);
+// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Start<SpotifyApi/<PauseAsync>d__29>(!!0&)
+extern "C" IL2CPP_METHOD_ATTR void AsyncTaskMethodBuilder_Start_TisU3CPauseAsyncU3Ed__29_tDEC85B2D09AA536D9ABA26C9948D506C674C0C84_mEDA9CBFB05D8917D9366929232742BD2F5A92D7D_gshared (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, U3CPauseAsyncU3Ed__29_tDEC85B2D09AA536D9ABA26C9948D506C674C0C84 * p0, const RuntimeMethod* method);
+// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Start<SpotifyApi/<RepeatAsync>d__30>(!!0&)
+extern "C" IL2CPP_METHOD_ATTR void AsyncTaskMethodBuilder_Start_TisU3CRepeatAsyncU3Ed__30_tBE6907D98B9974628F6181F8DB4B506D3DF1B509_m8147E856AC14D1D91575708DBDE5105C1D55ABFB_gshared (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, U3CRepeatAsyncU3Ed__30_tBE6907D98B9974628F6181F8DB4B506D3DF1B509 * p0, const RuntimeMethod* method);
 // System.Runtime.CompilerServices.TaskAwaiter`1<!0> System.Threading.Tasks.Task`1<System.Object>::GetAwaiter()
 extern "C" IL2CPP_METHOD_ATTR TaskAwaiter_1_t8CDB78D2A4D48E80C35A8FF6FC04A82B9FC35977  Task_1_GetAwaiter_m9C50610C6F05C1DA9BFA67201CB570F1DE040817_gshared (Task_1_tA56001ED5270173CA1432EDFCD84EABB1024BC09 * __this, const RuntimeMethod* method);
 // System.Boolean System.Runtime.CompilerServices.TaskAwaiter`1<System.Object>::get_IsCompleted()
 extern "C" IL2CPP_METHOD_ATTR bool TaskAwaiter_1_get_IsCompleted_mBF435C7EFD03FCF7810FC08EEDC5945F80FF88F9_gshared (TaskAwaiter_1_t8CDB78D2A4D48E80C35A8FF6FC04A82B9FC35977 * __this, const RuntimeMethod* method);
-// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter`1<System.Object>,SpotiftyLogin/<DoSignInAsync>d__7>(!!0&,!!1&)
-extern "C" IL2CPP_METHOD_ATTR void AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t8CDB78D2A4D48E80C35A8FF6FC04A82B9FC35977_TisU3CDoSignInAsyncU3Ed__7_t374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2_mB5B82F834F4041485AAA3821ADDBB6246B6E9D9C_gshared (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, TaskAwaiter_1_t8CDB78D2A4D48E80C35A8FF6FC04A82B9FC35977 * p0, U3CDoSignInAsyncU3Ed__7_t374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2 * p1, const RuntimeMethod* method);
+// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter`1<System.Object>,SpotifyApi/<PauseAsync>d__29>(!!0&,!!1&)
+extern "C" IL2CPP_METHOD_ATTR void AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t8CDB78D2A4D48E80C35A8FF6FC04A82B9FC35977_TisU3CPauseAsyncU3Ed__29_tDEC85B2D09AA536D9ABA26C9948D506C674C0C84_m8CA18D4BFE603857DCD0375A5152DDF963338694_gshared (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, TaskAwaiter_1_t8CDB78D2A4D48E80C35A8FF6FC04A82B9FC35977 * p0, U3CPauseAsyncU3Ed__29_tDEC85B2D09AA536D9ABA26C9948D506C674C0C84 * p1, const RuntimeMethod* method);
 // !0 System.Runtime.CompilerServices.TaskAwaiter`1<System.Object>::GetResult()
 extern "C" IL2CPP_METHOD_ATTR RuntimeObject * TaskAwaiter_1_GetResult_m9E148849CD4747E1BDD831E4FB2D7ECFA13C11C8_gshared (TaskAwaiter_1_t8CDB78D2A4D48E80C35A8FF6FC04A82B9FC35977 * __this, const RuntimeMethod* method);
-// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter`1<System.Object>,SpotiftyLogin/<Pause>d__13>(!!0&,!!1&)
-extern "C" IL2CPP_METHOD_ATTR void AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t8CDB78D2A4D48E80C35A8FF6FC04A82B9FC35977_TisU3CPauseU3Ed__13_t7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3_mC4D59B2754401B99DD21AD0F439F6C599BCB63AB_gshared (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, TaskAwaiter_1_t8CDB78D2A4D48E80C35A8FF6FC04A82B9FC35977 * p0, U3CPauseU3Ed__13_t7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3 * p1, const RuntimeMethod* method);
-// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter`1<System.Object>,SpotiftyLogin/<Play>d__12>(!!0&,!!1&)
-extern "C" IL2CPP_METHOD_ATTR void AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t8CDB78D2A4D48E80C35A8FF6FC04A82B9FC35977_TisU3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C_mA7C1259D302BCADF54B7D00BA9C07F7D7EDBA989_gshared (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, TaskAwaiter_1_t8CDB78D2A4D48E80C35A8FF6FC04A82B9FC35977 * p0, U3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C * p1, const RuntimeMethod* method);
-// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter`1<System.Object>,SpotiftyLogin/<WaitForCallback>d__8>(!!0&,!!1&)
-extern "C" IL2CPP_METHOD_ATTR void AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t8CDB78D2A4D48E80C35A8FF6FC04A82B9FC35977_TisU3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257_m0E6E9CA97226CD1AAFCA726C3F39CE089F0BE92B_gshared (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, TaskAwaiter_1_t8CDB78D2A4D48E80C35A8FF6FC04A82B9FC35977 * p0, U3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257 * p1, const RuntimeMethod* method);
+// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter`1<System.Object>,SpotifyApi/<PlayAsync>d__24>(!!0&,!!1&)
+extern "C" IL2CPP_METHOD_ATTR void AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t8CDB78D2A4D48E80C35A8FF6FC04A82B9FC35977_TisU3CPlayAsyncU3Ed__24_tB410B49C7C0816D2A5DD701A483FF046FA5C7777_m2B97F8258F686AD74700A459F135A4A1E1E81CCE_gshared (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, TaskAwaiter_1_t8CDB78D2A4D48E80C35A8FF6FC04A82B9FC35977 * p0, U3CPlayAsyncU3Ed__24_tB410B49C7C0816D2A5DD701A483FF046FA5C7777 * p1, const RuntimeMethod* method);
+// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter`1<System.Object>,SpotifyApi/<PlayUrisAsync>d__26>(!!0&,!!1&)
+extern "C" IL2CPP_METHOD_ATTR void AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t8CDB78D2A4D48E80C35A8FF6FC04A82B9FC35977_TisU3CPlayUrisAsyncU3Ed__26_tF7BEEEB5E918E76C3B6F702D718B1110F5033C78_m23220500FA2BB627DF554C6BC4F6252BF981256A_gshared (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, TaskAwaiter_1_t8CDB78D2A4D48E80C35A8FF6FC04A82B9FC35977 * p0, U3CPlayUrisAsyncU3Ed__26_tF7BEEEB5E918E76C3B6F702D718B1110F5033C78 * p1, const RuntimeMethod* method);
+// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter`1<System.Object>,SpotifyApi/<RepeatAsync>d__30>(!!0&,!!1&)
+extern "C" IL2CPP_METHOD_ATTR void AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t8CDB78D2A4D48E80C35A8FF6FC04A82B9FC35977_TisU3CRepeatAsyncU3Ed__30_tBE6907D98B9974628F6181F8DB4B506D3DF1B509_m8BE013819863CE25856731D9E04B63A8B484D242_gshared (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, TaskAwaiter_1_t8CDB78D2A4D48E80C35A8FF6FC04A82B9FC35977 * p0, U3CRepeatAsyncU3Ed__30_tBE6907D98B9974628F6181F8DB4B506D3DF1B509 * p1, const RuntimeMethod* method);
+// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<System.Object>::AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter`1<System.Object>,SpotifyApi/<SendAsync>d__18>(!!0&,!!1&)
+extern "C" IL2CPP_METHOD_ATTR void AsyncTaskMethodBuilder_1_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t8CDB78D2A4D48E80C35A8FF6FC04A82B9FC35977_TisU3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303_mB687108170097C00C0E412390EFA9826EEA91256_gshared (AsyncTaskMethodBuilder_1_t2A9513A084F4B19851B91EF1F22BB57776D35663 * __this, TaskAwaiter_1_t8CDB78D2A4D48E80C35A8FF6FC04A82B9FC35977 * p0, U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303 * p1, const RuntimeMethod* method);
+// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<System.Object>::SetException(System.Exception)
+extern "C" IL2CPP_METHOD_ATTR void AsyncTaskMethodBuilder_1_SetException_m4C0B5462ECCB520FACA3C90B353DF596DAAF586D_gshared (AsyncTaskMethodBuilder_1_t2A9513A084F4B19851B91EF1F22BB57776D35663 * __this, Exception_t * p0, const RuntimeMethod* method);
+// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<System.Object>::SetResult(!0)
+extern "C" IL2CPP_METHOD_ATTR void AsyncTaskMethodBuilder_1_SetResult_mD7DA7A17DC0610B11A0AAA364C3CA51FEC1271DB_gshared (AsyncTaskMethodBuilder_1_t2A9513A084F4B19851B91EF1F22BB57776D35663 * __this, RuntimeObject * p0, const RuntimeMethod* method);
+// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<System.Object>::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+extern "C" IL2CPP_METHOD_ATTR void AsyncTaskMethodBuilder_1_SetStateMachine_m5CC21A02320CF3D2DD7894A31123DFD82A428E4C_gshared (AsyncTaskMethodBuilder_1_t2A9513A084F4B19851B91EF1F22BB57776D35663 * __this, RuntimeObject* p0, const RuntimeMethod* method);
+// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter`1<System.Object>,SpotifyApi/<SignInAsync>d__14>(!!0&,!!1&)
+extern "C" IL2CPP_METHOD_ATTR void AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t8CDB78D2A4D48E80C35A8FF6FC04A82B9FC35977_TisU3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896_mC8ABF5A3B088954F6F0A52E19BEB3FC83A68F688_gshared (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, TaskAwaiter_1_t8CDB78D2A4D48E80C35A8FF6FC04A82B9FC35977 * p0, U3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896 * p1, const RuntimeMethod* method);
+// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter`1<System.Object>,SpotifyApi/<WaitForCallback>d__15>(!!0&,!!1&)
+extern "C" IL2CPP_METHOD_ATTR void AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t8CDB78D2A4D48E80C35A8FF6FC04A82B9FC35977_TisU3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A_mBB9EE4567F04967CC26902B9AB35AB26B4AE1877_gshared (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, TaskAwaiter_1_t8CDB78D2A4D48E80C35A8FF6FC04A82B9FC35977 * p0, U3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A * p1, const RuntimeMethod* method);
 // !!0 UnityEngine.Component::GetComponentInParent<System.Object>()
 extern "C" IL2CPP_METHOD_ATTR RuntimeObject * Component_GetComponentInParent_TisRuntimeObject_m36052D294AB8C1574678FEF9A9749145A073E8E3_gshared (Component_t05064EF382ABCAF4B8C94F8A350EA85184C26621 * __this, const RuntimeMethod* method);
 // System.Void System.Collections.Generic.Dictionary`2<System.Object,System.Object>::Add(!0,!1)
@@ -6347,6 +7193,12 @@ extern "C" IL2CPP_METHOD_ATTR Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720 
 extern "C" IL2CPP_METHOD_ATTR void Transform_Rotate_m610B6793DCC2F987290D328942E649B5B7DE0F9A (Transform_tBB9E78A2766C3C83599A8F66EDE7D1FCAFC66EDA * __this, Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  p0, const RuntimeMethod* method);
 // System.Void UnityEngine.MonoBehaviour::.ctor()
 extern "C" IL2CPP_METHOD_ATTR void MonoBehaviour__ctor_mEAEC84B222C60319D593E456D769B3311DFCEF97 (MonoBehaviour_t4A60845CF505405AF8BE8C61CC07F75CADEF6429 * __this, const RuntimeMethod* method);
+// System.String UnityEngine.PlayerPrefs::GetString(System.String)
+extern "C" IL2CPP_METHOD_ATTR String_t* PlayerPrefs_GetString_m3031AD2D5DEAB97677A9EF629618541437F079F1 (String_t* p0, const RuntimeMethod* method);
+// System.String System.String::Concat(System.String,System.String)
+extern "C" IL2CPP_METHOD_ATTR String_t* String_Concat_mB78D0094592718DA6D5DB6C712A9C225631666BE (String_t* p0, String_t* p1, const RuntimeMethod* method);
+// System.Void UnityEngine.Debug::Log(System.Object)
+extern "C" IL2CPP_METHOD_ATTR void Debug_Log_m4B7C70BAFD477C6BDB59C88A0934F0B018D03708 (RuntimeObject * p0, const RuntimeMethod* method);
 // System.Void UnityEngine.GameObject::.ctor(System.String)
 extern "C" IL2CPP_METHOD_ATTR void GameObject__ctor_mBB454E679AD9CF0B84D3609A01E6A9753ACF4686 (GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * __this, String_t* p0, const RuntimeMethod* method);
 // !!0 UnityEngine.GameObject::AddComponent<UniWebView>()
@@ -6362,78 +7214,97 @@ extern "C" IL2CPP_METHOD_ATTR void UniWebView_add_OnShouldClose_mF4E8FADA63C9F85
 extern "C" IL2CPP_METHOD_ATTR void HttpClient__ctor_m179C3B29F7C664CDC5B5761E24EC2E9685385A1F (HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7 * __this, const RuntimeMethod* method);
 // System.Boolean UnityEngine.Input::GetKeyDown(System.String)
 extern "C" IL2CPP_METHOD_ATTR bool Input_GetKeyDown_m0CBC4672BC86FE82A9210B7FD2F475E2DD9C3163 (String_t* p0, const RuntimeMethod* method);
-// System.Threading.Tasks.Task SpotiftyLogin::DoSignInAsync()
-extern "C" IL2CPP_METHOD_ATTR Task_t1F48C203E163126EBC69ACCA679D1A462DEE9EB2 * SpotiftyLogin_DoSignInAsync_m063D3947DA59864F4DABD1920AF41A83709B202B (SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * __this, const RuntimeMethod* method);
-// System.Void SpotiftyLogin::PlayPause()
-extern "C" IL2CPP_METHOD_ATTR void SpotiftyLogin_PlayPause_m6266607EBE5BD177B3FE83C4006798874EF73B63 (SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * __this, const RuntimeMethod* method);
+// System.Void SpotifyApi::SignIn()
+extern "C" IL2CPP_METHOD_ATTR void SpotifyApi_SignIn_m41AF859A4217D51DB6FAE03E61C0E10866BC04FE (SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * __this, const RuntimeMethod* method);
+// System.Void SpotifyApi::PlayPause()
+extern "C" IL2CPP_METHOD_ATTR void SpotifyApi_PlayPause_mC30A0DA32EC52078C4A94AD640FE44C6A4B883AC (SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * __this, const RuntimeMethod* method);
 // System.Runtime.CompilerServices.AsyncTaskMethodBuilder System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
 extern "C" IL2CPP_METHOD_ATTR AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  AsyncTaskMethodBuilder_Create_m081DF9A202E7C2F3CF3D41E1E63E63DA18F19FDB (const RuntimeMethod* method);
-// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Start<SpotiftyLogin/<DoSignInAsync>d__7>(!!0&)
-inline void AsyncTaskMethodBuilder_Start_TisU3CDoSignInAsyncU3Ed__7_t374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2_m2C1F1C4A3C36AC3AF6A6933666FF50FB22562668 (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, U3CDoSignInAsyncU3Ed__7_t374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2 * p0, const RuntimeMethod* method)
+// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Start<SpotifyApi/<SignInAsync>d__14>(!!0&)
+inline void AsyncTaskMethodBuilder_Start_TisU3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896_m4902196730A0D1D385EE1EA23EC42608A70B41E5 (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, U3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896 * p0, const RuntimeMethod* method)
 {
-	((  void (*) (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *, U3CDoSignInAsyncU3Ed__7_t374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2 *, const RuntimeMethod*))AsyncTaskMethodBuilder_Start_TisU3CDoSignInAsyncU3Ed__7_t374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2_m2C1F1C4A3C36AC3AF6A6933666FF50FB22562668_gshared)(__this, p0, method);
+	((  void (*) (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *, U3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896 *, const RuntimeMethod*))AsyncTaskMethodBuilder_Start_TisU3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896_m4902196730A0D1D385EE1EA23EC42608A70B41E5_gshared)(__this, p0, method);
 }
 // System.Threading.Tasks.Task System.Runtime.CompilerServices.AsyncTaskMethodBuilder::get_Task()
 extern "C" IL2CPP_METHOD_ATTR Task_t1F48C203E163126EBC69ACCA679D1A462DEE9EB2 * AsyncTaskMethodBuilder_get_Task_m3E45BC00F7D224FEA04AB9BF26DB52E131D33022 (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, const RuntimeMethod* method);
-// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Start<SpotiftyLogin/<WaitForCallback>d__8>(!!0&)
-inline void AsyncTaskMethodBuilder_Start_TisU3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257_m7DC605016D0DA8AC47C4C811AAD78B6BBBCF2BD8 (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, U3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257 * p0, const RuntimeMethod* method)
+// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Start<SpotifyApi/<WaitForCallback>d__15>(!!0&)
+inline void AsyncTaskMethodBuilder_Start_TisU3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A_m7BEAD734C24A2840A2C92C91ACC060BEA3013CCB (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, U3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A * p0, const RuntimeMethod* method)
 {
-	((  void (*) (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *, U3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257 *, const RuntimeMethod*))AsyncTaskMethodBuilder_Start_TisU3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257_m7DC605016D0DA8AC47C4C811AAD78B6BBBCF2BD8_gshared)(__this, p0, method);
+	((  void (*) (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *, U3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A *, const RuntimeMethod*))AsyncTaskMethodBuilder_Start_TisU3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A_m7BEAD734C24A2840A2C92C91ACC060BEA3013CCB_gshared)(__this, p0, method);
 }
-// System.Void SpotiftyLogin::CloseWebView()
-extern "C" IL2CPP_METHOD_ATTR void SpotiftyLogin_CloseWebView_m75F327DD482F4839DE3B12A80AD3D5F41344DA21 (SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * __this, const RuntimeMethod* method);
+// System.Void SpotifyApi::CloseWebView()
+extern "C" IL2CPP_METHOD_ATTR void SpotifyApi_CloseWebView_m8B8E9DD1E8B936D1370D5EA2C22ECC650EC313E9 (SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * __this, const RuntimeMethod* method);
 // System.Void System.Net.Http.HttpMessageInvoker::Dispose()
 extern "C" IL2CPP_METHOD_ATTR void HttpMessageInvoker_Dispose_mD4F72E4580D4BE545E8E3AB97C0A9BB0AB49C212 (HttpMessageInvoker_t7270E2BED3201CE430D6C4BECF923454AA526A72 * __this, const RuntimeMethod* method);
 // System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
 extern "C" IL2CPP_METHOD_ATTR bool Object_op_Inequality_m31EF58E217E8F4BDD3E409DEF79E1AEE95874FC1 (Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0 * p0, Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0 * p1, const RuntimeMethod* method);
 // System.Void UnityEngine.Object::Destroy(UnityEngine.Object)
 extern "C" IL2CPP_METHOD_ATTR void Object_Destroy_m23B4562495BA35A74266D4372D45368F8C05109A (Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0 * p0, const RuntimeMethod* method);
-// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Start<SpotiftyLogin/<Play>d__12>(!!0&)
-inline void AsyncTaskMethodBuilder_Start_TisU3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C_mDD7D66C4C1749D6D33B99988591C77949AFCF88E (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, U3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C * p0, const RuntimeMethod* method)
+// System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<System.String>::Create()
+inline AsyncTaskMethodBuilder_1_tC7B1E45031A96D1F2363C0491EC79BBE740BC10C  AsyncTaskMethodBuilder_1_Create_m4CACDA7CCC96C431E5426E670B268CC6FDF86695 (const RuntimeMethod* method)
 {
-	((  void (*) (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *, U3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C *, const RuntimeMethod*))AsyncTaskMethodBuilder_Start_TisU3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C_mDD7D66C4C1749D6D33B99988591C77949AFCF88E_gshared)(__this, p0, method);
+	return ((  AsyncTaskMethodBuilder_1_tC7B1E45031A96D1F2363C0491EC79BBE740BC10C  (*) (const RuntimeMethod*))AsyncTaskMethodBuilder_1_Create_mC7806A5C115ED2239A5073313AA3564D8244156E_gshared)(method);
 }
-// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Start<SpotiftyLogin/<Pause>d__13>(!!0&)
-inline void AsyncTaskMethodBuilder_Start_TisU3CPauseU3Ed__13_t7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3_mBEF76E010AA1628E6C30816358ADF786CF5A22A9 (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, U3CPauseU3Ed__13_t7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3 * p0, const RuntimeMethod* method)
+// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<System.String>::Start<SpotifyApi/<SendAsync>d__18>(!!0&)
+inline void AsyncTaskMethodBuilder_1_Start_TisU3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303_m3C7FC54B6BF0CDB29DF944CD6956AEFFD576C856 (AsyncTaskMethodBuilder_1_tC7B1E45031A96D1F2363C0491EC79BBE740BC10C * __this, U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303 * p0, const RuntimeMethod* method)
 {
-	((  void (*) (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *, U3CPauseU3Ed__13_t7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3 *, const RuntimeMethod*))AsyncTaskMethodBuilder_Start_TisU3CPauseU3Ed__13_t7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3_mBEF76E010AA1628E6C30816358ADF786CF5A22A9_gshared)(__this, p0, method);
+	((  void (*) (AsyncTaskMethodBuilder_1_tC7B1E45031A96D1F2363C0491EC79BBE740BC10C *, U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303 *, const RuntimeMethod*))AsyncTaskMethodBuilder_1_Start_TisU3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303_m1A63B97B2C66CB0E39FC33261527C3969283EE70_gshared)(__this, p0, method);
 }
-// System.Threading.Tasks.Task SpotiftyLogin::Play()
-extern "C" IL2CPP_METHOD_ATTR Task_t1F48C203E163126EBC69ACCA679D1A462DEE9EB2 * SpotiftyLogin_Play_m2F4F3137D6BDFC563905895703C89CC520CAEE7B (SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * __this, const RuntimeMethod* method);
-// System.Threading.Tasks.Task SpotiftyLogin::Pause()
-extern "C" IL2CPP_METHOD_ATTR Task_t1F48C203E163126EBC69ACCA679D1A462DEE9EB2 * SpotiftyLogin_Pause_mEA99580E9179AD71470FD390C64FCF8A19FF080D (SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * __this, const RuntimeMethod* method);
-// System.Void UnityEngine.Debug::Log(System.Object)
-extern "C" IL2CPP_METHOD_ATTR void Debug_Log_m4B7C70BAFD477C6BDB59C88A0934F0B018D03708 (RuntimeObject * p0, const RuntimeMethod* method);
-// System.String System.String::Concat(System.String,System.String)
-extern "C" IL2CPP_METHOD_ATTR String_t* String_Concat_mB78D0094592718DA6D5DB6C712A9C225631666BE (String_t* p0, String_t* p1, const RuntimeMethod* method);
-// System.Threading.Tasks.Task`1<System.Net.Http.HttpResponseMessage> System.Net.Http.HttpClient::GetAsync(System.String)
-extern "C" IL2CPP_METHOD_ATTR Task_1_t519CB3A303B53176BD616AC273201D66B84FF270 * HttpClient_GetAsync_mB979915E31872E80CA29D0724DB7F6239A914D99 (HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7 * __this, String_t* p0, const RuntimeMethod* method);
-// System.Runtime.CompilerServices.TaskAwaiter`1<!0> System.Threading.Tasks.Task`1<System.Net.Http.HttpResponseMessage>::GetAwaiter()
-inline TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  Task_1_GetAwaiter_m511397276BFE6D43B77D1BD80905DF2FB0FA54E0 (Task_1_t519CB3A303B53176BD616AC273201D66B84FF270 * __this, const RuntimeMethod* method)
+// System.Threading.Tasks.Task`1<!0> System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<System.String>::get_Task()
+inline Task_1_t4A75FEC8F36C5D4F8793BB8C94E4DAA7457D0286 * AsyncTaskMethodBuilder_1_get_Task_mB005567F7203FC44DD0AE1150FFC92706B8E2BB4 (AsyncTaskMethodBuilder_1_tC7B1E45031A96D1F2363C0491EC79BBE740BC10C * __this, const RuntimeMethod* method)
 {
-	return ((  TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  (*) (Task_1_t519CB3A303B53176BD616AC273201D66B84FF270 *, const RuntimeMethod*))Task_1_GetAwaiter_m9C50610C6F05C1DA9BFA67201CB570F1DE040817_gshared)(__this, method);
+	return ((  Task_1_t4A75FEC8F36C5D4F8793BB8C94E4DAA7457D0286 * (*) (AsyncTaskMethodBuilder_1_tC7B1E45031A96D1F2363C0491EC79BBE740BC10C *, const RuntimeMethod*))AsyncTaskMethodBuilder_1_get_Task_m19C5664D70C4FC799BEFB8D0FC98E687F97059FA_gshared)(__this, method);
 }
-// System.Boolean System.Runtime.CompilerServices.TaskAwaiter`1<System.Net.Http.HttpResponseMessage>::get_IsCompleted()
-inline bool TaskAwaiter_1_get_IsCompleted_m0F711316D40833EE5C67F3E65571EF033B9364DF (TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 * __this, const RuntimeMethod* method)
+// System.Boolean System.String::IsNullOrWhiteSpace(System.String)
+extern "C" IL2CPP_METHOD_ATTR bool String_IsNullOrWhiteSpace_m62102CA65546AE151DC8254B72110F4AA48E2135 (String_t* p0, const RuntimeMethod* method);
+// System.String System.String::Concat(System.String,System.String,System.String)
+extern "C" IL2CPP_METHOD_ATTR String_t* String_Concat_mF4626905368D6558695A823466A1AF65EADB9923 (String_t* p0, String_t* p1, String_t* p2, const RuntimeMethod* method);
+// System.Threading.CancellationToken System.Threading.CancellationToken::get_None()
+extern "C" IL2CPP_METHOD_ATTR CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  CancellationToken_get_None_m008D4CF5E11172703A6D781A3C30E6E537004F1D (const RuntimeMethod* method);
+// System.Threading.Tasks.Task SpotifyApi::SignInAsync(System.Threading.CancellationToken)
+extern "C" IL2CPP_METHOD_ATTR Task_t1F48C203E163126EBC69ACCA679D1A462DEE9EB2 * SpotifyApi_SignInAsync_mB50ABB95EAFCB342E015322187A34C086F49B3F2 (SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * __this, CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  ___cancel0, const RuntimeMethod* method);
+// System.Void TaskHelper::Ignore(System.Threading.Tasks.Task)
+extern "C" IL2CPP_METHOD_ATTR void TaskHelper_Ignore_mB73CBB96C01116303EAEACC68F0ACA844A0C2D2F (Task_t1F48C203E163126EBC69ACCA679D1A462DEE9EB2 * ___task0, const RuntimeMethod* method);
+// System.Threading.Tasks.Task SpotifyApi::PlayAsync(System.Threading.CancellationToken)
+extern "C" IL2CPP_METHOD_ATTR Task_t1F48C203E163126EBC69ACCA679D1A462DEE9EB2 * SpotifyApi_PlayAsync_mEB86600C559C735DCC952B2DA1EDAAB2436E1ADB (SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * __this, CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  ___cancel0, const RuntimeMethod* method);
+// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Start<SpotifyApi/<PlayAsync>d__24>(!!0&)
+inline void AsyncTaskMethodBuilder_Start_TisU3CPlayAsyncU3Ed__24_tB410B49C7C0816D2A5DD701A483FF046FA5C7777_m237320EDBBD41A7593D1B06CFD9A57F7F9268C85 (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, U3CPlayAsyncU3Ed__24_tB410B49C7C0816D2A5DD701A483FF046FA5C7777 * p0, const RuntimeMethod* method)
 {
-	return ((  bool (*) (TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 *, const RuntimeMethod*))TaskAwaiter_1_get_IsCompleted_mBF435C7EFD03FCF7810FC08EEDC5945F80FF88F9_gshared)(__this, method);
+	((  void (*) (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *, U3CPlayAsyncU3Ed__24_tB410B49C7C0816D2A5DD701A483FF046FA5C7777 *, const RuntimeMethod*))AsyncTaskMethodBuilder_Start_TisU3CPlayAsyncU3Ed__24_tB410B49C7C0816D2A5DD701A483FF046FA5C7777_m237320EDBBD41A7593D1B06CFD9A57F7F9268C85_gshared)(__this, p0, method);
 }
-// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter`1<System.Net.Http.HttpResponseMessage>,SpotiftyLogin/<DoSignInAsync>d__7>(!!0&,!!1&)
-inline void AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86_TisU3CDoSignInAsyncU3Ed__7_t374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2_mA05BBE8EB654A813785564578AD6A2B3A5EEE8D2 (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 * p0, U3CDoSignInAsyncU3Ed__7_t374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2 * p1, const RuntimeMethod* method)
+// System.Threading.Tasks.Task SpotifyApi::PlayUrisAsync(System.Int32,System.String[],System.Threading.CancellationToken)
+extern "C" IL2CPP_METHOD_ATTR Task_t1F48C203E163126EBC69ACCA679D1A462DEE9EB2 * SpotifyApi_PlayUrisAsync_m7E158D3A3670EEF0893A512D3C4A2F7EC3E69078 (SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * __this, int32_t ___positionMs0, StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* ___uris1, CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  ___cancel2, const RuntimeMethod* method);
+// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Start<SpotifyApi/<PlayUrisAsync>d__26>(!!0&)
+inline void AsyncTaskMethodBuilder_Start_TisU3CPlayUrisAsyncU3Ed__26_tF7BEEEB5E918E76C3B6F702D718B1110F5033C78_mD0E2F8936C3265082F8DA99A13006EFF541B15D6 (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, U3CPlayUrisAsyncU3Ed__26_tF7BEEEB5E918E76C3B6F702D718B1110F5033C78 * p0, const RuntimeMethod* method)
 {
-	((  void (*) (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *, TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 *, U3CDoSignInAsyncU3Ed__7_t374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2 *, const RuntimeMethod*))AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t8CDB78D2A4D48E80C35A8FF6FC04A82B9FC35977_TisU3CDoSignInAsyncU3Ed__7_t374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2_mB5B82F834F4041485AAA3821ADDBB6246B6E9D9C_gshared)(__this, p0, p1, method);
+	((  void (*) (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *, U3CPlayUrisAsyncU3Ed__26_tF7BEEEB5E918E76C3B6F702D718B1110F5033C78 *, const RuntimeMethod*))AsyncTaskMethodBuilder_Start_TisU3CPlayUrisAsyncU3Ed__26_tF7BEEEB5E918E76C3B6F702D718B1110F5033C78_mD0E2F8936C3265082F8DA99A13006EFF541B15D6_gshared)(__this, p0, method);
 }
-// !0 System.Runtime.CompilerServices.TaskAwaiter`1<System.Net.Http.HttpResponseMessage>::GetResult()
-inline HttpResponseMessage_t619DB9FDC8E63CDF2D0A314B61A4C6609A43F904 * TaskAwaiter_1_GetResult_m706665648BB29D83FD0C72CFA6279966143192A2 (TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 * __this, const RuntimeMethod* method)
+// System.Void SpotifyApi::PlayUris(System.Int32,System.String[])
+extern "C" IL2CPP_METHOD_ATTR void SpotifyApi_PlayUris_mACB2D59068277E3D10BEC6345D07A1F6D7E8C2FB (SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * __this, int32_t ___positionMs0, StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* ___uris1, const RuntimeMethod* method);
+// System.Threading.Tasks.Task SpotifyApi::PauseAsync(System.Threading.CancellationToken)
+extern "C" IL2CPP_METHOD_ATTR Task_t1F48C203E163126EBC69ACCA679D1A462DEE9EB2 * SpotifyApi_PauseAsync_mB065B364963D93EC6B3351665286BCF7ECD51A27 (SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * __this, CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  ___cancel0, const RuntimeMethod* method);
+// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Start<SpotifyApi/<PauseAsync>d__29>(!!0&)
+inline void AsyncTaskMethodBuilder_Start_TisU3CPauseAsyncU3Ed__29_tDEC85B2D09AA536D9ABA26C9948D506C674C0C84_mEDA9CBFB05D8917D9366929232742BD2F5A92D7D (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, U3CPauseAsyncU3Ed__29_tDEC85B2D09AA536D9ABA26C9948D506C674C0C84 * p0, const RuntimeMethod* method)
 {
-	return ((  HttpResponseMessage_t619DB9FDC8E63CDF2D0A314B61A4C6609A43F904 * (*) (TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 *, const RuntimeMethod*))TaskAwaiter_1_GetResult_m9E148849CD4747E1BDD831E4FB2D7ECFA13C11C8_gshared)(__this, method);
+	((  void (*) (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *, U3CPauseAsyncU3Ed__29_tDEC85B2D09AA536D9ABA26C9948D506C674C0C84 *, const RuntimeMethod*))AsyncTaskMethodBuilder_Start_TisU3CPauseAsyncU3Ed__29_tDEC85B2D09AA536D9ABA26C9948D506C674C0C84_mEDA9CBFB05D8917D9366929232742BD2F5A92D7D_gshared)(__this, p0, method);
 }
-// System.Net.Http.HttpResponseMessage System.Net.Http.HttpResponseMessage::EnsureSuccessStatusCode()
-extern "C" IL2CPP_METHOD_ATTR HttpResponseMessage_t619DB9FDC8E63CDF2D0A314B61A4C6609A43F904 * HttpResponseMessage_EnsureSuccessStatusCode_mFC49F01BD731C4FE89B7143E0AA8C6137F372B44 (HttpResponseMessage_t619DB9FDC8E63CDF2D0A314B61A4C6609A43F904 * __this, const RuntimeMethod* method);
-// System.Net.Http.HttpContent System.Net.Http.HttpResponseMessage::get_Content()
-extern "C" IL2CPP_METHOD_ATTR HttpContent_t678722F60CA151DD19AFCA917657BE24F111A41D * HttpResponseMessage_get_Content_m325C3E47B0D7E1DD70CA36FA04B894A152AD4420 (HttpResponseMessage_t619DB9FDC8E63CDF2D0A314B61A4C6609A43F904 * __this, const RuntimeMethod* method);
-// System.Threading.Tasks.Task`1<System.String> System.Net.Http.HttpContent::ReadAsStringAsync()
-extern "C" IL2CPP_METHOD_ATTR Task_1_t4A75FEC8F36C5D4F8793BB8C94E4DAA7457D0286 * HttpContent_ReadAsStringAsync_m499CCA8B02B3AFB793C0783D28220FC7A531A24D (HttpContent_t678722F60CA151DD19AFCA917657BE24F111A41D * __this, const RuntimeMethod* method);
+// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Start<SpotifyApi/<RepeatAsync>d__30>(!!0&)
+inline void AsyncTaskMethodBuilder_Start_TisU3CRepeatAsyncU3Ed__30_tBE6907D98B9974628F6181F8DB4B506D3DF1B509_m8147E856AC14D1D91575708DBDE5105C1D55ABFB (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, U3CRepeatAsyncU3Ed__30_tBE6907D98B9974628F6181F8DB4B506D3DF1B509 * p0, const RuntimeMethod* method)
+{
+	((  void (*) (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *, U3CRepeatAsyncU3Ed__30_tBE6907D98B9974628F6181F8DB4B506D3DF1B509 *, const RuntimeMethod*))AsyncTaskMethodBuilder_Start_TisU3CRepeatAsyncU3Ed__30_tBE6907D98B9974628F6181F8DB4B506D3DF1B509_m8147E856AC14D1D91575708DBDE5105C1D55ABFB_gshared)(__this, p0, method);
+}
+// System.Threading.Tasks.Task SpotifyApi::RepeatAsync(SpotifyRepeatMode,System.Threading.CancellationToken)
+extern "C" IL2CPP_METHOD_ATTR Task_t1F48C203E163126EBC69ACCA679D1A462DEE9EB2 * SpotifyApi_RepeatAsync_m847A36DE9791182FC65569065F9D21C27661DC7E (SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * __this, int32_t ___mode0, CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  ___cancel1, const RuntimeMethod* method);
+// System.Void SpotifyApi::Play()
+extern "C" IL2CPP_METHOD_ATTR void SpotifyApi_Play_m83B465EC0829797C07F7A66FA86B4AB440254ED5 (SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * __this, const RuntimeMethod* method);
+// System.Void SpotifyApi::Pause()
+extern "C" IL2CPP_METHOD_ATTR void SpotifyApi_Pause_m252C9A09573167A0F05891F8B9FC40B16A132ACB (SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * __this, const RuntimeMethod* method);
+// System.Net.Http.HttpMethod System.Net.Http.HttpMethod::get_Put()
+extern "C" IL2CPP_METHOD_ATTR HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220 * HttpMethod_get_Put_m4BB0741A43A9B72F8E7EDAC626AEBF1CD8E45F87 (const RuntimeMethod* method);
+// System.String SpotifyApi::GetDeviceIdQuery(System.Boolean)
+extern "C" IL2CPP_METHOD_ATTR String_t* SpotifyApi_GetDeviceIdQuery_m9C58CB91093EAA829734A7F04F950F725110C69E (SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * __this, bool ___isFirstParam0, const RuntimeMethod* method);
+// System.Threading.Tasks.Task`1<System.String> SpotifyApi::SendAsync(System.String,System.Net.Http.HttpMethod,System.String,System.String,System.Threading.CancellationToken)
+extern "C" IL2CPP_METHOD_ATTR Task_1_t4A75FEC8F36C5D4F8793BB8C94E4DAA7457D0286 * SpotifyApi_SendAsync_m5AD966C901F4391600A0955814F18F9A59C8D430 (SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * __this, String_t* ___cmdName0, HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220 * ___method1, String_t* ___path2, String_t* ___payload3, CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  ___cancel4, const RuntimeMethod* method);
 // System.Runtime.CompilerServices.TaskAwaiter`1<!0> System.Threading.Tasks.Task`1<System.String>::GetAwaiter()
 inline TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  Task_1_GetAwaiter_mBC24D09E3C1AB76F290AB7E9017AB8913242EC61 (Task_1_t4A75FEC8F36C5D4F8793BB8C94E4DAA7457D0286 * __this, const RuntimeMethod* method)
 {
@@ -6444,18 +7315,135 @@ inline bool TaskAwaiter_1_get_IsCompleted_m087FA74E453B58AB5AAD0A64BEDDB49070C6C
 {
 	return ((  bool (*) (TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 *, const RuntimeMethod*))TaskAwaiter_1_get_IsCompleted_mBF435C7EFD03FCF7810FC08EEDC5945F80FF88F9_gshared)(__this, method);
 }
-// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter`1<System.String>,SpotiftyLogin/<DoSignInAsync>d__7>(!!0&,!!1&)
-inline void AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483_TisU3CDoSignInAsyncU3Ed__7_t374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2_mBC8F8A17181CC5DD63F7ED3EB599D28FC6D087FE (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 * p0, U3CDoSignInAsyncU3Ed__7_t374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2 * p1, const RuntimeMethod* method)
+// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter`1<System.String>,SpotifyApi/<PauseAsync>d__29>(!!0&,!!1&)
+inline void AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483_TisU3CPauseAsyncU3Ed__29_tDEC85B2D09AA536D9ABA26C9948D506C674C0C84_m55D555D3DF52314F0D75BD409E3026F256D67C34 (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 * p0, U3CPauseAsyncU3Ed__29_tDEC85B2D09AA536D9ABA26C9948D506C674C0C84 * p1, const RuntimeMethod* method)
 {
-	((  void (*) (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *, TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 *, U3CDoSignInAsyncU3Ed__7_t374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2 *, const RuntimeMethod*))AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t8CDB78D2A4D48E80C35A8FF6FC04A82B9FC35977_TisU3CDoSignInAsyncU3Ed__7_t374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2_mB5B82F834F4041485AAA3821ADDBB6246B6E9D9C_gshared)(__this, p0, p1, method);
+	((  void (*) (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *, TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 *, U3CPauseAsyncU3Ed__29_tDEC85B2D09AA536D9ABA26C9948D506C674C0C84 *, const RuntimeMethod*))AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t8CDB78D2A4D48E80C35A8FF6FC04A82B9FC35977_TisU3CPauseAsyncU3Ed__29_tDEC85B2D09AA536D9ABA26C9948D506C674C0C84_m8CA18D4BFE603857DCD0375A5152DDF963338694_gshared)(__this, p0, p1, method);
 }
 // !0 System.Runtime.CompilerServices.TaskAwaiter`1<System.String>::GetResult()
 inline String_t* TaskAwaiter_1_GetResult_m2CE622156E52C41B443C3751AB08398ECC3CA3F3 (TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 * __this, const RuntimeMethod* method)
 {
 	return ((  String_t* (*) (TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 *, const RuntimeMethod*))TaskAwaiter_1_GetResult_m9E148849CD4747E1BDD831E4FB2D7ECFA13C11C8_gshared)(__this, method);
 }
-// System.Threading.Tasks.Task SpotiftyLogin::WaitForCallback(System.Net.Http.HttpClient,System.String)
-extern "C" IL2CPP_METHOD_ATTR Task_t1F48C203E163126EBC69ACCA679D1A462DEE9EB2 * SpotiftyLogin_WaitForCallback_m8728D0B5560ADC5D230DECB90AF9829E08BA8BF6 (SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * __this, HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7 * ___client0, String_t* ___state1, const RuntimeMethod* method);
+// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::SetException(System.Exception)
+extern "C" IL2CPP_METHOD_ATTR void AsyncTaskMethodBuilder_SetException_m370C484922A63A6EF96E241D1370B8814F1F2D6B (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, Exception_t * p0, const RuntimeMethod* method);
+// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::SetResult()
+extern "C" IL2CPP_METHOD_ATTR void AsyncTaskMethodBuilder_SetResult_m151016FB698F3BB34A73BAE693A97513A7E4C838 (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, const RuntimeMethod* method);
+// System.Void SpotifyApi/<PauseAsync>d__29::MoveNext()
+extern "C" IL2CPP_METHOD_ATTR void U3CPauseAsyncU3Ed__29_MoveNext_m901FBFBEC78C7F620D549AEF3D5B7DB78C71FA6F (U3CPauseAsyncU3Ed__29_tDEC85B2D09AA536D9ABA26C9948D506C674C0C84 * __this, const RuntimeMethod* method);
+// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+extern "C" IL2CPP_METHOD_ATTR void AsyncTaskMethodBuilder_SetStateMachine_mB5DD68F7C49EA6D452AEBA02B1B98AED898C3C25 (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, RuntimeObject* p0, const RuntimeMethod* method);
+// System.Void SpotifyApi/<PauseAsync>d__29::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+extern "C" IL2CPP_METHOD_ATTR void U3CPauseAsyncU3Ed__29_SetStateMachine_mDA7320C6312EC70C08ECB7DFCD92753C5CF2BB7D (U3CPauseAsyncU3Ed__29_tDEC85B2D09AA536D9ABA26C9948D506C674C0C84 * __this, RuntimeObject* ___stateMachine0, const RuntimeMethod* method);
+// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter`1<System.String>,SpotifyApi/<PlayAsync>d__24>(!!0&,!!1&)
+inline void AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483_TisU3CPlayAsyncU3Ed__24_tB410B49C7C0816D2A5DD701A483FF046FA5C7777_m388A695289A08AF6642AAAB510902EB9ADFD2425 (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 * p0, U3CPlayAsyncU3Ed__24_tB410B49C7C0816D2A5DD701A483FF046FA5C7777 * p1, const RuntimeMethod* method)
+{
+	((  void (*) (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *, TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 *, U3CPlayAsyncU3Ed__24_tB410B49C7C0816D2A5DD701A483FF046FA5C7777 *, const RuntimeMethod*))AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t8CDB78D2A4D48E80C35A8FF6FC04A82B9FC35977_TisU3CPlayAsyncU3Ed__24_tB410B49C7C0816D2A5DD701A483FF046FA5C7777_m2B97F8258F686AD74700A459F135A4A1E1E81CCE_gshared)(__this, p0, p1, method);
+}
+// System.Void SpotifyApi/<PlayAsync>d__24::MoveNext()
+extern "C" IL2CPP_METHOD_ATTR void U3CPlayAsyncU3Ed__24_MoveNext_mF019B2A18E86907A55AC5EA8227F951FE3152B59 (U3CPlayAsyncU3Ed__24_tB410B49C7C0816D2A5DD701A483FF046FA5C7777 * __this, const RuntimeMethod* method);
+// System.Void SpotifyApi/<PlayAsync>d__24::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+extern "C" IL2CPP_METHOD_ATTR void U3CPlayAsyncU3Ed__24_SetStateMachine_m5F16FA04784B9FC6F94F308B3642325E1AF2A0F9 (U3CPlayAsyncU3Ed__24_tB410B49C7C0816D2A5DD701A483FF046FA5C7777 * __this, RuntimeObject* ___stateMachine0, const RuntimeMethod* method);
+// System.String UnityEngine.JsonUtility::ToJson(System.Object)
+extern "C" IL2CPP_METHOD_ATTR String_t* JsonUtility_ToJson_m588D3BCFA6FC7FA342FC221D4CB02729E901E573 (RuntimeObject * p0, const RuntimeMethod* method);
+// System.String System.String::Concat(System.Object[])
+extern "C" IL2CPP_METHOD_ATTR String_t* String_Concat_mB7BA84F13912303B2E5E40FBF0109E1A328ACA07 (ObjectU5BU5D_t3C9242B5C88A48B2A5BD9FDA6CD0024E792AF08A* p0, const RuntimeMethod* method);
+// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter`1<System.String>,SpotifyApi/<PlayUrisAsync>d__26>(!!0&,!!1&)
+inline void AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483_TisU3CPlayUrisAsyncU3Ed__26_tF7BEEEB5E918E76C3B6F702D718B1110F5033C78_mC18A337FD73A92592626FB0834CBA684C6C45DB4 (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 * p0, U3CPlayUrisAsyncU3Ed__26_tF7BEEEB5E918E76C3B6F702D718B1110F5033C78 * p1, const RuntimeMethod* method)
+{
+	((  void (*) (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *, TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 *, U3CPlayUrisAsyncU3Ed__26_tF7BEEEB5E918E76C3B6F702D718B1110F5033C78 *, const RuntimeMethod*))AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t8CDB78D2A4D48E80C35A8FF6FC04A82B9FC35977_TisU3CPlayUrisAsyncU3Ed__26_tF7BEEEB5E918E76C3B6F702D718B1110F5033C78_m23220500FA2BB627DF554C6BC4F6252BF981256A_gshared)(__this, p0, p1, method);
+}
+// System.Void SpotifyApi/<PlayUrisAsync>d__26::MoveNext()
+extern "C" IL2CPP_METHOD_ATTR void U3CPlayUrisAsyncU3Ed__26_MoveNext_m1D53EECD7B7D798205493B7C042BC8F90E017FC1 (U3CPlayUrisAsyncU3Ed__26_tF7BEEEB5E918E76C3B6F702D718B1110F5033C78 * __this, const RuntimeMethod* method);
+// System.Void SpotifyApi/<PlayUrisAsync>d__26::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+extern "C" IL2CPP_METHOD_ATTR void U3CPlayUrisAsyncU3Ed__26_SetStateMachine_mD63DFAE18A659474D3B49D111902B2E12295D2A7 (U3CPlayUrisAsyncU3Ed__26_tF7BEEEB5E918E76C3B6F702D718B1110F5033C78 * __this, RuntimeObject* ___stateMachine0, const RuntimeMethod* method);
+// System.String System.String::ToLower()
+extern "C" IL2CPP_METHOD_ATTR String_t* String_ToLower_m5287204D93C9DDC4DF84581ADD756D0FDE2BA5A8 (String_t* __this, const RuntimeMethod* method);
+// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter`1<System.String>,SpotifyApi/<RepeatAsync>d__30>(!!0&,!!1&)
+inline void AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483_TisU3CRepeatAsyncU3Ed__30_tBE6907D98B9974628F6181F8DB4B506D3DF1B509_m16EA31FFBA6C8B1D27E06B62D8BED02D30C09D3B (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 * p0, U3CRepeatAsyncU3Ed__30_tBE6907D98B9974628F6181F8DB4B506D3DF1B509 * p1, const RuntimeMethod* method)
+{
+	((  void (*) (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *, TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 *, U3CRepeatAsyncU3Ed__30_tBE6907D98B9974628F6181F8DB4B506D3DF1B509 *, const RuntimeMethod*))AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t8CDB78D2A4D48E80C35A8FF6FC04A82B9FC35977_TisU3CRepeatAsyncU3Ed__30_tBE6907D98B9974628F6181F8DB4B506D3DF1B509_m8BE013819863CE25856731D9E04B63A8B484D242_gshared)(__this, p0, p1, method);
+}
+// System.Void SpotifyApi/<RepeatAsync>d__30::MoveNext()
+extern "C" IL2CPP_METHOD_ATTR void U3CRepeatAsyncU3Ed__30_MoveNext_m44002A5F00382C41B07B32F3D1A5A7045FDCAB19 (U3CRepeatAsyncU3Ed__30_tBE6907D98B9974628F6181F8DB4B506D3DF1B509 * __this, const RuntimeMethod* method);
+// System.Void SpotifyApi/<RepeatAsync>d__30::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+extern "C" IL2CPP_METHOD_ATTR void U3CRepeatAsyncU3Ed__30_SetStateMachine_mFA577CCED55B14C07C48E1E272FE7945A9A6FDFA (U3CRepeatAsyncU3Ed__30_tBE6907D98B9974628F6181F8DB4B506D3DF1B509 * __this, RuntimeObject* ___stateMachine0, const RuntimeMethod* method);
+// System.Void System.Net.Http.HttpRequestMessage::.ctor(System.Net.Http.HttpMethod,System.String)
+extern "C" IL2CPP_METHOD_ATTR void HttpRequestMessage__ctor_m76A9F3C082E2D1C9B679E56DB32F2AA8ECE377C0 (HttpRequestMessage_tBBC9EBC5D6C1B7E30F9927AABBDB65792FFB5427 * __this, HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220 * p0, String_t* p1, const RuntimeMethod* method);
+// System.Void System.Net.Http.StringContent::.ctor(System.String)
+extern "C" IL2CPP_METHOD_ATTR void StringContent__ctor_m14C504A380661472DEB032923DD27742561EC45C (StringContent_t0E49805143AA8BCE4640914150158663B9061079 * __this, String_t* p0, const RuntimeMethod* method);
+// System.Void System.Net.Http.HttpRequestMessage::set_Content(System.Net.Http.HttpContent)
+extern "C" IL2CPP_METHOD_ATTR void HttpRequestMessage_set_Content_mF926F55372E9ECD0E0987CE33C47648EDB23A78D (HttpRequestMessage_tBBC9EBC5D6C1B7E30F9927AABBDB65792FFB5427 * __this, HttpContent_t678722F60CA151DD19AFCA917657BE24F111A41D * p0, const RuntimeMethod* method);
+// System.Runtime.CompilerServices.TaskAwaiter`1<!0> System.Threading.Tasks.Task`1<System.Net.Http.HttpResponseMessage>::GetAwaiter()
+inline TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  Task_1_GetAwaiter_m511397276BFE6D43B77D1BD80905DF2FB0FA54E0 (Task_1_t519CB3A303B53176BD616AC273201D66B84FF270 * __this, const RuntimeMethod* method)
+{
+	return ((  TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  (*) (Task_1_t519CB3A303B53176BD616AC273201D66B84FF270 *, const RuntimeMethod*))Task_1_GetAwaiter_m9C50610C6F05C1DA9BFA67201CB570F1DE040817_gshared)(__this, method);
+}
+// System.Boolean System.Runtime.CompilerServices.TaskAwaiter`1<System.Net.Http.HttpResponseMessage>::get_IsCompleted()
+inline bool TaskAwaiter_1_get_IsCompleted_m0F711316D40833EE5C67F3E65571EF033B9364DF (TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 * __this, const RuntimeMethod* method)
+{
+	return ((  bool (*) (TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 *, const RuntimeMethod*))TaskAwaiter_1_get_IsCompleted_mBF435C7EFD03FCF7810FC08EEDC5945F80FF88F9_gshared)(__this, method);
+}
+// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<System.String>::AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter`1<System.Net.Http.HttpResponseMessage>,SpotifyApi/<SendAsync>d__18>(!!0&,!!1&)
+inline void AsyncTaskMethodBuilder_1_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86_TisU3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303_m6F091BA0BFBAFFACF7A021178E9ABD35A5DDAC3D (AsyncTaskMethodBuilder_1_tC7B1E45031A96D1F2363C0491EC79BBE740BC10C * __this, TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 * p0, U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303 * p1, const RuntimeMethod* method)
+{
+	((  void (*) (AsyncTaskMethodBuilder_1_tC7B1E45031A96D1F2363C0491EC79BBE740BC10C *, TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 *, U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303 *, const RuntimeMethod*))AsyncTaskMethodBuilder_1_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t8CDB78D2A4D48E80C35A8FF6FC04A82B9FC35977_TisU3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303_mB687108170097C00C0E412390EFA9826EEA91256_gshared)(__this, p0, p1, method);
+}
+// !0 System.Runtime.CompilerServices.TaskAwaiter`1<System.Net.Http.HttpResponseMessage>::GetResult()
+inline HttpResponseMessage_t619DB9FDC8E63CDF2D0A314B61A4C6609A43F904 * TaskAwaiter_1_GetResult_m706665648BB29D83FD0C72CFA6279966143192A2 (TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 * __this, const RuntimeMethod* method)
+{
+	return ((  HttpResponseMessage_t619DB9FDC8E63CDF2D0A314B61A4C6609A43F904 * (*) (TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 *, const RuntimeMethod*))TaskAwaiter_1_GetResult_m9E148849CD4747E1BDD831E4FB2D7ECFA13C11C8_gshared)(__this, method);
+}
+// System.Net.Http.HttpContent System.Net.Http.HttpResponseMessage::get_Content()
+extern "C" IL2CPP_METHOD_ATTR HttpContent_t678722F60CA151DD19AFCA917657BE24F111A41D * HttpResponseMessage_get_Content_m325C3E47B0D7E1DD70CA36FA04B894A152AD4420 (HttpResponseMessage_t619DB9FDC8E63CDF2D0A314B61A4C6609A43F904 * __this, const RuntimeMethod* method);
+// System.Threading.Tasks.Task`1<System.String> System.Net.Http.HttpContent::ReadAsStringAsync()
+extern "C" IL2CPP_METHOD_ATTR Task_1_t4A75FEC8F36C5D4F8793BB8C94E4DAA7457D0286 * HttpContent_ReadAsStringAsync_m499CCA8B02B3AFB793C0783D28220FC7A531A24D (HttpContent_t678722F60CA151DD19AFCA917657BE24F111A41D * __this, const RuntimeMethod* method);
+// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<System.String>::AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter`1<System.String>,SpotifyApi/<SendAsync>d__18>(!!0&,!!1&)
+inline void AsyncTaskMethodBuilder_1_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483_TisU3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303_m3E1DDF8398F7C7A367A1EB213C076FC091852CC1 (AsyncTaskMethodBuilder_1_tC7B1E45031A96D1F2363C0491EC79BBE740BC10C * __this, TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 * p0, U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303 * p1, const RuntimeMethod* method)
+{
+	((  void (*) (AsyncTaskMethodBuilder_1_tC7B1E45031A96D1F2363C0491EC79BBE740BC10C *, TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 *, U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303 *, const RuntimeMethod*))AsyncTaskMethodBuilder_1_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t8CDB78D2A4D48E80C35A8FF6FC04A82B9FC35977_TisU3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303_mB687108170097C00C0E412390EFA9826EEA91256_gshared)(__this, p0, p1, method);
+}
+// System.Net.Http.HttpResponseMessage System.Net.Http.HttpResponseMessage::EnsureSuccessStatusCode()
+extern "C" IL2CPP_METHOD_ATTR HttpResponseMessage_t619DB9FDC8E63CDF2D0A314B61A4C6609A43F904 * HttpResponseMessage_EnsureSuccessStatusCode_mFC49F01BD731C4FE89B7143E0AA8C6137F372B44 (HttpResponseMessage_t619DB9FDC8E63CDF2D0A314B61A4C6609A43F904 * __this, const RuntimeMethod* method);
+// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<System.String>::SetException(System.Exception)
+inline void AsyncTaskMethodBuilder_1_SetException_m7EC0D7D4B3431CA02400760ADA732A416EAEFB2D (AsyncTaskMethodBuilder_1_tC7B1E45031A96D1F2363C0491EC79BBE740BC10C * __this, Exception_t * p0, const RuntimeMethod* method)
+{
+	((  void (*) (AsyncTaskMethodBuilder_1_tC7B1E45031A96D1F2363C0491EC79BBE740BC10C *, Exception_t *, const RuntimeMethod*))AsyncTaskMethodBuilder_1_SetException_m4C0B5462ECCB520FACA3C90B353DF596DAAF586D_gshared)(__this, p0, method);
+}
+// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<System.String>::SetResult(!0)
+inline void AsyncTaskMethodBuilder_1_SetResult_m44836E9953D99A304CCB8725A8E47453725FFE9B (AsyncTaskMethodBuilder_1_tC7B1E45031A96D1F2363C0491EC79BBE740BC10C * __this, String_t* p0, const RuntimeMethod* method)
+{
+	((  void (*) (AsyncTaskMethodBuilder_1_tC7B1E45031A96D1F2363C0491EC79BBE740BC10C *, String_t*, const RuntimeMethod*))AsyncTaskMethodBuilder_1_SetResult_mD7DA7A17DC0610B11A0AAA364C3CA51FEC1271DB_gshared)(__this, p0, method);
+}
+// System.Void SpotifyApi/<SendAsync>d__18::MoveNext()
+extern "C" IL2CPP_METHOD_ATTR void U3CSendAsyncU3Ed__18_MoveNext_m8600ECFE98273D8826DE4523DC47E6840622D348 (U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303 * __this, const RuntimeMethod* method);
+// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<System.String>::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+inline void AsyncTaskMethodBuilder_1_SetStateMachine_m83945BA8843F53C1C9ED18D4B312FFF9A24BB9EB (AsyncTaskMethodBuilder_1_tC7B1E45031A96D1F2363C0491EC79BBE740BC10C * __this, RuntimeObject* p0, const RuntimeMethod* method)
+{
+	((  void (*) (AsyncTaskMethodBuilder_1_tC7B1E45031A96D1F2363C0491EC79BBE740BC10C *, RuntimeObject*, const RuntimeMethod*))AsyncTaskMethodBuilder_1_SetStateMachine_m5CC21A02320CF3D2DD7894A31123DFD82A428E4C_gshared)(__this, p0, method);
+}
+// System.Void SpotifyApi/<SendAsync>d__18::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+extern "C" IL2CPP_METHOD_ATTR void U3CSendAsyncU3Ed__18_SetStateMachine_m0245215E83678D57673618FA7FC5F7D256A3F02D (U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303 * __this, RuntimeObject* ___stateMachine0, const RuntimeMethod* method);
+// System.Threading.Tasks.Task`1<System.Net.Http.HttpResponseMessage> System.Net.Http.HttpClient::GetAsync(System.String,System.Threading.CancellationToken)
+extern "C" IL2CPP_METHOD_ATTR Task_1_t519CB3A303B53176BD616AC273201D66B84FF270 * HttpClient_GetAsync_m3D3DDCEB3022B5F6C9892B857374BFBE1DA54E4E (HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7 * __this, String_t* p0, CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  p1, const RuntimeMethod* method);
+// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter`1<System.Net.Http.HttpResponseMessage>,SpotifyApi/<SignInAsync>d__14>(!!0&,!!1&)
+inline void AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86_TisU3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896_mCE850206315E5139E460F35715A25A6FED2BB57A (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 * p0, U3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896 * p1, const RuntimeMethod* method)
+{
+	((  void (*) (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *, TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 *, U3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896 *, const RuntimeMethod*))AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t8CDB78D2A4D48E80C35A8FF6FC04A82B9FC35977_TisU3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896_mC8ABF5A3B088954F6F0A52E19BEB3FC83A68F688_gshared)(__this, p0, p1, method);
+}
+// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter`1<System.String>,SpotifyApi/<SignInAsync>d__14>(!!0&,!!1&)
+inline void AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483_TisU3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896_m3EF55D1FCBF886F4A691B0C2B1D46E9B55196193 (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 * p0, U3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896 * p1, const RuntimeMethod* method)
+{
+	((  void (*) (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *, TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 *, U3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896 *, const RuntimeMethod*))AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t8CDB78D2A4D48E80C35A8FF6FC04A82B9FC35977_TisU3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896_mC8ABF5A3B088954F6F0A52E19BEB3FC83A68F688_gshared)(__this, p0, p1, method);
+}
+// System.Threading.Tasks.Task SpotifyApi::WaitForCallback(System.String,System.Threading.CancellationToken)
+extern "C" IL2CPP_METHOD_ATTR Task_t1F48C203E163126EBC69ACCA679D1A462DEE9EB2 * SpotifyApi_WaitForCallback_mCF7845CDED16C66D0641E30C3F63E00269F36FE1 (SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * __this, String_t* ___state0, CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  ___cancel1, const RuntimeMethod* method);
+// System.String System.String::Join(System.String,System.String[])
+extern "C" IL2CPP_METHOD_ATTR String_t* String_Join_m49371BED70248F0FCE970CB4F2E39E9A688AAFA4 (String_t* p0, StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* p1, const RuntimeMethod* method);
+// System.String System.String::Concat(System.String[])
+extern "C" IL2CPP_METHOD_ATTR String_t* String_Concat_m232E857CA5107EA6AC52E7DD7018716C021F237B (StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* p0, const RuntimeMethod* method);
+// System.Void UnityEngine.Application::OpenURL(System.String)
+extern "C" IL2CPP_METHOD_ATTR void Application_OpenURL_m2888DA5BDF68B1BC23E983469157783F390D7BC8 (String_t* p0, const RuntimeMethod* method);
 // System.Int32 UnityEngine.Screen::get_width()
 extern "C" IL2CPP_METHOD_ATTR int32_t Screen_get_width_m8ECCEF7FF17395D1237BC0193D7A6640A3FEEAD3 (const RuntimeMethod* method);
 // System.Int32 UnityEngine.Screen::get_height()
@@ -6464,82 +7452,40 @@ extern "C" IL2CPP_METHOD_ATTR int32_t Screen_get_height_mF5B64EBC4CDE0EAAA5713C1
 extern "C" IL2CPP_METHOD_ATTR void Rect__ctor_m50B92C75005C9C5A0D05E6E0EBB43AFAF7C66280 (Rect_t35B976DE901B5423C11705E156938EA27AB402CE * __this, float p0, float p1, float p2, float p3, const RuntimeMethod* method);
 // System.Void UniWebView::set_Frame(UnityEngine.Rect)
 extern "C" IL2CPP_METHOD_ATTR void UniWebView_set_Frame_m5D8A545371F854091361FB698DCCF45A10C76CB9 (UniWebView_t70C5C5815FC5A948185238830E0AB8B221E34BBB * __this, Rect_t35B976DE901B5423C11705E156938EA27AB402CE  ___value0, const RuntimeMethod* method);
-// System.String System.String::Concat(System.String[])
-extern "C" IL2CPP_METHOD_ATTR String_t* String_Concat_m232E857CA5107EA6AC52E7DD7018716C021F237B (StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* p0, const RuntimeMethod* method);
 // System.Void UniWebView::Load(System.String,System.Boolean,System.String)
 extern "C" IL2CPP_METHOD_ATTR void UniWebView_Load_m27CFE9E72534ABEAEA16DE6AAABF6C7556305B6E (UniWebView_t70C5C5815FC5A948185238830E0AB8B221E34BBB * __this, String_t* ___url0, bool ___skipEncoding1, String_t* ___readAccessURL2, const RuntimeMethod* method);
 // System.Boolean UniWebView::Show(System.Boolean,UniWebViewTransitionEdge,System.Single,System.Action)
 extern "C" IL2CPP_METHOD_ATTR bool UniWebView_Show_m900E118C2CE18F8DBB39C49E4E25948478FC4102 (UniWebView_t70C5C5815FC5A948185238830E0AB8B221E34BBB * __this, bool ___fade0, int32_t ___edge1, float ___duration2, Action_t591D2A86165F896B4B800BB5C25CE18672A55579 * ___completionHandler3, const RuntimeMethod* method);
-// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::SetException(System.Exception)
-extern "C" IL2CPP_METHOD_ATTR void AsyncTaskMethodBuilder_SetException_m370C484922A63A6EF96E241D1370B8814F1F2D6B (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, Exception_t * p0, const RuntimeMethod* method);
-// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::SetResult()
-extern "C" IL2CPP_METHOD_ATTR void AsyncTaskMethodBuilder_SetResult_m151016FB698F3BB34A73BAE693A97513A7E4C838 (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, const RuntimeMethod* method);
-// System.Void SpotiftyLogin/<DoSignInAsync>d__7::MoveNext()
-extern "C" IL2CPP_METHOD_ATTR void U3CDoSignInAsyncU3Ed__7_MoveNext_mA623832C4C1226069800A1B3F9874017B26A0EB4 (U3CDoSignInAsyncU3Ed__7_t374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2 * __this, const RuntimeMethod* method);
-// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-extern "C" IL2CPP_METHOD_ATTR void AsyncTaskMethodBuilder_SetStateMachine_mB5DD68F7C49EA6D452AEBA02B1B98AED898C3C25 (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, RuntimeObject* p0, const RuntimeMethod* method);
-// System.Void SpotiftyLogin/<DoSignInAsync>d__7::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-extern "C" IL2CPP_METHOD_ATTR void U3CDoSignInAsyncU3Ed__7_SetStateMachine_m8B30C1F8D99C63814E026A71EB4ACDD679265E46 (U3CDoSignInAsyncU3Ed__7_t374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2 * __this, RuntimeObject* ___stateMachine0, const RuntimeMethod* method);
-// System.Void System.Net.Http.StringContent::.ctor(System.String)
-extern "C" IL2CPP_METHOD_ATTR void StringContent__ctor_m14C504A380661472DEB032923DD27742561EC45C (StringContent_t0E49805143AA8BCE4640914150158663B9061079 * __this, String_t* p0, const RuntimeMethod* method);
-// System.Threading.Tasks.Task`1<System.Net.Http.HttpResponseMessage> System.Net.Http.HttpClient::PutAsync(System.String,System.Net.Http.HttpContent)
-extern "C" IL2CPP_METHOD_ATTR Task_1_t519CB3A303B53176BD616AC273201D66B84FF270 * HttpClient_PutAsync_m600B18C3B5B9C424DD541EF1AAD0A248B24829E7 (HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7 * __this, String_t* p0, HttpContent_t678722F60CA151DD19AFCA917657BE24F111A41D * p1, const RuntimeMethod* method);
-// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter`1<System.Net.Http.HttpResponseMessage>,SpotiftyLogin/<Pause>d__13>(!!0&,!!1&)
-inline void AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86_TisU3CPauseU3Ed__13_t7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3_m5D6BE89DCCED75301497F9998148B85EE8135C35 (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 * p0, U3CPauseU3Ed__13_t7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3 * p1, const RuntimeMethod* method)
-{
-	((  void (*) (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *, TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 *, U3CPauseU3Ed__13_t7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3 *, const RuntimeMethod*))AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t8CDB78D2A4D48E80C35A8FF6FC04A82B9FC35977_TisU3CPauseU3Ed__13_t7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3_mC4D59B2754401B99DD21AD0F439F6C599BCB63AB_gshared)(__this, p0, p1, method);
-}
-// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter`1<System.String>,SpotiftyLogin/<Pause>d__13>(!!0&,!!1&)
-inline void AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483_TisU3CPauseU3Ed__13_t7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3_mBEBCE726EC238FCE181D231A149EAD42A94CF250 (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 * p0, U3CPauseU3Ed__13_t7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3 * p1, const RuntimeMethod* method)
-{
-	((  void (*) (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *, TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 *, U3CPauseU3Ed__13_t7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3 *, const RuntimeMethod*))AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t8CDB78D2A4D48E80C35A8FF6FC04A82B9FC35977_TisU3CPauseU3Ed__13_t7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3_mC4D59B2754401B99DD21AD0F439F6C599BCB63AB_gshared)(__this, p0, p1, method);
-}
-// System.Void SpotiftyLogin/<Pause>d__13::MoveNext()
-extern "C" IL2CPP_METHOD_ATTR void U3CPauseU3Ed__13_MoveNext_mE89FC1E787DB329D3706DA25D843D1377E23E7F8 (U3CPauseU3Ed__13_t7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3 * __this, const RuntimeMethod* method);
-// System.Void SpotiftyLogin/<Pause>d__13::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-extern "C" IL2CPP_METHOD_ATTR void U3CPauseU3Ed__13_SetStateMachine_mB45D3DDED01289717DDF958005F1577078EA27EE (U3CPauseU3Ed__13_t7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3 * __this, RuntimeObject* ___stateMachine0, const RuntimeMethod* method);
-// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter`1<System.Net.Http.HttpResponseMessage>,SpotiftyLogin/<Play>d__12>(!!0&,!!1&)
-inline void AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86_TisU3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C_mD4115B988D4E229C42FF1CA2CAE29CC5518015E5 (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 * p0, U3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C * p1, const RuntimeMethod* method)
-{
-	((  void (*) (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *, TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 *, U3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C *, const RuntimeMethod*))AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t8CDB78D2A4D48E80C35A8FF6FC04A82B9FC35977_TisU3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C_mA7C1259D302BCADF54B7D00BA9C07F7D7EDBA989_gshared)(__this, p0, p1, method);
-}
-// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter`1<System.String>,SpotiftyLogin/<Play>d__12>(!!0&,!!1&)
-inline void AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483_TisU3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C_m6A99DEB927FE2720A7A013F154D0D4775CAEEC27 (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 * p0, U3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C * p1, const RuntimeMethod* method)
-{
-	((  void (*) (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *, TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 *, U3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C *, const RuntimeMethod*))AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t8CDB78D2A4D48E80C35A8FF6FC04A82B9FC35977_TisU3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C_mA7C1259D302BCADF54B7D00BA9C07F7D7EDBA989_gshared)(__this, p0, p1, method);
-}
-// System.Net.Http.Headers.HttpResponseHeaders System.Net.Http.HttpResponseMessage::get_Headers()
-extern "C" IL2CPP_METHOD_ATTR HttpResponseHeaders_t51F7C46C9CE47E3B424A6137CE8F5BCA4E2B1D59 * HttpResponseMessage_get_Headers_mBD52D7A018509B2A6A55C0925A40955A33D20B98 (HttpResponseMessage_t619DB9FDC8E63CDF2D0A314B61A4C6609A43F904 * __this, const RuntimeMethod* method);
-// System.Void System.Net.Http.Headers.HttpHeaders::Add(System.String,System.String)
-extern "C" IL2CPP_METHOD_ATTR void HttpHeaders_Add_m41401B7E6B948DF760D603C2F43AC19ACC48D7FA (HttpHeaders_tF0E0E01200BD0D8141489FB370D60A9F4DBF42A1 * __this, String_t* p0, String_t* p1, const RuntimeMethod* method);
-// System.Void SpotiftyLogin/<Play>d__12::MoveNext()
-extern "C" IL2CPP_METHOD_ATTR void U3CPlayU3Ed__12_MoveNext_m92D0C2A3162EB0837371FA384EB8670F4AE3E429 (U3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C * __this, const RuntimeMethod* method);
-// System.Void SpotiftyLogin/<Play>d__12::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-extern "C" IL2CPP_METHOD_ATTR void U3CPlayU3Ed__12_SetStateMachine_m1C4E013C3F6C418FA4D4A965DF459783F65E3DC1 (U3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C * __this, RuntimeObject* ___stateMachine0, const RuntimeMethod* method);
+// System.Void SpotifyApi/<SignInAsync>d__14::MoveNext()
+extern "C" IL2CPP_METHOD_ATTR void U3CSignInAsyncU3Ed__14_MoveNext_mC70205135B57FFDD05C4593240F3210B5770757A (U3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896 * __this, const RuntimeMethod* method);
+// System.Void SpotifyApi/<SignInAsync>d__14::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+extern "C" IL2CPP_METHOD_ATTR void U3CSignInAsyncU3Ed__14_SetStateMachine_m2639F09B400D98D50FD7BC49A3A75E95801DED1C (U3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896 * __this, RuntimeObject* ___stateMachine0, const RuntimeMethod* method);
 // System.String System.Uri::EscapeDataString(System.String)
 extern "C" IL2CPP_METHOD_ATTR String_t* Uri_EscapeDataString_mE1095E7A694DF447B699676C651F5EA5D98A2925 (String_t* p0, const RuntimeMethod* method);
-// System.String System.String::Concat(System.String,System.String,System.String)
-extern "C" IL2CPP_METHOD_ATTR String_t* String_Concat_mF4626905368D6558695A823466A1AF65EADB9923 (String_t* p0, String_t* p1, String_t* p2, const RuntimeMethod* method);
-// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter`1<System.Net.Http.HttpResponseMessage>,SpotiftyLogin/<WaitForCallback>d__8>(!!0&,!!1&)
-inline void AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86_TisU3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257_m803944ED22822FD2A20B37214871D084C007DD96 (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 * p0, U3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257 * p1, const RuntimeMethod* method)
+// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter`1<System.Net.Http.HttpResponseMessage>,SpotifyApi/<WaitForCallback>d__15>(!!0&,!!1&)
+inline void AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86_TisU3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A_mF6C481713B4692EEA025E7B6471D6AC3CD5045C8 (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 * p0, U3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A * p1, const RuntimeMethod* method)
 {
-	((  void (*) (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *, TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 *, U3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257 *, const RuntimeMethod*))AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t8CDB78D2A4D48E80C35A8FF6FC04A82B9FC35977_TisU3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257_m0E6E9CA97226CD1AAFCA726C3F39CE089F0BE92B_gshared)(__this, p0, p1, method);
+	((  void (*) (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *, TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 *, U3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A *, const RuntimeMethod*))AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t8CDB78D2A4D48E80C35A8FF6FC04A82B9FC35977_TisU3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A_mBB9EE4567F04967CC26902B9AB35AB26B4AE1877_gshared)(__this, p0, p1, method);
 }
-// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter`1<System.String>,SpotiftyLogin/<WaitForCallback>d__8>(!!0&,!!1&)
-inline void AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483_TisU3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257_m37C373317E7D5EE46545F0D2F7F86C264263E62A (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 * p0, U3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257 * p1, const RuntimeMethod* method)
+// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter`1<System.String>,SpotifyApi/<WaitForCallback>d__15>(!!0&,!!1&)
+inline void AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483_TisU3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A_m73D75404FD39BD92B0C22BE96021C09BEFC0ACBF (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 * p0, U3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A * p1, const RuntimeMethod* method)
 {
-	((  void (*) (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *, TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 *, U3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257 *, const RuntimeMethod*))AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t8CDB78D2A4D48E80C35A8FF6FC04A82B9FC35977_TisU3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257_m0E6E9CA97226CD1AAFCA726C3F39CE089F0BE92B_gshared)(__this, p0, p1, method);
+	((  void (*) (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *, TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 *, U3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A *, const RuntimeMethod*))AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t8CDB78D2A4D48E80C35A8FF6FC04A82B9FC35977_TisU3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A_mBB9EE4567F04967CC26902B9AB35AB26B4AE1877_gshared)(__this, p0, p1, method);
 }
+// System.Void UnityEngine.PlayerPrefs::SetString(System.String,System.String)
+extern "C" IL2CPP_METHOD_ATTR void PlayerPrefs_SetString_m7AC4E332A5DCA04E0AD91544AF836744BA8C2583 (String_t* p0, String_t* p1, const RuntimeMethod* method);
+// System.Void UnityEngine.PlayerPrefs::Save()
+extern "C" IL2CPP_METHOD_ATTR void PlayerPrefs_Save_m6CC1FE22D4B10AC819F55802D725BE17EA2AD37B (const RuntimeMethod* method);
 // System.Net.Http.Headers.HttpRequestHeaders System.Net.Http.HttpClient::get_DefaultRequestHeaders()
 extern "C" IL2CPP_METHOD_ATTR HttpRequestHeaders_tD29E9D795891A7A0D4FE8C8AA7BF0E756FCA40D4 * HttpClient_get_DefaultRequestHeaders_m3D044032F7024F2F9E6AD821FFCF49FBEBF0152F (HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7 * __this, const RuntimeMethod* method);
 // System.Void System.Net.Http.Headers.AuthenticationHeaderValue::.ctor(System.String,System.String)
 extern "C" IL2CPP_METHOD_ATTR void AuthenticationHeaderValue__ctor_m8EBD61CBB89C61631F2C2B4E592B390098F72D3C (AuthenticationHeaderValue_tC285A16C25538CA86FA59B88CC25E6999BB5F1A6 * __this, String_t* p0, String_t* p1, const RuntimeMethod* method);
 // System.Void System.Net.Http.Headers.HttpRequestHeaders::set_Authorization(System.Net.Http.Headers.AuthenticationHeaderValue)
 extern "C" IL2CPP_METHOD_ATTR void HttpRequestHeaders_set_Authorization_m093B11E4E81ADCAF59C32CDFEF0C71111D9FE206 (HttpRequestHeaders_tD29E9D795891A7A0D4FE8C8AA7BF0E756FCA40D4 * __this, AuthenticationHeaderValue_tC285A16C25538CA86FA59B88CC25E6999BB5F1A6 * p0, const RuntimeMethod* method);
-// System.Void SpotiftyLogin/<WaitForCallback>d__8::MoveNext()
-extern "C" IL2CPP_METHOD_ATTR void U3CWaitForCallbackU3Ed__8_MoveNext_m57D5F79AD33858368B51F01D61A2A820F7716432 (U3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257 * __this, const RuntimeMethod* method);
-// System.Void SpotiftyLogin/<WaitForCallback>d__8::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-extern "C" IL2CPP_METHOD_ATTR void U3CWaitForCallbackU3Ed__8_SetStateMachine_mD9881514197FCD9957E1CF24B39C5201FF0278EF (U3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257 * __this, RuntimeObject* ___stateMachine0, const RuntimeMethod* method);
+// System.Void SpotifyApi/<WaitForCallback>d__15::MoveNext()
+extern "C" IL2CPP_METHOD_ATTR void U3CWaitForCallbackU3Ed__15_MoveNext_m6885AE5AA0B62C9850C182E0237F35BC76A5BA96 (U3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A * __this, const RuntimeMethod* method);
+// System.Void SpotifyApi/<WaitForCallback>d__15::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+extern "C" IL2CPP_METHOD_ATTR void U3CWaitForCallbackU3Ed__15_SetStateMachine_m5496DC8359D58C69B9550A8989D9017711C3C7F8 (U3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A * __this, RuntimeObject* ___stateMachine0, const RuntimeMethod* method);
 // System.Delegate System.Delegate::Combine(System.Delegate,System.Delegate)
 extern "C" IL2CPP_METHOD_ATTR Delegate_t * Delegate_Combine_mC25D2F7DECAFBA6D9A2F9EBA8A77063F0658ECF1 (Delegate_t * p0, Delegate_t * p1, const RuntimeMethod* method);
 // System.Delegate System.Delegate::Remove(System.Delegate,System.Delegate)
@@ -6811,8 +7757,6 @@ extern "C" IL2CPP_METHOD_ATTR Type_t * Type_GetTypeFromHandle_m9DC58ADF051298701
 extern "C" IL2CPP_METHOD_ATTR MethodInfo_t * Type_GetMethod_mB8368D44E32C205D279BA3BB9E6FE1D09D45A6DE (Type_t * __this, String_t* p0, const RuntimeMethod* method);
 // System.Boolean System.Reflection.MethodInfo::op_Equality(System.Reflection.MethodInfo,System.Reflection.MethodInfo)
 extern "C" IL2CPP_METHOD_ATTR bool MethodInfo_op_Equality_m1E51FB51169B9B8FB3120ED5F9B454785932C5D0 (MethodInfo_t * p0, MethodInfo_t * p1, const RuntimeMethod* method);
-// System.String System.String::Join(System.String,System.String[])
-extern "C" IL2CPP_METHOD_ATTR String_t* String_Join_m49371BED70248F0FCE970CB4F2E39E9A688AAFA4 (String_t* p0, StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* p1, const RuntimeMethod* method);
 // System.Object System.Reflection.MethodBase::Invoke(System.Object,System.Object[])
 extern "C" IL2CPP_METHOD_ATTR RuntimeObject * MethodBase_Invoke_m471794D56262D9DB5B5A324883030AB16BD39674 (MethodBase_t * __this, RuntimeObject * p0, ObjectU5BU5D_t3C9242B5C88A48B2A5BD9FDA6CD0024E792AF08A* p1, const RuntimeMethod* method);
 // System.String UnityEngine.Application::get_streamingAssetsPath()
@@ -7125,159 +8069,200 @@ extern "C" IL2CPP_METHOD_ATTR void Spin__ctor_mB1F9C254B92FC6C2A992C897B58C54D3A
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// System.Void SpotiftyLogin::Start()
-extern "C" IL2CPP_METHOD_ATTR void SpotiftyLogin_Start_mF0CB5B3938011A276846D921A9B50A031AAF059D (SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * __this, const RuntimeMethod* method)
+// System.Void SpotifyApi::Start()
+extern "C" IL2CPP_METHOD_ATTR void SpotifyApi_Start_m05176A6081B6753046F08F31AB6E6F43CB4D1F15 (SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * __this, const RuntimeMethod* method)
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_method (SpotiftyLogin_Start_mF0CB5B3938011A276846D921A9B50A031AAF059D_MetadataUsageId);
+		il2cpp_codegen_initialize_method (SpotifyApi_Start_m05176A6081B6753046F08F31AB6E6F43CB4D1F15_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
 	GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * V_0 = NULL;
+	String_t* V_1 = NULL;
 	{
-		GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * L_0 = (GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F *)il2cpp_codegen_object_new(GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F_il2cpp_TypeInfo_var);
-		GameObject__ctor_mBB454E679AD9CF0B84D3609A01E6A9753ACF4686(L_0, _stringLiteral77371EBC2D84DFF90E5FD1358DFA40AB94D93920, /*hidden argument*/NULL);
-		V_0 = L_0;
-		GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * L_1 = V_0;
-		NullCheck(L_1);
-		UniWebView_t70C5C5815FC5A948185238830E0AB8B221E34BBB * L_2 = GameObject_AddComponent_TisUniWebView_t70C5C5815FC5A948185238830E0AB8B221E34BBB_m333454E40F1E6B59EA21CB600871CEAEA814667A(L_1, /*hidden argument*/GameObject_AddComponent_TisUniWebView_t70C5C5815FC5A948185238830E0AB8B221E34BBB_m333454E40F1E6B59EA21CB600871CEAEA814667A_RuntimeMethod_var);
-		__this->set_webView_4(L_2);
-		UniWebView_t70C5C5815FC5A948185238830E0AB8B221E34BBB * L_3 = __this->get_webView_4();
-		ShouldCloseDelegate_t2E3349B793354B80E34E5AF4CB035C2370160998 * L_4 = (ShouldCloseDelegate_t2E3349B793354B80E34E5AF4CB035C2370160998 *)il2cpp_codegen_object_new(ShouldCloseDelegate_t2E3349B793354B80E34E5AF4CB035C2370160998_il2cpp_TypeInfo_var);
-		ShouldCloseDelegate__ctor_mF65DFABA7263681AACE8A4E6A46543AE77E3CAC0(L_4, __this, (intptr_t)((intptr_t)SpotiftyLogin_U3CStartU3Eb__5_0_mD46D41AE18AE0DC76D7A602E85B3CB120EFA14B5_RuntimeMethod_var), /*hidden argument*/NULL);
-		NullCheck(L_3);
-		UniWebView_add_OnShouldClose_mF4E8FADA63C9F8549DA92D3C46097F334826D887(L_3, L_4, /*hidden argument*/NULL);
-		HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7 * L_5 = (HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7 *)il2cpp_codegen_object_new(HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7_il2cpp_TypeInfo_var);
-		HttpClient__ctor_m179C3B29F7C664CDC5B5761E24EC2E9685385A1F(L_5, /*hidden argument*/NULL);
-		__this->set_client_7(L_5);
-		return;
-	}
-}
-// System.Void SpotiftyLogin::Update()
-extern "C" IL2CPP_METHOD_ATTR void SpotiftyLogin_Update_m76FC82398B78D0F3B41DE54E4DAF377D11F4E1F0 (SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * __this, const RuntimeMethod* method)
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_method (SpotiftyLogin_Update_m76FC82398B78D0F3B41DE54E4DAF377D11F4E1F0_MetadataUsageId);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		bool L_0 = Input_GetKeyDown_m0CBC4672BC86FE82A9210B7FD2F475E2DD9C3163(_stringLiteral07C342BE6E560E7F43842E2E21B774E61D85F047, /*hidden argument*/NULL);
+		String_t* L_0 = __this->get_Token_4();
 		if (!L_0)
 		{
-			goto IL_0014;
+			goto IL_002d;
 		}
 	}
 	{
-		SpotiftyLogin_DoSignInAsync_m063D3947DA59864F4DABD1920AF41A83709B202B(__this, /*hidden argument*/NULL);
-		return;
-	}
-
-IL_0014:
-	{
-		bool L_1 = Input_GetKeyDown_m0CBC4672BC86FE82A9210B7FD2F475E2DD9C3163(_stringLiteral516B9783FCA517EECBD1D064DA2D165310B19759, /*hidden argument*/NULL);
-		if (!L_1)
+		String_t* L_1 = PlayerPrefs_GetString_m3031AD2D5DEAB97677A9EF629618541437F079F1(_stringLiteral277A756AC1FE07420ABEE5E20FD9463C5F746D82, /*hidden argument*/NULL);
+		V_1 = L_1;
+		String_t* L_2 = V_1;
+		if (!L_2)
 		{
-			goto IL_0026;
+			goto IL_002d;
 		}
 	}
 	{
-		SpotiftyLogin_PlayPause_m6266607EBE5BD177B3FE83C4006798874EF73B63(__this, /*hidden argument*/NULL);
+		String_t* L_3 = V_1;
+		String_t* L_4 = String_Concat_mB78D0094592718DA6D5DB6C712A9C225631666BE(_stringLiteralF315A6A539D1C0581326F753DFD66EF461ED53A7, L_3, /*hidden argument*/NULL);
+		IL2CPP_RUNTIME_CLASS_INIT(Debug_t7B5FCB117E2FD63B6838BC52821B252E2BFB61C4_il2cpp_TypeInfo_var);
+		Debug_Log_m4B7C70BAFD477C6BDB59C88A0934F0B018D03708(L_4, /*hidden argument*/NULL);
+		String_t* L_5 = V_1;
+		__this->set_Token_4(L_5);
 	}
 
-IL_0026:
+IL_002d:
 	{
+		GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * L_6 = (GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F *)il2cpp_codegen_object_new(GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F_il2cpp_TypeInfo_var);
+		GameObject__ctor_mBB454E679AD9CF0B84D3609A01E6A9753ACF4686(L_6, _stringLiteral77371EBC2D84DFF90E5FD1358DFA40AB94D93920, /*hidden argument*/NULL);
+		V_0 = L_6;
+		GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * L_7 = V_0;
+		NullCheck(L_7);
+		UniWebView_t70C5C5815FC5A948185238830E0AB8B221E34BBB * L_8 = GameObject_AddComponent_TisUniWebView_t70C5C5815FC5A948185238830E0AB8B221E34BBB_m333454E40F1E6B59EA21CB600871CEAEA814667A(L_7, /*hidden argument*/GameObject_AddComponent_TisUniWebView_t70C5C5815FC5A948185238830E0AB8B221E34BBB_m333454E40F1E6B59EA21CB600871CEAEA814667A_RuntimeMethod_var);
+		__this->set_webView_12(L_8);
+		UniWebView_t70C5C5815FC5A948185238830E0AB8B221E34BBB * L_9 = __this->get_webView_12();
+		ShouldCloseDelegate_t2E3349B793354B80E34E5AF4CB035C2370160998 * L_10 = (ShouldCloseDelegate_t2E3349B793354B80E34E5AF4CB035C2370160998 *)il2cpp_codegen_object_new(ShouldCloseDelegate_t2E3349B793354B80E34E5AF4CB035C2370160998_il2cpp_TypeInfo_var);
+		ShouldCloseDelegate__ctor_mF65DFABA7263681AACE8A4E6A46543AE77E3CAC0(L_10, __this, (intptr_t)((intptr_t)SpotifyApi_U3CStartU3Eb__12_0_mA7A11EDC2688CDE8B598BC4632EF0A65097FA805_RuntimeMethod_var), /*hidden argument*/NULL);
+		NullCheck(L_9);
+		UniWebView_add_OnShouldClose_mF4E8FADA63C9F8549DA92D3C46097F334826D887(L_9, L_10, /*hidden argument*/NULL);
+		HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7 * L_11 = (HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7 *)il2cpp_codegen_object_new(HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7_il2cpp_TypeInfo_var);
+		HttpClient__ctor_m179C3B29F7C664CDC5B5761E24EC2E9685385A1F(L_11, /*hidden argument*/NULL);
+		__this->set_client_11(L_11);
 		return;
 	}
 }
-// System.Threading.Tasks.Task SpotiftyLogin::DoSignInAsync()
-extern "C" IL2CPP_METHOD_ATTR Task_t1F48C203E163126EBC69ACCA679D1A462DEE9EB2 * SpotiftyLogin_DoSignInAsync_m063D3947DA59864F4DABD1920AF41A83709B202B (SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * __this, const RuntimeMethod* method)
+// System.Void SpotifyApi::Update()
+extern "C" IL2CPP_METHOD_ATTR void SpotifyApi_Update_m4A4260975F9DBEDC5919BB9A7C05C48258BF8586 (SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * __this, const RuntimeMethod* method)
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_method (SpotiftyLogin_DoSignInAsync_m063D3947DA59864F4DABD1920AF41A83709B202B_MetadataUsageId);
+		il2cpp_codegen_initialize_method (SpotifyApi_Update_m4A4260975F9DBEDC5919BB9A7C05C48258BF8586_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
-	U3CDoSignInAsyncU3Ed__7_t374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2  V_0;
+	{
+		bool L_0 = __this->get_UseKeyboard_8();
+		if (L_0)
+		{
+			goto IL_0009;
+		}
+	}
+	{
+		return;
+	}
+
+IL_0009:
+	{
+		bool L_1 = Input_GetKeyDown_m0CBC4672BC86FE82A9210B7FD2F475E2DD9C3163(_stringLiteral07C342BE6E560E7F43842E2E21B774E61D85F047, /*hidden argument*/NULL);
+		if (!L_1)
+		{
+			goto IL_001c;
+		}
+	}
+	{
+		SpotifyApi_SignIn_m41AF859A4217D51DB6FAE03E61C0E10866BC04FE(__this, /*hidden argument*/NULL);
+		return;
+	}
+
+IL_001c:
+	{
+		bool L_2 = Input_GetKeyDown_m0CBC4672BC86FE82A9210B7FD2F475E2DD9C3163(_stringLiteral516B9783FCA517EECBD1D064DA2D165310B19759, /*hidden argument*/NULL);
+		if (!L_2)
+		{
+			goto IL_002e;
+		}
+	}
+	{
+		SpotifyApi_PlayPause_mC30A0DA32EC52078C4A94AD640FE44C6A4B883AC(__this, /*hidden argument*/NULL);
+	}
+
+IL_002e:
+	{
+		return;
+	}
+}
+// System.Threading.Tasks.Task SpotifyApi::SignInAsync(System.Threading.CancellationToken)
+extern "C" IL2CPP_METHOD_ATTR Task_t1F48C203E163126EBC69ACCA679D1A462DEE9EB2 * SpotifyApi_SignInAsync_mB50ABB95EAFCB342E015322187A34C086F49B3F2 (SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * __this, CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  ___cancel0, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (SpotifyApi_SignInAsync_mB50ABB95EAFCB342E015322187A34C086F49B3F2_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	U3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896  V_0;
 	memset(&V_0, 0, sizeof(V_0));
 	AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  V_1;
 	memset(&V_1, 0, sizeof(V_1));
 	{
 		(&V_0)->set_U3CU3E4__this_2(__this);
+		CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  L_0 = ___cancel0;
+		(&V_0)->set_cancel_3(L_0);
 		IL2CPP_RUNTIME_CLASS_INIT(AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487_il2cpp_TypeInfo_var);
-		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  L_0 = AsyncTaskMethodBuilder_Create_m081DF9A202E7C2F3CF3D41E1E63E63DA18F19FDB(/*hidden argument*/NULL);
-		(&V_0)->set_U3CU3Et__builder_1(L_0);
+		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  L_1 = AsyncTaskMethodBuilder_Create_m081DF9A202E7C2F3CF3D41E1E63E63DA18F19FDB(/*hidden argument*/NULL);
+		(&V_0)->set_U3CU3Et__builder_1(L_1);
 		(&V_0)->set_U3CU3E1__state_0((-1));
-		U3CDoSignInAsyncU3Ed__7_t374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2  L_1 = V_0;
-		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  L_2 = L_1.get_U3CU3Et__builder_1();
-		V_1 = L_2;
-		AsyncTaskMethodBuilder_Start_TisU3CDoSignInAsyncU3Ed__7_t374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2_m2C1F1C4A3C36AC3AF6A6933666FF50FB22562668((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)(&V_1), (U3CDoSignInAsyncU3Ed__7_t374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2 *)(&V_0), /*hidden argument*/AsyncTaskMethodBuilder_Start_TisU3CDoSignInAsyncU3Ed__7_t374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2_m2C1F1C4A3C36AC3AF6A6933666FF50FB22562668_RuntimeMethod_var);
-		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_3 = (&V_0)->get_address_of_U3CU3Et__builder_1();
-		Task_t1F48C203E163126EBC69ACCA679D1A462DEE9EB2 * L_4 = AsyncTaskMethodBuilder_get_Task_m3E45BC00F7D224FEA04AB9BF26DB52E131D33022((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_3, /*hidden argument*/NULL);
-		return L_4;
+		U3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896  L_2 = V_0;
+		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  L_3 = L_2.get_U3CU3Et__builder_1();
+		V_1 = L_3;
+		AsyncTaskMethodBuilder_Start_TisU3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896_m4902196730A0D1D385EE1EA23EC42608A70B41E5((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)(&V_1), (U3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896 *)(&V_0), /*hidden argument*/AsyncTaskMethodBuilder_Start_TisU3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896_m4902196730A0D1D385EE1EA23EC42608A70B41E5_RuntimeMethod_var);
+		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_4 = (&V_0)->get_address_of_U3CU3Et__builder_1();
+		Task_t1F48C203E163126EBC69ACCA679D1A462DEE9EB2 * L_5 = AsyncTaskMethodBuilder_get_Task_m3E45BC00F7D224FEA04AB9BF26DB52E131D33022((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_4, /*hidden argument*/NULL);
+		return L_5;
 	}
 }
-// System.Threading.Tasks.Task SpotiftyLogin::WaitForCallback(System.Net.Http.HttpClient,System.String)
-extern "C" IL2CPP_METHOD_ATTR Task_t1F48C203E163126EBC69ACCA679D1A462DEE9EB2 * SpotiftyLogin_WaitForCallback_m8728D0B5560ADC5D230DECB90AF9829E08BA8BF6 (SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * __this, HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7 * ___client0, String_t* ___state1, const RuntimeMethod* method)
+// System.Threading.Tasks.Task SpotifyApi::WaitForCallback(System.String,System.Threading.CancellationToken)
+extern "C" IL2CPP_METHOD_ATTR Task_t1F48C203E163126EBC69ACCA679D1A462DEE9EB2 * SpotifyApi_WaitForCallback_mCF7845CDED16C66D0641E30C3F63E00269F36FE1 (SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * __this, String_t* ___state0, CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  ___cancel1, const RuntimeMethod* method)
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_method (SpotiftyLogin_WaitForCallback_m8728D0B5560ADC5D230DECB90AF9829E08BA8BF6_MetadataUsageId);
+		il2cpp_codegen_initialize_method (SpotifyApi_WaitForCallback_mCF7845CDED16C66D0641E30C3F63E00269F36FE1_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
-	U3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257  V_0;
+	U3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A  V_0;
 	memset(&V_0, 0, sizeof(V_0));
 	AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  V_1;
 	memset(&V_1, 0, sizeof(V_1));
 	{
-		(&V_0)->set_U3CU3E4__this_3(__this);
-		HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7 * L_0 = ___client0;
-		(&V_0)->set_client_2(L_0);
-		String_t* L_1 = ___state1;
-		(&V_0)->set_state_4(L_1);
+		(&V_0)->set_U3CU3E4__this_2(__this);
+		String_t* L_0 = ___state0;
+		(&V_0)->set_state_3(L_0);
+		CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  L_1 = ___cancel1;
+		(&V_0)->set_cancel_4(L_1);
 		IL2CPP_RUNTIME_CLASS_INIT(AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487_il2cpp_TypeInfo_var);
 		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  L_2 = AsyncTaskMethodBuilder_Create_m081DF9A202E7C2F3CF3D41E1E63E63DA18F19FDB(/*hidden argument*/NULL);
 		(&V_0)->set_U3CU3Et__builder_1(L_2);
 		(&V_0)->set_U3CU3E1__state_0((-1));
-		U3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257  L_3 = V_0;
+		U3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A  L_3 = V_0;
 		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  L_4 = L_3.get_U3CU3Et__builder_1();
 		V_1 = L_4;
-		AsyncTaskMethodBuilder_Start_TisU3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257_m7DC605016D0DA8AC47C4C811AAD78B6BBBCF2BD8((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)(&V_1), (U3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257 *)(&V_0), /*hidden argument*/AsyncTaskMethodBuilder_Start_TisU3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257_m7DC605016D0DA8AC47C4C811AAD78B6BBBCF2BD8_RuntimeMethod_var);
+		AsyncTaskMethodBuilder_Start_TisU3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A_m7BEAD734C24A2840A2C92C91ACC060BEA3013CCB((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)(&V_1), (U3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A *)(&V_0), /*hidden argument*/AsyncTaskMethodBuilder_Start_TisU3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A_m7BEAD734C24A2840A2C92C91ACC060BEA3013CCB_RuntimeMethod_var);
 		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_5 = (&V_0)->get_address_of_U3CU3Et__builder_1();
 		Task_t1F48C203E163126EBC69ACCA679D1A462DEE9EB2 * L_6 = AsyncTaskMethodBuilder_get_Task_m3E45BC00F7D224FEA04AB9BF26DB52E131D33022((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_5, /*hidden argument*/NULL);
 		return L_6;
 	}
 }
-// System.Void SpotiftyLogin::OnDestroy()
-extern "C" IL2CPP_METHOD_ATTR void SpotiftyLogin_OnDestroy_m4D31BFA1AE13BB80529723E2197636D12FF1069D (SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * __this, const RuntimeMethod* method)
+// System.Void SpotifyApi::OnDestroy()
+extern "C" IL2CPP_METHOD_ATTR void SpotifyApi_OnDestroy_m1A1469845D87401486A0134379B336336804B473 (SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * __this, const RuntimeMethod* method)
 {
 	{
-		SpotiftyLogin_CloseWebView_m75F327DD482F4839DE3B12A80AD3D5F41344DA21(__this, /*hidden argument*/NULL);
-		HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7 * L_0 = __this->get_client_7();
+		SpotifyApi_CloseWebView_m8B8E9DD1E8B936D1370D5EA2C22ECC650EC313E9(__this, /*hidden argument*/NULL);
+		HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7 * L_0 = __this->get_client_11();
 		NullCheck(L_0);
 		HttpMessageInvoker_Dispose_mD4F72E4580D4BE545E8E3AB97C0A9BB0AB49C212(L_0, /*hidden argument*/NULL);
-		__this->set_client_7((HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7 *)NULL);
+		__this->set_client_11((HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7 *)NULL);
 		return;
 	}
 }
-// System.Void SpotiftyLogin::CloseWebView()
-extern "C" IL2CPP_METHOD_ATTR void SpotiftyLogin_CloseWebView_m75F327DD482F4839DE3B12A80AD3D5F41344DA21 (SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * __this, const RuntimeMethod* method)
+// System.Void SpotifyApi::CloseWebView()
+extern "C" IL2CPP_METHOD_ATTR void SpotifyApi_CloseWebView_m8B8E9DD1E8B936D1370D5EA2C22ECC650EC313E9 (SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * __this, const RuntimeMethod* method)
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_method (SpotiftyLogin_CloseWebView_m75F327DD482F4839DE3B12A80AD3D5F41344DA21_MetadataUsageId);
+		il2cpp_codegen_initialize_method (SpotifyApi_CloseWebView_m8B8E9DD1E8B936D1370D5EA2C22ECC650EC313E9_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
 	UniWebView_t70C5C5815FC5A948185238830E0AB8B221E34BBB * V_0 = NULL;
 	{
-		UniWebView_t70C5C5815FC5A948185238830E0AB8B221E34BBB * L_0 = __this->get_webView_4();
+		UniWebView_t70C5C5815FC5A948185238830E0AB8B221E34BBB * L_0 = __this->get_webView_12();
 		V_0 = L_0;
-		__this->set_webView_4((UniWebView_t70C5C5815FC5A948185238830E0AB8B221E34BBB *)NULL);
+		__this->set_webView_12((UniWebView_t70C5C5815FC5A948185238830E0AB8B221E34BBB *)NULL);
 		UniWebView_t70C5C5815FC5A948185238830E0AB8B221E34BBB * L_1 = V_0;
 		IL2CPP_RUNTIME_CLASS_INIT(Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0_il2cpp_TypeInfo_var);
 		bool L_2 = Object_op_Inequality_m31EF58E217E8F4BDD3E409DEF79E1AEE95874FC1(L_1, (Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0 *)NULL, /*hidden argument*/NULL);
@@ -7297,119 +8282,449 @@ IL_001d:
 		return;
 	}
 }
-// System.Threading.Tasks.Task SpotiftyLogin::Play()
-extern "C" IL2CPP_METHOD_ATTR Task_t1F48C203E163126EBC69ACCA679D1A462DEE9EB2 * SpotiftyLogin_Play_m2F4F3137D6BDFC563905895703C89CC520CAEE7B (SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * __this, const RuntimeMethod* method)
+// System.Threading.Tasks.Task`1<System.String> SpotifyApi::SendAsync(System.String,System.Net.Http.HttpMethod,System.String,System.String,System.Threading.CancellationToken)
+extern "C" IL2CPP_METHOD_ATTR Task_1_t4A75FEC8F36C5D4F8793BB8C94E4DAA7457D0286 * SpotifyApi_SendAsync_m5AD966C901F4391600A0955814F18F9A59C8D430 (SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * __this, String_t* ___cmdName0, HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220 * ___method1, String_t* ___path2, String_t* ___payload3, CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  ___cancel4, const RuntimeMethod* method)
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_method (SpotiftyLogin_Play_m2F4F3137D6BDFC563905895703C89CC520CAEE7B_MetadataUsageId);
+		il2cpp_codegen_initialize_method (SpotifyApi_SendAsync_m5AD966C901F4391600A0955814F18F9A59C8D430_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
-	U3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C  V_0;
+	U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303  V_0;
 	memset(&V_0, 0, sizeof(V_0));
-	AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  V_1;
+	AsyncTaskMethodBuilder_1_tC7B1E45031A96D1F2363C0491EC79BBE740BC10C  V_1;
 	memset(&V_1, 0, sizeof(V_1));
 	{
 		(&V_0)->set_U3CU3E4__this_2(__this);
-		IL2CPP_RUNTIME_CLASS_INIT(AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487_il2cpp_TypeInfo_var);
-		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  L_0 = AsyncTaskMethodBuilder_Create_m081DF9A202E7C2F3CF3D41E1E63E63DA18F19FDB(/*hidden argument*/NULL);
-		(&V_0)->set_U3CU3Et__builder_1(L_0);
+		String_t* L_0 = ___cmdName0;
+		(&V_0)->set_cmdName_4(L_0);
+		HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220 * L_1 = ___method1;
+		(&V_0)->set_method_5(L_1);
+		String_t* L_2 = ___path2;
+		(&V_0)->set_path_3(L_2);
+		String_t* L_3 = ___payload3;
+		(&V_0)->set_payload_6(L_3);
+		CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  L_4 = ___cancel4;
+		(&V_0)->set_cancel_7(L_4);
+		IL2CPP_RUNTIME_CLASS_INIT(AsyncTaskMethodBuilder_1_tC7B1E45031A96D1F2363C0491EC79BBE740BC10C_il2cpp_TypeInfo_var);
+		AsyncTaskMethodBuilder_1_tC7B1E45031A96D1F2363C0491EC79BBE740BC10C  L_5 = AsyncTaskMethodBuilder_1_Create_m4CACDA7CCC96C431E5426E670B268CC6FDF86695(/*hidden argument*/AsyncTaskMethodBuilder_1_Create_m4CACDA7CCC96C431E5426E670B268CC6FDF86695_RuntimeMethod_var);
+		(&V_0)->set_U3CU3Et__builder_1(L_5);
 		(&V_0)->set_U3CU3E1__state_0((-1));
-		U3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C  L_1 = V_0;
-		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  L_2 = L_1.get_U3CU3Et__builder_1();
-		V_1 = L_2;
-		AsyncTaskMethodBuilder_Start_TisU3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C_mDD7D66C4C1749D6D33B99988591C77949AFCF88E((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)(&V_1), (U3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C *)(&V_0), /*hidden argument*/AsyncTaskMethodBuilder_Start_TisU3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C_mDD7D66C4C1749D6D33B99988591C77949AFCF88E_RuntimeMethod_var);
-		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_3 = (&V_0)->get_address_of_U3CU3Et__builder_1();
-		Task_t1F48C203E163126EBC69ACCA679D1A462DEE9EB2 * L_4 = AsyncTaskMethodBuilder_get_Task_m3E45BC00F7D224FEA04AB9BF26DB52E131D33022((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_3, /*hidden argument*/NULL);
-		return L_4;
+		U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303  L_6 = V_0;
+		AsyncTaskMethodBuilder_1_tC7B1E45031A96D1F2363C0491EC79BBE740BC10C  L_7 = L_6.get_U3CU3Et__builder_1();
+		V_1 = L_7;
+		AsyncTaskMethodBuilder_1_Start_TisU3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303_m3C7FC54B6BF0CDB29DF944CD6956AEFFD576C856((AsyncTaskMethodBuilder_1_tC7B1E45031A96D1F2363C0491EC79BBE740BC10C *)(&V_1), (U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303 *)(&V_0), /*hidden argument*/AsyncTaskMethodBuilder_1_Start_TisU3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303_m3C7FC54B6BF0CDB29DF944CD6956AEFFD576C856_RuntimeMethod_var);
+		AsyncTaskMethodBuilder_1_tC7B1E45031A96D1F2363C0491EC79BBE740BC10C * L_8 = (&V_0)->get_address_of_U3CU3Et__builder_1();
+		Task_1_t4A75FEC8F36C5D4F8793BB8C94E4DAA7457D0286 * L_9 = AsyncTaskMethodBuilder_1_get_Task_mB005567F7203FC44DD0AE1150FFC92706B8E2BB4((AsyncTaskMethodBuilder_1_tC7B1E45031A96D1F2363C0491EC79BBE740BC10C *)L_8, /*hidden argument*/AsyncTaskMethodBuilder_1_get_Task_mB005567F7203FC44DD0AE1150FFC92706B8E2BB4_RuntimeMethod_var);
+		return L_9;
 	}
 }
-// System.Threading.Tasks.Task SpotiftyLogin::Pause()
-extern "C" IL2CPP_METHOD_ATTR Task_t1F48C203E163126EBC69ACCA679D1A462DEE9EB2 * SpotiftyLogin_Pause_mEA99580E9179AD71470FD390C64FCF8A19FF080D (SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * __this, const RuntimeMethod* method)
+// System.String SpotifyApi::GetDeviceIdQuery(System.Boolean)
+extern "C" IL2CPP_METHOD_ATTR String_t* SpotifyApi_GetDeviceIdQuery_m9C58CB91093EAA829734A7F04F950F725110C69E (SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * __this, bool ___isFirstParam0, const RuntimeMethod* method)
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_method (SpotiftyLogin_Pause_mEA99580E9179AD71470FD390C64FCF8A19FF080D_MetadataUsageId);
+		il2cpp_codegen_initialize_method (SpotifyApi_GetDeviceIdQuery_m9C58CB91093EAA829734A7F04F950F725110C69E_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
-	U3CPauseU3Ed__13_t7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3  V_0;
-	memset(&V_0, 0, sizeof(V_0));
-	AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  V_1;
-	memset(&V_1, 0, sizeof(V_1));
+	String_t* G_B5_0 = NULL;
 	{
-		(&V_0)->set_U3CU3E4__this_2(__this);
-		IL2CPP_RUNTIME_CLASS_INIT(AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487_il2cpp_TypeInfo_var);
-		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  L_0 = AsyncTaskMethodBuilder_Create_m081DF9A202E7C2F3CF3D41E1E63E63DA18F19FDB(/*hidden argument*/NULL);
-		(&V_0)->set_U3CU3Et__builder_1(L_0);
-		(&V_0)->set_U3CU3E1__state_0((-1));
-		U3CPauseU3Ed__13_t7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3  L_1 = V_0;
-		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  L_2 = L_1.get_U3CU3Et__builder_1();
-		V_1 = L_2;
-		AsyncTaskMethodBuilder_Start_TisU3CPauseU3Ed__13_t7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3_mBEF76E010AA1628E6C30816358ADF786CF5A22A9((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)(&V_1), (U3CPauseU3Ed__13_t7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3 *)(&V_0), /*hidden argument*/AsyncTaskMethodBuilder_Start_TisU3CPauseU3Ed__13_t7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3_mBEF76E010AA1628E6C30816358ADF786CF5A22A9_RuntimeMethod_var);
-		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_3 = (&V_0)->get_address_of_U3CU3Et__builder_1();
-		Task_t1F48C203E163126EBC69ACCA679D1A462DEE9EB2 * L_4 = AsyncTaskMethodBuilder_get_Task_m3E45BC00F7D224FEA04AB9BF26DB52E131D33022((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_3, /*hidden argument*/NULL);
-		return L_4;
-	}
-}
-// System.Void SpotiftyLogin::PlayPause()
-extern "C" IL2CPP_METHOD_ATTR void SpotiftyLogin_PlayPause_m6266607EBE5BD177B3FE83C4006798874EF73B63 (SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * __this, const RuntimeMethod* method)
-{
-	{
-		bool L_0 = __this->get_IsPaused_8();
-		if (!L_0)
+		String_t* L_0 = __this->get_DeviceId_10();
+		bool L_1 = String_IsNullOrWhiteSpace_m62102CA65546AE151DC8254B72110F4AA48E2135(L_0, /*hidden argument*/NULL);
+		if (!L_1)
 		{
-			goto IL_0011;
+			goto IL_0013;
 		}
 	}
 	{
-		SpotiftyLogin_Play_m2F4F3137D6BDFC563905895703C89CC520CAEE7B(__this, /*hidden argument*/NULL);
-		goto IL_0018;
+		String_t* L_2 = ((String_t_StaticFields*)il2cpp_codegen_static_fields_for(String_t_il2cpp_TypeInfo_var))->get_Empty_5();
+		return L_2;
 	}
 
-IL_0011:
+IL_0013:
 	{
-		SpotiftyLogin_Pause_mEA99580E9179AD71470FD390C64FCF8A19FF080D(__this, /*hidden argument*/NULL);
+		bool L_3 = ___isFirstParam0;
+		if (L_3)
+		{
+			goto IL_001d;
+		}
+	}
+	{
+		G_B5_0 = _stringLiteral7C4D33785DAA5C2370201FFA236B427AA37C9996;
+		goto IL_0022;
 	}
 
-IL_0018:
+IL_001d:
 	{
-		bool L_1 = __this->get_IsPaused_8();
-		__this->set_IsPaused_8((bool)((((int32_t)L_1) == ((int32_t)0))? 1 : 0));
-		return;
+		G_B5_0 = _stringLiteral5BAB61EB53176449E25C2C82F172B82CB13FFB9D;
+	}
+
+IL_0022:
+	{
+		String_t* L_4 = __this->get_DeviceId_10();
+		String_t* L_5 = String_Concat_mF4626905368D6558695A823466A1AF65EADB9923(G_B5_0, _stringLiteralFA4A01053A330CFD3A678EFC8AFD7C2426888589, L_4, /*hidden argument*/NULL);
+		return L_5;
 	}
 }
-// System.Void SpotiftyLogin::Login()
-extern "C" IL2CPP_METHOD_ATTR void SpotiftyLogin_Login_m5DF83D00F1110270F9DBF7BD70D8819C0772D55E (SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * __this, const RuntimeMethod* method)
-{
-	{
-		SpotiftyLogin_DoSignInAsync_m063D3947DA59864F4DABD1920AF41A83709B202B(__this, /*hidden argument*/NULL);
-		return;
-	}
-}
-// System.Void SpotiftyLogin::.ctor()
-extern "C" IL2CPP_METHOD_ATTR void SpotiftyLogin__ctor_m42C9C49987DD419902AB87EC0FEC3804E081FC25 (SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * __this, const RuntimeMethod* method)
+// System.Void SpotifyApi::SignIn()
+extern "C" IL2CPP_METHOD_ATTR void SpotifyApi_SignIn_m41AF859A4217D51DB6FAE03E61C0E10866BC04FE (SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * __this, const RuntimeMethod* method)
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_method (SpotiftyLogin__ctor_m42C9C49987DD419902AB87EC0FEC3804E081FC25_MetadataUsageId);
+		il2cpp_codegen_initialize_method (SpotifyApi_SignIn_m41AF859A4217D51DB6FAE03E61C0E10866BC04FE_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		__this->set_ApiBaseUrl_6(_stringLiteral27D8065B51E8577B2ED34800B1C74E812539FC84);
-		__this->set_IsPaused_8((bool)1);
-		__this->set_DeviceId_9(_stringLiteral3D9E765D7BA857C78A48E394812257CD7794C617);
+		IL2CPP_RUNTIME_CLASS_INIT(CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB_il2cpp_TypeInfo_var);
+		CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  L_0 = CancellationToken_get_None_m008D4CF5E11172703A6D781A3C30E6E537004F1D(/*hidden argument*/NULL);
+		Task_t1F48C203E163126EBC69ACCA679D1A462DEE9EB2 * L_1 = SpotifyApi_SignInAsync_mB50ABB95EAFCB342E015322187A34C086F49B3F2(__this, L_0, /*hidden argument*/NULL);
+		TaskHelper_Ignore_mB73CBB96C01116303EAEACC68F0ACA844A0C2D2F(L_1, /*hidden argument*/NULL);
+		return;
+	}
+}
+// System.Boolean SpotifyApi::get_IsSignedIn()
+extern "C" IL2CPP_METHOD_ATTR bool SpotifyApi_get_IsSignedIn_mC53D631B6F34EFB129B3EBD27BBCF4504EE86F89 (SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * __this, const RuntimeMethod* method)
+{
+	{
+		String_t* L_0 = __this->get_Token_4();
+		return (bool)((!(((RuntimeObject*)(String_t*)L_0) <= ((RuntimeObject*)(RuntimeObject *)NULL)))? 1 : 0);
+	}
+}
+// System.Void SpotifyApi::Play()
+extern "C" IL2CPP_METHOD_ATTR void SpotifyApi_Play_m83B465EC0829797C07F7A66FA86B4AB440254ED5 (SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * __this, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (SpotifyApi_Play_m83B465EC0829797C07F7A66FA86B4AB440254ED5_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		IL2CPP_RUNTIME_CLASS_INIT(CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB_il2cpp_TypeInfo_var);
+		CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  L_0 = CancellationToken_get_None_m008D4CF5E11172703A6D781A3C30E6E537004F1D(/*hidden argument*/NULL);
+		Task_t1F48C203E163126EBC69ACCA679D1A462DEE9EB2 * L_1 = SpotifyApi_PlayAsync_mEB86600C559C735DCC952B2DA1EDAAB2436E1ADB(__this, L_0, /*hidden argument*/NULL);
+		TaskHelper_Ignore_mB73CBB96C01116303EAEACC68F0ACA844A0C2D2F(L_1, /*hidden argument*/NULL);
+		return;
+	}
+}
+// System.Threading.Tasks.Task SpotifyApi::PlayAsync(System.Threading.CancellationToken)
+extern "C" IL2CPP_METHOD_ATTR Task_t1F48C203E163126EBC69ACCA679D1A462DEE9EB2 * SpotifyApi_PlayAsync_mEB86600C559C735DCC952B2DA1EDAAB2436E1ADB (SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * __this, CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  ___cancel0, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (SpotifyApi_PlayAsync_mEB86600C559C735DCC952B2DA1EDAAB2436E1ADB_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	U3CPlayAsyncU3Ed__24_tB410B49C7C0816D2A5DD701A483FF046FA5C7777  V_0;
+	memset(&V_0, 0, sizeof(V_0));
+	AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  V_1;
+	memset(&V_1, 0, sizeof(V_1));
+	{
+		(&V_0)->set_U3CU3E4__this_2(__this);
+		CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  L_0 = ___cancel0;
+		(&V_0)->set_cancel_3(L_0);
+		IL2CPP_RUNTIME_CLASS_INIT(AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487_il2cpp_TypeInfo_var);
+		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  L_1 = AsyncTaskMethodBuilder_Create_m081DF9A202E7C2F3CF3D41E1E63E63DA18F19FDB(/*hidden argument*/NULL);
+		(&V_0)->set_U3CU3Et__builder_1(L_1);
+		(&V_0)->set_U3CU3E1__state_0((-1));
+		U3CPlayAsyncU3Ed__24_tB410B49C7C0816D2A5DD701A483FF046FA5C7777  L_2 = V_0;
+		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  L_3 = L_2.get_U3CU3Et__builder_1();
+		V_1 = L_3;
+		AsyncTaskMethodBuilder_Start_TisU3CPlayAsyncU3Ed__24_tB410B49C7C0816D2A5DD701A483FF046FA5C7777_m237320EDBBD41A7593D1B06CFD9A57F7F9268C85((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)(&V_1), (U3CPlayAsyncU3Ed__24_tB410B49C7C0816D2A5DD701A483FF046FA5C7777 *)(&V_0), /*hidden argument*/AsyncTaskMethodBuilder_Start_TisU3CPlayAsyncU3Ed__24_tB410B49C7C0816D2A5DD701A483FF046FA5C7777_m237320EDBBD41A7593D1B06CFD9A57F7F9268C85_RuntimeMethod_var);
+		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_4 = (&V_0)->get_address_of_U3CU3Et__builder_1();
+		Task_t1F48C203E163126EBC69ACCA679D1A462DEE9EB2 * L_5 = AsyncTaskMethodBuilder_get_Task_m3E45BC00F7D224FEA04AB9BF26DB52E131D33022((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_4, /*hidden argument*/NULL);
+		return L_5;
+	}
+}
+// System.Void SpotifyApi::PlayUris(System.Int32,System.String[])
+extern "C" IL2CPP_METHOD_ATTR void SpotifyApi_PlayUris_mACB2D59068277E3D10BEC6345D07A1F6D7E8C2FB (SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * __this, int32_t ___positionMs0, StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* ___uris1, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (SpotifyApi_PlayUris_mACB2D59068277E3D10BEC6345D07A1F6D7E8C2FB_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		int32_t L_0 = ___positionMs0;
+		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_1 = ___uris1;
+		IL2CPP_RUNTIME_CLASS_INIT(CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB_il2cpp_TypeInfo_var);
+		CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  L_2 = CancellationToken_get_None_m008D4CF5E11172703A6D781A3C30E6E537004F1D(/*hidden argument*/NULL);
+		Task_t1F48C203E163126EBC69ACCA679D1A462DEE9EB2 * L_3 = SpotifyApi_PlayUrisAsync_m7E158D3A3670EEF0893A512D3C4A2F7EC3E69078(__this, L_0, L_1, L_2, /*hidden argument*/NULL);
+		TaskHelper_Ignore_mB73CBB96C01116303EAEACC68F0ACA844A0C2D2F(L_3, /*hidden argument*/NULL);
+		return;
+	}
+}
+// System.Threading.Tasks.Task SpotifyApi::PlayUrisAsync(System.Int32,System.String[],System.Threading.CancellationToken)
+extern "C" IL2CPP_METHOD_ATTR Task_t1F48C203E163126EBC69ACCA679D1A462DEE9EB2 * SpotifyApi_PlayUrisAsync_m7E158D3A3670EEF0893A512D3C4A2F7EC3E69078 (SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * __this, int32_t ___positionMs0, StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* ___uris1, CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  ___cancel2, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (SpotifyApi_PlayUrisAsync_m7E158D3A3670EEF0893A512D3C4A2F7EC3E69078_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	U3CPlayUrisAsyncU3Ed__26_tF7BEEEB5E918E76C3B6F702D718B1110F5033C78  V_0;
+	memset(&V_0, 0, sizeof(V_0));
+	AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  V_1;
+	memset(&V_1, 0, sizeof(V_1));
+	{
+		(&V_0)->set_U3CU3E4__this_2(__this);
+		int32_t L_0 = ___positionMs0;
+		(&V_0)->set_positionMs_4(L_0);
+		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_1 = ___uris1;
+		(&V_0)->set_uris_3(L_1);
+		CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  L_2 = ___cancel2;
+		(&V_0)->set_cancel_5(L_2);
+		IL2CPP_RUNTIME_CLASS_INIT(AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487_il2cpp_TypeInfo_var);
+		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  L_3 = AsyncTaskMethodBuilder_Create_m081DF9A202E7C2F3CF3D41E1E63E63DA18F19FDB(/*hidden argument*/NULL);
+		(&V_0)->set_U3CU3Et__builder_1(L_3);
+		(&V_0)->set_U3CU3E1__state_0((-1));
+		U3CPlayUrisAsyncU3Ed__26_tF7BEEEB5E918E76C3B6F702D718B1110F5033C78  L_4 = V_0;
+		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  L_5 = L_4.get_U3CU3Et__builder_1();
+		V_1 = L_5;
+		AsyncTaskMethodBuilder_Start_TisU3CPlayUrisAsyncU3Ed__26_tF7BEEEB5E918E76C3B6F702D718B1110F5033C78_mD0E2F8936C3265082F8DA99A13006EFF541B15D6((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)(&V_1), (U3CPlayUrisAsyncU3Ed__26_tF7BEEEB5E918E76C3B6F702D718B1110F5033C78 *)(&V_0), /*hidden argument*/AsyncTaskMethodBuilder_Start_TisU3CPlayUrisAsyncU3Ed__26_tF7BEEEB5E918E76C3B6F702D718B1110F5033C78_mD0E2F8936C3265082F8DA99A13006EFF541B15D6_RuntimeMethod_var);
+		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_6 = (&V_0)->get_address_of_U3CU3Et__builder_1();
+		Task_t1F48C203E163126EBC69ACCA679D1A462DEE9EB2 * L_7 = AsyncTaskMethodBuilder_get_Task_m3E45BC00F7D224FEA04AB9BF26DB52E131D33022((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_6, /*hidden argument*/NULL);
+		return L_7;
+	}
+}
+// System.Void SpotifyApi::PlayTrack(System.Int32,System.String)
+extern "C" IL2CPP_METHOD_ATTR void SpotifyApi_PlayTrack_mB9935DADCFB89EFB157DD20F8EC6765314C7CA1C (SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * __this, int32_t ___positionMs0, String_t* ___id1, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (SpotifyApi_PlayTrack_mB9935DADCFB89EFB157DD20F8EC6765314C7CA1C_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		int32_t L_0 = ___positionMs0;
+		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_1 = (StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E*)SZArrayNew(StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E_il2cpp_TypeInfo_var, (uint32_t)1);
+		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2 = L_1;
+		String_t* L_3 = ___id1;
+		String_t* L_4 = String_Concat_mB78D0094592718DA6D5DB6C712A9C225631666BE(_stringLiteralD32E45A6EAAF5E311CC1971B69734F18DF1D2403, L_3, /*hidden argument*/NULL);
+		NullCheck(L_2);
+		ArrayElementTypeCheck (L_2, L_4);
+		(L_2)->SetAt(static_cast<il2cpp_array_size_t>(0), (String_t*)L_4);
+		SpotifyApi_PlayUris_mACB2D59068277E3D10BEC6345D07A1F6D7E8C2FB(__this, L_0, L_2, /*hidden argument*/NULL);
+		return;
+	}
+}
+// System.Void SpotifyApi::Pause()
+extern "C" IL2CPP_METHOD_ATTR void SpotifyApi_Pause_m252C9A09573167A0F05891F8B9FC40B16A132ACB (SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * __this, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (SpotifyApi_Pause_m252C9A09573167A0F05891F8B9FC40B16A132ACB_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		IL2CPP_RUNTIME_CLASS_INIT(CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB_il2cpp_TypeInfo_var);
+		CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  L_0 = CancellationToken_get_None_m008D4CF5E11172703A6D781A3C30E6E537004F1D(/*hidden argument*/NULL);
+		Task_t1F48C203E163126EBC69ACCA679D1A462DEE9EB2 * L_1 = SpotifyApi_PauseAsync_mB065B364963D93EC6B3351665286BCF7ECD51A27(__this, L_0, /*hidden argument*/NULL);
+		TaskHelper_Ignore_mB73CBB96C01116303EAEACC68F0ACA844A0C2D2F(L_1, /*hidden argument*/NULL);
+		return;
+	}
+}
+// System.Threading.Tasks.Task SpotifyApi::PauseAsync(System.Threading.CancellationToken)
+extern "C" IL2CPP_METHOD_ATTR Task_t1F48C203E163126EBC69ACCA679D1A462DEE9EB2 * SpotifyApi_PauseAsync_mB065B364963D93EC6B3351665286BCF7ECD51A27 (SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * __this, CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  ___cancel0, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (SpotifyApi_PauseAsync_mB065B364963D93EC6B3351665286BCF7ECD51A27_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	U3CPauseAsyncU3Ed__29_tDEC85B2D09AA536D9ABA26C9948D506C674C0C84  V_0;
+	memset(&V_0, 0, sizeof(V_0));
+	AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  V_1;
+	memset(&V_1, 0, sizeof(V_1));
+	{
+		(&V_0)->set_U3CU3E4__this_2(__this);
+		CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  L_0 = ___cancel0;
+		(&V_0)->set_cancel_3(L_0);
+		IL2CPP_RUNTIME_CLASS_INIT(AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487_il2cpp_TypeInfo_var);
+		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  L_1 = AsyncTaskMethodBuilder_Create_m081DF9A202E7C2F3CF3D41E1E63E63DA18F19FDB(/*hidden argument*/NULL);
+		(&V_0)->set_U3CU3Et__builder_1(L_1);
+		(&V_0)->set_U3CU3E1__state_0((-1));
+		U3CPauseAsyncU3Ed__29_tDEC85B2D09AA536D9ABA26C9948D506C674C0C84  L_2 = V_0;
+		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  L_3 = L_2.get_U3CU3Et__builder_1();
+		V_1 = L_3;
+		AsyncTaskMethodBuilder_Start_TisU3CPauseAsyncU3Ed__29_tDEC85B2D09AA536D9ABA26C9948D506C674C0C84_mEDA9CBFB05D8917D9366929232742BD2F5A92D7D((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)(&V_1), (U3CPauseAsyncU3Ed__29_tDEC85B2D09AA536D9ABA26C9948D506C674C0C84 *)(&V_0), /*hidden argument*/AsyncTaskMethodBuilder_Start_TisU3CPauseAsyncU3Ed__29_tDEC85B2D09AA536D9ABA26C9948D506C674C0C84_mEDA9CBFB05D8917D9366929232742BD2F5A92D7D_RuntimeMethod_var);
+		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_4 = (&V_0)->get_address_of_U3CU3Et__builder_1();
+		Task_t1F48C203E163126EBC69ACCA679D1A462DEE9EB2 * L_5 = AsyncTaskMethodBuilder_get_Task_m3E45BC00F7D224FEA04AB9BF26DB52E131D33022((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_4, /*hidden argument*/NULL);
+		return L_5;
+	}
+}
+// System.Threading.Tasks.Task SpotifyApi::RepeatAsync(SpotifyRepeatMode,System.Threading.CancellationToken)
+extern "C" IL2CPP_METHOD_ATTR Task_t1F48C203E163126EBC69ACCA679D1A462DEE9EB2 * SpotifyApi_RepeatAsync_m847A36DE9791182FC65569065F9D21C27661DC7E (SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * __this, int32_t ___mode0, CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  ___cancel1, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (SpotifyApi_RepeatAsync_m847A36DE9791182FC65569065F9D21C27661DC7E_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	U3CRepeatAsyncU3Ed__30_tBE6907D98B9974628F6181F8DB4B506D3DF1B509  V_0;
+	memset(&V_0, 0, sizeof(V_0));
+	AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  V_1;
+	memset(&V_1, 0, sizeof(V_1));
+	{
+		(&V_0)->set_U3CU3E4__this_2(__this);
+		int32_t L_0 = ___mode0;
+		(&V_0)->set_mode_3(L_0);
+		CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  L_1 = ___cancel1;
+		(&V_0)->set_cancel_4(L_1);
+		IL2CPP_RUNTIME_CLASS_INIT(AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487_il2cpp_TypeInfo_var);
+		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  L_2 = AsyncTaskMethodBuilder_Create_m081DF9A202E7C2F3CF3D41E1E63E63DA18F19FDB(/*hidden argument*/NULL);
+		(&V_0)->set_U3CU3Et__builder_1(L_2);
+		(&V_0)->set_U3CU3E1__state_0((-1));
+		U3CRepeatAsyncU3Ed__30_tBE6907D98B9974628F6181F8DB4B506D3DF1B509  L_3 = V_0;
+		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  L_4 = L_3.get_U3CU3Et__builder_1();
+		V_1 = L_4;
+		AsyncTaskMethodBuilder_Start_TisU3CRepeatAsyncU3Ed__30_tBE6907D98B9974628F6181F8DB4B506D3DF1B509_m8147E856AC14D1D91575708DBDE5105C1D55ABFB((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)(&V_1), (U3CRepeatAsyncU3Ed__30_tBE6907D98B9974628F6181F8DB4B506D3DF1B509 *)(&V_0), /*hidden argument*/AsyncTaskMethodBuilder_Start_TisU3CRepeatAsyncU3Ed__30_tBE6907D98B9974628F6181F8DB4B506D3DF1B509_m8147E856AC14D1D91575708DBDE5105C1D55ABFB_RuntimeMethod_var);
+		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_5 = (&V_0)->get_address_of_U3CU3Et__builder_1();
+		Task_t1F48C203E163126EBC69ACCA679D1A462DEE9EB2 * L_6 = AsyncTaskMethodBuilder_get_Task_m3E45BC00F7D224FEA04AB9BF26DB52E131D33022((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_5, /*hidden argument*/NULL);
+		return L_6;
+	}
+}
+// System.Void SpotifyApi::Repeat(SpotifyRepeatMode)
+extern "C" IL2CPP_METHOD_ATTR void SpotifyApi_Repeat_m3A0BE694087A5D4A6EC7ABE085C4726353B882CA (SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * __this, int32_t ___mode0, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (SpotifyApi_Repeat_m3A0BE694087A5D4A6EC7ABE085C4726353B882CA_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		int32_t L_0 = ___mode0;
+		IL2CPP_RUNTIME_CLASS_INIT(CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB_il2cpp_TypeInfo_var);
+		CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  L_1 = CancellationToken_get_None_m008D4CF5E11172703A6D781A3C30E6E537004F1D(/*hidden argument*/NULL);
+		Task_t1F48C203E163126EBC69ACCA679D1A462DEE9EB2 * L_2 = SpotifyApi_RepeatAsync_m847A36DE9791182FC65569065F9D21C27661DC7E(__this, L_0, L_1, /*hidden argument*/NULL);
+		TaskHelper_Ignore_mB73CBB96C01116303EAEACC68F0ACA844A0C2D2F(L_2, /*hidden argument*/NULL);
+		return;
+	}
+}
+// System.Void SpotifyApi::RepeatTrack()
+extern "C" IL2CPP_METHOD_ATTR void SpotifyApi_RepeatTrack_mCEC8D00975F32158785803B9EB407AC9F448CB10 (SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * __this, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (SpotifyApi_RepeatTrack_mCEC8D00975F32158785803B9EB407AC9F448CB10_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		IL2CPP_RUNTIME_CLASS_INIT(CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB_il2cpp_TypeInfo_var);
+		CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  L_0 = CancellationToken_get_None_m008D4CF5E11172703A6D781A3C30E6E537004F1D(/*hidden argument*/NULL);
+		Task_t1F48C203E163126EBC69ACCA679D1A462DEE9EB2 * L_1 = SpotifyApi_RepeatAsync_m847A36DE9791182FC65569065F9D21C27661DC7E(__this, 1, L_0, /*hidden argument*/NULL);
+		TaskHelper_Ignore_mB73CBB96C01116303EAEACC68F0ACA844A0C2D2F(L_1, /*hidden argument*/NULL);
+		return;
+	}
+}
+// System.Void SpotifyApi::RepeatOff()
+extern "C" IL2CPP_METHOD_ATTR void SpotifyApi_RepeatOff_mD07B88DE997E76F3CF89AF554FFC4A519576701B (SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * __this, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (SpotifyApi_RepeatOff_mD07B88DE997E76F3CF89AF554FFC4A519576701B_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		IL2CPP_RUNTIME_CLASS_INIT(CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB_il2cpp_TypeInfo_var);
+		CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  L_0 = CancellationToken_get_None_m008D4CF5E11172703A6D781A3C30E6E537004F1D(/*hidden argument*/NULL);
+		Task_t1F48C203E163126EBC69ACCA679D1A462DEE9EB2 * L_1 = SpotifyApi_RepeatAsync_m847A36DE9791182FC65569065F9D21C27661DC7E(__this, 0, L_0, /*hidden argument*/NULL);
+		TaskHelper_Ignore_mB73CBB96C01116303EAEACC68F0ACA844A0C2D2F(L_1, /*hidden argument*/NULL);
+		return;
+	}
+}
+// System.Void SpotifyApi::PlayPause()
+extern "C" IL2CPP_METHOD_ATTR void SpotifyApi_PlayPause_mC30A0DA32EC52078C4A94AD640FE44C6A4B883AC (SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * __this, const RuntimeMethod* method)
+{
+	{
+		bool L_0 = __this->get_IsPaused_13();
+		if (!L_0)
+		{
+			goto IL_0010;
+		}
+	}
+	{
+		SpotifyApi_Play_m83B465EC0829797C07F7A66FA86B4AB440254ED5(__this, /*hidden argument*/NULL);
+		goto IL_0016;
+	}
+
+IL_0010:
+	{
+		SpotifyApi_Pause_m252C9A09573167A0F05891F8B9FC40B16A132ACB(__this, /*hidden argument*/NULL);
+	}
+
+IL_0016:
+	{
+		bool L_1 = __this->get_IsPaused_13();
+		__this->set_IsPaused_13((bool)((((int32_t)L_1) == ((int32_t)0))? 1 : 0));
+		return;
+	}
+}
+// System.Void SpotifyApi::.ctor()
+extern "C" IL2CPP_METHOD_ATTR void SpotifyApi__ctor_m6110C8193EBEAF4D56E218A1E059921ED9FF0AA8 (SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * __this, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (SpotifyApi__ctor_m6110C8193EBEAF4D56E218A1E059921ED9FF0AA8_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		__this->set_ApiBaseUrl_5(_stringLiteral27D8065B51E8577B2ED34800B1C74E812539FC84);
+		__this->set_SpotifyApiBaseUrl_6(_stringLiteral51C1EC11AE063653881DF94B129117681A1791DB);
+		__this->set_IsPaused_13((bool)1);
+		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_0 = (StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E*)SZArrayNew(StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E_il2cpp_TypeInfo_var, (uint32_t)7);
+		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_1 = L_0;
+		NullCheck(L_1);
+		ArrayElementTypeCheck (L_1, _stringLiteralD81F651171032FE421EA7D6DAC4484E0F54CE077);
+		(L_1)->SetAt(static_cast<il2cpp_array_size_t>(0), (String_t*)_stringLiteralD81F651171032FE421EA7D6DAC4484E0F54CE077);
+		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2 = L_1;
+		NullCheck(L_2);
+		ArrayElementTypeCheck (L_2, _stringLiteral320145F7531C13390577682EE0BADD8B11AB8FD1);
+		(L_2)->SetAt(static_cast<il2cpp_array_size_t>(1), (String_t*)_stringLiteral320145F7531C13390577682EE0BADD8B11AB8FD1);
+		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_3 = L_2;
+		NullCheck(L_3);
+		ArrayElementTypeCheck (L_3, _stringLiteral3DBEFA1C508D53E429B88C35CF47D16834416F5A);
+		(L_3)->SetAt(static_cast<il2cpp_array_size_t>(2), (String_t*)_stringLiteral3DBEFA1C508D53E429B88C35CF47D16834416F5A);
+		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_4 = L_3;
+		NullCheck(L_4);
+		ArrayElementTypeCheck (L_4, _stringLiteralACA66D422486FBEA6F091DB58FF34ACCA5323CCF);
+		(L_4)->SetAt(static_cast<il2cpp_array_size_t>(3), (String_t*)_stringLiteralACA66D422486FBEA6F091DB58FF34ACCA5323CCF);
+		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_5 = L_4;
+		NullCheck(L_5);
+		ArrayElementTypeCheck (L_5, _stringLiteralB3DDF8D8E21A454CC53A99706BCF63A54E2C92B3);
+		(L_5)->SetAt(static_cast<il2cpp_array_size_t>(4), (String_t*)_stringLiteralB3DDF8D8E21A454CC53A99706BCF63A54E2C92B3);
+		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_6 = L_5;
+		NullCheck(L_6);
+		ArrayElementTypeCheck (L_6, _stringLiteral5828DD995E7E6304B98583BFADFCF0F146C26243);
+		(L_6)->SetAt(static_cast<il2cpp_array_size_t>(5), (String_t*)_stringLiteral5828DD995E7E6304B98583BFADFCF0F146C26243);
+		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_7 = L_6;
+		NullCheck(L_7);
+		ArrayElementTypeCheck (L_7, _stringLiteral3A310F6EC721E6B362FCD22772B57F36A2FE6BB2);
+		(L_7)->SetAt(static_cast<il2cpp_array_size_t>(6), (String_t*)_stringLiteral3A310F6EC721E6B362FCD22772B57F36A2FE6BB2);
+		__this->set_Scopes_14(L_7);
 		MonoBehaviour__ctor_mEAEC84B222C60319D593E456D769B3311DFCEF97(__this, /*hidden argument*/NULL);
 		return;
 	}
 }
-// System.Boolean SpotiftyLogin::<Start>b__5_0(UniWebView)
-extern "C" IL2CPP_METHOD_ATTR bool SpotiftyLogin_U3CStartU3Eb__5_0_mD46D41AE18AE0DC76D7A602E85B3CB120EFA14B5 (SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * __this, UniWebView_t70C5C5815FC5A948185238830E0AB8B221E34BBB * ___view0, const RuntimeMethod* method)
+// System.Boolean SpotifyApi::<Start>b__12_0(UniWebView)
+extern "C" IL2CPP_METHOD_ATTR bool SpotifyApi_U3CStartU3Eb__12_0_mA7A11EDC2688CDE8B598BC4632EF0A65097FA805 (SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * __this, UniWebView_t70C5C5815FC5A948185238830E0AB8B221E34BBB * ___view0, const RuntimeMethod* method)
 {
 	{
-		__this->set_webView_4((UniWebView_t70C5C5815FC5A948185238830E0AB8B221E34BBB *)NULL);
+		__this->set_webView_12((UniWebView_t70C5C5815FC5A948185238830E0AB8B221E34BBB *)NULL);
 		return (bool)1;
 	}
 }
@@ -7421,34 +8736,31 @@ extern "C" IL2CPP_METHOD_ATTR bool SpotiftyLogin_U3CStartU3Eb__5_0_mD46D41AE18AE
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// System.Void SpotiftyLogin_<DoSignInAsync>d__7::MoveNext()
-extern "C" IL2CPP_METHOD_ATTR void U3CDoSignInAsyncU3Ed__7_MoveNext_mA623832C4C1226069800A1B3F9874017B26A0EB4 (U3CDoSignInAsyncU3Ed__7_t374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2 * __this, const RuntimeMethod* method)
+// System.Void SpotifyApi_<PauseAsync>d__29::MoveNext()
+extern "C" IL2CPP_METHOD_ATTR void U3CPauseAsyncU3Ed__29_MoveNext_m901FBFBEC78C7F620D549AEF3D5B7DB78C71FA6F (U3CPauseAsyncU3Ed__29_tDEC85B2D09AA536D9ABA26C9948D506C674C0C84 * __this, const RuntimeMethod* method)
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_method (U3CDoSignInAsyncU3Ed__7_MoveNext_mA623832C4C1226069800A1B3F9874017B26A0EB4_MetadataUsageId);
+		il2cpp_codegen_initialize_method (U3CPauseAsyncU3Ed__29_MoveNext_m901FBFBEC78C7F620D549AEF3D5B7DB78C71FA6F_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
 	int32_t V_0 = 0;
-	SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * V_1 = NULL;
-	String_t* V_2 = NULL;
-	TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  V_3;
-	memset(&V_3, 0, sizeof(V_3));
-	TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  V_4;
-	memset(&V_4, 0, sizeof(V_4));
-	Exception_t * V_5 = NULL;
+	SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * V_1 = NULL;
+	TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  V_2;
+	memset(&V_2, 0, sizeof(V_2));
+	Exception_t * V_3 = NULL;
 	Exception_t * __last_unhandled_exception = 0;
 	NO_UNUSED_WARNING (__last_unhandled_exception);
 	Exception_t * __exception_local = 0;
 	NO_UNUSED_WARNING (__exception_local);
-	void* __leave_targets_storage = alloca(sizeof(int32_t) * 4);
+	void* __leave_targets_storage = alloca(sizeof(int32_t) * 3);
 	il2cpp::utils::LeaveTargetStack __leave_targets(__leave_targets_storage);
 	NO_UNUSED_WARNING (__leave_targets);
 	{
 		int32_t L_0 = __this->get_U3CU3E1__state_0();
 		V_0 = L_0;
-		SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * L_1 = __this->get_U3CU3E4__this_2();
+		SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * L_1 = __this->get_U3CU3E4__this_2();
 		V_1 = L_1;
 	}
 
@@ -7459,39 +8771,29 @@ IL_000e:
 			int32_t L_2 = V_0;
 			if (!L_2)
 			{
-				goto IL_006f;
+				goto IL_006c;
 			}
 		}
 
 IL_0011:
 		{
-			int32_t L_3 = V_0;
-			if ((((int32_t)L_3) == ((int32_t)1)))
-			{
-				goto IL_00d7;
-			}
-		}
-
-IL_0018:
-		{
-			IL2CPP_RUNTIME_CLASS_INIT(Debug_t7B5FCB117E2FD63B6838BC52821B252E2BFB61C4_il2cpp_TypeInfo_var);
-			Debug_Log_m4B7C70BAFD477C6BDB59C88A0934F0B018D03708(_stringLiteral9805AC55B9E584DBE26361DAAFBC0DADD634CE0A, /*hidden argument*/NULL);
-			SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * L_4 = V_1;
-			NullCheck(L_4);
-			HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7 * L_5 = L_4->get_client_7();
-			SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * L_6 = V_1;
-			NullCheck(L_6);
-			String_t* L_7 = L_6->get_ApiBaseUrl_6();
-			String_t* L_8 = String_Concat_mB78D0094592718DA6D5DB6C712A9C225631666BE(L_7, _stringLiteralEB3EF5B64FEA70627EE286D5AD0C95AF4DE65A7C, /*hidden argument*/NULL);
+			SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * L_3 = V_1;
+			IL2CPP_RUNTIME_CLASS_INIT(HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220_il2cpp_TypeInfo_var);
+			HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220 * L_4 = HttpMethod_get_Put_m4BB0741A43A9B72F8E7EDAC626AEBF1CD8E45F87(/*hidden argument*/NULL);
+			SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * L_5 = V_1;
 			NullCheck(L_5);
-			Task_1_t519CB3A303B53176BD616AC273201D66B84FF270 * L_9 = HttpClient_GetAsync_mB979915E31872E80CA29D0724DB7F6239A914D99(L_5, L_8, /*hidden argument*/NULL);
+			String_t* L_6 = SpotifyApi_GetDeviceIdQuery_m9C58CB91093EAA829734A7F04F950F725110C69E(L_5, (bool)1, /*hidden argument*/NULL);
+			String_t* L_7 = String_Concat_mB78D0094592718DA6D5DB6C712A9C225631666BE(_stringLiteral35C2A600B9980540586FBD11981AD1D136373C0A, L_6, /*hidden argument*/NULL);
+			CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  L_8 = __this->get_cancel_3();
+			NullCheck(L_3);
+			Task_1_t4A75FEC8F36C5D4F8793BB8C94E4DAA7457D0286 * L_9 = SpotifyApi_SendAsync_m5AD966C901F4391600A0955814F18F9A59C8D430(L_3, _stringLiteral781961BC81C25697841ECCE5D4D9DAD9F6B261C6, L_4, L_7, _stringLiteralBF21A9E8FBC5A3846FB05B4FA0859E0917B2202F, L_8, /*hidden argument*/NULL);
 			NullCheck(L_9);
-			TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  L_10 = Task_1_GetAwaiter_m511397276BFE6D43B77D1BD80905DF2FB0FA54E0(L_9, /*hidden argument*/Task_1_GetAwaiter_m511397276BFE6D43B77D1BD80905DF2FB0FA54E0_RuntimeMethod_var);
-			V_3 = L_10;
-			bool L_11 = TaskAwaiter_1_get_IsCompleted_m0F711316D40833EE5C67F3E65571EF033B9364DF((TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 *)(&V_3), /*hidden argument*/TaskAwaiter_1_get_IsCompleted_m0F711316D40833EE5C67F3E65571EF033B9364DF_RuntimeMethod_var);
+			TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  L_10 = Task_1_GetAwaiter_mBC24D09E3C1AB76F290AB7E9017AB8913242EC61(L_9, /*hidden argument*/Task_1_GetAwaiter_mBC24D09E3C1AB76F290AB7E9017AB8913242EC61_RuntimeMethod_var);
+			V_2 = L_10;
+			bool L_11 = TaskAwaiter_1_get_IsCompleted_m087FA74E453B58AB5AAD0A64BEDDB49070C6CE94((TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 *)(&V_2), /*hidden argument*/TaskAwaiter_1_get_IsCompleted_m087FA74E453B58AB5AAD0A64BEDDB49070C6CE94_RuntimeMethod_var);
 			if (L_11)
 			{
-				goto IL_008b;
+				goto IL_0088;
 			}
 		}
 
@@ -7500,164 +8802,67 @@ IL_004c:
 			int32_t L_12 = 0;
 			V_0 = L_12;
 			__this->set_U3CU3E1__state_0(L_12);
-			TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  L_13 = V_3;
-			__this->set_U3CU3Eu__1_3(L_13);
+			TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  L_13 = V_2;
+			__this->set_U3CU3Eu__1_4(L_13);
 			AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_14 = __this->get_address_of_U3CU3Et__builder_1();
-			AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86_TisU3CDoSignInAsyncU3Ed__7_t374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2_mA05BBE8EB654A813785564578AD6A2B3A5EEE8D2((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_14, (TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 *)(&V_3), (U3CDoSignInAsyncU3Ed__7_t374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2 *)__this, /*hidden argument*/AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86_TisU3CDoSignInAsyncU3Ed__7_t374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2_mA05BBE8EB654A813785564578AD6A2B3A5EEE8D2_RuntimeMethod_var);
-			goto IL_01af;
+			AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483_TisU3CPauseAsyncU3Ed__29_tDEC85B2D09AA536D9ABA26C9948D506C674C0C84_m55D555D3DF52314F0D75BD409E3026F256D67C34((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_14, (TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 *)(&V_2), (U3CPauseAsyncU3Ed__29_tDEC85B2D09AA536D9ABA26C9948D506C674C0C84 *)__this, /*hidden argument*/AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483_TisU3CPauseAsyncU3Ed__29_tDEC85B2D09AA536D9ABA26C9948D506C674C0C84_m55D555D3DF52314F0D75BD409E3026F256D67C34_RuntimeMethod_var);
+			goto IL_00bc;
 		}
 
-IL_006f:
+IL_006c:
 		{
-			TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  L_15 = __this->get_U3CU3Eu__1_3();
-			V_3 = L_15;
-			TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 * L_16 = __this->get_address_of_U3CU3Eu__1_3();
-			il2cpp_codegen_initobj(L_16, sizeof(TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 ));
+			TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  L_15 = __this->get_U3CU3Eu__1_4();
+			V_2 = L_15;
+			TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 * L_16 = __this->get_address_of_U3CU3Eu__1_4();
+			il2cpp_codegen_initobj(L_16, sizeof(TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 ));
 			int32_t L_17 = (-1);
 			V_0 = L_17;
 			__this->set_U3CU3E1__state_0(L_17);
 		}
 
-IL_008b:
+IL_0088:
 		{
-			HttpResponseMessage_t619DB9FDC8E63CDF2D0A314B61A4C6609A43F904 * L_18 = TaskAwaiter_1_GetResult_m706665648BB29D83FD0C72CFA6279966143192A2((TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 *)(&V_3), /*hidden argument*/TaskAwaiter_1_GetResult_m706665648BB29D83FD0C72CFA6279966143192A2_RuntimeMethod_var);
-			HttpResponseMessage_t619DB9FDC8E63CDF2D0A314B61A4C6609A43F904 * L_19 = L_18;
-			NullCheck(L_19);
-			HttpResponseMessage_EnsureSuccessStatusCode_mFC49F01BD731C4FE89B7143E0AA8C6137F372B44(L_19, /*hidden argument*/NULL);
-			NullCheck(L_19);
-			HttpContent_t678722F60CA151DD19AFCA917657BE24F111A41D * L_20 = HttpResponseMessage_get_Content_m325C3E47B0D7E1DD70CA36FA04B894A152AD4420(L_19, /*hidden argument*/NULL);
-			NullCheck(L_20);
-			Task_1_t4A75FEC8F36C5D4F8793BB8C94E4DAA7457D0286 * L_21 = HttpContent_ReadAsStringAsync_m499CCA8B02B3AFB793C0783D28220FC7A531A24D(L_20, /*hidden argument*/NULL);
-			NullCheck(L_21);
-			TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  L_22 = Task_1_GetAwaiter_mBC24D09E3C1AB76F290AB7E9017AB8913242EC61(L_21, /*hidden argument*/Task_1_GetAwaiter_mBC24D09E3C1AB76F290AB7E9017AB8913242EC61_RuntimeMethod_var);
-			V_4 = L_22;
-			bool L_23 = TaskAwaiter_1_get_IsCompleted_m087FA74E453B58AB5AAD0A64BEDDB49070C6CE94((TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 *)(&V_4), /*hidden argument*/TaskAwaiter_1_get_IsCompleted_m087FA74E453B58AB5AAD0A64BEDDB49070C6CE94_RuntimeMethod_var);
-			if (L_23)
-			{
-				goto IL_00f4;
-			}
-		}
-
-IL_00b3:
-		{
-			int32_t L_24 = 1;
-			V_0 = L_24;
-			__this->set_U3CU3E1__state_0(L_24);
-			TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  L_25 = V_4;
-			__this->set_U3CU3Eu__2_4(L_25);
-			AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_26 = __this->get_address_of_U3CU3Et__builder_1();
-			AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483_TisU3CDoSignInAsyncU3Ed__7_t374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2_mBC8F8A17181CC5DD63F7ED3EB599D28FC6D087FE((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_26, (TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 *)(&V_4), (U3CDoSignInAsyncU3Ed__7_t374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2 *)__this, /*hidden argument*/AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483_TisU3CDoSignInAsyncU3Ed__7_t374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2_mBC8F8A17181CC5DD63F7ED3EB599D28FC6D087FE_RuntimeMethod_var);
-			goto IL_01af;
-		}
-
-IL_00d7:
-		{
-			TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  L_27 = __this->get_U3CU3Eu__2_4();
-			V_4 = L_27;
-			TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 * L_28 = __this->get_address_of_U3CU3Eu__2_4();
-			il2cpp_codegen_initobj(L_28, sizeof(TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 ));
-			int32_t L_29 = (-1);
-			V_0 = L_29;
-			__this->set_U3CU3E1__state_0(L_29);
-		}
-
-IL_00f4:
-		{
-			String_t* L_30 = TaskAwaiter_1_GetResult_m2CE622156E52C41B443C3751AB08398ECC3CA3F3((TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 *)(&V_4), /*hidden argument*/TaskAwaiter_1_GetResult_m2CE622156E52C41B443C3751AB08398ECC3CA3F3_RuntimeMethod_var);
-			V_2 = L_30;
-			SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * L_31 = V_1;
-			SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * L_32 = V_1;
-			NullCheck(L_32);
-			HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7 * L_33 = L_32->get_client_7();
-			String_t* L_34 = V_2;
-			NullCheck(L_31);
-			SpotiftyLogin_WaitForCallback_m8728D0B5560ADC5D230DECB90AF9829E08BA8BF6(L_31, L_33, L_34, /*hidden argument*/NULL);
-			SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * L_35 = V_1;
-			NullCheck(L_35);
-			UniWebView_t70C5C5815FC5A948185238830E0AB8B221E34BBB * L_36 = L_35->get_webView_4();
-			int32_t L_37 = Screen_get_width_m8ECCEF7FF17395D1237BC0193D7A6640A3FEEAD3(/*hidden argument*/NULL);
-			int32_t L_38 = Screen_get_height_mF5B64EBC4CDE0EAAA5713C1452ED2CE475F25150(/*hidden argument*/NULL);
-			Rect_t35B976DE901B5423C11705E156938EA27AB402CE  L_39;
-			memset(&L_39, 0, sizeof(L_39));
-			Rect__ctor_m50B92C75005C9C5A0D05E6E0EBB43AFAF7C66280((&L_39), (0.0f), (0.0f), (((float)((float)L_37))), (((float)((float)L_38))), /*hidden argument*/NULL);
-			NullCheck(L_36);
-			UniWebView_set_Frame_m5D8A545371F854091361FB698DCCF45A10C76CB9(L_36, L_39, /*hidden argument*/NULL);
-			SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * L_40 = V_1;
-			NullCheck(L_40);
-			UniWebView_t70C5C5815FC5A948185238830E0AB8B221E34BBB * L_41 = L_40->get_webView_4();
-			StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_42 = (StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E*)SZArrayNew(StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E_il2cpp_TypeInfo_var, (uint32_t)5);
-			StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_43 = L_42;
-			NullCheck(L_43);
-			ArrayElementTypeCheck (L_43, _stringLiteral310C3A2FA52D468C1A69568D9E3448429DC7B705);
-			(L_43)->SetAt(static_cast<il2cpp_array_size_t>(0), (String_t*)_stringLiteral310C3A2FA52D468C1A69568D9E3448429DC7B705);
-			StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_44 = L_43;
-			String_t* L_45 = V_2;
-			NullCheck(L_44);
-			ArrayElementTypeCheck (L_44, L_45);
-			(L_44)->SetAt(static_cast<il2cpp_array_size_t>(1), (String_t*)L_45);
-			StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_46 = L_44;
-			NullCheck(L_46);
-			ArrayElementTypeCheck (L_46, _stringLiteral20AE2117886DAEA45AD17FAE5272B38A530F7F95);
-			(L_46)->SetAt(static_cast<il2cpp_array_size_t>(2), (String_t*)_stringLiteral20AE2117886DAEA45AD17FAE5272B38A530F7F95);
-			StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_47 = L_46;
-			SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * L_48 = V_1;
-			NullCheck(L_48);
-			String_t* L_49 = L_48->get_ApiBaseUrl_6();
-			NullCheck(L_47);
-			ArrayElementTypeCheck (L_47, L_49);
-			(L_47)->SetAt(static_cast<il2cpp_array_size_t>(3), (String_t*)L_49);
-			StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_50 = L_47;
-			NullCheck(L_50);
-			ArrayElementTypeCheck (L_50, _stringLiteral75A25C2BE83FDFA0BB221B04CF3A4525E9F1203A);
-			(L_50)->SetAt(static_cast<il2cpp_array_size_t>(4), (String_t*)_stringLiteral75A25C2BE83FDFA0BB221B04CF3A4525E9F1203A);
-			String_t* L_51 = String_Concat_m232E857CA5107EA6AC52E7DD7018716C021F237B(L_50, /*hidden argument*/NULL);
-			NullCheck(L_41);
-			UniWebView_Load_m27CFE9E72534ABEAEA16DE6AAABF6C7556305B6E(L_41, L_51, (bool)0, (String_t*)NULL, /*hidden argument*/NULL);
-			SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * L_52 = V_1;
-			NullCheck(L_52);
-			UniWebView_t70C5C5815FC5A948185238830E0AB8B221E34BBB * L_53 = L_52->get_webView_4();
-			NullCheck(L_53);
-			UniWebView_Show_m900E118C2CE18F8DBB39C49E4E25948478FC4102(L_53, (bool)0, 0, (0.4f), (Action_t591D2A86165F896B4B800BB5C25CE18672A55579 *)NULL, /*hidden argument*/NULL);
-			goto IL_019c;
+			TaskAwaiter_1_GetResult_m2CE622156E52C41B443C3751AB08398ECC3CA3F3((TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 *)(&V_2), /*hidden argument*/TaskAwaiter_1_GetResult_m2CE622156E52C41B443C3751AB08398ECC3CA3F3_RuntimeMethod_var);
+			goto IL_00a9;
 		}
 	} // end try (depth: 1)
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__exception_local = (Exception_t *)e.ex;
 		if(il2cpp_codegen_class_is_assignable_from (Exception_t_il2cpp_TypeInfo_var, il2cpp_codegen_object_class(e.ex)))
-			goto CATCH_0183;
+			goto CATCH_0092;
 		throw e;
 	}
 
-CATCH_0183:
+CATCH_0092:
 	{ // begin catch(System.Exception)
-		V_5 = ((Exception_t *)__exception_local);
+		V_3 = ((Exception_t *)__exception_local);
 		__this->set_U3CU3E1__state_0(((int32_t)-2));
-		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_54 = __this->get_address_of_U3CU3Et__builder_1();
-		Exception_t * L_55 = V_5;
-		AsyncTaskMethodBuilder_SetException_m370C484922A63A6EF96E241D1370B8814F1F2D6B((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_54, L_55, /*hidden argument*/NULL);
-		goto IL_01af;
+		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_18 = __this->get_address_of_U3CU3Et__builder_1();
+		Exception_t * L_19 = V_3;
+		AsyncTaskMethodBuilder_SetException_m370C484922A63A6EF96E241D1370B8814F1F2D6B((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_18, L_19, /*hidden argument*/NULL);
+		goto IL_00bc;
 	} // end catch (depth: 1)
 
-IL_019c:
+IL_00a9:
 	{
 		__this->set_U3CU3E1__state_0(((int32_t)-2));
-		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_56 = __this->get_address_of_U3CU3Et__builder_1();
-		AsyncTaskMethodBuilder_SetResult_m151016FB698F3BB34A73BAE693A97513A7E4C838((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_56, /*hidden argument*/NULL);
+		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_20 = __this->get_address_of_U3CU3Et__builder_1();
+		AsyncTaskMethodBuilder_SetResult_m151016FB698F3BB34A73BAE693A97513A7E4C838((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_20, /*hidden argument*/NULL);
 	}
 
-IL_01af:
+IL_00bc:
 	{
 		return;
 	}
 }
-extern "C"  void U3CDoSignInAsyncU3Ed__7_MoveNext_mA623832C4C1226069800A1B3F9874017B26A0EB4_AdjustorThunk (RuntimeObject * __this, const RuntimeMethod* method)
+extern "C"  void U3CPauseAsyncU3Ed__29_MoveNext_m901FBFBEC78C7F620D549AEF3D5B7DB78C71FA6F_AdjustorThunk (RuntimeObject * __this, const RuntimeMethod* method)
 {
-	U3CDoSignInAsyncU3Ed__7_t374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2 * _thisAdjusted = reinterpret_cast<U3CDoSignInAsyncU3Ed__7_t374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2 *>(__this + 1);
-	U3CDoSignInAsyncU3Ed__7_MoveNext_mA623832C4C1226069800A1B3F9874017B26A0EB4(_thisAdjusted, method);
+	U3CPauseAsyncU3Ed__29_tDEC85B2D09AA536D9ABA26C9948D506C674C0C84 * _thisAdjusted = reinterpret_cast<U3CPauseAsyncU3Ed__29_tDEC85B2D09AA536D9ABA26C9948D506C674C0C84 *>(__this + 1);
+	U3CPauseAsyncU3Ed__29_MoveNext_m901FBFBEC78C7F620D549AEF3D5B7DB78C71FA6F(_thisAdjusted, method);
 }
-// System.Void SpotiftyLogin_<DoSignInAsync>d__7::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-extern "C" IL2CPP_METHOD_ATTR void U3CDoSignInAsyncU3Ed__7_SetStateMachine_m8B30C1F8D99C63814E026A71EB4ACDD679265E46 (U3CDoSignInAsyncU3Ed__7_t374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2 * __this, RuntimeObject* ___stateMachine0, const RuntimeMethod* method)
+// System.Void SpotifyApi_<PauseAsync>d__29::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+extern "C" IL2CPP_METHOD_ATTR void U3CPauseAsyncU3Ed__29_SetStateMachine_mDA7320C6312EC70C08ECB7DFCD92753C5CF2BB7D (U3CPauseAsyncU3Ed__29_tDEC85B2D09AA536D9ABA26C9948D506C674C0C84 * __this, RuntimeObject* ___stateMachine0, const RuntimeMethod* method)
 {
 	{
 		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_0 = __this->get_address_of_U3CU3Et__builder_1();
@@ -7666,10 +8871,10 @@ extern "C" IL2CPP_METHOD_ATTR void U3CDoSignInAsyncU3Ed__7_SetStateMachine_m8B30
 		return;
 	}
 }
-extern "C"  void U3CDoSignInAsyncU3Ed__7_SetStateMachine_m8B30C1F8D99C63814E026A71EB4ACDD679265E46_AdjustorThunk (RuntimeObject * __this, RuntimeObject* ___stateMachine0, const RuntimeMethod* method)
+extern "C"  void U3CPauseAsyncU3Ed__29_SetStateMachine_mDA7320C6312EC70C08ECB7DFCD92753C5CF2BB7D_AdjustorThunk (RuntimeObject * __this, RuntimeObject* ___stateMachine0, const RuntimeMethod* method)
 {
-	U3CDoSignInAsyncU3Ed__7_t374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2 * _thisAdjusted = reinterpret_cast<U3CDoSignInAsyncU3Ed__7_t374DD674BF5C20CFCCBB68C4D82CBDEE602C50D2 *>(__this + 1);
-	U3CDoSignInAsyncU3Ed__7_SetStateMachine_m8B30C1F8D99C63814E026A71EB4ACDD679265E46(_thisAdjusted, ___stateMachine0, method);
+	U3CPauseAsyncU3Ed__29_tDEC85B2D09AA536D9ABA26C9948D506C674C0C84 * _thisAdjusted = reinterpret_cast<U3CPauseAsyncU3Ed__29_tDEC85B2D09AA536D9ABA26C9948D506C674C0C84 *>(__this + 1);
+	U3CPauseAsyncU3Ed__29_SetStateMachine_mDA7320C6312EC70C08ECB7DFCD92753C5CF2BB7D(_thisAdjusted, ___stateMachine0, method);
 }
 #ifdef __clang__
 #pragma clang diagnostic pop
@@ -7679,34 +8884,31 @@ extern "C"  void U3CDoSignInAsyncU3Ed__7_SetStateMachine_m8B30C1F8D99C63814E026A
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// System.Void SpotiftyLogin_<Pause>d__13::MoveNext()
-extern "C" IL2CPP_METHOD_ATTR void U3CPauseU3Ed__13_MoveNext_mE89FC1E787DB329D3706DA25D843D1377E23E7F8 (U3CPauseU3Ed__13_t7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3 * __this, const RuntimeMethod* method)
+// System.Void SpotifyApi_<PlayAsync>d__24::MoveNext()
+extern "C" IL2CPP_METHOD_ATTR void U3CPlayAsyncU3Ed__24_MoveNext_mF019B2A18E86907A55AC5EA8227F951FE3152B59 (U3CPlayAsyncU3Ed__24_tB410B49C7C0816D2A5DD701A483FF046FA5C7777 * __this, const RuntimeMethod* method)
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_method (U3CPauseU3Ed__13_MoveNext_mE89FC1E787DB329D3706DA25D843D1377E23E7F8_MetadataUsageId);
+		il2cpp_codegen_initialize_method (U3CPlayAsyncU3Ed__24_MoveNext_mF019B2A18E86907A55AC5EA8227F951FE3152B59_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
 	int32_t V_0 = 0;
-	SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * V_1 = NULL;
-	String_t* V_2 = NULL;
-	TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  V_3;
-	memset(&V_3, 0, sizeof(V_3));
-	TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  V_4;
-	memset(&V_4, 0, sizeof(V_4));
-	Exception_t * V_5 = NULL;
+	SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * V_1 = NULL;
+	TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  V_2;
+	memset(&V_2, 0, sizeof(V_2));
+	Exception_t * V_3 = NULL;
 	Exception_t * __last_unhandled_exception = 0;
 	NO_UNUSED_WARNING (__last_unhandled_exception);
 	Exception_t * __exception_local = 0;
 	NO_UNUSED_WARNING (__exception_local);
-	void* __leave_targets_storage = alloca(sizeof(int32_t) * 4);
+	void* __leave_targets_storage = alloca(sizeof(int32_t) * 3);
 	il2cpp::utils::LeaveTargetStack __leave_targets(__leave_targets_storage);
 	NO_UNUSED_WARNING (__leave_targets);
 	{
 		int32_t L_0 = __this->get_U3CU3E1__state_0();
 		V_0 = L_0;
-		SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * L_1 = __this->get_U3CU3E4__this_2();
+		SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * L_1 = __this->get_U3CU3E4__this_2();
 		V_1 = L_1;
 	}
 
@@ -7717,151 +8919,98 @@ IL_000e:
 			int32_t L_2 = V_0;
 			if (!L_2)
 			{
-				goto IL_006e;
+				goto IL_006c;
 			}
 		}
 
 IL_0011:
 		{
-			int32_t L_3 = V_0;
-			if ((((int32_t)L_3) == ((int32_t)1)))
-			{
-				goto IL_00cc;
-			}
-		}
-
-IL_0018:
-		{
-			IL2CPP_RUNTIME_CLASS_INIT(Debug_t7B5FCB117E2FD63B6838BC52821B252E2BFB61C4_il2cpp_TypeInfo_var);
-			Debug_Log_m4B7C70BAFD477C6BDB59C88A0934F0B018D03708(_stringLiteral781961BC81C25697841ECCE5D4D9DAD9F6B261C6, /*hidden argument*/NULL);
-			SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * L_4 = V_1;
-			NullCheck(L_4);
-			HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7 * L_5 = L_4->get_client_7();
-			StringContent_t0E49805143AA8BCE4640914150158663B9061079 * L_6 = (StringContent_t0E49805143AA8BCE4640914150158663B9061079 *)il2cpp_codegen_object_new(StringContent_t0E49805143AA8BCE4640914150158663B9061079_il2cpp_TypeInfo_var);
-			StringContent__ctor_m14C504A380661472DEB032923DD27742561EC45C(L_6, _stringLiteralBF21A9E8FBC5A3846FB05B4FA0859E0917B2202F, /*hidden argument*/NULL);
+			SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * L_3 = V_1;
+			IL2CPP_RUNTIME_CLASS_INIT(HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220_il2cpp_TypeInfo_var);
+			HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220 * L_4 = HttpMethod_get_Put_m4BB0741A43A9B72F8E7EDAC626AEBF1CD8E45F87(/*hidden argument*/NULL);
+			SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * L_5 = V_1;
 			NullCheck(L_5);
-			Task_1_t519CB3A303B53176BD616AC273201D66B84FF270 * L_7 = HttpClient_PutAsync_m600B18C3B5B9C424DD541EF1AAD0A248B24829E7(L_5, _stringLiteral30F9F91F5CF7A0B6F4D11D0BCD16A5F9D4A1CAED, L_6, /*hidden argument*/NULL);
-			NullCheck(L_7);
-			TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  L_8 = Task_1_GetAwaiter_m511397276BFE6D43B77D1BD80905DF2FB0FA54E0(L_7, /*hidden argument*/Task_1_GetAwaiter_m511397276BFE6D43B77D1BD80905DF2FB0FA54E0_RuntimeMethod_var);
-			V_3 = L_8;
-			bool L_9 = TaskAwaiter_1_get_IsCompleted_m0F711316D40833EE5C67F3E65571EF033B9364DF((TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 *)(&V_3), /*hidden argument*/TaskAwaiter_1_get_IsCompleted_m0F711316D40833EE5C67F3E65571EF033B9364DF_RuntimeMethod_var);
-			if (L_9)
+			String_t* L_6 = SpotifyApi_GetDeviceIdQuery_m9C58CB91093EAA829734A7F04F950F725110C69E(L_5, (bool)1, /*hidden argument*/NULL);
+			String_t* L_7 = String_Concat_mB78D0094592718DA6D5DB6C712A9C225631666BE(_stringLiteral6405670567C1F2A6C961588E7C174287D06D3436, L_6, /*hidden argument*/NULL);
+			CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  L_8 = __this->get_cancel_3();
+			NullCheck(L_3);
+			Task_1_t4A75FEC8F36C5D4F8793BB8C94E4DAA7457D0286 * L_9 = SpotifyApi_SendAsync_m5AD966C901F4391600A0955814F18F9A59C8D430(L_3, _stringLiteral46D879CE296624142E8E1B8B317A99540429EFF5, L_4, L_7, _stringLiteralBF21A9E8FBC5A3846FB05B4FA0859E0917B2202F, L_8, /*hidden argument*/NULL);
+			NullCheck(L_9);
+			TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  L_10 = Task_1_GetAwaiter_mBC24D09E3C1AB76F290AB7E9017AB8913242EC61(L_9, /*hidden argument*/Task_1_GetAwaiter_mBC24D09E3C1AB76F290AB7E9017AB8913242EC61_RuntimeMethod_var);
+			V_2 = L_10;
+			bool L_11 = TaskAwaiter_1_get_IsCompleted_m087FA74E453B58AB5AAD0A64BEDDB49070C6CE94((TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 *)(&V_2), /*hidden argument*/TaskAwaiter_1_get_IsCompleted_m087FA74E453B58AB5AAD0A64BEDDB49070C6CE94_RuntimeMethod_var);
+			if (L_11)
 			{
-				goto IL_008a;
+				goto IL_0088;
 			}
 		}
 
-IL_004b:
+IL_004c:
 		{
-			int32_t L_10 = 0;
-			V_0 = L_10;
-			__this->set_U3CU3E1__state_0(L_10);
-			TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  L_11 = V_3;
-			__this->set_U3CU3Eu__1_3(L_11);
-			AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_12 = __this->get_address_of_U3CU3Et__builder_1();
-			AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86_TisU3CPauseU3Ed__13_t7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3_m5D6BE89DCCED75301497F9998148B85EE8135C35((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_12, (TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 *)(&V_3), (U3CPauseU3Ed__13_t7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3 *)__this, /*hidden argument*/AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86_TisU3CPauseU3Ed__13_t7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3_m5D6BE89DCCED75301497F9998148B85EE8135C35_RuntimeMethod_var);
-			goto IL_012f;
+			int32_t L_12 = 0;
+			V_0 = L_12;
+			__this->set_U3CU3E1__state_0(L_12);
+			TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  L_13 = V_2;
+			__this->set_U3CU3Eu__1_4(L_13);
+			AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_14 = __this->get_address_of_U3CU3Et__builder_1();
+			AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483_TisU3CPlayAsyncU3Ed__24_tB410B49C7C0816D2A5DD701A483FF046FA5C7777_m388A695289A08AF6642AAAB510902EB9ADFD2425((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_14, (TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 *)(&V_2), (U3CPlayAsyncU3Ed__24_tB410B49C7C0816D2A5DD701A483FF046FA5C7777 *)__this, /*hidden argument*/AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483_TisU3CPlayAsyncU3Ed__24_tB410B49C7C0816D2A5DD701A483FF046FA5C7777_m388A695289A08AF6642AAAB510902EB9ADFD2425_RuntimeMethod_var);
+			goto IL_00bc;
 		}
 
-IL_006e:
+IL_006c:
 		{
-			TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  L_13 = __this->get_U3CU3Eu__1_3();
-			V_3 = L_13;
-			TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 * L_14 = __this->get_address_of_U3CU3Eu__1_3();
-			il2cpp_codegen_initobj(L_14, sizeof(TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 ));
-			int32_t L_15 = (-1);
-			V_0 = L_15;
-			__this->set_U3CU3E1__state_0(L_15);
+			TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  L_15 = __this->get_U3CU3Eu__1_4();
+			V_2 = L_15;
+			TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 * L_16 = __this->get_address_of_U3CU3Eu__1_4();
+			il2cpp_codegen_initobj(L_16, sizeof(TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 ));
+			int32_t L_17 = (-1);
+			V_0 = L_17;
+			__this->set_U3CU3E1__state_0(L_17);
 		}
 
-IL_008a:
+IL_0088:
 		{
-			HttpResponseMessage_t619DB9FDC8E63CDF2D0A314B61A4C6609A43F904 * L_16 = TaskAwaiter_1_GetResult_m706665648BB29D83FD0C72CFA6279966143192A2((TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 *)(&V_3), /*hidden argument*/TaskAwaiter_1_GetResult_m706665648BB29D83FD0C72CFA6279966143192A2_RuntimeMethod_var);
-			NullCheck(L_16);
-			HttpContent_t678722F60CA151DD19AFCA917657BE24F111A41D * L_17 = HttpResponseMessage_get_Content_m325C3E47B0D7E1DD70CA36FA04B894A152AD4420(L_16, /*hidden argument*/NULL);
-			NullCheck(L_17);
-			Task_1_t4A75FEC8F36C5D4F8793BB8C94E4DAA7457D0286 * L_18 = HttpContent_ReadAsStringAsync_m499CCA8B02B3AFB793C0783D28220FC7A531A24D(L_17, /*hidden argument*/NULL);
-			NullCheck(L_18);
-			TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  L_19 = Task_1_GetAwaiter_mBC24D09E3C1AB76F290AB7E9017AB8913242EC61(L_18, /*hidden argument*/Task_1_GetAwaiter_mBC24D09E3C1AB76F290AB7E9017AB8913242EC61_RuntimeMethod_var);
-			V_4 = L_19;
-			bool L_20 = TaskAwaiter_1_get_IsCompleted_m087FA74E453B58AB5AAD0A64BEDDB49070C6CE94((TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 *)(&V_4), /*hidden argument*/TaskAwaiter_1_get_IsCompleted_m087FA74E453B58AB5AAD0A64BEDDB49070C6CE94_RuntimeMethod_var);
-			if (L_20)
-			{
-				goto IL_00e9;
-			}
-		}
-
-IL_00ab:
-		{
-			int32_t L_21 = 1;
-			V_0 = L_21;
-			__this->set_U3CU3E1__state_0(L_21);
-			TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  L_22 = V_4;
-			__this->set_U3CU3Eu__2_4(L_22);
-			AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_23 = __this->get_address_of_U3CU3Et__builder_1();
-			AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483_TisU3CPauseU3Ed__13_t7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3_mBEBCE726EC238FCE181D231A149EAD42A94CF250((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_23, (TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 *)(&V_4), (U3CPauseU3Ed__13_t7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3 *)__this, /*hidden argument*/AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483_TisU3CPauseU3Ed__13_t7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3_mBEBCE726EC238FCE181D231A149EAD42A94CF250_RuntimeMethod_var);
-			goto IL_012f;
-		}
-
-IL_00cc:
-		{
-			TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  L_24 = __this->get_U3CU3Eu__2_4();
-			V_4 = L_24;
-			TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 * L_25 = __this->get_address_of_U3CU3Eu__2_4();
-			il2cpp_codegen_initobj(L_25, sizeof(TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 ));
-			int32_t L_26 = (-1);
-			V_0 = L_26;
-			__this->set_U3CU3E1__state_0(L_26);
-		}
-
-IL_00e9:
-		{
-			String_t* L_27 = TaskAwaiter_1_GetResult_m2CE622156E52C41B443C3751AB08398ECC3CA3F3((TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 *)(&V_4), /*hidden argument*/TaskAwaiter_1_GetResult_m2CE622156E52C41B443C3751AB08398ECC3CA3F3_RuntimeMethod_var);
-			V_2 = L_27;
-			String_t* L_28 = V_2;
-			String_t* L_29 = String_Concat_mB78D0094592718DA6D5DB6C712A9C225631666BE(_stringLiteralCDE1EB2FE366B2C13B8B9C56597730709C974A4C, L_28, /*hidden argument*/NULL);
-			IL2CPP_RUNTIME_CLASS_INIT(Debug_t7B5FCB117E2FD63B6838BC52821B252E2BFB61C4_il2cpp_TypeInfo_var);
-			Debug_Log_m4B7C70BAFD477C6BDB59C88A0934F0B018D03708(L_29, /*hidden argument*/NULL);
-			goto IL_011c;
+			TaskAwaiter_1_GetResult_m2CE622156E52C41B443C3751AB08398ECC3CA3F3((TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 *)(&V_2), /*hidden argument*/TaskAwaiter_1_GetResult_m2CE622156E52C41B443C3751AB08398ECC3CA3F3_RuntimeMethod_var);
+			goto IL_00a9;
 		}
 	} // end try (depth: 1)
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__exception_local = (Exception_t *)e.ex;
 		if(il2cpp_codegen_class_is_assignable_from (Exception_t_il2cpp_TypeInfo_var, il2cpp_codegen_object_class(e.ex)))
-			goto CATCH_0103;
+			goto CATCH_0092;
 		throw e;
 	}
 
-CATCH_0103:
+CATCH_0092:
 	{ // begin catch(System.Exception)
-		V_5 = ((Exception_t *)__exception_local);
+		V_3 = ((Exception_t *)__exception_local);
 		__this->set_U3CU3E1__state_0(((int32_t)-2));
-		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_30 = __this->get_address_of_U3CU3Et__builder_1();
-		Exception_t * L_31 = V_5;
-		AsyncTaskMethodBuilder_SetException_m370C484922A63A6EF96E241D1370B8814F1F2D6B((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_30, L_31, /*hidden argument*/NULL);
-		goto IL_012f;
+		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_18 = __this->get_address_of_U3CU3Et__builder_1();
+		Exception_t * L_19 = V_3;
+		AsyncTaskMethodBuilder_SetException_m370C484922A63A6EF96E241D1370B8814F1F2D6B((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_18, L_19, /*hidden argument*/NULL);
+		goto IL_00bc;
 	} // end catch (depth: 1)
 
-IL_011c:
+IL_00a9:
 	{
 		__this->set_U3CU3E1__state_0(((int32_t)-2));
-		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_32 = __this->get_address_of_U3CU3Et__builder_1();
-		AsyncTaskMethodBuilder_SetResult_m151016FB698F3BB34A73BAE693A97513A7E4C838((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_32, /*hidden argument*/NULL);
+		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_20 = __this->get_address_of_U3CU3Et__builder_1();
+		AsyncTaskMethodBuilder_SetResult_m151016FB698F3BB34A73BAE693A97513A7E4C838((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_20, /*hidden argument*/NULL);
 	}
 
-IL_012f:
+IL_00bc:
 	{
 		return;
 	}
 }
-extern "C"  void U3CPauseU3Ed__13_MoveNext_mE89FC1E787DB329D3706DA25D843D1377E23E7F8_AdjustorThunk (RuntimeObject * __this, const RuntimeMethod* method)
+extern "C"  void U3CPlayAsyncU3Ed__24_MoveNext_mF019B2A18E86907A55AC5EA8227F951FE3152B59_AdjustorThunk (RuntimeObject * __this, const RuntimeMethod* method)
 {
-	U3CPauseU3Ed__13_t7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3 * _thisAdjusted = reinterpret_cast<U3CPauseU3Ed__13_t7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3 *>(__this + 1);
-	U3CPauseU3Ed__13_MoveNext_mE89FC1E787DB329D3706DA25D843D1377E23E7F8(_thisAdjusted, method);
+	U3CPlayAsyncU3Ed__24_tB410B49C7C0816D2A5DD701A483FF046FA5C7777 * _thisAdjusted = reinterpret_cast<U3CPlayAsyncU3Ed__24_tB410B49C7C0816D2A5DD701A483FF046FA5C7777 *>(__this + 1);
+	U3CPlayAsyncU3Ed__24_MoveNext_mF019B2A18E86907A55AC5EA8227F951FE3152B59(_thisAdjusted, method);
 }
-// System.Void SpotiftyLogin_<Pause>d__13::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-extern "C" IL2CPP_METHOD_ATTR void U3CPauseU3Ed__13_SetStateMachine_mB45D3DDED01289717DDF958005F1577078EA27EE (U3CPauseU3Ed__13_t7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3 * __this, RuntimeObject* ___stateMachine0, const RuntimeMethod* method)
+// System.Void SpotifyApi_<PlayAsync>d__24::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+extern "C" IL2CPP_METHOD_ATTR void U3CPlayAsyncU3Ed__24_SetStateMachine_m5F16FA04784B9FC6F94F308B3642325E1AF2A0F9 (U3CPlayAsyncU3Ed__24_tB410B49C7C0816D2A5DD701A483FF046FA5C7777 * __this, RuntimeObject* ___stateMachine0, const RuntimeMethod* method)
 {
 	{
 		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_0 = __this->get_address_of_U3CU3Et__builder_1();
@@ -7870,10 +9019,10 @@ extern "C" IL2CPP_METHOD_ATTR void U3CPauseU3Ed__13_SetStateMachine_mB45D3DDED01
 		return;
 	}
 }
-extern "C"  void U3CPauseU3Ed__13_SetStateMachine_mB45D3DDED01289717DDF958005F1577078EA27EE_AdjustorThunk (RuntimeObject * __this, RuntimeObject* ___stateMachine0, const RuntimeMethod* method)
+extern "C"  void U3CPlayAsyncU3Ed__24_SetStateMachine_m5F16FA04784B9FC6F94F308B3642325E1AF2A0F9_AdjustorThunk (RuntimeObject * __this, RuntimeObject* ___stateMachine0, const RuntimeMethod* method)
 {
-	U3CPauseU3Ed__13_t7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3 * _thisAdjusted = reinterpret_cast<U3CPauseU3Ed__13_t7C5AE3B827129116ACE98E9B9EE4EEF76A7253C3 *>(__this + 1);
-	U3CPauseU3Ed__13_SetStateMachine_mB45D3DDED01289717DDF958005F1577078EA27EE(_thisAdjusted, ___stateMachine0, method);
+	U3CPlayAsyncU3Ed__24_tB410B49C7C0816D2A5DD701A483FF046FA5C7777 * _thisAdjusted = reinterpret_cast<U3CPlayAsyncU3Ed__24_tB410B49C7C0816D2A5DD701A483FF046FA5C7777 *>(__this + 1);
+	U3CPlayAsyncU3Ed__24_SetStateMachine_m5F16FA04784B9FC6F94F308B3642325E1AF2A0F9(_thisAdjusted, ___stateMachine0, method);
 }
 #ifdef __clang__
 #pragma clang diagnostic pop
@@ -7883,19 +9032,629 @@ extern "C"  void U3CPauseU3Ed__13_SetStateMachine_mB45D3DDED01289717DDF958005F15
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// System.Void SpotiftyLogin_<Play>d__12::MoveNext()
-extern "C" IL2CPP_METHOD_ATTR void U3CPlayU3Ed__12_MoveNext_m92D0C2A3162EB0837371FA384EB8670F4AE3E429 (U3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C * __this, const RuntimeMethod* method)
+// System.Void SpotifyApi_<PlayUrisAsync>d__26::MoveNext()
+extern "C" IL2CPP_METHOD_ATTR void U3CPlayUrisAsyncU3Ed__26_MoveNext_m1D53EECD7B7D798205493B7C042BC8F90E017FC1 (U3CPlayUrisAsyncU3Ed__26_tF7BEEEB5E918E76C3B6F702D718B1110F5033C78 * __this, const RuntimeMethod* method)
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_method (U3CPlayU3Ed__12_MoveNext_m92D0C2A3162EB0837371FA384EB8670F4AE3E429_MetadataUsageId);
+		il2cpp_codegen_initialize_method (U3CPlayUrisAsyncU3Ed__26_MoveNext_m1D53EECD7B7D798205493B7C042BC8F90E017FC1_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
 	int32_t V_0 = 0;
-	SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * V_1 = NULL;
+	SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * V_1 = NULL;
+	TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  V_2;
+	memset(&V_2, 0, sizeof(V_2));
+	Exception_t * V_3 = NULL;
+	Exception_t * __last_unhandled_exception = 0;
+	NO_UNUSED_WARNING (__last_unhandled_exception);
+	Exception_t * __exception_local = 0;
+	NO_UNUSED_WARNING (__exception_local);
+	void* __leave_targets_storage = alloca(sizeof(int32_t) * 3);
+	il2cpp::utils::LeaveTargetStack __leave_targets(__leave_targets_storage);
+	NO_UNUSED_WARNING (__leave_targets);
+	{
+		int32_t L_0 = __this->get_U3CU3E1__state_0();
+		V_0 = L_0;
+		SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * L_1 = __this->get_U3CU3E4__this_2();
+		V_1 = L_1;
+	}
+
+IL_000e:
+	try
+	{ // begin try (depth: 1)
+		{
+			int32_t L_2 = V_0;
+			if (!L_2)
+			{
+				goto IL_00a9;
+			}
+		}
+
+IL_0014:
+		{
+			SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * L_3 = V_1;
+			IL2CPP_RUNTIME_CLASS_INIT(HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220_il2cpp_TypeInfo_var);
+			HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220 * L_4 = HttpMethod_get_Put_m4BB0741A43A9B72F8E7EDAC626AEBF1CD8E45F87(/*hidden argument*/NULL);
+			SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * L_5 = V_1;
+			NullCheck(L_5);
+			String_t* L_6 = SpotifyApi_GetDeviceIdQuery_m9C58CB91093EAA829734A7F04F950F725110C69E(L_5, (bool)1, /*hidden argument*/NULL);
+			String_t* L_7 = String_Concat_mB78D0094592718DA6D5DB6C712A9C225631666BE(_stringLiteral6405670567C1F2A6C961588E7C174287D06D3436, L_6, /*hidden argument*/NULL);
+			ObjectU5BU5D_t3C9242B5C88A48B2A5BD9FDA6CD0024E792AF08A* L_8 = (ObjectU5BU5D_t3C9242B5C88A48B2A5BD9FDA6CD0024E792AF08A*)SZArrayNew(ObjectU5BU5D_t3C9242B5C88A48B2A5BD9FDA6CD0024E792AF08A_il2cpp_TypeInfo_var, (uint32_t)5);
+			ObjectU5BU5D_t3C9242B5C88A48B2A5BD9FDA6CD0024E792AF08A* L_9 = L_8;
+			NullCheck(L_9);
+			ArrayElementTypeCheck (L_9, _stringLiteral814513A21468075BD4B7D44F3E2981132C6214C1);
+			(L_9)->SetAt(static_cast<il2cpp_array_size_t>(0), (RuntimeObject *)_stringLiteral814513A21468075BD4B7D44F3E2981132C6214C1);
+			ObjectU5BU5D_t3C9242B5C88A48B2A5BD9FDA6CD0024E792AF08A* L_10 = L_9;
+			StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_11 = __this->get_uris_3();
+			String_t* L_12 = JsonUtility_ToJson_m588D3BCFA6FC7FA342FC221D4CB02729E901E573((RuntimeObject *)(RuntimeObject *)L_11, /*hidden argument*/NULL);
+			NullCheck(L_10);
+			ArrayElementTypeCheck (L_10, L_12);
+			(L_10)->SetAt(static_cast<il2cpp_array_size_t>(1), (RuntimeObject *)L_12);
+			ObjectU5BU5D_t3C9242B5C88A48B2A5BD9FDA6CD0024E792AF08A* L_13 = L_10;
+			NullCheck(L_13);
+			ArrayElementTypeCheck (L_13, _stringLiteralF106334790426732FBC8DB58C50A4F4D4CFC6ECB);
+			(L_13)->SetAt(static_cast<il2cpp_array_size_t>(2), (RuntimeObject *)_stringLiteralF106334790426732FBC8DB58C50A4F4D4CFC6ECB);
+			ObjectU5BU5D_t3C9242B5C88A48B2A5BD9FDA6CD0024E792AF08A* L_14 = L_13;
+			int32_t L_15 = __this->get_positionMs_4();
+			int32_t L_16 = L_15;
+			RuntimeObject * L_17 = Box(Int32_t585191389E07734F19F3156FF88FB3EF4800D102_il2cpp_TypeInfo_var, &L_16);
+			NullCheck(L_14);
+			ArrayElementTypeCheck (L_14, L_17);
+			(L_14)->SetAt(static_cast<il2cpp_array_size_t>(3), (RuntimeObject *)L_17);
+			ObjectU5BU5D_t3C9242B5C88A48B2A5BD9FDA6CD0024E792AF08A* L_18 = L_14;
+			NullCheck(L_18);
+			ArrayElementTypeCheck (L_18, _stringLiteralC2B7DF6201FDD3362399091F0A29550DF3505B6A);
+			(L_18)->SetAt(static_cast<il2cpp_array_size_t>(4), (RuntimeObject *)_stringLiteralC2B7DF6201FDD3362399091F0A29550DF3505B6A);
+			String_t* L_19 = String_Concat_mB7BA84F13912303B2E5E40FBF0109E1A328ACA07(L_18, /*hidden argument*/NULL);
+			CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  L_20 = __this->get_cancel_5();
+			NullCheck(L_3);
+			Task_1_t4A75FEC8F36C5D4F8793BB8C94E4DAA7457D0286 * L_21 = SpotifyApi_SendAsync_m5AD966C901F4391600A0955814F18F9A59C8D430(L_3, _stringLiteral46D879CE296624142E8E1B8B317A99540429EFF5, L_4, L_7, L_19, L_20, /*hidden argument*/NULL);
+			NullCheck(L_21);
+			TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  L_22 = Task_1_GetAwaiter_mBC24D09E3C1AB76F290AB7E9017AB8913242EC61(L_21, /*hidden argument*/Task_1_GetAwaiter_mBC24D09E3C1AB76F290AB7E9017AB8913242EC61_RuntimeMethod_var);
+			V_2 = L_22;
+			bool L_23 = TaskAwaiter_1_get_IsCompleted_m087FA74E453B58AB5AAD0A64BEDDB49070C6CE94((TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 *)(&V_2), /*hidden argument*/TaskAwaiter_1_get_IsCompleted_m087FA74E453B58AB5AAD0A64BEDDB49070C6CE94_RuntimeMethod_var);
+			if (L_23)
+			{
+				goto IL_00c5;
+			}
+		}
+
+IL_0089:
+		{
+			int32_t L_24 = 0;
+			V_0 = L_24;
+			__this->set_U3CU3E1__state_0(L_24);
+			TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  L_25 = V_2;
+			__this->set_U3CU3Eu__1_6(L_25);
+			AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_26 = __this->get_address_of_U3CU3Et__builder_1();
+			AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483_TisU3CPlayUrisAsyncU3Ed__26_tF7BEEEB5E918E76C3B6F702D718B1110F5033C78_mC18A337FD73A92592626FB0834CBA684C6C45DB4((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_26, (TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 *)(&V_2), (U3CPlayUrisAsyncU3Ed__26_tF7BEEEB5E918E76C3B6F702D718B1110F5033C78 *)__this, /*hidden argument*/AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483_TisU3CPlayUrisAsyncU3Ed__26_tF7BEEEB5E918E76C3B6F702D718B1110F5033C78_mC18A337FD73A92592626FB0834CBA684C6C45DB4_RuntimeMethod_var);
+			goto IL_00f9;
+		}
+
+IL_00a9:
+		{
+			TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  L_27 = __this->get_U3CU3Eu__1_6();
+			V_2 = L_27;
+			TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 * L_28 = __this->get_address_of_U3CU3Eu__1_6();
+			il2cpp_codegen_initobj(L_28, sizeof(TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 ));
+			int32_t L_29 = (-1);
+			V_0 = L_29;
+			__this->set_U3CU3E1__state_0(L_29);
+		}
+
+IL_00c5:
+		{
+			TaskAwaiter_1_GetResult_m2CE622156E52C41B443C3751AB08398ECC3CA3F3((TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 *)(&V_2), /*hidden argument*/TaskAwaiter_1_GetResult_m2CE622156E52C41B443C3751AB08398ECC3CA3F3_RuntimeMethod_var);
+			goto IL_00e6;
+		}
+	} // end try (depth: 1)
+	catch(Il2CppExceptionWrapper& e)
+	{
+		__exception_local = (Exception_t *)e.ex;
+		if(il2cpp_codegen_class_is_assignable_from (Exception_t_il2cpp_TypeInfo_var, il2cpp_codegen_object_class(e.ex)))
+			goto CATCH_00cf;
+		throw e;
+	}
+
+CATCH_00cf:
+	{ // begin catch(System.Exception)
+		V_3 = ((Exception_t *)__exception_local);
+		__this->set_U3CU3E1__state_0(((int32_t)-2));
+		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_30 = __this->get_address_of_U3CU3Et__builder_1();
+		Exception_t * L_31 = V_3;
+		AsyncTaskMethodBuilder_SetException_m370C484922A63A6EF96E241D1370B8814F1F2D6B((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_30, L_31, /*hidden argument*/NULL);
+		goto IL_00f9;
+	} // end catch (depth: 1)
+
+IL_00e6:
+	{
+		__this->set_U3CU3E1__state_0(((int32_t)-2));
+		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_32 = __this->get_address_of_U3CU3Et__builder_1();
+		AsyncTaskMethodBuilder_SetResult_m151016FB698F3BB34A73BAE693A97513A7E4C838((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_32, /*hidden argument*/NULL);
+	}
+
+IL_00f9:
+	{
+		return;
+	}
+}
+extern "C"  void U3CPlayUrisAsyncU3Ed__26_MoveNext_m1D53EECD7B7D798205493B7C042BC8F90E017FC1_AdjustorThunk (RuntimeObject * __this, const RuntimeMethod* method)
+{
+	U3CPlayUrisAsyncU3Ed__26_tF7BEEEB5E918E76C3B6F702D718B1110F5033C78 * _thisAdjusted = reinterpret_cast<U3CPlayUrisAsyncU3Ed__26_tF7BEEEB5E918E76C3B6F702D718B1110F5033C78 *>(__this + 1);
+	U3CPlayUrisAsyncU3Ed__26_MoveNext_m1D53EECD7B7D798205493B7C042BC8F90E017FC1(_thisAdjusted, method);
+}
+// System.Void SpotifyApi_<PlayUrisAsync>d__26::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+extern "C" IL2CPP_METHOD_ATTR void U3CPlayUrisAsyncU3Ed__26_SetStateMachine_mD63DFAE18A659474D3B49D111902B2E12295D2A7 (U3CPlayUrisAsyncU3Ed__26_tF7BEEEB5E918E76C3B6F702D718B1110F5033C78 * __this, RuntimeObject* ___stateMachine0, const RuntimeMethod* method)
+{
+	{
+		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_0 = __this->get_address_of_U3CU3Et__builder_1();
+		RuntimeObject* L_1 = ___stateMachine0;
+		AsyncTaskMethodBuilder_SetStateMachine_mB5DD68F7C49EA6D452AEBA02B1B98AED898C3C25((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_0, L_1, /*hidden argument*/NULL);
+		return;
+	}
+}
+extern "C"  void U3CPlayUrisAsyncU3Ed__26_SetStateMachine_mD63DFAE18A659474D3B49D111902B2E12295D2A7_AdjustorThunk (RuntimeObject * __this, RuntimeObject* ___stateMachine0, const RuntimeMethod* method)
+{
+	U3CPlayUrisAsyncU3Ed__26_tF7BEEEB5E918E76C3B6F702D718B1110F5033C78 * _thisAdjusted = reinterpret_cast<U3CPlayUrisAsyncU3Ed__26_tF7BEEEB5E918E76C3B6F702D718B1110F5033C78 *>(__this + 1);
+	U3CPlayUrisAsyncU3Ed__26_SetStateMachine_mD63DFAE18A659474D3B49D111902B2E12295D2A7(_thisAdjusted, ___stateMachine0, method);
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// System.Void SpotifyApi_<RepeatAsync>d__30::MoveNext()
+extern "C" IL2CPP_METHOD_ATTR void U3CRepeatAsyncU3Ed__30_MoveNext_m44002A5F00382C41B07B32F3D1A5A7045FDCAB19 (U3CRepeatAsyncU3Ed__30_tBE6907D98B9974628F6181F8DB4B506D3DF1B509 * __this, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (U3CRepeatAsyncU3Ed__30_MoveNext_m44002A5F00382C41B07B32F3D1A5A7045FDCAB19_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	int32_t V_0 = 0;
+	SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * V_1 = NULL;
+	TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  V_2;
+	memset(&V_2, 0, sizeof(V_2));
+	Exception_t * V_3 = NULL;
+	Exception_t * __last_unhandled_exception = 0;
+	NO_UNUSED_WARNING (__last_unhandled_exception);
+	Exception_t * __exception_local = 0;
+	NO_UNUSED_WARNING (__exception_local);
+	void* __leave_targets_storage = alloca(sizeof(int32_t) * 3);
+	il2cpp::utils::LeaveTargetStack __leave_targets(__leave_targets_storage);
+	NO_UNUSED_WARNING (__leave_targets);
+	{
+		int32_t L_0 = __this->get_U3CU3E1__state_0();
+		V_0 = L_0;
+		SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * L_1 = __this->get_U3CU3E4__this_2();
+		V_1 = L_1;
+	}
+
+IL_000e:
+	try
+	{ // begin try (depth: 1)
+		{
+			int32_t L_2 = V_0;
+			if (!L_2)
+			{
+				goto IL_0082;
+			}
+		}
+
+IL_0011:
+		{
+			SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * L_3 = V_1;
+			IL2CPP_RUNTIME_CLASS_INIT(HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220_il2cpp_TypeInfo_var);
+			HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220 * L_4 = HttpMethod_get_Put_m4BB0741A43A9B72F8E7EDAC626AEBF1CD8E45F87(/*hidden argument*/NULL);
+			int32_t* L_5 = __this->get_address_of_mode_3();
+			RuntimeObject * L_6 = Box(SpotifyRepeatMode_t808DBF4667005FCB3A97FCDA876C84B196E5E083_il2cpp_TypeInfo_var, L_5);
+			NullCheck(L_6);
+			String_t* L_7 = VirtFuncInvoker0< String_t* >::Invoke(3 /* System.String System.Object::ToString() */, L_6);
+			*L_5 = *(int32_t*)UnBox(L_6);
+			NullCheck(L_7);
+			String_t* L_8 = String_ToLower_m5287204D93C9DDC4DF84581ADD756D0FDE2BA5A8(L_7, /*hidden argument*/NULL);
+			SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * L_9 = V_1;
+			NullCheck(L_9);
+			String_t* L_10 = SpotifyApi_GetDeviceIdQuery_m9C58CB91093EAA829734A7F04F950F725110C69E(L_9, (bool)0, /*hidden argument*/NULL);
+			String_t* L_11 = String_Concat_mF4626905368D6558695A823466A1AF65EADB9923(_stringLiteralD62692107CA63BAA9FB765B1344404D3D5A9F3BF, L_8, L_10, /*hidden argument*/NULL);
+			CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  L_12 = __this->get_cancel_4();
+			NullCheck(L_3);
+			Task_1_t4A75FEC8F36C5D4F8793BB8C94E4DAA7457D0286 * L_13 = SpotifyApi_SendAsync_m5AD966C901F4391600A0955814F18F9A59C8D430(L_3, _stringLiteral659EBA121958F4A29FAB3D29D61CEDC55A892334, L_4, L_11, _stringLiteralBF21A9E8FBC5A3846FB05B4FA0859E0917B2202F, L_12, /*hidden argument*/NULL);
+			NullCheck(L_13);
+			TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  L_14 = Task_1_GetAwaiter_mBC24D09E3C1AB76F290AB7E9017AB8913242EC61(L_13, /*hidden argument*/Task_1_GetAwaiter_mBC24D09E3C1AB76F290AB7E9017AB8913242EC61_RuntimeMethod_var);
+			V_2 = L_14;
+			bool L_15 = TaskAwaiter_1_get_IsCompleted_m087FA74E453B58AB5AAD0A64BEDDB49070C6CE94((TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 *)(&V_2), /*hidden argument*/TaskAwaiter_1_get_IsCompleted_m087FA74E453B58AB5AAD0A64BEDDB49070C6CE94_RuntimeMethod_var);
+			if (L_15)
+			{
+				goto IL_009e;
+			}
+		}
+
+IL_0062:
+		{
+			int32_t L_16 = 0;
+			V_0 = L_16;
+			__this->set_U3CU3E1__state_0(L_16);
+			TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  L_17 = V_2;
+			__this->set_U3CU3Eu__1_5(L_17);
+			AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_18 = __this->get_address_of_U3CU3Et__builder_1();
+			AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483_TisU3CRepeatAsyncU3Ed__30_tBE6907D98B9974628F6181F8DB4B506D3DF1B509_m16EA31FFBA6C8B1D27E06B62D8BED02D30C09D3B((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_18, (TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 *)(&V_2), (U3CRepeatAsyncU3Ed__30_tBE6907D98B9974628F6181F8DB4B506D3DF1B509 *)__this, /*hidden argument*/AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483_TisU3CRepeatAsyncU3Ed__30_tBE6907D98B9974628F6181F8DB4B506D3DF1B509_m16EA31FFBA6C8B1D27E06B62D8BED02D30C09D3B_RuntimeMethod_var);
+			goto IL_00d2;
+		}
+
+IL_0082:
+		{
+			TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  L_19 = __this->get_U3CU3Eu__1_5();
+			V_2 = L_19;
+			TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 * L_20 = __this->get_address_of_U3CU3Eu__1_5();
+			il2cpp_codegen_initobj(L_20, sizeof(TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 ));
+			int32_t L_21 = (-1);
+			V_0 = L_21;
+			__this->set_U3CU3E1__state_0(L_21);
+		}
+
+IL_009e:
+		{
+			TaskAwaiter_1_GetResult_m2CE622156E52C41B443C3751AB08398ECC3CA3F3((TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 *)(&V_2), /*hidden argument*/TaskAwaiter_1_GetResult_m2CE622156E52C41B443C3751AB08398ECC3CA3F3_RuntimeMethod_var);
+			goto IL_00bf;
+		}
+	} // end try (depth: 1)
+	catch(Il2CppExceptionWrapper& e)
+	{
+		__exception_local = (Exception_t *)e.ex;
+		if(il2cpp_codegen_class_is_assignable_from (Exception_t_il2cpp_TypeInfo_var, il2cpp_codegen_object_class(e.ex)))
+			goto CATCH_00a8;
+		throw e;
+	}
+
+CATCH_00a8:
+	{ // begin catch(System.Exception)
+		V_3 = ((Exception_t *)__exception_local);
+		__this->set_U3CU3E1__state_0(((int32_t)-2));
+		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_22 = __this->get_address_of_U3CU3Et__builder_1();
+		Exception_t * L_23 = V_3;
+		AsyncTaskMethodBuilder_SetException_m370C484922A63A6EF96E241D1370B8814F1F2D6B((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_22, L_23, /*hidden argument*/NULL);
+		goto IL_00d2;
+	} // end catch (depth: 1)
+
+IL_00bf:
+	{
+		__this->set_U3CU3E1__state_0(((int32_t)-2));
+		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_24 = __this->get_address_of_U3CU3Et__builder_1();
+		AsyncTaskMethodBuilder_SetResult_m151016FB698F3BB34A73BAE693A97513A7E4C838((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_24, /*hidden argument*/NULL);
+	}
+
+IL_00d2:
+	{
+		return;
+	}
+}
+extern "C"  void U3CRepeatAsyncU3Ed__30_MoveNext_m44002A5F00382C41B07B32F3D1A5A7045FDCAB19_AdjustorThunk (RuntimeObject * __this, const RuntimeMethod* method)
+{
+	U3CRepeatAsyncU3Ed__30_tBE6907D98B9974628F6181F8DB4B506D3DF1B509 * _thisAdjusted = reinterpret_cast<U3CRepeatAsyncU3Ed__30_tBE6907D98B9974628F6181F8DB4B506D3DF1B509 *>(__this + 1);
+	U3CRepeatAsyncU3Ed__30_MoveNext_m44002A5F00382C41B07B32F3D1A5A7045FDCAB19(_thisAdjusted, method);
+}
+// System.Void SpotifyApi_<RepeatAsync>d__30::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+extern "C" IL2CPP_METHOD_ATTR void U3CRepeatAsyncU3Ed__30_SetStateMachine_mFA577CCED55B14C07C48E1E272FE7945A9A6FDFA (U3CRepeatAsyncU3Ed__30_tBE6907D98B9974628F6181F8DB4B506D3DF1B509 * __this, RuntimeObject* ___stateMachine0, const RuntimeMethod* method)
+{
+	{
+		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_0 = __this->get_address_of_U3CU3Et__builder_1();
+		RuntimeObject* L_1 = ___stateMachine0;
+		AsyncTaskMethodBuilder_SetStateMachine_mB5DD68F7C49EA6D452AEBA02B1B98AED898C3C25((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_0, L_1, /*hidden argument*/NULL);
+		return;
+	}
+}
+extern "C"  void U3CRepeatAsyncU3Ed__30_SetStateMachine_mFA577CCED55B14C07C48E1E272FE7945A9A6FDFA_AdjustorThunk (RuntimeObject * __this, RuntimeObject* ___stateMachine0, const RuntimeMethod* method)
+{
+	U3CRepeatAsyncU3Ed__30_tBE6907D98B9974628F6181F8DB4B506D3DF1B509 * _thisAdjusted = reinterpret_cast<U3CRepeatAsyncU3Ed__30_tBE6907D98B9974628F6181F8DB4B506D3DF1B509 *>(__this + 1);
+	U3CRepeatAsyncU3Ed__30_SetStateMachine_mFA577CCED55B14C07C48E1E272FE7945A9A6FDFA(_thisAdjusted, ___stateMachine0, method);
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// System.Void SpotifyApi_<SendAsync>d__18::MoveNext()
+extern "C" IL2CPP_METHOD_ATTR void U3CSendAsyncU3Ed__18_MoveNext_m8600ECFE98273D8826DE4523DC47E6840622D348 (U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303 * __this, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (U3CSendAsyncU3Ed__18_MoveNext_m8600ECFE98273D8826DE4523DC47E6840622D348_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	int32_t V_0 = 0;
+	SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * V_1 = NULL;
 	String_t* V_2 = NULL;
-	HttpResponseMessage_t619DB9FDC8E63CDF2D0A314B61A4C6609A43F904 * V_3 = NULL;
+	String_t* V_3 = NULL;
+	HttpRequestMessage_tBBC9EBC5D6C1B7E30F9927AABBDB65792FFB5427 * V_4 = NULL;
+	String_t* V_5 = NULL;
+	HttpResponseMessage_t619DB9FDC8E63CDF2D0A314B61A4C6609A43F904 * V_6 = NULL;
+	TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  V_7;
+	memset(&V_7, 0, sizeof(V_7));
+	TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  V_8;
+	memset(&V_8, 0, sizeof(V_8));
+	Exception_t * V_9 = NULL;
+	Exception_t * __last_unhandled_exception = 0;
+	NO_UNUSED_WARNING (__last_unhandled_exception);
+	Exception_t * __exception_local = 0;
+	NO_UNUSED_WARNING (__exception_local);
+	void* __leave_targets_storage = alloca(sizeof(int32_t) * 4);
+	il2cpp::utils::LeaveTargetStack __leave_targets(__leave_targets_storage);
+	NO_UNUSED_WARNING (__leave_targets);
+	{
+		int32_t L_0 = __this->get_U3CU3E1__state_0();
+		V_0 = L_0;
+		SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * L_1 = __this->get_U3CU3E4__this_2();
+		V_1 = L_1;
+	}
+
+IL_000e:
+	try
+	{ // begin try (depth: 1)
+		{
+			int32_t L_2 = V_0;
+			if (!L_2)
+			{
+				goto IL_00d2;
+			}
+		}
+
+IL_0014:
+		{
+			int32_t L_3 = V_0;
+			if ((((int32_t)L_3) == ((int32_t)1)))
+			{
+				goto IL_0141;
+			}
+		}
+
+IL_001b:
+		{
+			SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * L_4 = V_1;
+			NullCheck(L_4);
+			String_t* L_5 = L_4->get_SpotifyApiBaseUrl_6();
+			String_t* L_6 = __this->get_path_3();
+			String_t* L_7 = String_Concat_mB78D0094592718DA6D5DB6C712A9C225631666BE(L_5, L_6, /*hidden argument*/NULL);
+			V_3 = L_7;
+			ObjectU5BU5D_t3C9242B5C88A48B2A5BD9FDA6CD0024E792AF08A* L_8 = (ObjectU5BU5D_t3C9242B5C88A48B2A5BD9FDA6CD0024E792AF08A*)SZArrayNew(ObjectU5BU5D_t3C9242B5C88A48B2A5BD9FDA6CD0024E792AF08A_il2cpp_TypeInfo_var, (uint32_t)5);
+			ObjectU5BU5D_t3C9242B5C88A48B2A5BD9FDA6CD0024E792AF08A* L_9 = L_8;
+			String_t* L_10 = __this->get_cmdName_4();
+			NullCheck(L_9);
+			ArrayElementTypeCheck (L_9, L_10);
+			(L_9)->SetAt(static_cast<il2cpp_array_size_t>(0), (RuntimeObject *)L_10);
+			ObjectU5BU5D_t3C9242B5C88A48B2A5BD9FDA6CD0024E792AF08A* L_11 = L_9;
+			NullCheck(L_11);
+			ArrayElementTypeCheck (L_11, _stringLiteralB858CB282617FB0956D960215C8E84D1CCF909C6);
+			(L_11)->SetAt(static_cast<il2cpp_array_size_t>(1), (RuntimeObject *)_stringLiteralB858CB282617FB0956D960215C8E84D1CCF909C6);
+			ObjectU5BU5D_t3C9242B5C88A48B2A5BD9FDA6CD0024E792AF08A* L_12 = L_11;
+			HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220 * L_13 = __this->get_method_5();
+			NullCheck(L_12);
+			ArrayElementTypeCheck (L_12, L_13);
+			(L_12)->SetAt(static_cast<il2cpp_array_size_t>(2), (RuntimeObject *)L_13);
+			ObjectU5BU5D_t3C9242B5C88A48B2A5BD9FDA6CD0024E792AF08A* L_14 = L_12;
+			NullCheck(L_14);
+			ArrayElementTypeCheck (L_14, _stringLiteralB858CB282617FB0956D960215C8E84D1CCF909C6);
+			(L_14)->SetAt(static_cast<il2cpp_array_size_t>(3), (RuntimeObject *)_stringLiteralB858CB282617FB0956D960215C8E84D1CCF909C6);
+			ObjectU5BU5D_t3C9242B5C88A48B2A5BD9FDA6CD0024E792AF08A* L_15 = L_14;
+			String_t* L_16 = V_3;
+			NullCheck(L_15);
+			ArrayElementTypeCheck (L_15, L_16);
+			(L_15)->SetAt(static_cast<il2cpp_array_size_t>(4), (RuntimeObject *)L_16);
+			String_t* L_17 = String_Concat_mB7BA84F13912303B2E5E40FBF0109E1A328ACA07(L_15, /*hidden argument*/NULL);
+			IL2CPP_RUNTIME_CLASS_INIT(Debug_t7B5FCB117E2FD63B6838BC52821B252E2BFB61C4_il2cpp_TypeInfo_var);
+			Debug_Log_m4B7C70BAFD477C6BDB59C88A0934F0B018D03708(L_17, /*hidden argument*/NULL);
+			HttpMethod_tC762DCC43B5B2C08E8744B8C1C866D8E55CF6220 * L_18 = __this->get_method_5();
+			String_t* L_19 = V_3;
+			HttpRequestMessage_tBBC9EBC5D6C1B7E30F9927AABBDB65792FFB5427 * L_20 = (HttpRequestMessage_tBBC9EBC5D6C1B7E30F9927AABBDB65792FFB5427 *)il2cpp_codegen_object_new(HttpRequestMessage_tBBC9EBC5D6C1B7E30F9927AABBDB65792FFB5427_il2cpp_TypeInfo_var);
+			HttpRequestMessage__ctor_m76A9F3C082E2D1C9B679E56DB32F2AA8ECE377C0(L_20, L_18, L_19, /*hidden argument*/NULL);
+			V_4 = L_20;
+			String_t* L_21 = __this->get_payload_6();
+			if (!L_21)
+			{
+				goto IL_008b;
+			}
+		}
+
+IL_0079:
+		{
+			HttpRequestMessage_tBBC9EBC5D6C1B7E30F9927AABBDB65792FFB5427 * L_22 = V_4;
+			String_t* L_23 = __this->get_payload_6();
+			StringContent_t0E49805143AA8BCE4640914150158663B9061079 * L_24 = (StringContent_t0E49805143AA8BCE4640914150158663B9061079 *)il2cpp_codegen_object_new(StringContent_t0E49805143AA8BCE4640914150158663B9061079_il2cpp_TypeInfo_var);
+			StringContent__ctor_m14C504A380661472DEB032923DD27742561EC45C(L_24, L_23, /*hidden argument*/NULL);
+			NullCheck(L_22);
+			HttpRequestMessage_set_Content_mF926F55372E9ECD0E0987CE33C47648EDB23A78D(L_22, L_24, /*hidden argument*/NULL);
+		}
+
+IL_008b:
+		{
+			SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * L_25 = V_1;
+			NullCheck(L_25);
+			HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7 * L_26 = L_25->get_client_11();
+			HttpRequestMessage_tBBC9EBC5D6C1B7E30F9927AABBDB65792FFB5427 * L_27 = V_4;
+			CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  L_28 = __this->get_cancel_7();
+			NullCheck(L_26);
+			Task_1_t519CB3A303B53176BD616AC273201D66B84FF270 * L_29 = VirtFuncInvoker2< Task_1_t519CB3A303B53176BD616AC273201D66B84FF270 *, HttpRequestMessage_tBBC9EBC5D6C1B7E30F9927AABBDB65792FFB5427 *, CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  >::Invoke(6 /* System.Threading.Tasks.Task`1<System.Net.Http.HttpResponseMessage> System.Net.Http.HttpMessageInvoker::SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken) */, L_26, L_27, L_28);
+			NullCheck(L_29);
+			TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  L_30 = Task_1_GetAwaiter_m511397276BFE6D43B77D1BD80905DF2FB0FA54E0(L_29, /*hidden argument*/Task_1_GetAwaiter_m511397276BFE6D43B77D1BD80905DF2FB0FA54E0_RuntimeMethod_var);
+			V_7 = L_30;
+			bool L_31 = TaskAwaiter_1_get_IsCompleted_m0F711316D40833EE5C67F3E65571EF033B9364DF((TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 *)(&V_7), /*hidden argument*/TaskAwaiter_1_get_IsCompleted_m0F711316D40833EE5C67F3E65571EF033B9364DF_RuntimeMethod_var);
+			if (L_31)
+			{
+				goto IL_00ef;
+			}
+		}
+
+IL_00ae:
+		{
+			int32_t L_32 = 0;
+			V_0 = L_32;
+			__this->set_U3CU3E1__state_0(L_32);
+			TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  L_33 = V_7;
+			__this->set_U3CU3Eu__1_9(L_33);
+			AsyncTaskMethodBuilder_1_tC7B1E45031A96D1F2363C0491EC79BBE740BC10C * L_34 = __this->get_address_of_U3CU3Et__builder_1();
+			AsyncTaskMethodBuilder_1_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86_TisU3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303_m6F091BA0BFBAFFACF7A021178E9ABD35A5DDAC3D((AsyncTaskMethodBuilder_1_tC7B1E45031A96D1F2363C0491EC79BBE740BC10C *)L_34, (TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 *)(&V_7), (U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303 *)__this, /*hidden argument*/AsyncTaskMethodBuilder_1_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86_TisU3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303_m6F091BA0BFBAFFACF7A021178E9ABD35A5DDAC3D_RuntimeMethod_var);
+			goto IL_01bc;
+		}
+
+IL_00d2:
+		{
+			TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  L_35 = __this->get_U3CU3Eu__1_9();
+			V_7 = L_35;
+			TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 * L_36 = __this->get_address_of_U3CU3Eu__1_9();
+			il2cpp_codegen_initobj(L_36, sizeof(TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 ));
+			int32_t L_37 = (-1);
+			V_0 = L_37;
+			__this->set_U3CU3E1__state_0(L_37);
+		}
+
+IL_00ef:
+		{
+			HttpResponseMessage_t619DB9FDC8E63CDF2D0A314B61A4C6609A43F904 * L_38 = TaskAwaiter_1_GetResult_m706665648BB29D83FD0C72CFA6279966143192A2((TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 *)(&V_7), /*hidden argument*/TaskAwaiter_1_GetResult_m706665648BB29D83FD0C72CFA6279966143192A2_RuntimeMethod_var);
+			V_6 = L_38;
+			HttpResponseMessage_t619DB9FDC8E63CDF2D0A314B61A4C6609A43F904 * L_39 = V_6;
+			__this->set_U3CrU3E5__2_8(L_39);
+			HttpResponseMessage_t619DB9FDC8E63CDF2D0A314B61A4C6609A43F904 * L_40 = __this->get_U3CrU3E5__2_8();
+			NullCheck(L_40);
+			HttpContent_t678722F60CA151DD19AFCA917657BE24F111A41D * L_41 = HttpResponseMessage_get_Content_m325C3E47B0D7E1DD70CA36FA04B894A152AD4420(L_40, /*hidden argument*/NULL);
+			NullCheck(L_41);
+			Task_1_t4A75FEC8F36C5D4F8793BB8C94E4DAA7457D0286 * L_42 = HttpContent_ReadAsStringAsync_m499CCA8B02B3AFB793C0783D28220FC7A531A24D(L_41, /*hidden argument*/NULL);
+			NullCheck(L_42);
+			TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  L_43 = Task_1_GetAwaiter_mBC24D09E3C1AB76F290AB7E9017AB8913242EC61(L_42, /*hidden argument*/Task_1_GetAwaiter_mBC24D09E3C1AB76F290AB7E9017AB8913242EC61_RuntimeMethod_var);
+			V_8 = L_43;
+			bool L_44 = TaskAwaiter_1_get_IsCompleted_m087FA74E453B58AB5AAD0A64BEDDB49070C6CE94((TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 *)(&V_8), /*hidden argument*/TaskAwaiter_1_get_IsCompleted_m087FA74E453B58AB5AAD0A64BEDDB49070C6CE94_RuntimeMethod_var);
+			if (L_44)
+			{
+				goto IL_015e;
+			}
+		}
+
+IL_0120:
+		{
+			int32_t L_45 = 1;
+			V_0 = L_45;
+			__this->set_U3CU3E1__state_0(L_45);
+			TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  L_46 = V_8;
+			__this->set_U3CU3Eu__2_10(L_46);
+			AsyncTaskMethodBuilder_1_tC7B1E45031A96D1F2363C0491EC79BBE740BC10C * L_47 = __this->get_address_of_U3CU3Et__builder_1();
+			AsyncTaskMethodBuilder_1_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483_TisU3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303_m3E1DDF8398F7C7A367A1EB213C076FC091852CC1((AsyncTaskMethodBuilder_1_tC7B1E45031A96D1F2363C0491EC79BBE740BC10C *)L_47, (TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 *)(&V_8), (U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303 *)__this, /*hidden argument*/AsyncTaskMethodBuilder_1_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483_TisU3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303_m3E1DDF8398F7C7A367A1EB213C076FC091852CC1_RuntimeMethod_var);
+			goto IL_01bc;
+		}
+
+IL_0141:
+		{
+			TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  L_48 = __this->get_U3CU3Eu__2_10();
+			V_8 = L_48;
+			TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 * L_49 = __this->get_address_of_U3CU3Eu__2_10();
+			il2cpp_codegen_initobj(L_49, sizeof(TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 ));
+			int32_t L_50 = (-1);
+			V_0 = L_50;
+			__this->set_U3CU3E1__state_0(L_50);
+		}
+
+IL_015e:
+		{
+			String_t* L_51 = TaskAwaiter_1_GetResult_m2CE622156E52C41B443C3751AB08398ECC3CA3F3((TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 *)(&V_8), /*hidden argument*/TaskAwaiter_1_GetResult_m2CE622156E52C41B443C3751AB08398ECC3CA3F3_RuntimeMethod_var);
+			V_5 = L_51;
+			String_t* L_52 = __this->get_cmdName_4();
+			String_t* L_53 = V_5;
+			String_t* L_54 = String_Concat_mF4626905368D6558695A823466A1AF65EADB9923(L_52, _stringLiteralFC02E199EAA2A6900AEC454AD22BAA13B6E8F8E6, L_53, /*hidden argument*/NULL);
+			IL2CPP_RUNTIME_CLASS_INIT(Debug_t7B5FCB117E2FD63B6838BC52821B252E2BFB61C4_il2cpp_TypeInfo_var);
+			Debug_Log_m4B7C70BAFD477C6BDB59C88A0934F0B018D03708(L_54, /*hidden argument*/NULL);
+			HttpResponseMessage_t619DB9FDC8E63CDF2D0A314B61A4C6609A43F904 * L_55 = __this->get_U3CrU3E5__2_8();
+			NullCheck(L_55);
+			HttpResponseMessage_EnsureSuccessStatusCode_mFC49F01BD731C4FE89B7143E0AA8C6137F372B44(L_55, /*hidden argument*/NULL);
+			String_t* L_56 = V_5;
+			V_2 = L_56;
+			goto IL_01a8;
+		}
+	} // end try (depth: 1)
+	catch(Il2CppExceptionWrapper& e)
+	{
+		__exception_local = (Exception_t *)e.ex;
+		if(il2cpp_codegen_class_is_assignable_from (Exception_t_il2cpp_TypeInfo_var, il2cpp_codegen_object_class(e.ex)))
+			goto CATCH_018f;
+		throw e;
+	}
+
+CATCH_018f:
+	{ // begin catch(System.Exception)
+		V_9 = ((Exception_t *)__exception_local);
+		__this->set_U3CU3E1__state_0(((int32_t)-2));
+		AsyncTaskMethodBuilder_1_tC7B1E45031A96D1F2363C0491EC79BBE740BC10C * L_57 = __this->get_address_of_U3CU3Et__builder_1();
+		Exception_t * L_58 = V_9;
+		AsyncTaskMethodBuilder_1_SetException_m7EC0D7D4B3431CA02400760ADA732A416EAEFB2D((AsyncTaskMethodBuilder_1_tC7B1E45031A96D1F2363C0491EC79BBE740BC10C *)L_57, L_58, /*hidden argument*/AsyncTaskMethodBuilder_1_SetException_m7EC0D7D4B3431CA02400760ADA732A416EAEFB2D_RuntimeMethod_var);
+		goto IL_01bc;
+	} // end catch (depth: 1)
+
+IL_01a8:
+	{
+		__this->set_U3CU3E1__state_0(((int32_t)-2));
+		AsyncTaskMethodBuilder_1_tC7B1E45031A96D1F2363C0491EC79BBE740BC10C * L_59 = __this->get_address_of_U3CU3Et__builder_1();
+		String_t* L_60 = V_2;
+		AsyncTaskMethodBuilder_1_SetResult_m44836E9953D99A304CCB8725A8E47453725FFE9B((AsyncTaskMethodBuilder_1_tC7B1E45031A96D1F2363C0491EC79BBE740BC10C *)L_59, L_60, /*hidden argument*/AsyncTaskMethodBuilder_1_SetResult_m44836E9953D99A304CCB8725A8E47453725FFE9B_RuntimeMethod_var);
+	}
+
+IL_01bc:
+	{
+		return;
+	}
+}
+extern "C"  void U3CSendAsyncU3Ed__18_MoveNext_m8600ECFE98273D8826DE4523DC47E6840622D348_AdjustorThunk (RuntimeObject * __this, const RuntimeMethod* method)
+{
+	U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303 * _thisAdjusted = reinterpret_cast<U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303 *>(__this + 1);
+	U3CSendAsyncU3Ed__18_MoveNext_m8600ECFE98273D8826DE4523DC47E6840622D348(_thisAdjusted, method);
+}
+// System.Void SpotifyApi_<SendAsync>d__18::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+extern "C" IL2CPP_METHOD_ATTR void U3CSendAsyncU3Ed__18_SetStateMachine_m0245215E83678D57673618FA7FC5F7D256A3F02D (U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303 * __this, RuntimeObject* ___stateMachine0, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (U3CSendAsyncU3Ed__18_SetStateMachine_m0245215E83678D57673618FA7FC5F7D256A3F02D_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		AsyncTaskMethodBuilder_1_tC7B1E45031A96D1F2363C0491EC79BBE740BC10C * L_0 = __this->get_address_of_U3CU3Et__builder_1();
+		RuntimeObject* L_1 = ___stateMachine0;
+		AsyncTaskMethodBuilder_1_SetStateMachine_m83945BA8843F53C1C9ED18D4B312FFF9A24BB9EB((AsyncTaskMethodBuilder_1_tC7B1E45031A96D1F2363C0491EC79BBE740BC10C *)L_0, L_1, /*hidden argument*/AsyncTaskMethodBuilder_1_SetStateMachine_m83945BA8843F53C1C9ED18D4B312FFF9A24BB9EB_RuntimeMethod_var);
+		return;
+	}
+}
+extern "C"  void U3CSendAsyncU3Ed__18_SetStateMachine_m0245215E83678D57673618FA7FC5F7D256A3F02D_AdjustorThunk (RuntimeObject * __this, RuntimeObject* ___stateMachine0, const RuntimeMethod* method)
+{
+	U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303 * _thisAdjusted = reinterpret_cast<U3CSendAsyncU3Ed__18_tC88FAED363C09B2ADAAFD0E58095B20DCB7D3303 *>(__this + 1);
+	U3CSendAsyncU3Ed__18_SetStateMachine_m0245215E83678D57673618FA7FC5F7D256A3F02D(_thisAdjusted, ___stateMachine0, method);
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// System.Void SpotifyApi_<SignInAsync>d__14::MoveNext()
+extern "C" IL2CPP_METHOD_ATTR void U3CSignInAsyncU3Ed__14_MoveNext_mC70205135B57FFDD05C4593240F3210B5770757A (U3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896 * __this, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (U3CSignInAsyncU3Ed__14_MoveNext_mC70205135B57FFDD05C4593240F3210B5770757A_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	int32_t V_0 = 0;
+	SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * V_1 = NULL;
+	String_t* V_2 = NULL;
+	String_t* V_3 = NULL;
 	TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  V_4;
 	memset(&V_4, 0, sizeof(V_4));
 	TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  V_5;
@@ -7908,10 +9667,20 @@ extern "C" IL2CPP_METHOD_ATTR void U3CPlayU3Ed__12_MoveNext_m92D0C2A3162EB083737
 	void* __leave_targets_storage = alloca(sizeof(int32_t) * 4);
 	il2cpp::utils::LeaveTargetStack __leave_targets(__leave_targets_storage);
 	NO_UNUSED_WARNING (__leave_targets);
+	int32_t G_B11_0 = 0;
+	StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* G_B11_1 = NULL;
+	StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* G_B11_2 = NULL;
+	int32_t G_B10_0 = 0;
+	StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* G_B10_1 = NULL;
+	StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* G_B10_2 = NULL;
+	String_t* G_B12_0 = NULL;
+	int32_t G_B12_1 = 0;
+	StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* G_B12_2 = NULL;
+	StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* G_B12_3 = NULL;
 	{
 		int32_t L_0 = __this->get_U3CU3E1__state_0();
 		V_0 = L_0;
-		SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * L_1 = __this->get_U3CU3E4__this_2();
+		SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * L_1 = __this->get_U3CU3E4__this_2();
 		V_1 = L_1;
 	}
 
@@ -7922,7 +9691,7 @@ IL_000e:
 			int32_t L_2 = V_0;
 			if (!L_2)
 			{
-				goto IL_0070;
+				goto IL_0077;
 			}
 		}
 
@@ -7931,151 +9700,273 @@ IL_0011:
 			int32_t L_3 = V_0;
 			if ((((int32_t)L_3) == ((int32_t)1)))
 			{
-				goto IL_00dd;
+				goto IL_00e0;
 			}
 		}
 
 IL_0018:
 		{
 			IL2CPP_RUNTIME_CLASS_INIT(Debug_t7B5FCB117E2FD63B6838BC52821B252E2BFB61C4_il2cpp_TypeInfo_var);
-			Debug_Log_m4B7C70BAFD477C6BDB59C88A0934F0B018D03708(_stringLiteral5D12BD53552CAFC41CA6146C04870DF2E1574E13, /*hidden argument*/NULL);
-			SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * L_4 = V_1;
+			Debug_Log_m4B7C70BAFD477C6BDB59C88A0934F0B018D03708(_stringLiteral9805AC55B9E584DBE26361DAAFBC0DADD634CE0A, /*hidden argument*/NULL);
+			SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * L_4 = V_1;
 			NullCheck(L_4);
-			HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7 * L_5 = L_4->get_client_7();
-			StringContent_t0E49805143AA8BCE4640914150158663B9061079 * L_6 = (StringContent_t0E49805143AA8BCE4640914150158663B9061079 *)il2cpp_codegen_object_new(StringContent_t0E49805143AA8BCE4640914150158663B9061079_il2cpp_TypeInfo_var);
-			StringContent__ctor_m14C504A380661472DEB032923DD27742561EC45C(L_6, _stringLiteral0727C5584851CE551EAB519A195EC4C1DA48EBF5, /*hidden argument*/NULL);
+			HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7 * L_5 = L_4->get_client_11();
+			SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * L_6 = V_1;
+			NullCheck(L_6);
+			String_t* L_7 = L_6->get_ApiBaseUrl_5();
+			String_t* L_8 = String_Concat_mB78D0094592718DA6D5DB6C712A9C225631666BE(L_7, _stringLiteralEB3EF5B64FEA70627EE286D5AD0C95AF4DE65A7C, /*hidden argument*/NULL);
+			CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  L_9 = __this->get_cancel_3();
 			NullCheck(L_5);
-			Task_1_t519CB3A303B53176BD616AC273201D66B84FF270 * L_7 = HttpClient_PutAsync_m600B18C3B5B9C424DD541EF1AAD0A248B24829E7(L_5, _stringLiteral22CA7BEB9A08D067CF5F7298B11507321D496458, L_6, /*hidden argument*/NULL);
-			NullCheck(L_7);
-			TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  L_8 = Task_1_GetAwaiter_m511397276BFE6D43B77D1BD80905DF2FB0FA54E0(L_7, /*hidden argument*/Task_1_GetAwaiter_m511397276BFE6D43B77D1BD80905DF2FB0FA54E0_RuntimeMethod_var);
-			V_4 = L_8;
-			bool L_9 = TaskAwaiter_1_get_IsCompleted_m0F711316D40833EE5C67F3E65571EF033B9364DF((TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 *)(&V_4), /*hidden argument*/TaskAwaiter_1_get_IsCompleted_m0F711316D40833EE5C67F3E65571EF033B9364DF_RuntimeMethod_var);
-			if (L_9)
+			Task_1_t519CB3A303B53176BD616AC273201D66B84FF270 * L_10 = HttpClient_GetAsync_m3D3DDCEB3022B5F6C9892B857374BFBE1DA54E4E(L_5, L_8, L_9, /*hidden argument*/NULL);
+			NullCheck(L_10);
+			TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  L_11 = Task_1_GetAwaiter_m511397276BFE6D43B77D1BD80905DF2FB0FA54E0(L_10, /*hidden argument*/Task_1_GetAwaiter_m511397276BFE6D43B77D1BD80905DF2FB0FA54E0_RuntimeMethod_var);
+			V_4 = L_11;
+			bool L_12 = TaskAwaiter_1_get_IsCompleted_m0F711316D40833EE5C67F3E65571EF033B9364DF((TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 *)(&V_4), /*hidden argument*/TaskAwaiter_1_get_IsCompleted_m0F711316D40833EE5C67F3E65571EF033B9364DF_RuntimeMethod_var);
+			if (L_12)
 			{
-				goto IL_008d;
+				goto IL_0094;
 			}
 		}
 
-IL_004c:
+IL_0053:
 		{
-			int32_t L_10 = 0;
-			V_0 = L_10;
-			__this->set_U3CU3E1__state_0(L_10);
-			TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  L_11 = V_4;
-			__this->set_U3CU3Eu__1_4(L_11);
-			AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_12 = __this->get_address_of_U3CU3Et__builder_1();
-			AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86_TisU3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C_mD4115B988D4E229C42FF1CA2CAE29CC5518015E5((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_12, (TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 *)(&V_4), (U3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C *)__this, /*hidden argument*/AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86_TisU3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C_mD4115B988D4E229C42FF1CA2CAE29CC5518015E5_RuntimeMethod_var);
-			goto IL_015a;
+			int32_t L_13 = 0;
+			V_0 = L_13;
+			__this->set_U3CU3E1__state_0(L_13);
+			TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  L_14 = V_4;
+			__this->set_U3CU3Eu__1_4(L_14);
+			AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_15 = __this->get_address_of_U3CU3Et__builder_1();
+			AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86_TisU3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896_mCE850206315E5139E460F35715A25A6FED2BB57A((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_15, (TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 *)(&V_4), (U3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896 *)__this, /*hidden argument*/AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86_TisU3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896_mCE850206315E5139E460F35715A25A6FED2BB57A_RuntimeMethod_var);
+			goto IL_0205;
 		}
 
-IL_0070:
+IL_0077:
 		{
-			TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  L_13 = __this->get_U3CU3Eu__1_4();
-			V_4 = L_13;
-			TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 * L_14 = __this->get_address_of_U3CU3Eu__1_4();
-			il2cpp_codegen_initobj(L_14, sizeof(TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 ));
-			int32_t L_15 = (-1);
-			V_0 = L_15;
-			__this->set_U3CU3E1__state_0(L_15);
+			TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  L_16 = __this->get_U3CU3Eu__1_4();
+			V_4 = L_16;
+			TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 * L_17 = __this->get_address_of_U3CU3Eu__1_4();
+			il2cpp_codegen_initobj(L_17, sizeof(TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 ));
+			int32_t L_18 = (-1);
+			V_0 = L_18;
+			__this->set_U3CU3E1__state_0(L_18);
 		}
 
-IL_008d:
+IL_0094:
 		{
-			HttpResponseMessage_t619DB9FDC8E63CDF2D0A314B61A4C6609A43F904 * L_16 = TaskAwaiter_1_GetResult_m706665648BB29D83FD0C72CFA6279966143192A2((TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 *)(&V_4), /*hidden argument*/TaskAwaiter_1_GetResult_m706665648BB29D83FD0C72CFA6279966143192A2_RuntimeMethod_var);
-			V_3 = L_16;
-			HttpResponseMessage_t619DB9FDC8E63CDF2D0A314B61A4C6609A43F904 * L_17 = V_3;
-			__this->set_U3CrU3E5__2_3(L_17);
-			HttpResponseMessage_t619DB9FDC8E63CDF2D0A314B61A4C6609A43F904 * L_18 = __this->get_U3CrU3E5__2_3();
-			NullCheck(L_18);
-			HttpContent_t678722F60CA151DD19AFCA917657BE24F111A41D * L_19 = HttpResponseMessage_get_Content_m325C3E47B0D7E1DD70CA36FA04B894A152AD4420(L_18, /*hidden argument*/NULL);
-			NullCheck(L_19);
-			Task_1_t4A75FEC8F36C5D4F8793BB8C94E4DAA7457D0286 * L_20 = HttpContent_ReadAsStringAsync_m499CCA8B02B3AFB793C0783D28220FC7A531A24D(L_19, /*hidden argument*/NULL);
+			HttpResponseMessage_t619DB9FDC8E63CDF2D0A314B61A4C6609A43F904 * L_19 = TaskAwaiter_1_GetResult_m706665648BB29D83FD0C72CFA6279966143192A2((TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 *)(&V_4), /*hidden argument*/TaskAwaiter_1_GetResult_m706665648BB29D83FD0C72CFA6279966143192A2_RuntimeMethod_var);
+			HttpResponseMessage_t619DB9FDC8E63CDF2D0A314B61A4C6609A43F904 * L_20 = L_19;
 			NullCheck(L_20);
-			TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  L_21 = Task_1_GetAwaiter_mBC24D09E3C1AB76F290AB7E9017AB8913242EC61(L_20, /*hidden argument*/Task_1_GetAwaiter_mBC24D09E3C1AB76F290AB7E9017AB8913242EC61_RuntimeMethod_var);
-			V_5 = L_21;
-			bool L_22 = TaskAwaiter_1_get_IsCompleted_m087FA74E453B58AB5AAD0A64BEDDB49070C6CE94((TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 *)(&V_5), /*hidden argument*/TaskAwaiter_1_get_IsCompleted_m087FA74E453B58AB5AAD0A64BEDDB49070C6CE94_RuntimeMethod_var);
-			if (L_22)
+			HttpResponseMessage_EnsureSuccessStatusCode_mFC49F01BD731C4FE89B7143E0AA8C6137F372B44(L_20, /*hidden argument*/NULL);
+			NullCheck(L_20);
+			HttpContent_t678722F60CA151DD19AFCA917657BE24F111A41D * L_21 = HttpResponseMessage_get_Content_m325C3E47B0D7E1DD70CA36FA04B894A152AD4420(L_20, /*hidden argument*/NULL);
+			NullCheck(L_21);
+			Task_1_t4A75FEC8F36C5D4F8793BB8C94E4DAA7457D0286 * L_22 = HttpContent_ReadAsStringAsync_m499CCA8B02B3AFB793C0783D28220FC7A531A24D(L_21, /*hidden argument*/NULL);
+			NullCheck(L_22);
+			TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  L_23 = Task_1_GetAwaiter_mBC24D09E3C1AB76F290AB7E9017AB8913242EC61(L_22, /*hidden argument*/Task_1_GetAwaiter_mBC24D09E3C1AB76F290AB7E9017AB8913242EC61_RuntimeMethod_var);
+			V_5 = L_23;
+			bool L_24 = TaskAwaiter_1_get_IsCompleted_m087FA74E453B58AB5AAD0A64BEDDB49070C6CE94((TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 *)(&V_5), /*hidden argument*/TaskAwaiter_1_get_IsCompleted_m087FA74E453B58AB5AAD0A64BEDDB49070C6CE94_RuntimeMethod_var);
+			if (L_24)
 			{
-				goto IL_00fa;
+				goto IL_00fd;
 			}
 		}
 
 IL_00bc:
 		{
-			int32_t L_23 = 1;
-			V_0 = L_23;
-			__this->set_U3CU3E1__state_0(L_23);
-			TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  L_24 = V_5;
-			__this->set_U3CU3Eu__2_5(L_24);
-			AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_25 = __this->get_address_of_U3CU3Et__builder_1();
-			AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483_TisU3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C_m6A99DEB927FE2720A7A013F154D0D4775CAEEC27((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_25, (TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 *)(&V_5), (U3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C *)__this, /*hidden argument*/AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483_TisU3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C_m6A99DEB927FE2720A7A013F154D0D4775CAEEC27_RuntimeMethod_var);
-			goto IL_015a;
+			int32_t L_25 = 1;
+			V_0 = L_25;
+			__this->set_U3CU3E1__state_0(L_25);
+			TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  L_26 = V_5;
+			__this->set_U3CU3Eu__2_5(L_26);
+			AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_27 = __this->get_address_of_U3CU3Et__builder_1();
+			AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483_TisU3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896_m3EF55D1FCBF886F4A691B0C2B1D46E9B55196193((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_27, (TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 *)(&V_5), (U3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896 *)__this, /*hidden argument*/AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483_TisU3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896_m3EF55D1FCBF886F4A691B0C2B1D46E9B55196193_RuntimeMethod_var);
+			goto IL_0205;
 		}
 
-IL_00dd:
+IL_00e0:
 		{
-			TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  L_26 = __this->get_U3CU3Eu__2_5();
-			V_5 = L_26;
-			TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 * L_27 = __this->get_address_of_U3CU3Eu__2_5();
-			il2cpp_codegen_initobj(L_27, sizeof(TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 ));
-			int32_t L_28 = (-1);
-			V_0 = L_28;
-			__this->set_U3CU3E1__state_0(L_28);
+			TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  L_28 = __this->get_U3CU3Eu__2_5();
+			V_5 = L_28;
+			TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 * L_29 = __this->get_address_of_U3CU3Eu__2_5();
+			il2cpp_codegen_initobj(L_29, sizeof(TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 ));
+			int32_t L_30 = (-1);
+			V_0 = L_30;
+			__this->set_U3CU3E1__state_0(L_30);
 		}
 
-IL_00fa:
+IL_00fd:
 		{
-			String_t* L_29 = TaskAwaiter_1_GetResult_m2CE622156E52C41B443C3751AB08398ECC3CA3F3((TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 *)(&V_5), /*hidden argument*/TaskAwaiter_1_GetResult_m2CE622156E52C41B443C3751AB08398ECC3CA3F3_RuntimeMethod_var);
-			V_2 = L_29;
-			HttpResponseMessage_t619DB9FDC8E63CDF2D0A314B61A4C6609A43F904 * L_30 = __this->get_U3CrU3E5__2_3();
-			NullCheck(L_30);
-			HttpResponseHeaders_t51F7C46C9CE47E3B424A6137CE8F5BCA4E2B1D59 * L_31 = HttpResponseMessage_get_Headers_mBD52D7A018509B2A6A55C0925A40955A33D20B98(L_30, /*hidden argument*/NULL);
-			NullCheck(L_31);
-			HttpHeaders_Add_m41401B7E6B948DF760D603C2F43AC19ACC48D7FA(L_31, _stringLiteral77D12B97BA61FFCCB079E0DD2EF6809C1E957255, _stringLiteralCA9FD0B2414177B79AC2EA7AD76252E4EF6DD65C, /*hidden argument*/NULL);
-			String_t* L_32 = V_2;
-			String_t* L_33 = String_Concat_mB78D0094592718DA6D5DB6C712A9C225631666BE(_stringLiteralFBAA357ACBCB9D448868F8AB1D86F48D4AAEFD11, L_32, /*hidden argument*/NULL);
-			IL2CPP_RUNTIME_CLASS_INIT(Debug_t7B5FCB117E2FD63B6838BC52821B252E2BFB61C4_il2cpp_TypeInfo_var);
-			Debug_Log_m4B7C70BAFD477C6BDB59C88A0934F0B018D03708(L_33, /*hidden argument*/NULL);
-			goto IL_0147;
+			String_t* L_31 = TaskAwaiter_1_GetResult_m2CE622156E52C41B443C3751AB08398ECC3CA3F3((TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 *)(&V_5), /*hidden argument*/TaskAwaiter_1_GetResult_m2CE622156E52C41B443C3751AB08398ECC3CA3F3_RuntimeMethod_var);
+			V_2 = L_31;
+			SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * L_32 = V_1;
+			String_t* L_33 = V_2;
+			CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  L_34 = __this->get_cancel_3();
+			NullCheck(L_32);
+			SpotifyApi_WaitForCallback_mCF7845CDED16C66D0641E30C3F63E00269F36FE1(L_32, L_33, L_34, /*hidden argument*/NULL);
+			StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_35 = (StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E*)SZArrayNew(StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E_il2cpp_TypeInfo_var, (uint32_t)((int32_t)9));
+			StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_36 = L_35;
+			NullCheck(L_36);
+			ArrayElementTypeCheck (L_36, _stringLiteral310C3A2FA52D468C1A69568D9E3448429DC7B705);
+			(L_36)->SetAt(static_cast<il2cpp_array_size_t>(0), (String_t*)_stringLiteral310C3A2FA52D468C1A69568D9E3448429DC7B705);
+			StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_37 = L_36;
+			String_t* L_38 = V_2;
+			NullCheck(L_37);
+			ArrayElementTypeCheck (L_37, L_38);
+			(L_37)->SetAt(static_cast<il2cpp_array_size_t>(1), (String_t*)L_38);
+			StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_39 = L_37;
+			NullCheck(L_39);
+			ArrayElementTypeCheck (L_39, _stringLiteralAE902E64FFA01CAE1C59362708C8A15E1E76CAB6);
+			(L_39)->SetAt(static_cast<il2cpp_array_size_t>(2), (String_t*)_stringLiteralAE902E64FFA01CAE1C59362708C8A15E1E76CAB6);
+			StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_40 = L_39;
+			SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * L_41 = V_1;
+			NullCheck(L_41);
+			bool L_42 = L_41->get_AlwaysShowSignIn_7();
+			G_B10_0 = 3;
+			G_B10_1 = L_40;
+			G_B10_2 = L_40;
+			if (L_42)
+			{
+				G_B11_0 = 3;
+				G_B11_1 = L_40;
+				G_B11_2 = L_40;
+				goto IL_013f;
+			}
+		}
+
+IL_0138:
+		{
+			G_B12_0 = _stringLiteral7CB6EFB98BA5972A9B5090DC2E517FE14D12CB04;
+			G_B12_1 = G_B10_0;
+			G_B12_2 = G_B10_1;
+			G_B12_3 = G_B10_2;
+			goto IL_0144;
+		}
+
+IL_013f:
+		{
+			G_B12_0 = _stringLiteral5FFE533B830F08A0326348A9160AFAFC8ADA44DB;
+			G_B12_1 = G_B11_0;
+			G_B12_2 = G_B11_1;
+			G_B12_3 = G_B11_2;
+		}
+
+IL_0144:
+		{
+			NullCheck(G_B12_2);
+			ArrayElementTypeCheck (G_B12_2, G_B12_0);
+			(G_B12_2)->SetAt(static_cast<il2cpp_array_size_t>(G_B12_1), (String_t*)G_B12_0);
+			StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_43 = G_B12_3;
+			NullCheck(L_43);
+			ArrayElementTypeCheck (L_43, _stringLiteral6CCF7E6CFEF9AC2F6A9CB34269A214EF73D4B854);
+			(L_43)->SetAt(static_cast<il2cpp_array_size_t>(4), (String_t*)_stringLiteral6CCF7E6CFEF9AC2F6A9CB34269A214EF73D4B854);
+			StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_44 = L_43;
+			SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * L_45 = V_1;
+			NullCheck(L_45);
+			StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_46 = L_45->get_Scopes_14();
+			String_t* L_47 = String_Join_m49371BED70248F0FCE970CB4F2E39E9A688AAFA4(_stringLiteral986F2ED15C79ED805000ECCD85519810B2DB2A93, L_46, /*hidden argument*/NULL);
+			NullCheck(L_44);
+			ArrayElementTypeCheck (L_44, L_47);
+			(L_44)->SetAt(static_cast<il2cpp_array_size_t>(5), (String_t*)L_47);
+			StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_48 = L_44;
+			NullCheck(L_48);
+			ArrayElementTypeCheck (L_48, _stringLiteralB5321B1D1E8ECB0999835BE5CD69DF9FE39B8ABA);
+			(L_48)->SetAt(static_cast<il2cpp_array_size_t>(6), (String_t*)_stringLiteralB5321B1D1E8ECB0999835BE5CD69DF9FE39B8ABA);
+			StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_49 = L_48;
+			SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * L_50 = V_1;
+			NullCheck(L_50);
+			String_t* L_51 = L_50->get_ApiBaseUrl_5();
+			NullCheck(L_49);
+			ArrayElementTypeCheck (L_49, L_51);
+			(L_49)->SetAt(static_cast<il2cpp_array_size_t>(7), (String_t*)L_51);
+			StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_52 = L_49;
+			NullCheck(L_52);
+			ArrayElementTypeCheck (L_52, _stringLiteral75A25C2BE83FDFA0BB221B04CF3A4525E9F1203A);
+			(L_52)->SetAt(static_cast<il2cpp_array_size_t>(8), (String_t*)_stringLiteral75A25C2BE83FDFA0BB221B04CF3A4525E9F1203A);
+			String_t* L_53 = String_Concat_m232E857CA5107EA6AC52E7DD7018716C021F237B(L_52, /*hidden argument*/NULL);
+			V_3 = L_53;
+			SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * L_54 = V_1;
+			NullCheck(L_54);
+			bool L_55 = L_54->get_UseSystemOpen_9();
+			if (!L_55)
+			{
+				goto IL_018f;
+			}
+		}
+
+IL_0187:
+		{
+			String_t* L_56 = V_3;
+			Application_OpenURL_m2888DA5BDF68B1BC23E983469157783F390D7BC8(L_56, /*hidden argument*/NULL);
+			goto IL_01d7;
+		}
+
+IL_018f:
+		{
+			SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * L_57 = V_1;
+			NullCheck(L_57);
+			UniWebView_t70C5C5815FC5A948185238830E0AB8B221E34BBB * L_58 = L_57->get_webView_12();
+			int32_t L_59 = Screen_get_width_m8ECCEF7FF17395D1237BC0193D7A6640A3FEEAD3(/*hidden argument*/NULL);
+			int32_t L_60 = Screen_get_height_mF5B64EBC4CDE0EAAA5713C1452ED2CE475F25150(/*hidden argument*/NULL);
+			Rect_t35B976DE901B5423C11705E156938EA27AB402CE  L_61;
+			memset(&L_61, 0, sizeof(L_61));
+			Rect__ctor_m50B92C75005C9C5A0D05E6E0EBB43AFAF7C66280((&L_61), (0.0f), (0.0f), (((float)((float)L_59))), (((float)((float)L_60))), /*hidden argument*/NULL);
+			NullCheck(L_58);
+			UniWebView_set_Frame_m5D8A545371F854091361FB698DCCF45A10C76CB9(L_58, L_61, /*hidden argument*/NULL);
+			SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * L_62 = V_1;
+			NullCheck(L_62);
+			UniWebView_t70C5C5815FC5A948185238830E0AB8B221E34BBB * L_63 = L_62->get_webView_12();
+			String_t* L_64 = V_3;
+			NullCheck(L_63);
+			UniWebView_Load_m27CFE9E72534ABEAEA16DE6AAABF6C7556305B6E(L_63, L_64, (bool)0, (String_t*)NULL, /*hidden argument*/NULL);
+			SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * L_65 = V_1;
+			NullCheck(L_65);
+			UniWebView_t70C5C5815FC5A948185238830E0AB8B221E34BBB * L_66 = L_65->get_webView_12();
+			NullCheck(L_66);
+			UniWebView_Show_m900E118C2CE18F8DBB39C49E4E25948478FC4102(L_66, (bool)0, 0, (0.4f), (Action_t591D2A86165F896B4B800BB5C25CE18672A55579 *)NULL, /*hidden argument*/NULL);
+		}
+
+IL_01d7:
+		{
+			goto IL_01f2;
 		}
 	} // end try (depth: 1)
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__exception_local = (Exception_t *)e.ex;
 		if(il2cpp_codegen_class_is_assignable_from (Exception_t_il2cpp_TypeInfo_var, il2cpp_codegen_object_class(e.ex)))
-			goto CATCH_012e;
+			goto CATCH_01d9;
 		throw e;
 	}
 
-CATCH_012e:
+CATCH_01d9:
 	{ // begin catch(System.Exception)
 		V_6 = ((Exception_t *)__exception_local);
 		__this->set_U3CU3E1__state_0(((int32_t)-2));
-		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_34 = __this->get_address_of_U3CU3Et__builder_1();
-		Exception_t * L_35 = V_6;
-		AsyncTaskMethodBuilder_SetException_m370C484922A63A6EF96E241D1370B8814F1F2D6B((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_34, L_35, /*hidden argument*/NULL);
-		goto IL_015a;
+		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_67 = __this->get_address_of_U3CU3Et__builder_1();
+		Exception_t * L_68 = V_6;
+		AsyncTaskMethodBuilder_SetException_m370C484922A63A6EF96E241D1370B8814F1F2D6B((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_67, L_68, /*hidden argument*/NULL);
+		goto IL_0205;
 	} // end catch (depth: 1)
 
-IL_0147:
+IL_01f2:
 	{
 		__this->set_U3CU3E1__state_0(((int32_t)-2));
-		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_36 = __this->get_address_of_U3CU3Et__builder_1();
-		AsyncTaskMethodBuilder_SetResult_m151016FB698F3BB34A73BAE693A97513A7E4C838((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_36, /*hidden argument*/NULL);
+		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_69 = __this->get_address_of_U3CU3Et__builder_1();
+		AsyncTaskMethodBuilder_SetResult_m151016FB698F3BB34A73BAE693A97513A7E4C838((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_69, /*hidden argument*/NULL);
 	}
 
-IL_015a:
+IL_0205:
 	{
 		return;
 	}
 }
-extern "C"  void U3CPlayU3Ed__12_MoveNext_m92D0C2A3162EB0837371FA384EB8670F4AE3E429_AdjustorThunk (RuntimeObject * __this, const RuntimeMethod* method)
+extern "C"  void U3CSignInAsyncU3Ed__14_MoveNext_mC70205135B57FFDD05C4593240F3210B5770757A_AdjustorThunk (RuntimeObject * __this, const RuntimeMethod* method)
 {
-	U3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C * _thisAdjusted = reinterpret_cast<U3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C *>(__this + 1);
-	U3CPlayU3Ed__12_MoveNext_m92D0C2A3162EB0837371FA384EB8670F4AE3E429(_thisAdjusted, method);
+	U3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896 * _thisAdjusted = reinterpret_cast<U3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896 *>(__this + 1);
+	U3CSignInAsyncU3Ed__14_MoveNext_mC70205135B57FFDD05C4593240F3210B5770757A(_thisAdjusted, method);
 }
-// System.Void SpotiftyLogin_<Play>d__12::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-extern "C" IL2CPP_METHOD_ATTR void U3CPlayU3Ed__12_SetStateMachine_m1C4E013C3F6C418FA4D4A965DF459783F65E3DC1 (U3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C * __this, RuntimeObject* ___stateMachine0, const RuntimeMethod* method)
+// System.Void SpotifyApi_<SignInAsync>d__14::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+extern "C" IL2CPP_METHOD_ATTR void U3CSignInAsyncU3Ed__14_SetStateMachine_m2639F09B400D98D50FD7BC49A3A75E95801DED1C (U3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896 * __this, RuntimeObject* ___stateMachine0, const RuntimeMethod* method)
 {
 	{
 		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_0 = __this->get_address_of_U3CU3Et__builder_1();
@@ -8084,10 +9975,10 @@ extern "C" IL2CPP_METHOD_ATTR void U3CPlayU3Ed__12_SetStateMachine_m1C4E013C3F6C
 		return;
 	}
 }
-extern "C"  void U3CPlayU3Ed__12_SetStateMachine_m1C4E013C3F6C418FA4D4A965DF459783F65E3DC1_AdjustorThunk (RuntimeObject * __this, RuntimeObject* ___stateMachine0, const RuntimeMethod* method)
+extern "C"  void U3CSignInAsyncU3Ed__14_SetStateMachine_m2639F09B400D98D50FD7BC49A3A75E95801DED1C_AdjustorThunk (RuntimeObject * __this, RuntimeObject* ___stateMachine0, const RuntimeMethod* method)
 {
-	U3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C * _thisAdjusted = reinterpret_cast<U3CPlayU3Ed__12_t89A2EF9EF2800D6FB431D881738694CAE970089C *>(__this + 1);
-	U3CPlayU3Ed__12_SetStateMachine_m1C4E013C3F6C418FA4D4A965DF459783F65E3DC1(_thisAdjusted, ___stateMachine0, method);
+	U3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896 * _thisAdjusted = reinterpret_cast<U3CSignInAsyncU3Ed__14_t636917824EDF3D792DBEE5A007B28D06028DA896 *>(__this + 1);
+	U3CSignInAsyncU3Ed__14_SetStateMachine_m2639F09B400D98D50FD7BC49A3A75E95801DED1C(_thisAdjusted, ___stateMachine0, method);
 }
 #ifdef __clang__
 #pragma clang diagnostic pop
@@ -8097,17 +9988,17 @@ extern "C"  void U3CPlayU3Ed__12_SetStateMachine_m1C4E013C3F6C418FA4D4A965DF4597
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// System.Void SpotiftyLogin_<WaitForCallback>d__8::MoveNext()
-extern "C" IL2CPP_METHOD_ATTR void U3CWaitForCallbackU3Ed__8_MoveNext_m57D5F79AD33858368B51F01D61A2A820F7716432 (U3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257 * __this, const RuntimeMethod* method)
+// System.Void SpotifyApi_<WaitForCallback>d__15::MoveNext()
+extern "C" IL2CPP_METHOD_ATTR void U3CWaitForCallbackU3Ed__15_MoveNext_m6885AE5AA0B62C9850C182E0237F35BC76A5BA96 (U3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A * __this, const RuntimeMethod* method)
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_method (U3CWaitForCallbackU3Ed__8_MoveNext_m57D5F79AD33858368B51F01D61A2A820F7716432_MetadataUsageId);
+		il2cpp_codegen_initialize_method (U3CWaitForCallbackU3Ed__15_MoveNext_m6885AE5AA0B62C9850C182E0237F35BC76A5BA96_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
 	int32_t V_0 = 0;
-	SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * V_1 = NULL;
+	SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * V_1 = NULL;
 	String_t* V_2 = NULL;
 	TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  V_3;
 	memset(&V_3, 0, sizeof(V_3));
@@ -8124,7 +10015,7 @@ extern "C" IL2CPP_METHOD_ATTR void U3CWaitForCallbackU3Ed__8_MoveNext_m57D5F79AD
 	{
 		int32_t L_0 = __this->get_U3CU3E1__state_0();
 		V_0 = L_0;
-		SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * L_1 = __this->get_U3CU3E4__this_3();
+		SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * L_1 = __this->get_U3CU3E4__this_2();
 		V_1 = L_1;
 	}
 
@@ -8135,7 +10026,7 @@ IL_000e:
 			int32_t L_2 = V_0;
 			if (!L_2)
 			{
-				goto IL_0070;
+				goto IL_0076;
 			}
 		}
 
@@ -8144,161 +10035,169 @@ IL_0011:
 			int32_t L_3 = V_0;
 			if ((((int32_t)L_3) == ((int32_t)1)))
 			{
-				goto IL_00d8;
+				goto IL_00de;
 			}
 		}
 
 IL_0018:
 		{
-			HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7 * L_4 = __this->get_client_2();
-			SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * L_5 = V_1;
-			NullCheck(L_5);
-			String_t* L_6 = L_5->get_ApiBaseUrl_6();
-			String_t* L_7 = __this->get_state_4();
-			IL2CPP_RUNTIME_CLASS_INIT(Uri_t87E4A94B2901F5EEDD18AA72C3DB1B00E672D68E_il2cpp_TypeInfo_var);
-			String_t* L_8 = Uri_EscapeDataString_mE1095E7A694DF447B699676C651F5EA5D98A2925(L_7, /*hidden argument*/NULL);
-			String_t* L_9 = String_Concat_mF4626905368D6558695A823466A1AF65EADB9923(L_6, _stringLiteralCF1AD600BAD94AA9A997B61D9569D46E3DCC5EE7, L_8, /*hidden argument*/NULL);
+			SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * L_4 = V_1;
 			NullCheck(L_4);
-			Task_1_t519CB3A303B53176BD616AC273201D66B84FF270 * L_10 = HttpClient_GetAsync_mB979915E31872E80CA29D0724DB7F6239A914D99(L_4, L_9, /*hidden argument*/NULL);
-			NullCheck(L_10);
-			TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  L_11 = Task_1_GetAwaiter_m511397276BFE6D43B77D1BD80905DF2FB0FA54E0(L_10, /*hidden argument*/Task_1_GetAwaiter_m511397276BFE6D43B77D1BD80905DF2FB0FA54E0_RuntimeMethod_var);
-			V_3 = L_11;
-			bool L_12 = TaskAwaiter_1_get_IsCompleted_m0F711316D40833EE5C67F3E65571EF033B9364DF((TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 *)(&V_3), /*hidden argument*/TaskAwaiter_1_get_IsCompleted_m0F711316D40833EE5C67F3E65571EF033B9364DF_RuntimeMethod_var);
-			if (L_12)
+			HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7 * L_5 = L_4->get_client_11();
+			SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * L_6 = V_1;
+			NullCheck(L_6);
+			String_t* L_7 = L_6->get_ApiBaseUrl_5();
+			String_t* L_8 = __this->get_state_3();
+			IL2CPP_RUNTIME_CLASS_INIT(Uri_t87E4A94B2901F5EEDD18AA72C3DB1B00E672D68E_il2cpp_TypeInfo_var);
+			String_t* L_9 = Uri_EscapeDataString_mE1095E7A694DF447B699676C651F5EA5D98A2925(L_8, /*hidden argument*/NULL);
+			String_t* L_10 = String_Concat_mF4626905368D6558695A823466A1AF65EADB9923(L_7, _stringLiteralCF1AD600BAD94AA9A997B61D9569D46E3DCC5EE7, L_9, /*hidden argument*/NULL);
+			CancellationToken_t9E956952F7F20908F2AE72EDF36D97E6C7DB63AB  L_11 = __this->get_cancel_4();
+			NullCheck(L_5);
+			Task_1_t519CB3A303B53176BD616AC273201D66B84FF270 * L_12 = HttpClient_GetAsync_m3D3DDCEB3022B5F6C9892B857374BFBE1DA54E4E(L_5, L_10, L_11, /*hidden argument*/NULL);
+			NullCheck(L_12);
+			TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  L_13 = Task_1_GetAwaiter_m511397276BFE6D43B77D1BD80905DF2FB0FA54E0(L_12, /*hidden argument*/Task_1_GetAwaiter_m511397276BFE6D43B77D1BD80905DF2FB0FA54E0_RuntimeMethod_var);
+			V_3 = L_13;
+			bool L_14 = TaskAwaiter_1_get_IsCompleted_m0F711316D40833EE5C67F3E65571EF033B9364DF((TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 *)(&V_3), /*hidden argument*/TaskAwaiter_1_get_IsCompleted_m0F711316D40833EE5C67F3E65571EF033B9364DF_RuntimeMethod_var);
+			if (L_14)
 			{
-				goto IL_008c;
+				goto IL_0092;
 			}
 		}
 
-IL_004d:
+IL_0053:
 		{
-			int32_t L_13 = 0;
-			V_0 = L_13;
-			__this->set_U3CU3E1__state_0(L_13);
-			TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  L_14 = V_3;
-			__this->set_U3CU3Eu__1_5(L_14);
-			AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_15 = __this->get_address_of_U3CU3Et__builder_1();
-			AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86_TisU3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257_m803944ED22822FD2A20B37214871D084C007DD96((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_15, (TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 *)(&V_3), (U3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257 *)__this, /*hidden argument*/AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86_TisU3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257_m803944ED22822FD2A20B37214871D084C007DD96_RuntimeMethod_var);
-			goto IL_0163;
+			int32_t L_15 = 0;
+			V_0 = L_15;
+			__this->set_U3CU3E1__state_0(L_15);
+			TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  L_16 = V_3;
+			__this->set_U3CU3Eu__1_5(L_16);
+			AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_17 = __this->get_address_of_U3CU3Et__builder_1();
+			AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86_TisU3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A_mF6C481713B4692EEA025E7B6471D6AC3CD5045C8((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_17, (TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 *)(&V_3), (U3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A *)__this, /*hidden argument*/AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86_TisU3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A_mF6C481713B4692EEA025E7B6471D6AC3CD5045C8_RuntimeMethod_var);
+			goto IL_0179;
 		}
 
-IL_0070:
+IL_0076:
 		{
-			TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  L_16 = __this->get_U3CU3Eu__1_5();
-			V_3 = L_16;
-			TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 * L_17 = __this->get_address_of_U3CU3Eu__1_5();
-			il2cpp_codegen_initobj(L_17, sizeof(TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 ));
-			int32_t L_18 = (-1);
-			V_0 = L_18;
-			__this->set_U3CU3E1__state_0(L_18);
+			TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86  L_18 = __this->get_U3CU3Eu__1_5();
+			V_3 = L_18;
+			TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 * L_19 = __this->get_address_of_U3CU3Eu__1_5();
+			il2cpp_codegen_initobj(L_19, sizeof(TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 ));
+			int32_t L_20 = (-1);
+			V_0 = L_20;
+			__this->set_U3CU3E1__state_0(L_20);
 		}
 
-IL_008c:
+IL_0092:
 		{
-			HttpResponseMessage_t619DB9FDC8E63CDF2D0A314B61A4C6609A43F904 * L_19 = TaskAwaiter_1_GetResult_m706665648BB29D83FD0C72CFA6279966143192A2((TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 *)(&V_3), /*hidden argument*/TaskAwaiter_1_GetResult_m706665648BB29D83FD0C72CFA6279966143192A2_RuntimeMethod_var);
-			HttpResponseMessage_t619DB9FDC8E63CDF2D0A314B61A4C6609A43F904 * L_20 = L_19;
-			NullCheck(L_20);
-			HttpResponseMessage_EnsureSuccessStatusCode_mFC49F01BD731C4FE89B7143E0AA8C6137F372B44(L_20, /*hidden argument*/NULL);
-			NullCheck(L_20);
-			HttpContent_t678722F60CA151DD19AFCA917657BE24F111A41D * L_21 = HttpResponseMessage_get_Content_m325C3E47B0D7E1DD70CA36FA04B894A152AD4420(L_20, /*hidden argument*/NULL);
-			NullCheck(L_21);
-			Task_1_t4A75FEC8F36C5D4F8793BB8C94E4DAA7457D0286 * L_22 = HttpContent_ReadAsStringAsync_m499CCA8B02B3AFB793C0783D28220FC7A531A24D(L_21, /*hidden argument*/NULL);
+			HttpResponseMessage_t619DB9FDC8E63CDF2D0A314B61A4C6609A43F904 * L_21 = TaskAwaiter_1_GetResult_m706665648BB29D83FD0C72CFA6279966143192A2((TaskAwaiter_1_t0CD71BC02837B0D53252196D19DABDA73A615B86 *)(&V_3), /*hidden argument*/TaskAwaiter_1_GetResult_m706665648BB29D83FD0C72CFA6279966143192A2_RuntimeMethod_var);
+			HttpResponseMessage_t619DB9FDC8E63CDF2D0A314B61A4C6609A43F904 * L_22 = L_21;
 			NullCheck(L_22);
-			TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  L_23 = Task_1_GetAwaiter_mBC24D09E3C1AB76F290AB7E9017AB8913242EC61(L_22, /*hidden argument*/Task_1_GetAwaiter_mBC24D09E3C1AB76F290AB7E9017AB8913242EC61_RuntimeMethod_var);
-			V_4 = L_23;
-			bool L_24 = TaskAwaiter_1_get_IsCompleted_m087FA74E453B58AB5AAD0A64BEDDB49070C6CE94((TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 *)(&V_4), /*hidden argument*/TaskAwaiter_1_get_IsCompleted_m087FA74E453B58AB5AAD0A64BEDDB49070C6CE94_RuntimeMethod_var);
-			if (L_24)
+			HttpResponseMessage_EnsureSuccessStatusCode_mFC49F01BD731C4FE89B7143E0AA8C6137F372B44(L_22, /*hidden argument*/NULL);
+			NullCheck(L_22);
+			HttpContent_t678722F60CA151DD19AFCA917657BE24F111A41D * L_23 = HttpResponseMessage_get_Content_m325C3E47B0D7E1DD70CA36FA04B894A152AD4420(L_22, /*hidden argument*/NULL);
+			NullCheck(L_23);
+			Task_1_t4A75FEC8F36C5D4F8793BB8C94E4DAA7457D0286 * L_24 = HttpContent_ReadAsStringAsync_m499CCA8B02B3AFB793C0783D28220FC7A531A24D(L_23, /*hidden argument*/NULL);
+			NullCheck(L_24);
+			TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  L_25 = Task_1_GetAwaiter_mBC24D09E3C1AB76F290AB7E9017AB8913242EC61(L_24, /*hidden argument*/Task_1_GetAwaiter_mBC24D09E3C1AB76F290AB7E9017AB8913242EC61_RuntimeMethod_var);
+			V_4 = L_25;
+			bool L_26 = TaskAwaiter_1_get_IsCompleted_m087FA74E453B58AB5AAD0A64BEDDB49070C6CE94((TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 *)(&V_4), /*hidden argument*/TaskAwaiter_1_get_IsCompleted_m087FA74E453B58AB5AAD0A64BEDDB49070C6CE94_RuntimeMethod_var);
+			if (L_26)
 			{
-				goto IL_00f5;
+				goto IL_00fb;
 			}
 		}
 
-IL_00b4:
+IL_00ba:
 		{
-			int32_t L_25 = 1;
-			V_0 = L_25;
-			__this->set_U3CU3E1__state_0(L_25);
-			TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  L_26 = V_4;
-			__this->set_U3CU3Eu__2_6(L_26);
-			AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_27 = __this->get_address_of_U3CU3Et__builder_1();
-			AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483_TisU3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257_m37C373317E7D5EE46545F0D2F7F86C264263E62A((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_27, (TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 *)(&V_4), (U3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257 *)__this, /*hidden argument*/AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483_TisU3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257_m37C373317E7D5EE46545F0D2F7F86C264263E62A_RuntimeMethod_var);
-			goto IL_0163;
+			int32_t L_27 = 1;
+			V_0 = L_27;
+			__this->set_U3CU3E1__state_0(L_27);
+			TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  L_28 = V_4;
+			__this->set_U3CU3Eu__2_6(L_28);
+			AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_29 = __this->get_address_of_U3CU3Et__builder_1();
+			AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483_TisU3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A_m73D75404FD39BD92B0C22BE96021C09BEFC0ACBF((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_29, (TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 *)(&V_4), (U3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A *)__this, /*hidden argument*/AsyncTaskMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483_TisU3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A_m73D75404FD39BD92B0C22BE96021C09BEFC0ACBF_RuntimeMethod_var);
+			goto IL_0179;
 		}
 
-IL_00d8:
+IL_00de:
 		{
-			TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  L_28 = __this->get_U3CU3Eu__2_6();
-			V_4 = L_28;
-			TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 * L_29 = __this->get_address_of_U3CU3Eu__2_6();
-			il2cpp_codegen_initobj(L_29, sizeof(TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 ));
-			int32_t L_30 = (-1);
-			V_0 = L_30;
-			__this->set_U3CU3E1__state_0(L_30);
+			TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483  L_30 = __this->get_U3CU3Eu__2_6();
+			V_4 = L_30;
+			TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 * L_31 = __this->get_address_of_U3CU3Eu__2_6();
+			il2cpp_codegen_initobj(L_31, sizeof(TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 ));
+			int32_t L_32 = (-1);
+			V_0 = L_32;
+			__this->set_U3CU3E1__state_0(L_32);
 		}
 
-IL_00f5:
+IL_00fb:
 		{
-			String_t* L_31 = TaskAwaiter_1_GetResult_m2CE622156E52C41B443C3751AB08398ECC3CA3F3((TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 *)(&V_4), /*hidden argument*/TaskAwaiter_1_GetResult_m2CE622156E52C41B443C3751AB08398ECC3CA3F3_RuntimeMethod_var);
-			V_2 = L_31;
-			SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * L_32 = V_1;
-			String_t* L_33 = V_2;
-			NullCheck(L_32);
-			L_32->set_Token_5(L_33);
-			String_t* L_34 = V_2;
-			String_t* L_35 = String_Concat_mB78D0094592718DA6D5DB6C712A9C225631666BE(_stringLiteral8E54285CFC41A77DC6AF23178CC201C8A0C7FA60, L_34, /*hidden argument*/NULL);
+			String_t* L_33 = TaskAwaiter_1_GetResult_m2CE622156E52C41B443C3751AB08398ECC3CA3F3((TaskAwaiter_1_t614647F82D882519EA620421E613B1DB6A463483 *)(&V_4), /*hidden argument*/TaskAwaiter_1_GetResult_m2CE622156E52C41B443C3751AB08398ECC3CA3F3_RuntimeMethod_var);
+			V_2 = L_33;
+			SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * L_34 = V_1;
+			String_t* L_35 = V_2;
+			NullCheck(L_34);
+			L_34->set_Token_4(L_35);
+			String_t* L_36 = V_2;
+			PlayerPrefs_SetString_m7AC4E332A5DCA04E0AD91544AF836744BA8C2583(_stringLiteral277A756AC1FE07420ABEE5E20FD9463C5F746D82, L_36, /*hidden argument*/NULL);
+			PlayerPrefs_Save_m6CC1FE22D4B10AC819F55802D725BE17EA2AD37B(/*hidden argument*/NULL);
+			String_t* L_37 = V_2;
+			String_t* L_38 = String_Concat_mB78D0094592718DA6D5DB6C712A9C225631666BE(_stringLiteral8E54285CFC41A77DC6AF23178CC201C8A0C7FA60, L_37, /*hidden argument*/NULL);
 			IL2CPP_RUNTIME_CLASS_INIT(Debug_t7B5FCB117E2FD63B6838BC52821B252E2BFB61C4_il2cpp_TypeInfo_var);
-			Debug_Log_m4B7C70BAFD477C6BDB59C88A0934F0B018D03708(L_35, /*hidden argument*/NULL);
-			HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7 * L_36 = __this->get_client_2();
-			NullCheck(L_36);
-			HttpRequestHeaders_tD29E9D795891A7A0D4FE8C8AA7BF0E756FCA40D4 * L_37 = HttpClient_get_DefaultRequestHeaders_m3D044032F7024F2F9E6AD821FFCF49FBEBF0152F(L_36, /*hidden argument*/NULL);
-			String_t* L_38 = V_2;
-			AuthenticationHeaderValue_tC285A16C25538CA86FA59B88CC25E6999BB5F1A6 * L_39 = (AuthenticationHeaderValue_tC285A16C25538CA86FA59B88CC25E6999BB5F1A6 *)il2cpp_codegen_object_new(AuthenticationHeaderValue_tC285A16C25538CA86FA59B88CC25E6999BB5F1A6_il2cpp_TypeInfo_var);
-			AuthenticationHeaderValue__ctor_m8EBD61CBB89C61631F2C2B4E592B390098F72D3C(L_39, _stringLiteral2C035AC06ADD3F441D7B835885958B03DEAC3D50, L_38, /*hidden argument*/NULL);
-			NullCheck(L_37);
-			HttpRequestHeaders_set_Authorization_m093B11E4E81ADCAF59C32CDFEF0C71111D9FE206(L_37, L_39, /*hidden argument*/NULL);
-			SpotiftyLogin_t4A08281A3B749813DFC009D01820F3E8F332CD1B * L_40 = V_1;
+			Debug_Log_m4B7C70BAFD477C6BDB59C88A0934F0B018D03708(L_38, /*hidden argument*/NULL);
+			SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * L_39 = V_1;
+			NullCheck(L_39);
+			HttpClient_tC7477E4B30DD5CFE1B41DD9CD2EA1F83DB4DE9E7 * L_40 = L_39->get_client_11();
 			NullCheck(L_40);
-			SpotiftyLogin_CloseWebView_m75F327DD482F4839DE3B12A80AD3D5F41344DA21(L_40, /*hidden argument*/NULL);
-			goto IL_0150;
+			HttpRequestHeaders_tD29E9D795891A7A0D4FE8C8AA7BF0E756FCA40D4 * L_41 = HttpClient_get_DefaultRequestHeaders_m3D044032F7024F2F9E6AD821FFCF49FBEBF0152F(L_40, /*hidden argument*/NULL);
+			String_t* L_42 = V_2;
+			AuthenticationHeaderValue_tC285A16C25538CA86FA59B88CC25E6999BB5F1A6 * L_43 = (AuthenticationHeaderValue_tC285A16C25538CA86FA59B88CC25E6999BB5F1A6 *)il2cpp_codegen_object_new(AuthenticationHeaderValue_tC285A16C25538CA86FA59B88CC25E6999BB5F1A6_il2cpp_TypeInfo_var);
+			AuthenticationHeaderValue__ctor_m8EBD61CBB89C61631F2C2B4E592B390098F72D3C(L_43, _stringLiteral2C035AC06ADD3F441D7B835885958B03DEAC3D50, L_42, /*hidden argument*/NULL);
+			NullCheck(L_41);
+			HttpRequestHeaders_set_Authorization_m093B11E4E81ADCAF59C32CDFEF0C71111D9FE206(L_41, L_43, /*hidden argument*/NULL);
+			SpotifyApi_t26EE204B4409E86787EA330E26A6479E5826D4F2 * L_44 = V_1;
+			NullCheck(L_44);
+			SpotifyApi_CloseWebView_m8B8E9DD1E8B936D1370D5EA2C22ECC650EC313E9(L_44, /*hidden argument*/NULL);
+			goto IL_0166;
 		}
 	} // end try (depth: 1)
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__exception_local = (Exception_t *)e.ex;
 		if(il2cpp_codegen_class_is_assignable_from (Exception_t_il2cpp_TypeInfo_var, il2cpp_codegen_object_class(e.ex)))
-			goto CATCH_0137;
+			goto CATCH_014d;
 		throw e;
 	}
 
-CATCH_0137:
+CATCH_014d:
 	{ // begin catch(System.Exception)
 		V_5 = ((Exception_t *)__exception_local);
 		__this->set_U3CU3E1__state_0(((int32_t)-2));
-		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_41 = __this->get_address_of_U3CU3Et__builder_1();
-		Exception_t * L_42 = V_5;
-		AsyncTaskMethodBuilder_SetException_m370C484922A63A6EF96E241D1370B8814F1F2D6B((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_41, L_42, /*hidden argument*/NULL);
-		goto IL_0163;
+		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_45 = __this->get_address_of_U3CU3Et__builder_1();
+		Exception_t * L_46 = V_5;
+		AsyncTaskMethodBuilder_SetException_m370C484922A63A6EF96E241D1370B8814F1F2D6B((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_45, L_46, /*hidden argument*/NULL);
+		goto IL_0179;
 	} // end catch (depth: 1)
 
-IL_0150:
+IL_0166:
 	{
 		__this->set_U3CU3E1__state_0(((int32_t)-2));
-		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_43 = __this->get_address_of_U3CU3Et__builder_1();
-		AsyncTaskMethodBuilder_SetResult_m151016FB698F3BB34A73BAE693A97513A7E4C838((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_43, /*hidden argument*/NULL);
+		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_47 = __this->get_address_of_U3CU3Et__builder_1();
+		AsyncTaskMethodBuilder_SetResult_m151016FB698F3BB34A73BAE693A97513A7E4C838((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_47, /*hidden argument*/NULL);
 	}
 
-IL_0163:
+IL_0179:
 	{
 		return;
 	}
 }
-extern "C"  void U3CWaitForCallbackU3Ed__8_MoveNext_m57D5F79AD33858368B51F01D61A2A820F7716432_AdjustorThunk (RuntimeObject * __this, const RuntimeMethod* method)
+extern "C"  void U3CWaitForCallbackU3Ed__15_MoveNext_m6885AE5AA0B62C9850C182E0237F35BC76A5BA96_AdjustorThunk (RuntimeObject * __this, const RuntimeMethod* method)
 {
-	U3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257 * _thisAdjusted = reinterpret_cast<U3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257 *>(__this + 1);
-	U3CWaitForCallbackU3Ed__8_MoveNext_m57D5F79AD33858368B51F01D61A2A820F7716432(_thisAdjusted, method);
+	U3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A * _thisAdjusted = reinterpret_cast<U3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A *>(__this + 1);
+	U3CWaitForCallbackU3Ed__15_MoveNext_m6885AE5AA0B62C9850C182E0237F35BC76A5BA96(_thisAdjusted, method);
 }
-// System.Void SpotiftyLogin_<WaitForCallback>d__8::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-extern "C" IL2CPP_METHOD_ATTR void U3CWaitForCallbackU3Ed__8_SetStateMachine_mD9881514197FCD9957E1CF24B39C5201FF0278EF (U3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257 * __this, RuntimeObject* ___stateMachine0, const RuntimeMethod* method)
+// System.Void SpotifyApi_<WaitForCallback>d__15::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+extern "C" IL2CPP_METHOD_ATTR void U3CWaitForCallbackU3Ed__15_SetStateMachine_m5496DC8359D58C69B9550A8989D9017711C3C7F8 (U3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A * __this, RuntimeObject* ___stateMachine0, const RuntimeMethod* method)
 {
 	{
 		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_0 = __this->get_address_of_U3CU3Et__builder_1();
@@ -8307,10 +10206,33 @@ extern "C" IL2CPP_METHOD_ATTR void U3CWaitForCallbackU3Ed__8_SetStateMachine_mD9
 		return;
 	}
 }
-extern "C"  void U3CWaitForCallbackU3Ed__8_SetStateMachine_mD9881514197FCD9957E1CF24B39C5201FF0278EF_AdjustorThunk (RuntimeObject * __this, RuntimeObject* ___stateMachine0, const RuntimeMethod* method)
+extern "C"  void U3CWaitForCallbackU3Ed__15_SetStateMachine_m5496DC8359D58C69B9550A8989D9017711C3C7F8_AdjustorThunk (RuntimeObject * __this, RuntimeObject* ___stateMachine0, const RuntimeMethod* method)
 {
-	U3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257 * _thisAdjusted = reinterpret_cast<U3CWaitForCallbackU3Ed__8_t6C2EC894924B135435275582071A1B6835524257 *>(__this + 1);
-	U3CWaitForCallbackU3Ed__8_SetStateMachine_mD9881514197FCD9957E1CF24B39C5201FF0278EF(_thisAdjusted, ___stateMachine0, method);
+	U3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A * _thisAdjusted = reinterpret_cast<U3CWaitForCallbackU3Ed__15_t5DC4AB18EE9765DD43E51540F62A1B33A92FC85A *>(__this + 1);
+	U3CWaitForCallbackU3Ed__15_SetStateMachine_m5496DC8359D58C69B9550A8989D9017711C3C7F8(_thisAdjusted, ___stateMachine0, method);
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// System.Void TaskHelper::Ignore(System.Threading.Tasks.Task)
+extern "C" IL2CPP_METHOD_ATTR void TaskHelper_Ignore_mB73CBB96C01116303EAEACC68F0ACA844A0C2D2F (Task_t1F48C203E163126EBC69ACCA679D1A462DEE9EB2 * ___task0, const RuntimeMethod* method)
+{
+	{
+		return;
+	}
 }
 #ifdef __clang__
 #pragma clang diagnostic pop
