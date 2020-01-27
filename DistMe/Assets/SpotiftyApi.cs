@@ -20,6 +20,8 @@ public class SpotiftyApi : MonoBehaviour
 
     public bool UseKeyboard = false;
 
+    public bool UseSystemOpen = false;
+
     public string DeviceId;
 
     private HttpClient client;
@@ -91,15 +93,26 @@ public class SpotiftyApi : MonoBehaviour
         r.EnsureSuccessStatusCode();
         var state = await r.Content.ReadAsStringAsync();
         var task=WaitForCallback(state,cancel);
-        webView.Frame = new Rect(0, 0, Screen.width, Screen.height);
-        webView.Load(
-            "https://accounts.spotify.com/authorize?state=" + state + "&"+
-            "show_dialog="+(AlwaysShowSignIn?"true":"false") +"&"+
+
+        var url = "https://accounts.spotify.com/authorize?state=" + state + "&" +
+            "show_dialog=" + (AlwaysShowSignIn ? "true" : "false") + "&" +
             "response_type=code&" +
             "client_id=cec072dca1a648f18da1c553888f95d1&" +
-            "scope="+string.Join("%20",Scopes)+"&" +
-            "redirect_uri=" + ApiBaseUrl + "spotify");
-        webView.Show();
+            "scope=" + string.Join("%20", Scopes) + "&" +
+            "redirect_uri=" + ApiBaseUrl + "spotify";
+
+        if (UseSystemOpen)
+        {
+            Application.OpenURL(url);
+        }
+        else
+        {
+            webView.Frame = new Rect(0, 0, Screen.width, Screen.height);
+            webView.Load(url);
+            webView.Show();
+        }
+
+        
 
     }
 
@@ -137,7 +150,12 @@ public class SpotiftyApi : MonoBehaviour
 
 
 
-    private async Task<string> SendAsync(string cmdName, HttpMethod method, string path, string payload, CancellationToken cancel)
+    private async Task<string> SendAsync(
+        string cmdName,
+        HttpMethod method,
+        string path,
+        string payload,
+        CancellationToken cancel)
     {
         var uri = SpotifyApiBaseUrl + path;
         Debug.Log(cmdName+" "+method+" "+uri);
