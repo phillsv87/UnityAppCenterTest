@@ -220,7 +220,7 @@ public class SpotifyApi : MonoBehaviour
             "PlayUris",
             HttpMethod.Put,
             "me/player/play" + GetDeviceIdQuery(),
-            @"{""uris"":" + JsonUtility.ToJson(uris) + @",""position_ms"":"+positionMs+"}",
+            @"{""uris"":[""" + string.Join("\",\"",uris) + @"""],""position_ms"":"+positionMs+"}",
             cancel);
     }
 
