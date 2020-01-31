@@ -62,5 +62,20 @@
     <string />
     <key>UnityCrashSubmissionURL</key>
     <string />
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+      <string>spotify</string>
+    </array>
+    <key>CFBundleURLTypes</key>
+    <array>
+      <dict>
+        <key>CFBundleURLName</key>
+        <string>com.phillsv87.spinnycube</string>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>vnd.spinnycube</string>
+        </array>
+      </dict>
+    </array>
   </dict>
 </plist>
