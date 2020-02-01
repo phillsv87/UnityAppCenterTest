@@ -38,6 +38,7 @@
 		262D4D7EAA185D48396CFD94 /* Bulk_netstandard_0.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B97F4428921ADA769BF40D75 /* Bulk_netstandard_0.cpp */; };
 		289248E8BD8BE485BBBA3639 /* Bulk_UnityEngine.UIModule_0.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7C45450CB030086D4A003AC6 /* Bulk_UnityEngine.UIModule_0.cpp */; };
 		2A0C1BD523E4AA5300C987DA /* SpotifyiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A0C1BD423E4AA5300C987DA /* SpotifyiOS.framework */; };
+		2ADBE9F423E4F0CB004128BD /* UnitySpotify.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2ADBE9F323E4F0CB004128BD /* UnitySpotify.mm */; };
 		2D734BFEA7705E2BAC3813C9 /* Bulk_Generics_11.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B8E94439930402A4084AEE39 /* Bulk_Generics_11.cpp */; };
 		30104DF6B413328C4E563B44 /* Bulk_mscorlib_1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3EA4A5081E7EBEE7A669076 /* Bulk_mscorlib_1.cpp */; };
 		308144E089FA3823981CC2FB /* Bulk_mscorlib_2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6FA403E9DBCD5B970A59C41 /* Bulk_mscorlib_2.cpp */; };
@@ -273,6 +274,9 @@
 		266543229C27F58829588087 /* Il2CppCompilerCalculateTypeValues_28Table.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Il2CppCompilerCalculateTypeValues_28Table.cpp; path = Classes/Native/Il2CppCompilerCalculateTypeValues_28Table.cpp; sourceTree = SOURCE_ROOT; };
 		28BF405D8936F06AA74E4CC5 /* Bulk_UnityEngine_0.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Bulk_UnityEngine_0.cpp; path = Classes/Native/Bulk_UnityEngine_0.cpp; sourceTree = SOURCE_ROOT; };
 		2A0C1BD423E4AA5300C987DA /* SpotifyiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpotifyiOS.framework; path = frameworks/SpotifyiOS.framework; sourceTree = "<group>"; };
+		2ADBE9F323E4F0CB004128BD /* UnitySpotify.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = UnitySpotify.mm; sourceTree = "<group>"; };
+		2ADBE9F523E4F0F9004128BD /* UnitySpotify.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnitySpotify.h; sourceTree = "<group>"; };
+		2ADBE9F623E61CAA004128BD /* Build3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Build3.h; sourceTree = "<group>"; };
 		2BD844F38C38A23A9598F0BB /* Il2CppMethodPointerTable.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Il2CppMethodPointerTable.cpp; path = Classes/Native/Il2CppMethodPointerTable.cpp; sourceTree = SOURCE_ROOT; };
 		2BFF4AB4993E8A6535E24BD8 /* Bulk_UnityEngine.UI_3.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Bulk_UnityEngine.UI_3.cpp; path = Classes/Native/Bulk_UnityEngine.UI_3.cpp; sourceTree = SOURCE_ROOT; };
 		302441809CF470D6C80A2C36 /* Il2CppCodeRegistration.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Il2CppCodeRegistration.cpp; path = Classes/Native/Il2CppCodeRegistration.cpp; sourceTree = SOURCE_ROOT; };
@@ -558,6 +562,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				2ADBE9F623E61CAA004128BD /* Build3.h */,
 				AA31BF961B55660D0013FB1B /* Data */,
 				56C56C9717D6015100616839 /* Images.xcassets */,
 				D82DCFB50E8000A5005D6AD8 /* Classes */,
@@ -889,6 +894,8 @@
 				8A8D90D91A274A7800456C4E /* UnityAppController+UnityInterface.mm */,
 				8AA6ADDB17818CFD00A1C5F1 /* UnityTrampolineConfigure.h */,
 				D3114C4F842CDD323213D360 /* Native */,
+				2ADBE9F523E4F0F9004128BD /* UnitySpotify.h */,
+				2ADBE9F323E4F0CB004128BD /* UnitySpotify.mm */,
 			);
 			path = Classes;
 			sourceTree = SOURCE_ROOT;
@@ -1118,6 +1125,7 @@
 				8ACB801C177081D4005D0019 /* DeviceSettings.mm in Sources */,
 				03F528631B447098000F4FB8 /* Il2CppOptions.cpp in Sources */,
 				F75E412CB3D1F292BD7903C0 /* Bulk_Assembly-CSharp_0.cpp in Sources */,
+				2ADBE9F423E4F0CB004128BD /* UnitySpotify.mm in Sources */,
 				4C194B7CBDCFA3773D388D4D /* Bulk_Generics_0.cpp in Sources */,
 				709F499B840BF3AF4B017F57 /* Bulk_Generics_1.cpp in Sources */,
 				7252479F8F1FBC56C12641A1 /* Bulk_Generics_10.cpp in Sources */,
