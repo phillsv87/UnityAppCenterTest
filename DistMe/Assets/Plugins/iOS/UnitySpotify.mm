@@ -133,7 +133,9 @@ static UnitySpotify * _defaultInst=0;
 {
     [self.appRemote.playerAPI resume:^(id _Nullable result, NSError * _Nullable error) {
         US_LOG("resume %@ %@",result,error);
-        callback(error?UnitySpotifyErrorApiCallFailed:UnitySpotifyErrorNone,nil);
+        if(callback){
+            callback(error?UnitySpotifyErrorApiCallFailed:UnitySpotifyErrorNone,nil);
+        }
     }];
 }
 
@@ -141,7 +143,9 @@ static UnitySpotify * _defaultInst=0;
 {
     [self.appRemote.playerAPI pause:^(id _Nullable result, NSError * _Nullable error) {
         US_LOG("pause %@ %@",result,error);
-        callback(error?UnitySpotifyErrorApiCallFailed:UnitySpotifyErrorNone,nil);
+        if(callback){
+            callback(error?UnitySpotifyErrorApiCallFailed:UnitySpotifyErrorNone,nil);
+        }
     }];
 }
 - (void)play:(NSInteger)positionMs uri:(NSString*)uri withCallback:(UnitySpotifyCallback _Nullable )callback
@@ -149,15 +153,21 @@ static UnitySpotify * _defaultInst=0;
     [self.appRemote.playerAPI play:uri callback:^(id _Nullable result, NSError * _Nullable error) {
         US_LOG("play %@ %@",uri,error);
         if(error){
-            callback(UnitySpotifyErrorApiCallFailed,nil);
+            if(callback){
+                callback(UnitySpotifyErrorApiCallFailed,nil);
+            }
             return;
         }
         if(positionMs>0){
             [self.appRemote.playerAPI seekToPosition:positionMs callback:^(id  _Nullable result, NSError * _Nullable error2) {
-                callback(error2?UnitySpotifyErrorSeekFailed:UnitySpotifyErrorNone,nil);
+                if(callback){
+                    callback(error2?UnitySpotifyErrorSeekFailed:UnitySpotifyErrorNone,nil);
+                }
             }];
         }else{
-            callback(UnitySpotifyErrorNone,nil);
+            if(callback){
+                callback(UnitySpotifyErrorNone,nil);
+            }
         }
     }];
 }
@@ -182,7 +192,9 @@ static UnitySpotify * _defaultInst=0;
     
     [self.appRemote.playerAPI setRepeatMode:sMode callback:^(id  _Nullable result, NSError * _Nullable error) {
         US_LOG("repeat %@",error);
-        callback(error?UnitySpotifyErrorApiCallFailed:UnitySpotifyErrorNone,nil);
+        if(callback){
+            callback(error?UnitySpotifyErrorApiCallFailed:UnitySpotifyErrorNone,nil);
+        }
     }];
 }
 
@@ -207,107 +219,171 @@ static UnitySpotify * _defaultInst=0;
 
 @end
 
-#define UNSP_INIT()  if(!_defaultInst){callback(UnitySpotifyErrorInitRequired,nil);return;}
+#define UNSP_INIT()  \
+    if(!_defaultInst){\
+        US_LOG("Init Required");\
+        callback(UnitySpotifyErrorInitRequired,nil);\
+        return;\
+    }
 
-#define UNSP_VERIFY_SIGNIN() UNSP_INIT();if(![_defaultInst isSignedIn]){callback(UnitySpotifyErrorNotSignedIn,nil);return;}
+#define UNSP_VERIFY_SIGNIN() \
+    UNSP_INIT();\
+    if(![_defaultInst isSignedIn]){\
+        US_LOG("SignIn Required");\
+        callback(UnitySpotifyErrorNotSignedIn,nil);\
+        return;\
+    }
 
 
 
 void UnitySpotifyInit(UnitySpotifyCallback _Nullable callback)
 {
+    
     US_LOG("Init");
     
-    if(_defaultInst){
-        callback(UnitySpotifyErrorNone,nil);
-        return;
-    }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+        if(_defaultInst){
+            if(callback){
+                callback(UnitySpotifyErrorNone,nil);
+            }
+            return;
+        }
 
-    _defaultInst = [[UnitySpotify alloc] init];
-    if(!_defaultInst){
-        callback(UnitySpotifyErrorInitFailed,nil);
-        return;
-    }
-    
-    callback(UnitySpotifyErrorNone,nil);
-    
-    US_LOG("Init Success");
+        _defaultInst = [[UnitySpotify alloc] init];
+        if(!_defaultInst){
+            if(callback){
+                callback(UnitySpotifyErrorInitFailed,nil);
+            }
+            return;
+        }
+        
+        if(callback){
+            callback(UnitySpotifyErrorNone,nil);
+        }
+        
+        US_LOG("Init Success");
+    });
 }
 
 void UnitySpotifySignIn(UnitySpotifyCallback _Nullable callback)
 {
+    
     US_LOG("SignIn");
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
 
-    UNSP_INIT();
+        UNSP_INIT();
 
-    [_defaultInst signIn:callback];
+        [_defaultInst signIn:callback];
+    });
 }
 
 void UnitySpotifyConnect(UnitySpotifyCallback _Nullable callback)
 {
-    US_LOG("Connect");
-
-    UNSP_INIT();
     
-    [_defaultInst signIn:callback];
+    US_LOG("Connect");
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+
+        UNSP_INIT();
+        
+        [_defaultInst signIn:callback];
+    });
 }
 
 
 void UnitySpotifyResume(UnitySpotifyCallback _Nullable callback)
 {
-    UNSP_VERIFY_SIGNIN();
     
     US_LOG("Resume");
     
-    [_defaultInst resume:callback];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+        UNSP_VERIFY_SIGNIN();
+        
+        [_defaultInst resume:callback];
+    });
 }
 
 void UnitySpotifyPause(UnitySpotifyCallback _Nullable callback)
 {
+    
     US_LOG("Pause");
     
-    UNSP_VERIFY_SIGNIN();
-    
-    [_defaultInst pause:callback];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+        UNSP_VERIFY_SIGNIN();
+        
+        [_defaultInst pause:callback];
+    });
 }
 
 void UnitySpotifyPlayUri(int positionMs, const char * uri, UnitySpotifyCallback _Nullable callback)
 {
+    
     US_LOG("Play URI %d %s",positionMs,uri);
     
-    UNSP_VERIFY_SIGNIN();
-    
-    if(!uri || positionMs<0){
-        callback(UnitySpotifyErrorInvalidParam,nil);
-        return;
-    }
-    
-    NSString * str=[NSString stringWithCString:uri encoding:NSUnicodeStringEncoding];
-    if(!str){
-        callback(UnitySpotifyErrorOutOfMemory,nil);
-        return;
-    }
-    
-    [_defaultInst play:positionMs uri:str withCallback:callback];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+        UNSP_VERIFY_SIGNIN();
+        
+        if(!uri || positionMs<0){
+            if(callback){
+                callback(UnitySpotifyErrorInvalidParam,nil);
+            }
+            return;
+        }
+        
+        NSString * str=[NSString stringWithCString:uri encoding:NSUnicodeStringEncoding];
+        if(!str){
+            if(callback){
+                callback(UnitySpotifyErrorOutOfMemory,nil);
+            }
+            return;
+        }
+        
+        [_defaultInst play:positionMs uri:str withCallback:callback];
+    });
 }
 
 void UnitySpotifyRepeat(UnitySpotifyRepeatMode mode, UnitySpotifyCallback _Nullable callback)
 {
-    UNSP_VERIFY_SIGNIN();
     
     US_LOG("Repeat");
     
-    [_defaultInst repeat:mode withCallback:callback];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+        UNSP_VERIFY_SIGNIN();
+        
+        [_defaultInst repeat:mode withCallback:callback];
+    });
 }
 
 UnitySpotifyBool UnitySpotifyIsConnected()
 {
+    
+    US_LOG("IsConnected %@",_defaultInst);
+    
+    if(!_defaultInst){
+        UnitySpotifyInit(nil);
+    }
+    
     if(!_defaultInst || !_defaultInst.appRemote){
+        
+        US_LOG("-connected  False");
         return UnitySpotifyBoolFalse;
     }
+    
+    US_LOG("-connected  %d",_defaultInst.appRemote.connected);
+    
     return _defaultInst.appRemote.connected==YES?UnitySpotifyBoolTrue:UnitySpotifyBoolFalse;
 }
 
 UnitySpotifyBool UnitySpotifyIsInited()
 {
+    
+    US_LOG("IsInited");
+    
     return _defaultInst?UnitySpotifyBoolTrue:UnitySpotifyBoolFalse;
 }
