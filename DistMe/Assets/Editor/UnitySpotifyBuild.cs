@@ -55,6 +55,21 @@ public class UnitySpotifyBuild
             proj.AddBuildProperty(target, "OTHER_LDFLAGS", "-ObjC");
 
             File.WriteAllText(projPath, proj.WriteToString());
+
+
+            // Get plist
+            string plistPath = path + "/Info.plist";
+            PlistDocument plist = new PlistDocument();
+            plist.ReadFromString(File.ReadAllText(plistPath));
+
+            // Get root
+            PlistElementDict rootDict = plist.root;
+            var ary=rootDict.CreateArray("LSApplicationQueriesSchemes");
+            ary.AddString("spotify");
+
+            // Write to file
+            File.WriteAllText(plistPath, plist.WriteToString());
+
         }
 	}
 }
