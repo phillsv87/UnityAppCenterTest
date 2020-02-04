@@ -27,7 +27,8 @@ extern "C" {
         UnitySpotifyErrorApiCallFailed = 8,
         UnitySpotifyErrorSeekFailed = 9,
         UnitySpotifyErrorTimeout = 10,
-        UnitySpotifyErrorWorkFailed = 11
+        UnitySpotifyErrorWorkFailed = 11,
+        UnitySpotifyErrorInvalidConfig = 12,
         
     } UnitySpotifyError;
 
@@ -44,9 +45,9 @@ extern "C" {
         UnitySpotifyBoolTrue = 1
     } UnitySpotifyBool;
 
-    typedef void (*UnitySpotifyCallback)(int cid, UnitySpotifyError error, const char * _Nullable msg);
+    typedef void (*UnitySpotifyCallback)(int cid, UnitySpotifyError error, const unichar * _Nullable msg);
 
-    void UnitySpotifyInit(int cid, UnitySpotifyCallback _Nullable callback);
+    void UnitySpotifyInit(const unichar * _Nonnull config, int cid, UnitySpotifyCallback _Nullable callback);
 
     void UnitySpotifySignIn(int cid, UnitySpotifyCallback _Nullable callback);
 
@@ -75,6 +76,10 @@ extern "C" {
 @property (nonatomic, strong) SPTSessionManager * _Nullable sessionManager;
 @property (nonatomic, strong) SPTConfiguration * _Nullable configuration;
 @property (nonatomic, strong) SPTAppRemote * _Nullable appRemote;
+
+-       (id _Nonnull )init:(NSString*_Nonnull)clientId
+               redirectUrl:(NSString*_Nonnull)redirectUrl
+                apiBaseUrl:(NSString*_Nonnull)apiBaseUrl;
 
 - (void)application:(UIApplication*_Nullable)app
             openURL:(NSURL*_Nullable)url

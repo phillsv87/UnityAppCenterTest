@@ -22,7 +22,7 @@ static UnitySpotify * _defaultInst=0;
 -(void)setCallSignInCallback:(UnitySpotifyCallback _Nullable)callback
                          cid:(int)cid
                    withError:(UnitySpotifyError) error
-                  andMessage:(const char * _Nullable) msg
+                  andMessage:(const unichar * _Nullable) msg
 {
     UnitySpotifyCallback cb=self->_signInCallback;
     int _cid=self->_signInCid;
@@ -86,7 +86,9 @@ static UnitySpotify * _defaultInst=0;
 
 
 
-- (id)init
+-       (id _Nonnull)init:(NSString*_Nonnull)clientId
+              redirectUrl:(NSString*_Nonnull)redirectUrl
+               apiBaseUrl:(NSString*_Nonnull)apiBaseUrl;
 {
     self = [super init];
     
@@ -94,17 +96,16 @@ static UnitySpotify * _defaultInst=0;
         return self;
     }
     
-    NSString *spotifyClientID = @"cec072dca1a648f18da1c553888f95d1";
-    NSURL *spotifyRedirectURL = [NSURL URLWithString:@"vnd.spinnycube://callback"];
+    NSURL *spotifyRedirectURL = [NSURL URLWithString:redirectUrl];
 
-    self.configuration  = [[SPTConfiguration alloc] initWithClientID:spotifyClientID redirectURL:spotifyRedirectURL];
+    self.configuration  = [[SPTConfiguration alloc] initWithClientID:clientId redirectURL:spotifyRedirectURL];
     
-    NSURL *tokenSwapURL = [NSURL URLWithString:@"https://oc-api.ngrok.io/api/Spotify/token"];
-    NSURL *tokenRefreshURL = [NSURL URLWithString:@"https://oc-api.ngrok.io/api/Spotify/refresh_token"];
+    NSURL *tokenSwapURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/Spotify/token",apiBaseUrl]];
+    NSURL *tokenRefreshURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/Spotify/refresh_token",apiBaseUrl]];
 
     self.configuration.tokenSwapURL = tokenSwapURL;
     self.configuration.tokenRefreshURL = tokenRefreshURL;
-    self.configuration.playURI = @"";
+    self.configuration.playURI = nil;
 
     self.sessionManager = [[SPTSessionManager alloc] initWithConfiguration:self.configuration delegate:self];
     
@@ -235,10 +236,75 @@ static UnitySpotify * _defaultInst=0;
 
 
 
-void UnitySpotifyInit(int cid, UnitySpotifyCallback _Nullable callback)
+
+void UnitySpotifyInit(const unichar * _Nonnull config, int cid, UnitySpotifyCallback _Nullable callback)
 {
-    
     US_LOG("Init");
+    
+    if(!config){
+        if(callback){
+            callback(cid,UnitySpotifyErrorInvalidConfig,nil);
+        }
+        return;
+    }
+    
+    US_LOG("Config:\n%S",config);
+    
+    NSString * clientId=nil;
+    NSString * redirectUrl=nil;
+    NSString * apiBaseUrl=nil;
+    
+    NSString * str=[NSString stringWithFormat:@"%S",config];
+    if(!str){
+        if(callback){
+            callback(cid,UnitySpotifyErrorOutOfMemory,nil);
+        }
+        return;
+    }
+    
+    NSArray * lines=[str componentsSeparatedByString:@"\n"];
+    for(NSString * line in lines){
+        NSArray * parts=[line componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+        NSString * key=parts[0];
+        NSString * value=parts[parts.count-1];
+        key=[key stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+        value=[value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+        
+        if([key        caseInsensitiveCompare:@"clientId"] == NSOrderedSame){
+            clientId=value;
+        } else if([key caseInsensitiveCompare:@"redirectUrl"] == NSOrderedSame){
+            redirectUrl=value;
+        } else if([key caseInsensitiveCompare:@"apiBaseUrl"] == NSOrderedSame){
+            apiBaseUrl=value;
+        }
+        
+    }
+    
+    
+    NSString * errorMsg=nil;
+    
+    if(!clientId){
+        errorMsg=@"config.clientId required";
+    } else if(!redirectUrl){
+        errorMsg=@"config.redirectUrl required";
+    } else if(!apiBaseUrl){
+        errorMsg=@"config.apiBaseUrl required";
+    }
+    
+    if(errorMsg){
+        
+        US_LOG("Invalid config: %@",errorMsg);
+        
+        if(callback){
+            NSData * data = [errorMsg dataUsingEncoding:NSUnicodeStringEncoding];
+            const unichar* ptr = (const unichar*)data.bytes;
+            callback(cid,UnitySpotifyErrorInvalidConfig,ptr);
+        }
+        
+        return;
+    }
+    
+    US_LOG("Config Set");
     
     dispatch_async(dispatch_get_main_queue(), ^{
         
@@ -249,7 +315,9 @@ void UnitySpotifyInit(int cid, UnitySpotifyCallback _Nullable callback)
             return;
         }
 
-        _defaultInst = [[UnitySpotify alloc] init];
+        _defaultInst = [[UnitySpotify alloc] init:clientId
+                                      redirectUrl:redirectUrl
+                                       apiBaseUrl:apiBaseUrl];
         if(!_defaultInst){
             if(callback){
                 callback(cid,UnitySpotifyErrorInitFailed,nil);

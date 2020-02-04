@@ -21,7 +21,9 @@ public enum UnitySpotifyError
     ApiCallFailed = 8,
     SeekFailed = 9,
     Timeout = 10,
-    WorkFailed = 11
+    WorkFailed = 11,
+    InvalidConfig = 12,
+    ConfigNotSet = 13
 
 }
 
@@ -40,6 +42,13 @@ public enum UnitySpotifyBool
 
 public delegate void UnitySpotifyCallback(UnitySpotifyError error, string msg);
 
+public struct UnitySpotifyConfig
+{
+    public string ClientId { get; set; }
+    public string RedirectUrl { get; set; }
+    public string ApiBaseUrl { get; set; }
+}
+
 public static class UnitySpotify
 {
 
@@ -54,7 +63,7 @@ public static class UnitySpotify
     private static extern UnitySpotifyBool UnitySpotifyIsInited();
 
     [DllImport("__Internal", CharSet = DefaultCharSet)]
-    private static extern void UnitySpotifyInit(int cid, _Callback callback);
+    private static extern void UnitySpotifyInit(string config, int cid, _Callback callback);
 
     [DllImport("__Internal", CharSet = DefaultCharSet)]
     private static extern void UnitySpotifySignIn(int cid, _Callback callback);
@@ -74,7 +83,7 @@ public static class UnitySpotify
     [DllImport("__Internal", CharSet = DefaultCharSet)]
     private static extern void UnitySpotifyRepeat(UnitySpotifyRepeatMode mode, int cid, _Callback callback);
 
-
+    private static Func<UnitySpotifyConfig> _ConfigDelegate;
 
     public static bool IsConnected()
     {
@@ -100,9 +109,28 @@ public static class UnitySpotify
         }
     }
 
+    public static void SetConfigDelegate(Func<UnitySpotifyConfig> getConfig)
+    {
+        _ConfigDelegate = getConfig;
+    }
+
     public static void Init(UnitySpotifyCallback callback)
     {
-        QueueWork(false, false, (cid) => UnitySpotifyInit(cid, WorkCallback), callback);
+
+        string config;
+
+        if (_ConfigDelegate == null)
+        {
+            config = null;
+        }
+        else
+        {
+            var value = _ConfigDelegate();
+            var props = typeof(UnitySpotifyConfig).GetProperties();
+            config = string.Join("\n", props.Select(p => p.Name + " " + p.GetValue(value)));
+        }
+
+        QueueWork(false, false, (cid) => UnitySpotifyInit(config, cid, WorkCallback), callback);
     }
 
     public static void SignIn(UnitySpotifyCallback callback)
