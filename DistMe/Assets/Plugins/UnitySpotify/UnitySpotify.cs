@@ -2,7 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using System.Threading;
 using System.Threading.Tasks;
+using AOT;
 using UnityEngine;
 
 public enum UnitySpotifyError
@@ -81,87 +83,39 @@ public static class UnitySpotify
 
     public static void Init(UnitySpotifyCallback callback)
     {
-        QueueWork(false,() =>
-        {
-            UnitySpotifyInit((err,msg)=>
-            {
-                AddCallback(callback, err, msg);
-                WorkNext();
-            });
-        });
+        QueueWork(false, false, () => UnitySpotifyInit(WorkCallback), callback);
     }
 
     public static void SignIn(UnitySpotifyCallback callback)
     {
-        QueueWork(false, () =>
-        {
-            UnitySpotifySignIn((err, msg) =>
-            {
-                AddCallback(callback, err, msg);
-                WorkNext();
-            });
-        });
+        QueueWork(true, false, () => UnitySpotifySignIn(WorkCallback), callback);
     }
 
     public static void Connect(UnitySpotifyCallback callback)
     {
-        QueueWork(false, () =>
-        {
-            UnitySpotifyConnect((err, msg) =>
-            {
-                AddCallback(callback, err, msg);
-                WorkNext();
-            });
-        });
+        QueueWork(true, false, () => UnitySpotifyConnect(WorkCallback), callback);
     }
 
     public static void Resume(UnitySpotifyCallback callback)
     {
-        QueueWork(true,() =>
-        {
-            UnitySpotifyResume((err, msg) =>
-            {
-                AddCallback(callback, err, msg);
-                WorkNext();
-            });
-        });
+        QueueWork(true, true, () => UnitySpotifyResume(WorkCallback), callback);
     }
 
     public static void Pause(UnitySpotifyCallback callback)
     {
-        QueueWork(true,() =>
-        {
-            UnitySpotifyPause((err, msg) =>
-            {
-                AddCallback(callback, err, msg);
-                WorkNext();
-            });
-        });
+        QueueWork(true, true, () => UnitySpotifyPause(WorkCallback), callback);
     }
 
     public static void PlayUri(int positionMs, string uri, UnitySpotifyCallback callback)
     {
-        QueueWork(true,() =>
-        {
-            UnitySpotifyPlayUri(positionMs,uri,(err, msg) =>
-            {
-                AddCallback(callback, err, msg);
-                WorkNext();
-            });
-        });
+        QueueWork(true, true, () => UnitySpotifyPlayUri(positionMs,uri,WorkCallback), callback);
     }
 
     public static void Repeat(UnitySpotifyRepeatMode mode, UnitySpotifyCallback callback)
     {
-        QueueWork(true,() =>
-        {
-            UnitySpotifyRepeat(mode,(err, msg) =>
-            {
-                AddCallback(callback, err, msg);
-                WorkNext();
-            });
-        });
+        QueueWork(true, true, () => UnitySpotifyRepeat(mode,WorkCallback), callback);
     }
+
 
     private static readonly object CallbackSync = new object();
 
@@ -211,52 +165,69 @@ public static class UnitySpotify
     }
 
 
+    private class WorkItem
+    {
+        public UnitySpotifyCallback Callback;
+        public Action Work;
+    }
+
     private static readonly object WorkSync = new object();
 
-    private static readonly Queue<Action> _WorkQueue = new Queue<Action>();
+    private static readonly Queue<WorkItem> _WorkQueue = new Queue<WorkItem>();
 
-    private static Action _CurrentWork = null;
+    private static WorkItem _CurrentWork = null;
 
-    private static void QueueWork(bool ensureConnected, Action work)
+    private static void QueueWork(bool ensureInited, bool ensureConnected, Action work, UnitySpotifyCallback callback)
     {
+
+        if(ensureInited && !IsInited())
+        {
+            Init((err, msg) => QueueWork(false, ensureConnected, work, callback));
+            return;
+        }
 
         if (ensureConnected && !IsConnected())
         {
-            Connect((err, msg) =>
-            {
-                WorkNext(work);
-            });
+            Connect((err, msg) => QueueWork(false,false,work,callback));
+            return;
         }
-        else
-        {
 
-            WorkNext(work);
-        }
+        WorkNext(new WorkItem()
+        {
+            Work = work,
+            Callback = callback
+        });
+        
     }
 
-    private static void WorkNext(Action addWork=null)
+    private static void WorkNext(WorkItem addItem)
     {
-        Task.Run(() =>
+        WorkItem work = null;
+        lock (WorkSync)
         {
-            Action work = null;
-            lock (WorkSync)
+            if (addItem != null)
             {
-                if (addWork == null)
-                {
-                    _CurrentWork = null;
-                }
-                else
-                { 
-                    _WorkQueue.Enqueue(addWork);
-                }
-
-                if(_CurrentWork==null && _WorkQueue.Count != 0)
-                {
-                    work = _WorkQueue.Dequeue();
-                    _CurrentWork = work;
-                }
+                _WorkQueue.Enqueue(addItem);
             }
-            work?.Invoke();
+
+            if (_CurrentWork == null && _WorkQueue.Count != 0)
+            {
+                work = _WorkQueue.Dequeue();
+                _CurrentWork = work;
+            }
+        }
+        work?.Work?.Invoke();
+    }
+
+    [MonoPInvokeCallback(typeof(UnitySpotifyCallback))]
+    private static void WorkCallback(UnitySpotifyError err, string msg)
+    {
+        AddCallback(() =>
+        {
+            var current = _CurrentWork;
+            _CurrentWork = null;
+            current?.Callback?.Invoke(err, msg);
+            WorkNext(null);
         });
     }
 

@@ -8,7 +8,7 @@ public class UnitySpotifyBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        UnitySpotify.Init((err, msg) => LogCallback("Init", err, msg));
+        
     }
 
     // Update is called once per frame

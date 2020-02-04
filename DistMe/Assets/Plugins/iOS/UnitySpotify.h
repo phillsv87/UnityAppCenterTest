@@ -42,7 +42,7 @@ extern "C" {
         UnitySpotifyBoolTrue = 1
     } UnitySpotifyBool;
 
-    typedef void (^UnitySpotifyCallback)(UnitySpotifyError error, const char * _Nullable msg);
+    typedef void (*UnitySpotifyCallback)(UnitySpotifyError error, const char * _Nullable msg);
 
     void UnitySpotifyInit(UnitySpotifyCallback _Nullable callback);
 
@@ -54,7 +54,7 @@ extern "C" {
 
     void UnitySpotifyPause(UnitySpotifyCallback _Nullable callback);
 
-    void UnitySpotifyPlayUri(int positionMs, const char * _Nonnull uri, UnitySpotifyCallback _Nullable callback);
+    void UnitySpotifyPlayUri(int positionMs, const unichar * _Nonnull uri, UnitySpotifyCallback _Nullable callback);
 
     void UnitySpotifyRepeat(UnitySpotifyRepeatMode mode, UnitySpotifyCallback _Nullable callback);
 

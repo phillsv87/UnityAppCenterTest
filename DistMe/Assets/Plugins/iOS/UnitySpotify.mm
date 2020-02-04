@@ -24,6 +24,7 @@ static UnitySpotify * _defaultInst=0;
 {
     UnitySpotifyCallback cb=self->_signInCallback;
     self->_signInCallback=callback;
+    US_LOG("signin CB:%d err:%d newCb:%d",cb?1:0,error,callback?1:0);
     if(cb){
         dispatch_async(dispatch_get_main_queue(), ^{
             cb(error,msg);
@@ -114,7 +115,7 @@ static UnitySpotify * _defaultInst=0;
 - (void)signIn:(UnitySpotifyCallback _Nullable )callback
 {
     
-    [self setCallSignInCallback:nil withError:UnitySpotifyErrorSignInCanceled andMessage:nil];
+    [self setCallSignInCallback:callback withError:UnitySpotifyErrorSignInCanceled andMessage:nil];
     
     SPTScope requestedScope = SPTAppRemoteControlScope|SPTUserModifyPlaybackStateScope|SPTStreamingScope;
     if (@available(iOS 11.0, *)) {
@@ -200,7 +201,7 @@ static UnitySpotify * _defaultInst=0;
 
 - (void)application:(UIApplication*)app openURL:(NSURL*)url options:(NSDictionary<NSString*, id>*)options
 {
-    US_LOG("CALLBACK");
+    US_LOG("application openURL");
     [self.sessionManager application:app openURL:url options:options];
 }
 
@@ -319,10 +320,10 @@ void UnitySpotifyPause(UnitySpotifyCallback _Nullable callback)
     });
 }
 
-void UnitySpotifyPlayUri(int positionMs, const char * uri, UnitySpotifyCallback _Nullable callback)
+void UnitySpotifyPlayUri(int positionMs, const unichar * uri, UnitySpotifyCallback _Nullable callback)
 {
     
-    US_LOG("Play URI %d %s",positionMs,uri);
+    US_LOG("Play URI %d %S",positionMs,uri);
     
     dispatch_async(dispatch_get_main_queue(), ^{
         
@@ -335,7 +336,7 @@ void UnitySpotifyPlayUri(int positionMs, const char * uri, UnitySpotifyCallback 
             return;
         }
         
-        NSString * str=[NSString stringWithCString:uri encoding:NSUnicodeStringEncoding];
+        NSString * str=[NSString stringWithFormat:@"%S",uri];
         if(!str){
             if(callback){
                 callback(UnitySpotifyErrorOutOfMemory,nil);
@@ -363,21 +364,13 @@ void UnitySpotifyRepeat(UnitySpotifyRepeatMode mode, UnitySpotifyCallback _Nulla
 UnitySpotifyBool UnitySpotifyIsConnected()
 {
     
-    US_LOG("IsConnected %@",_defaultInst);
-    
-    if(!_defaultInst){
-        UnitySpotifyInit(nil);
-    }
+    US_LOG("IsConnected");
     
     if(!_defaultInst || !_defaultInst.appRemote){
-        
-        US_LOG("-connected  False");
         return UnitySpotifyBoolFalse;
     }
     
-    US_LOG("-connected  %d",_defaultInst.appRemote.connected);
-    
-    return _defaultInst.appRemote.connected==YES?UnitySpotifyBoolTrue:UnitySpotifyBoolFalse;
+    return _defaultInst.appRemote.connected?UnitySpotifyBoolTrue:UnitySpotifyBoolFalse;
 }
 
 UnitySpotifyBool UnitySpotifyIsInited()
