@@ -1971,6 +1971,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94ed32adf33c849459df4d6f8b07869e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ClientId: cec072dca1a648f18da1c553888f95d1
+  RedirectUrl: vnd.spinnycube://callback
+  ApiBaseUrl: https://oc-api.ngrok.io/api
   UriInput: {fileID: 1764993698}
   PosMsInput: {fileID: 631662611}
 --- !u!4 &1399993119
