@@ -25,7 +25,9 @@ extern "C" {
         UnitySpotifyErrorSignInFailed = 6,
         UnitySpotifyErrorInitRequired = 7,
         UnitySpotifyErrorApiCallFailed = 8,
-        UnitySpotifyErrorSeekFailed = 9
+        UnitySpotifyErrorSeekFailed = 9,
+        UnitySpotifyErrorTimeout = 10,
+        UnitySpotifyErrorWorkFailed = 11
         
     } UnitySpotifyError;
 
@@ -42,21 +44,21 @@ extern "C" {
         UnitySpotifyBoolTrue = 1
     } UnitySpotifyBool;
 
-    typedef void (*UnitySpotifyCallback)(UnitySpotifyError error, const char * _Nullable msg);
+    typedef void (*UnitySpotifyCallback)(int cid, UnitySpotifyError error, const char * _Nullable msg);
 
-    void UnitySpotifyInit(UnitySpotifyCallback _Nullable callback);
+    void UnitySpotifyInit(int cid, UnitySpotifyCallback _Nullable callback);
 
-    void UnitySpotifySignIn(UnitySpotifyCallback _Nullable callback);
+    void UnitySpotifySignIn(int cid, UnitySpotifyCallback _Nullable callback);
 
-    void UnitySpotifyConnect(UnitySpotifyCallback _Nullable callback);
+    void UnitySpotifyConnect(int cid, UnitySpotifyCallback _Nullable callback);
 
-    void UnitySpotifyResume(UnitySpotifyCallback _Nullable callback);
+    void UnitySpotifyResume(int cid, UnitySpotifyCallback _Nullable callback);
 
-    void UnitySpotifyPause(UnitySpotifyCallback _Nullable callback);
+    void UnitySpotifyPause(int cid, UnitySpotifyCallback _Nullable callback);
 
-    void UnitySpotifyPlayUri(int positionMs, const unichar * _Nonnull uri, UnitySpotifyCallback _Nullable callback);
+    void UnitySpotifyPlayUri(int positionMs, const unichar * _Nonnull uri, int cid, UnitySpotifyCallback _Nullable callback);
 
-    void UnitySpotifyRepeat(UnitySpotifyRepeatMode mode, UnitySpotifyCallback _Nullable callback);
+    void UnitySpotifyRepeat(UnitySpotifyRepeatMode mode, int cid, UnitySpotifyCallback _Nullable callback);
 
     UnitySpotifyBool UnitySpotifyIsConnected();
 
@@ -74,21 +76,24 @@ extern "C" {
 @property (nonatomic, strong) SPTConfiguration * _Nullable configuration;
 @property (nonatomic, strong) SPTAppRemote * _Nullable appRemote;
 
-- (void)signIn:(UnitySpotifyCallback _Nullable )callback;
+- (void)application:(UIApplication*_Nullable)app
+            openURL:(NSURL*_Nullable)url
+            options:(NSDictionary<NSString*, id>*_Nullable)options;
 
-- (void)application:(UIApplication*_Nullable)app openURL:(NSURL*_Nullable)url options:(NSDictionary<NSString*, id>*_Nullable)options;
+- (void)signIn:(int)cid withCallback:(UnitySpotifyCallback _Nullable )callback;
 
-- (BOOL)isSignedIn;
+- (void)resume:(int)cid withCallback:(UnitySpotifyCallback _Nullable )callback;
 
-- (void)resume:(UnitySpotifyCallback _Nullable )callback;
-
-- (void)pause:(UnitySpotifyCallback _Nullable )callback;
+- (void)pause:(int)cid withCallback:(UnitySpotifyCallback _Nullable )callback;
 
 - (void)play:(NSInteger)positionMs
          uri:(NSString*_Nonnull)uri
+         cid:(int)cid
 withCallback:(UnitySpotifyCallback _Nullable )callback;
 
-- (void)repeat:(UnitySpotifyRepeatMode)mode withCallback:(UnitySpotifyCallback _Nullable )callback;
+- (void)repeat:(UnitySpotifyRepeatMode)mode
+           cid:(int)cid
+  withCallback:(UnitySpotifyCallback _Nullable )callback;
 
 @end
 

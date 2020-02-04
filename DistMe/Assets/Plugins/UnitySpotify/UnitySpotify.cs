@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Threading.Tasks;
@@ -18,7 +19,9 @@ public enum UnitySpotifyError
     SignInFailed = 6,
     InitRequired = 7,
     ApiCallFailed = 8,
-    SeekFailed = 9
+    SeekFailed = 9,
+    Timeout = 10,
+    WorkFailed = 11
 
 }
 
@@ -42,6 +45,8 @@ public static class UnitySpotify
 
     private const CharSet DefaultCharSet = CharSet.Unicode;
 
+    public delegate void _Callback(int cid, UnitySpotifyError error, string msg);
+
     [DllImport("__Internal", CharSet = DefaultCharSet)]
     private static extern UnitySpotifyBool UnitySpotifyIsConnected();
     
@@ -49,71 +54,85 @@ public static class UnitySpotify
     private static extern UnitySpotifyBool UnitySpotifyIsInited();
 
     [DllImport("__Internal", CharSet = DefaultCharSet)]
-    private static extern void UnitySpotifyInit(UnitySpotifyCallback callback);
+    private static extern void UnitySpotifyInit(int cid, _Callback callback);
 
     [DllImport("__Internal", CharSet = DefaultCharSet)]
-    private static extern void UnitySpotifySignIn(UnitySpotifyCallback callback);
+    private static extern void UnitySpotifySignIn(int cid, _Callback callback);
 
     [DllImport("__Internal", CharSet = DefaultCharSet)]
-    private static extern void UnitySpotifyConnect(UnitySpotifyCallback callback);
+    private static extern void UnitySpotifyConnect(int cid, _Callback callback);
 
     [DllImport("__Internal", CharSet = DefaultCharSet)]
-    private static extern void UnitySpotifyResume(UnitySpotifyCallback callback);
+    private static extern void UnitySpotifyResume(int cid, _Callback callback);
 
     [DllImport("__Internal", CharSet = DefaultCharSet)]
-    private static extern void UnitySpotifyPause(UnitySpotifyCallback callback);
+    private static extern void UnitySpotifyPause(int cid, _Callback callback);
 
     [DllImport("__Internal", CharSet= DefaultCharSet)]
-    private static extern void UnitySpotifyPlayUri(int positionMs, string uri, UnitySpotifyCallback callback);
+    private static extern void UnitySpotifyPlayUri(int positionMs, string uri, int cid, _Callback callback);
 
     [DllImport("__Internal", CharSet = DefaultCharSet)]
-    private static extern void UnitySpotifyRepeat(UnitySpotifyRepeatMode mode, UnitySpotifyCallback callback);
+    private static extern void UnitySpotifyRepeat(UnitySpotifyRepeatMode mode, int cid, _Callback callback);
 
 
 
     public static bool IsConnected()
     {
-        return UnitySpotifyIsConnected() == UnitySpotifyBool.True;
+        try
+        {
+            return UnitySpotifyIsConnected() == UnitySpotifyBool.True;
+        }catch(Exception ex)
+        {
+            Debug.Log("UnitySpotify IsConnected error - " + ex.Message);
+            return false;
+        }
     }
 
     public static bool IsInited()
     {
-        return UnitySpotifyIsInited() == UnitySpotifyBool.True;
+        try
+        {
+            return UnitySpotifyIsInited() == UnitySpotifyBool.True;
+        }catch(Exception ex)
+        {
+            Debug.Log("UnitySpotify IsInited error - " + ex.Message);
+            return false;
+        }
     }
 
     public static void Init(UnitySpotifyCallback callback)
     {
-        QueueWork(false, false, () => UnitySpotifyInit(WorkCallback), callback);
+        QueueWork(false, false, (cid) => UnitySpotifyInit(cid, WorkCallback), callback);
     }
 
     public static void SignIn(UnitySpotifyCallback callback)
     {
-        QueueWork(true, false, () => UnitySpotifySignIn(WorkCallback), callback);
+        QueueWork(true, false, (cid) => UnitySpotifySignIn(cid, WorkCallback), callback);
     }
 
     public static void Connect(UnitySpotifyCallback callback)
     {
-        QueueWork(true, false, () => UnitySpotifyConnect(WorkCallback), callback);
+        QueueWork(true, false, (cid) => UnitySpotifyConnect(cid, WorkCallback), callback);
     }
 
     public static void Resume(UnitySpotifyCallback callback)
     {
-        QueueWork(true, true, () => UnitySpotifyResume(WorkCallback), callback);
+        QueueWork(true, true, (cid) => UnitySpotifyResume(cid, WorkCallback), callback);
     }
 
     public static void Pause(UnitySpotifyCallback callback)
     {
-        QueueWork(true, true, () => UnitySpotifyPause(WorkCallback), callback);
+        QueueWork(true, true, (cid) => UnitySpotifyPause(cid, WorkCallback), callback);
     }
 
     public static void PlayUri(int positionMs, string uri, UnitySpotifyCallback callback)
     {
-        QueueWork(true, true, () => UnitySpotifyPlayUri(positionMs,uri,WorkCallback), callback);
+        QueueWork(true, true, (cid) => UnitySpotifyPlayUri(positionMs, uri, cid, WorkCallback), callback);
     }
 
     public static void Repeat(UnitySpotifyRepeatMode mode, UnitySpotifyCallback callback)
     {
-        QueueWork(true, true, () => UnitySpotifyRepeat(mode,WorkCallback), callback);
+        QueueWork(true, true, (cid) => UnitySpotifyRepeat(mode, cid, WorkCallback), callback);
     }
 
 
@@ -139,46 +158,98 @@ public static class UnitySpotify
 
     public static void FlushQueue()
     {
-        if (_CallbackQueue.Count == 0)
+        if (_CallbackQueue.Count != 0)
         {
-            return;
-        }
+            List<Action> callbacks;
 
-        List<Action> callbacks;
-
-        lock (CallbackSync)
-        {
-            callbacks = _CallbackQueue;
-            _CallbackQueue = new List<Action>();
-        }
-
-        foreach(var cb in callbacks)
-        {
-            try
+            lock (CallbackSync)
             {
-                cb?.Invoke();
-            }catch(Exception ex)
+                callbacks = _CallbackQueue;
+                _CallbackQueue = new List<Action>();
+            }
+
+            foreach (var cb in callbacks)
             {
-                Debug.Log("UnitySpotify callback error: "+ex.Message);
+                try
+                {
+                    cb?.Invoke();
+                }
+                catch (Exception ex)
+                {
+                    Debug.Log("UnitySpotify callback error: " + ex.Message);
+                }
             }
         }
+
+
+        if (_WorkQueue.Count != 0)
+        {
+            List<WorkItem> timeouts = null;
+            lock (WorkSync)
+            {
+                var now = DateTime.UtcNow;
+                for(int i = 0; i< _WorkQueue.Count; i++)
+                {
+                    if (_WorkQueue[i].TTL < now)
+                    {
+                        if (timeouts == null)
+                        {
+                            timeouts = new List<WorkItem>();
+                        }
+                        timeouts.Add(_WorkQueue[i]);
+                        _WorkQueue.RemoveAt(i);
+                        i--;
+                    }
+                }
+            }
+
+            if (timeouts != null)
+            {
+                foreach (var item in timeouts)
+                {
+                    try
+                    {
+                        item?.Callback?.Invoke(UnitySpotifyError.Timeout, null);
+                    }
+                    catch (Exception ex)
+                    {
+                        Debug.Log("UnitySpotify WorkQueue callback error - " + ex.Message);
+                    }
+                }
+                WorkNext(null);
+            }
+        }
+
+
     }
 
 
     private class WorkItem
     {
         public UnitySpotifyCallback Callback;
-        public Action Work;
+        public Action<int> Work;
+        public int Cid;
+        public bool Active;
+        public DateTime TTL;
+
+        public WorkItem(UnitySpotifyCallback callback, Action<int> work)
+        {
+            Callback = callback;
+            Work = work;
+        }
     }
 
     private static readonly object WorkSync = new object();
 
-    private static readonly Queue<WorkItem> _WorkQueue = new Queue<WorkItem>();
+    private static readonly List<WorkItem> _WorkQueue = new List<WorkItem>();
 
-    private static WorkItem _CurrentWork = null;
-
-    private static void QueueWork(bool ensureInited, bool ensureConnected, Action work, UnitySpotifyCallback callback)
+    private static void QueueWork(bool ensureInited, bool ensureConnected, Action<int> work, UnitySpotifyCallback callback)
     {
+
+        if (work == null)
+        {
+            throw new ArgumentNullException(nameof(work));
+        }
 
         if(ensureInited && !IsInited())
         {
@@ -192,11 +263,7 @@ public static class UnitySpotify
             return;
         }
 
-        WorkNext(new WorkItem()
-        {
-            Work = work,
-            Callback = callback
-        });
+        WorkNext(new WorkItem(callback,work));
         
     }
 
@@ -207,26 +274,56 @@ public static class UnitySpotify
         {
             if (addItem != null)
             {
-                _WorkQueue.Enqueue(addItem);
+                int cid = 0;
+                while (_WorkQueue.Any(w=>w.Cid==cid))
+                {
+                    cid++;
+                }
+                addItem.Cid = cid;
+                addItem.TTL = DateTime.UtcNow.AddSeconds(15);
+                _WorkQueue.Add(addItem);
             }
 
-            if (_CurrentWork == null && _WorkQueue.Count != 0)
+            if (_WorkQueue.Count != 0 && !_WorkQueue[0].Active)
             {
-                work = _WorkQueue.Dequeue();
-                _CurrentWork = work;
+                work = _WorkQueue[0];
+                work.Active = true;
             }
         }
-        work?.Work?.Invoke();
+        if (work != null)
+        {
+            try
+            {
+                work.Work(work.Cid);
+            }catch(Exception ex)
+            {
+                Debug.Log("UnitySpotify work error - " + ex.Message);
+                WorkCallback(work.Cid, UnitySpotifyError.WorkFailed, null);
+            }
+        }
     }
 
-    [MonoPInvokeCallback(typeof(UnitySpotifyCallback))]
-    private static void WorkCallback(UnitySpotifyError err, string msg)
+    [MonoPInvokeCallback(typeof(_Callback))]
+    private static void WorkCallback(int cid, UnitySpotifyError err, string msg)
     {
         AddCallback(() =>
         {
-            var current = _CurrentWork;
-            _CurrentWork = null;
-            current?.Callback?.Invoke(err, msg);
+            WorkItem item;
+            lock (WorkSync)
+            {
+                item = _WorkQueue.FirstOrDefault(w => w.Cid == cid);
+                if (item != null)
+                {
+                    _WorkQueue.Remove(item);
+                }
+            }
+            try
+            {
+                item?.Callback?.Invoke(err, msg);
+            }catch(Exception ex)
+            {
+                Debug.Log("UnitySpotify WorkQueue callback error - " + ex.Message);
+            }
             WorkNext(null);
         });
     }
