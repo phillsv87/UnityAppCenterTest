@@ -176,14 +176,6 @@ public static class UnitySpotify
         }
     }
 
-    private static void AddCallback(UnitySpotifyCallback callback, UnitySpotifyError err, string msg)
-    {
-        if (callback != null)
-        {
-            AddCallback(()=>callback(err,msg));
-        }
-    }
-
     public static void FlushQueue()
     {
         if (_CallbackQueue.Count != 0)
