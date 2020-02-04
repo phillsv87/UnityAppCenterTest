@@ -104,7 +104,8 @@ static UnitySpotify * _defaultInst=0;
     NSURL *tokenRefreshURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/Spotify/refresh_token",apiBaseUrl]];
 
     self.configuration.tokenSwapURL = tokenSwapURL;
-    self.configuration.tokenRefreshURL = tokenRefreshURL;
+    // tmp disable
+    //self.configuration.tokenRefreshURL = tokenRefreshURL;
     self.configuration.playURI = nil;
 
     self.sessionManager = [[SPTSessionManager alloc] initWithConfiguration:self.configuration delegate:self];
@@ -222,7 +223,7 @@ static UnitySpotify * _defaultInst=0;
 #define UNSP_INIT()  \
     if(!_defaultInst){\
         US_LOG("Init Required");\
-        callback(cid,UnitySpotifyErrorInitRequired,nil);\
+        if(callback){callback(cid,UnitySpotifyErrorInitRequired,nil);}\
         return;\
     }
 
@@ -230,7 +231,7 @@ static UnitySpotify * _defaultInst=0;
     UNSP_INIT();\
     if(!UnitySpotifyIsInited()){\
         US_LOG("SignIn Required");\
-        callback(cid,UnitySpotifyErrorNotSignedIn,nil);\
+        if(callback){callback(cid,UnitySpotifyErrorNotSignedIn,nil);}\
         return;\
     }
 
@@ -248,13 +249,13 @@ void UnitySpotifyInit(const unichar * _Nonnull config, int cid, UnitySpotifyCall
         return;
     }
     
-    US_LOG("Config:\n%S",config);
     
     NSString * clientId=nil;
     NSString * redirectUrl=nil;
     NSString * apiBaseUrl=nil;
     
     NSString * str=[NSString stringWithFormat:@"%S",config];
+    US_LOG(@"Config:\n%@",str);
     if(!str){
         if(callback){
             callback(cid,UnitySpotifyErrorOutOfMemory,nil);
