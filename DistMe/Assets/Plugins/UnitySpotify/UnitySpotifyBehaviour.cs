@@ -5,10 +5,27 @@ using UnityEngine.UI;
 
 public class UnitySpotifyBehaviour : MonoBehaviour
 {
+
+    #region config fields
+    public string ClientId;
+    public string RedirectUrl;
+    public string ApiBaseUrl;
+    #endregion
+
+    private UnitySpotifyConfig GetConfig()
+    {
+        return new UnitySpotifyConfig()
+        {
+            ClientId = ClientId,
+            RedirectUrl = RedirectUrl,
+            ApiBaseUrl = ApiBaseUrl
+        };
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        UnitySpotify.SetConfigDelegate(GetConfig);
     }
 
     // Update is called once per frame
