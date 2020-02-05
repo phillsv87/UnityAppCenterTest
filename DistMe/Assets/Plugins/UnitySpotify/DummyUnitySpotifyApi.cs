@@ -2,57 +2,61 @@
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 
-public class DummyUnitySpotifyApi : IUnitySpotifyApi
+namespace UnitySpotify
 {
 
-    private UnitySpotifyBool _IsConnected = UnitySpotifyBool.False;
-    private UnitySpotifyBool _IsInited = UnitySpotifyBool.False;
-
-    public void Connect(int cid, UnitySpotifyApiCallback callback)
+    public class DummyUnitySpotifyApi : IUnitySpotifyApi
     {
-        _IsConnected = UnitySpotifyBool.True;
-        DelayAsync(() => callback?.Invoke(cid,UnitySpotifyError.None,null))._Ignore();
-    }
 
-    public void Init(string config, int cid, UnitySpotifyApiCallback callback)
-    {
-        _IsInited = UnitySpotifyBool.True;
-        DelayAsync(() => callback?.Invoke(cid, UnitySpotifyError.None, null))._Ignore();
-    }
+        private bool _IsConnected = false;
+        private bool _IsInited = false;
 
-    public UnitySpotifyBool IsConnected()
-    {
-        return _IsConnected;
-    }
+        public void Connect(int cid, UnitySpotifyApiCallback callback)
+        {
+            _IsConnected = true;
+            DelayAsync(() => callback?.Invoke(cid,UnitySpotifyError.None,null))._Ignore();
+        }
 
-    public UnitySpotifyBool IsInited()
-    {
-        return _IsInited;
-    }
+        public void Init(string config, int cid, UnitySpotifyApiCallback callback)
+        {
+            _IsInited = true;
+            DelayAsync(() => callback?.Invoke(cid, UnitySpotifyError.None, null))._Ignore();
+        }
 
-    private async Task DelayAsync(Action work)
-    {
-        await Task.Delay(300);
-        work();
-    }
+        public bool IsConnected()
+        {
+            return _IsConnected;
+        }
 
-    public void Pause(int cid, UnitySpotifyApiCallback callback)
-    {
-        DelayAsync(() => callback?.Invoke(cid, UnitySpotifyError.None, null))._Ignore();
-    }
+        public bool IsInited()
+        {
+            return _IsInited;
+        }
 
-    public void PlayUri(int positionMs, string uri, int cid, UnitySpotifyApiCallback callback)
-    {
-        DelayAsync(() => callback?.Invoke(cid, UnitySpotifyError.None, null))._Ignore();
-    }
+        private async Task DelayAsync(Action work)
+        {
+            await Task.Delay(300);
+            work();
+        }
 
-    public void Repeat(UnitySpotifyRepeatMode mode, int cid, UnitySpotifyApiCallback callback)
-    {
-        DelayAsync(() => callback?.Invoke(cid, UnitySpotifyError.None, null))._Ignore();
-    }
+        public void Pause(int cid, UnitySpotifyApiCallback callback)
+        {
+            DelayAsync(() => callback?.Invoke(cid, UnitySpotifyError.None, null))._Ignore();
+        }
 
-    public void Resume(int cid, UnitySpotifyApiCallback callback)
-    {
-        DelayAsync(() => callback?.Invoke(cid, UnitySpotifyError.None, null))._Ignore();
+        public void PlayUri(int positionMs, string uri, int cid, UnitySpotifyApiCallback callback)
+        {
+            DelayAsync(() => callback?.Invoke(cid, UnitySpotifyError.None, null))._Ignore();
+        }
+
+        public void Repeat(RepeatMode mode, int cid, UnitySpotifyApiCallback callback)
+        {
+            DelayAsync(() => callback?.Invoke(cid, UnitySpotifyError.None, null))._Ignore();
+        }
+
+        public void Resume(int cid, UnitySpotifyApiCallback callback)
+        {
+            DelayAsync(() => callback?.Invoke(cid, UnitySpotifyError.None, null))._Ignore();
+        }
     }
 }

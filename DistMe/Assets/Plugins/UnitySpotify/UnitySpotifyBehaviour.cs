@@ -3,79 +3,83 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UnitySpotifyBehaviour : MonoBehaviour
+namespace UnitySpotify
 {
 
-    #region config fields
-    public string ConfigUrl;
-    #endregion
-
-    // Start is called before the first frame update
-    void Start()
+    public class UnitySpotifyBehaviour : MonoBehaviour
     {
-        UnitySpotify.SetConfigUrlDelegate(()=>ConfigUrl);
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        UnitySpotify.FlushQueue();
-    }
+        #region config fields
+        public string ConfigUrl;
+        #endregion
 
-    private void LogCallback(string method, UnitySpotifyError err, string msg)
-    {
-        Debug.Log($"{method} result - err:{err}, msg:{msg}");
-    }
-
-
-    public void Connect()
-    {
-        UnitySpotify.Connect((err, msg) => LogCallback(nameof(Connect), err, msg));
-    }
-
-    public void Resume()
-    {
-        UnitySpotify.Resume((err, msg) => LogCallback(nameof(Resume), err, msg));
-    }
-
-    public void Pause()
-    {
-        UnitySpotify.Pause((err, msg) => LogCallback(nameof(Pause), err, msg));
-    }
-
-    public void RepeatOff()
-    {
-        UnitySpotify.Repeat(UnitySpotifyRepeatMode.Off, (err, msg) => LogCallback(nameof(RepeatOff), err, msg));
-    }
-
-    public void RepeatTrack()
-    {
-        UnitySpotify.Repeat(UnitySpotifyRepeatMode.Track, (err, msg) => LogCallback(nameof(RepeatTrack), err, msg));
-    }
-
-    public void RepeatContext()
-    {
-        UnitySpotify.Repeat(UnitySpotifyRepeatMode.Context, (err, msg) => LogCallback(nameof(RepeatContext), err, msg));
-    }
-
-
-    public InputField UriInput;
-    public InputField PosMsInput;
-
-    public void PlayUri()
-    {
-        var uri = UriInput?.text;
-        var _pos = PosMsInput?.text;
-
-        if (string.IsNullOrWhiteSpace(uri))
+        // Start is called before the first frame update
+        void Start()
         {
-            return;
+            UnitySpotifyApi.SetConfigUrlDelegate(()=>ConfigUrl);
         }
 
-        int pos = int.TryParse(_pos, out int p) ? p : 0;
+        // Update is called once per frame
+        void Update()
+        {
+            UnitySpotifyApi.FlushQueue();
+        }
 
-        UnitySpotify.PlayUri(pos, uri, (err, msg) => LogCallback(nameof(PlayUri), err, msg));
+        private void LogCallback(string method, UnitySpotifyError err, string msg)
+        {
+            Debug.Log($"{method} result - err:{err}, msg:{msg}");
+        }
+
+
+        public void Connect()
+        {
+            UnitySpotifyApi.Connect((err, msg) => LogCallback(nameof(Connect), err, msg));
+        }
+
+        public void Resume()
+        {
+            UnitySpotifyApi.Resume((err, msg) => LogCallback(nameof(Resume), err, msg));
+        }
+
+        public void Pause()
+        {
+            UnitySpotifyApi.Pause((err, msg) => LogCallback(nameof(Pause), err, msg));
+        }
+
+        public void RepeatOff()
+        {
+            UnitySpotifyApi.Repeat(RepeatMode.Off, (err, msg) => LogCallback(nameof(RepeatOff), err, msg));
+        }
+
+        public void RepeatTrack()
+        {
+            UnitySpotifyApi.Repeat(RepeatMode.Track, (err, msg) => LogCallback(nameof(RepeatTrack), err, msg));
+        }
+
+        public void RepeatContext()
+        {
+            UnitySpotifyApi.Repeat(RepeatMode.Context, (err, msg) => LogCallback(nameof(RepeatContext), err, msg));
+        }
+
+
+        public InputField UriInput;
+        public InputField PosMsInput;
+
+        public void PlayUri()
+        {
+            var uri = UriInput?.text;
+            var _pos = PosMsInput?.text;
+
+            if (string.IsNullOrWhiteSpace(uri))
+            {
+                return;
+            }
+
+            int pos = int.TryParse(_pos, out int p) ? p : 0;
+
+            UnitySpotifyApi.PlayUri(pos, uri, (err, msg) => LogCallback(nameof(PlayUri), err, msg));
+
+        }
 
     }
-
 }
