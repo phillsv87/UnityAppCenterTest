@@ -318,13 +318,25 @@ namespace UnitySpotify
 
             if(ensureInited && !IsInited())
             {
-                Init((err, msg) => QueueWork(false, ensureConnected, work, callback));
+                Init((err, msg) => {
+                    if(err==UnitySpotifyError.None){
+                        QueueWork(false, ensureConnected, work, callback);
+                    }else{
+                        callback?.Invoke(err,msg);
+                    }
+                });
                 return;
             }
 
             if (ensureConnected && !IsConnected())
             {
-                Connect((err, msg) => QueueWork(false,false,work,callback));
+                Connect((err, msg) => {
+                    if(err==UnitySpotifyError.None){
+                        QueueWork(false,false,work,callback);
+                    }else{
+                        callback?.Invoke(err,msg);
+                    }
+                });
                 return;
             }
 
