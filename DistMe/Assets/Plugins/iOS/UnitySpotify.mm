@@ -334,19 +334,6 @@ void UnitySpotifyInit(const unichar * _Nonnull config, int cid, UnitySpotifyCall
     });
 }
 
-void UnitySpotifySignIn(int cid, UnitySpotifyCallback _Nullable callback)
-{
-    
-    US_LOG("SignIn");
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-
-        UNSP_INIT();
-
-        [_defaultInst signIn:cid withCallback:callback];
-    });
-}
-
 void UnitySpotifyConnect(int cid, UnitySpotifyCallback _Nullable callback)
 {
     

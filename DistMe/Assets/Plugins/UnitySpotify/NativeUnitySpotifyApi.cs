@@ -15,9 +15,6 @@ public class NativeUnitySpotifyApi : IUnitySpotifyApi
     private static extern void UnitySpotifyInit(string config, int cid, UnitySpotifyApiCallback callback);
 
     [DllImport("__Internal", CharSet = DefaultCharSet)]
-    private static extern void UnitySpotifySignIn(int cid, UnitySpotifyApiCallback callback);
-
-    [DllImport("__Internal", CharSet = DefaultCharSet)]
     private static extern void UnitySpotifyConnect(int cid, UnitySpotifyApiCallback callback);
 
     [DllImport("__Internal", CharSet = DefaultCharSet)]
@@ -70,10 +67,5 @@ public class NativeUnitySpotifyApi : IUnitySpotifyApi
     public void Resume(int cid, UnitySpotifyApiCallback callback)
     {
         UnitySpotifyResume(cid,callback);
-    }
-
-    public void SignIn(int cid, UnitySpotifyApiCallback callback)
-    {
-        UnitySpotifySignIn(cid,callback);
     }
 }

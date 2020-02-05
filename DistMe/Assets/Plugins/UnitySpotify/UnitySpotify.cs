@@ -52,6 +52,7 @@ public class UnitySpotifyConfig
     public string RedirectUrlWeb { get; set; }
     public string SpotifyApiBaseUrl { get; set; }
     public string ApiBaseUrl { get; set; }
+    public bool AlwaysShowSignIn { get; set; }
 }
 
 public interface IUnitySpotifyApi
@@ -64,9 +65,6 @@ public interface IUnitySpotifyApi
 
     
     void Init(string config, int cid, UnitySpotifyApiCallback callback);
-
-    
-    void SignIn(int cid, UnitySpotifyApiCallback callback);
 
     
     void Connect(int cid, UnitySpotifyApiCallback callback);
@@ -199,11 +197,6 @@ public static class UnitySpotify
         }
 
         _Api.Init(configString, cid, WorkCallback);
-    }
-
-    public static void SignIn(UnitySpotifyCallback callback)
-    {
-        QueueWork(true, false, (cid) => _Api.SignIn(cid, WorkCallback), callback);
     }
 
     public static void Connect(UnitySpotifyCallback callback)

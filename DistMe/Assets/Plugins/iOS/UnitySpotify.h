@@ -49,8 +49,6 @@ extern "C" {
 
     void UnitySpotifyInit(const unichar * _Nonnull config, int cid, UnitySpotifyCallback _Nullable callback);
 
-    void UnitySpotifySignIn(int cid, UnitySpotifyCallback _Nullable callback);
-
     void UnitySpotifyConnect(int cid, UnitySpotifyCallback _Nullable callback);
 
     void UnitySpotifyResume(int cid, UnitySpotifyCallback _Nullable callback);

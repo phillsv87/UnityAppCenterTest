@@ -196,11 +196,6 @@ public class WebUnitySpotifyApi : IUnitySpotifyApi, IDisposable
         callback?.Invoke(cid, UnitySpotifyError.None, null);
     }
 
-    public void SignIn(int cid, UnitySpotifyApiCallback callback)
-    {
-        DoAsync(cid, callback, () => SignInAsync(CancellationToken.None))._Ignore();
-    }
-
     public void Connect(int cid, UnitySpotifyApiCallback callback)
     {
         DoAsync(cid, callback, () => SignInAsync(CancellationToken.None))._Ignore();

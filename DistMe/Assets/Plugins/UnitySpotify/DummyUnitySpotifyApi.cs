@@ -55,9 +55,4 @@ public class DummyUnitySpotifyApi : IUnitySpotifyApi
     {
         DelayAsync(() => callback?.Invoke(cid, UnitySpotifyError.None, null))._Ignore();
     }
-
-    public void SignIn(int cid, UnitySpotifyApiCallback callback)
-    {
-        Connect(cid, callback);
-    }
 }
