@@ -13,24 +13,24 @@ static UnitySpotify * _defaultInst=0;
 
 
 @implementation UnitySpotify {
-    UnitySpotifyCallback _signInCallback;
-    int _signInCid;
+    UnitySpotifyCallback _connectCallback;
+    int _connectCid;
 }
 
 
 
--(void)setCallSignInCallback:(UnitySpotifyCallback _Nullable)callback
+-(void)setConnectCallback:(UnitySpotifyCallback _Nullable)callback
                          cid:(int)cid
                    withError:(UnitySpotifyError) error
                   andMessage:(const unichar * _Nullable) msg
 {
-    UnitySpotifyCallback cb=self->_signInCallback;
-    int _cid=self->_signInCid;
-    self->_signInCallback=callback;
-    self->_signInCid=cid;
-    if(cb){
+    UnitySpotifyCallback _cb=self->_connectCallback;
+    int _cid=self->_connectCid;
+    self->_connectCallback=callback;
+    self->_connectCid=cid;
+    if(_cb){
         dispatch_async(dispatch_get_main_queue(), ^{
-            cb(_cid,error,msg);
+            _cb(_cid,error,msg);
         });
     }
 }
@@ -40,7 +40,7 @@ static UnitySpotify * _defaultInst=0;
 
 - (void)sessionManager:(SPTSessionManager *)manager didInitiateSession:(SPTSession *)session
 {
-    US_LOG("success: %@", session);
+    US_LOG("session success: %@", session);
     dispatch_async(dispatch_get_main_queue(), ^{
         self.appRemote.connectionParameters.accessToken = session.accessToken;
         [self.appRemote connect];
@@ -49,19 +49,22 @@ static UnitySpotify * _defaultInst=0;
 
 - (void)sessionManager:(SPTSessionManager *)manager didFailWithError:(NSError *)error
 {
-  US_LOG("fail: %@", error);
+    US_LOG("session fail: %@", error);
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self setConnectCallback:nil cid:-1 withError:UnitySpotifyErrorSignInFailed andMessage:nil];
+    });
 }
 
 - (void)sessionManager:(SPTSessionManager *)manager didRenewSession:(SPTSession *)session
 {
-  US_LOG("renewed: %@", session);
+  US_LOG("session renewed: %@", session);
 }
 
 - (void)appRemoteDidEstablishConnection:(SPTAppRemote *)appRemote
 {
   US_LOG("connected");
   dispatch_async(dispatch_get_main_queue(), ^{
-      [self setCallSignInCallback:nil cid:-1 withError:UnitySpotifyErrorNone andMessage:nil];
+      [self setConnectCallback:nil cid:-1 withError:UnitySpotifyErrorNone andMessage:nil];
       self.appRemote.playerAPI.delegate = self;
   });
 }
@@ -73,9 +76,9 @@ static UnitySpotify * _defaultInst=0;
 
 - (void)appRemote:(SPTAppRemote *)appRemote didFailConnectionAttemptWithError:(NSError *)error
 {
-  US_LOG("failed %@",error);
+    US_LOG("connect failed %@",error);
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self setCallSignInCallback:nil cid:-1 withError:UnitySpotifyErrorSignInFailed andMessage:nil];
+        [self setConnectCallback:nil cid:-1 withError:UnitySpotifyErrorSignInFailed andMessage:nil];
     });
 }
 
@@ -88,7 +91,8 @@ static UnitySpotify * _defaultInst=0;
 
 -       (id _Nonnull)init:(NSString*_Nonnull)clientId
               redirectUrl:(NSString*_Nonnull)redirectUrl
-               apiBaseUrl:(NSString*_Nonnull)apiBaseUrl;
+               apiBaseUrl:(NSString*_Nonnull)apiBaseUrl
+         alwaysShowSignIn:(BOOL)alwaysShowSignIn;
 {
     self = [super init];
     
@@ -109,6 +113,7 @@ static UnitySpotify * _defaultInst=0;
     self.configuration.playURI = nil;
 
     self.sessionManager = [[SPTSessionManager alloc] initWithConfiguration:self.configuration delegate:self];
+    self.sessionManager.alwaysShowAuthorizationDialog=alwaysShowSignIn;
     
     self.appRemote = [[SPTAppRemote alloc] initWithConfiguration:self.configuration logLevel:SPTAppRemoteLogLevelDebug];
     self.appRemote.delegate = self;
@@ -117,17 +122,44 @@ static UnitySpotify * _defaultInst=0;
     
 }
 
-- (void)signIn:(int)cid withCallback:(UnitySpotifyCallback _Nullable )callback
+- (BOOL)isSessionActive
 {
-    
-    [self setCallSignInCallback:callback cid:cid withError:UnitySpotifyErrorSignInCanceled andMessage:nil];
-    
+    return
+        self.sessionManager.session!=nil &&
+        !self.sessionManager.session.expired &&
+        self.sessionManager.session.accessToken;
+}
+
+-(void)_signIn:(int)cid withCallback:(UnitySpotifyCallback _Nullable )callback
+{
     SPTScope requestedScope = SPTAppRemoteControlScope|SPTUserModifyPlaybackStateScope|SPTStreamingScope;
     if (@available(iOS 11.0, *)) {
         [self.sessionManager initiateSessionWithScope:requestedScope options:SPTDefaultAuthorizationOption];
     } else {
         // Fallback on earlier versions
     }
+}
+
+- (void)connect:(int)cid withCallback:(UnitySpotifyCallback _Nullable )callback
+{
+    
+    
+    [self setConnectCallback:callback cid:cid withError:UnitySpotifyErrorSignInCanceled andMessage:nil];
+    
+    if(![self isSessionActive]){
+        [self _signIn:cid withCallback:callback];
+        return;
+    }
+    
+    [SPTAppRemote checkIfSpotifyAppIsActive:^(BOOL active) {
+        if(active){
+            [self.appRemote connect];
+        }else{
+            [self.appRemote authorizeAndPlayURI:@""];
+        }
+    }];
+    
+    
 }
 
 - (void)resume:(int)cid withCallback:(UnitySpotifyCallback _Nullable )callback
@@ -203,6 +235,9 @@ static UnitySpotify * _defaultInst=0;
 {
     US_LOG("application openURL");
     [self.sessionManager application:app openURL:url options:options];
+    if([self isSessionActive]){
+        [self.appRemote connect];
+    }
 }
 
 @end
@@ -253,6 +288,7 @@ void UnitySpotifyInit(const unichar * _Nonnull config, int cid, UnitySpotifyCall
     NSString * clientId=nil;
     NSString * redirectUrl=nil;
     NSString * apiBaseUrl=nil;
+    BOOL alwaysShowSignIn=NO;
     
     NSString * str=[NSString stringWithFormat:@"%S",config];
     US_LOG(@"Config:\n%@",str);
@@ -271,12 +307,14 @@ void UnitySpotifyInit(const unichar * _Nonnull config, int cid, UnitySpotifyCall
         key=[key stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
         value=[value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
         
-        if([key        caseInsensitiveCompare:@"clientId"] == NSOrderedSame){
+        if([key        caseInsensitiveCompare:@"ClientId"] == NSOrderedSame){
             clientId=value;
-        } else if([key caseInsensitiveCompare:@"redirectUrl"] == NSOrderedSame){
+        } else if([key caseInsensitiveCompare:@"RedirectUrl"] == NSOrderedSame){
             redirectUrl=value;
-        } else if([key caseInsensitiveCompare:@"apiBaseUrl"] == NSOrderedSame){
+        } else if([key caseInsensitiveCompare:@"ApiBaseUrl"] == NSOrderedSame){
             apiBaseUrl=value;
+        } else if([key caseInsensitiveCompare:@"AlwaysShowSignIn"] == NSOrderedSame){
+            alwaysShowSignIn=[value caseInsensitiveCompare:@"true"] == NSOrderedSame;
         }
         
     }
@@ -318,7 +356,8 @@ void UnitySpotifyInit(const unichar * _Nonnull config, int cid, UnitySpotifyCall
 
         _defaultInst = [[UnitySpotify alloc] init:clientId
                                       redirectUrl:redirectUrl
-                                       apiBaseUrl:apiBaseUrl];
+                                       apiBaseUrl:apiBaseUrl
+                                 alwaysShowSignIn:alwaysShowSignIn];
         if(!_defaultInst){
             if(callback){
                 callback(cid,UnitySpotifyErrorInitFailed,nil);
@@ -343,7 +382,7 @@ void UnitySpotifyConnect(int cid, UnitySpotifyCallback _Nullable callback)
 
         UNSP_INIT();
         
-        [_defaultInst signIn:cid withCallback:callback];
+        [_defaultInst connect:cid withCallback:callback];
     });
 }
 
@@ -424,7 +463,8 @@ UnitySpotifyBool UnitySpotifyIsConnected()
         return UnitySpotifyBoolFalse;
     }
     
-    return _defaultInst.appRemote.connected?UnitySpotifyBoolTrue:UnitySpotifyBoolFalse;
+    return ([_defaultInst isSessionActive] && _defaultInst.appRemote.connected)?
+        UnitySpotifyBoolTrue:UnitySpotifyBoolFalse;
 }
 
 UnitySpotifyBool UnitySpotifyIsInited()

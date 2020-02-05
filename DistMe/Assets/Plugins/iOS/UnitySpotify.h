@@ -77,13 +77,16 @@ extern "C" {
 
 -       (id _Nonnull )init:(NSString*_Nonnull)clientId
                redirectUrl:(NSString*_Nonnull)redirectUrl
-                apiBaseUrl:(NSString*_Nonnull)apiBaseUrl;
+                apiBaseUrl:(NSString*_Nonnull)apiBaseUrl
+          alwaysShowSignIn:(BOOL)alwaysShowSignIn;
 
 - (void)application:(UIApplication*_Nullable)app
             openURL:(NSURL*_Nullable)url
             options:(NSDictionary<NSString*, id>*_Nullable)options;
 
-- (void)signIn:(int)cid withCallback:(UnitySpotifyCallback _Nullable )callback;
+- (BOOL)isSessionActive;
+
+- (void)connect:(int)cid withCallback:(UnitySpotifyCallback _Nullable )callback;
 
 - (void)resume:(int)cid withCallback:(UnitySpotifyCallback _Nullable )callback;
 
