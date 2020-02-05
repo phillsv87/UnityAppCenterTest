@@ -29,6 +29,8 @@ extern "C" {
         UnitySpotifyErrorTimeout = 10,
         UnitySpotifyErrorWorkFailed = 11,
         UnitySpotifyErrorInvalidConfig = 12,
+        UnitySpotifyErrorConfigNotSet = 13,
+        UnitySpotifyErrorOsVersionNotSupported = 14,
         
     } UnitySpotifyError;
 

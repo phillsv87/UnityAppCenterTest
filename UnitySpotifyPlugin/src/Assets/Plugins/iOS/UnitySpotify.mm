@@ -136,7 +136,7 @@ static UnitySpotify * _defaultInst=0;
     if (@available(iOS 11.0, *)) {
         [self.sessionManager initiateSessionWithScope:requestedScope options:SPTDefaultAuthorizationOption];
     } else {
-        // Fallback on earlier versions
+        [self setConnectCallback:nil cid:cid withError:UnitySpotifyErrorOsVersionNotSupported andMessage:nil];
     }
 }
 

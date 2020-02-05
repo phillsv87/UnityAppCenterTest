@@ -15,7 +15,8 @@ namespace UnitySpotify
         Timeout = 10,
         WorkFailed = 11,
         InvalidConfig = 12,
-        ConfigNotSet = 13
+        ConfigNotSet = 13,
+        OsVersionNotSupported = 14
 
     }
 }
