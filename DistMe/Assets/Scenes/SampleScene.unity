@@ -1845,7 +1845,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94ed32adf33c849459df4d6f8b07869e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ConfigUrl: https://oc-api.ngrok.io/api/Spotify/51f25dee-fd41-461b-85d6-454e22a2a61f/Config
+  ConfigUrl: https://api.grbll.opencanvas.services/api/Spotify/51f25dee-fd41-461b-85d6-454e22a2a61f/Config
   UriInput: {fileID: 1764993698}
   PosMsInput: {fileID: 631662611}
 --- !u!4 &1399993119
