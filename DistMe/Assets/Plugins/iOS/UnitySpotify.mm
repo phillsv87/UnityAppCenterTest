@@ -100,8 +100,8 @@ static UnitySpotify * _defaultInst=0;
 
     self.configuration  = [[SPTConfiguration alloc] initWithClientID:clientId redirectURL:spotifyRedirectURL];
     
-    NSURL *tokenSwapURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/Spotify/token",apiBaseUrl]];
-    NSURL *tokenRefreshURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/Spotify/refresh_token",apiBaseUrl]];
+    NSURL *tokenSwapURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/token",apiBaseUrl]];
+    NSURL *tokenRefreshURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/refresh_token",apiBaseUrl]];
 
     self.configuration.tokenSwapURL = tokenSwapURL;
     // tmp disable
