@@ -104,7 +104,7 @@ namespace UnitySpotify
 
         /// <summary>
         /// Establishes a connection to a Spotify player. This method will be called automatically
-        /// as nneded, but can be called direclty to establish a connection early.
+        /// as needed, but can be called directly to establish a connection early.
         /// </summary>
         /// <param name="callback"></param>
         public static void Connect(UnitySpotifyCallback callback)
@@ -131,9 +131,9 @@ namespace UnitySpotify
         }
 
         /// <summary>
-        /// Begains playback of a uri.
+        /// Begins playback of a uri.
         /// </summary>
-        /// <param name="positionMs">Position in millisecons where to start playback</param>
+        /// <param name="positionMs">Position in milliseconds where to start playback</param>
         /// <param name="uri"></param>
         /// <param name="callback"></param>
         public static void PlayUri(int positionMs, string uri, UnitySpotifyCallback callback)
