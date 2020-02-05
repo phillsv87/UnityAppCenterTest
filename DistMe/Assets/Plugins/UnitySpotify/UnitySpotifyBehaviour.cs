@@ -7,25 +7,13 @@ public class UnitySpotifyBehaviour : MonoBehaviour
 {
 
     #region config fields
-    public string ClientId;
-    public string RedirectUrl;
-    public string ApiBaseUrl;
+    public string ConfigUrl;
     #endregion
-
-    private UnitySpotifyConfig GetConfig()
-    {
-        return new UnitySpotifyConfig()
-        {
-            ClientId = ClientId,
-            RedirectUrl = RedirectUrl,
-            ApiBaseUrl = ApiBaseUrl
-        };
-    }
 
     // Start is called before the first frame update
     void Start()
     {
-        UnitySpotify.SetConfigDelegate(GetConfig);
+        UnitySpotify.SetConfigUrlDelegate(()=>ConfigUrl);
     }
 
     // Update is called once per frame

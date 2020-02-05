@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Threading.Tasks;
@@ -42,54 +43,68 @@ public enum UnitySpotifyBool
 
 public delegate void UnitySpotifyCallback(UnitySpotifyError error, string msg);
 
-public struct UnitySpotifyConfig
+public delegate void UnitySpotifyApiCallback(int cid, UnitySpotifyError error, string msg);
+
+public class UnitySpotifyConfig
 {
     public string ClientId { get; set; }
     public string RedirectUrl { get; set; }
+    public string RedirectUrlWeb { get; set; }
+    public string SpotifyApiBaseUrl { get; set; }
     public string ApiBaseUrl { get; set; }
+}
+
+public interface IUnitySpotifyApi
+{
+    
+    UnitySpotifyBool IsConnected();
+
+    
+    UnitySpotifyBool IsInited();
+
+    
+    void Init(string config, int cid, UnitySpotifyApiCallback callback);
+
+    
+    void SignIn(int cid, UnitySpotifyApiCallback callback);
+
+    
+    void Connect(int cid, UnitySpotifyApiCallback callback);
+
+    
+    void Resume(int cid, UnitySpotifyApiCallback callback);
+
+    
+    void Pause(int cid, UnitySpotifyApiCallback callback);
+
+    
+    void PlayUri(int positionMs, string uri, int cid, UnitySpotifyApiCallback callback);
+
+    
+    void Repeat(UnitySpotifyRepeatMode mode, int cid, UnitySpotifyApiCallback callback);
 }
 
 public static class UnitySpotify
 {
 
-    private const CharSet DefaultCharSet = CharSet.Unicode;
-
-    public delegate void _Callback(int cid, UnitySpotifyError error, string msg);
-
-    [DllImport("__Internal", CharSet = DefaultCharSet)]
-    private static extern UnitySpotifyBool UnitySpotifyIsConnected();
     
-    [DllImport("__Internal", CharSet = DefaultCharSet)]
-    private static extern UnitySpotifyBool UnitySpotifyIsInited();
-
-    [DllImport("__Internal", CharSet = DefaultCharSet)]
-    private static extern void UnitySpotifyInit(string config, int cid, _Callback callback);
-
-    [DllImport("__Internal", CharSet = DefaultCharSet)]
-    private static extern void UnitySpotifySignIn(int cid, _Callback callback);
-
-    [DllImport("__Internal", CharSet = DefaultCharSet)]
-    private static extern void UnitySpotifyConnect(int cid, _Callback callback);
-
-    [DllImport("__Internal", CharSet = DefaultCharSet)]
-    private static extern void UnitySpotifyResume(int cid, _Callback callback);
-
-    [DllImport("__Internal", CharSet = DefaultCharSet)]
-    private static extern void UnitySpotifyPause(int cid, _Callback callback);
-
-    [DllImport("__Internal", CharSet= DefaultCharSet)]
-    private static extern void UnitySpotifyPlayUri(int positionMs, string uri, int cid, _Callback callback);
-
-    [DllImport("__Internal", CharSet = DefaultCharSet)]
-    private static extern void UnitySpotifyRepeat(UnitySpotifyRepeatMode mode, int cid, _Callback callback);
 
     private static Func<UnitySpotifyConfig> _ConfigDelegate;
 
+    private static Func<string> _ConfigUrlDelegate;
+
+    private static IUnitySpotifyApi _Api;
+
     public static bool IsConnected()
     {
+        if (_Api == null)
+        {
+            return false;
+        }
+
         try
         {
-            return UnitySpotifyIsConnected() == UnitySpotifyBool.True;
+            return _Api.IsConnected() == UnitySpotifyBool.True;
         }catch(Exception ex)
         {
             Debug.Log("UnitySpotify IsConnected error - " + ex.Message);
@@ -99,9 +114,15 @@ public static class UnitySpotify
 
     public static bool IsInited()
     {
+
+        if (_Api == null)
+        {
+            return false;
+        }
+
         try
         {
-            return UnitySpotifyIsInited() == UnitySpotifyBool.True;
+            return _Api.IsInited() == UnitySpotifyBool.True;
         }catch(Exception ex)
         {
             Debug.Log("UnitySpotify IsInited error - " + ex.Message);
@@ -114,78 +135,125 @@ public static class UnitySpotify
         _ConfigDelegate = getConfig;
     }
 
+    public static void SetConfigUrlDelegate(Func<string> getConfig)
+    {
+        _ConfigUrlDelegate = getConfig;
+    }
+
     public static void Init(UnitySpotifyCallback callback)
     {
+        QueueWork(false, false, (cid) => InitAsync(cid,CancellationToken.None)._Ignore(), callback);;
+    }
 
-        string config;
+    private static async Task InitAsync(int cid, CancellationToken cancel)
+    {
 
-        if (_ConfigDelegate == null)
+        string configString = null;
+
+        UnitySpotifyConfig config = null;
+
+        try
         {
-            config = null;
-        }
-        else
+
+            if (_ConfigDelegate != null)
+            {
+                config = _ConfigDelegate();
+                
+            }else if (_ConfigUrlDelegate != null)
+            {
+                using (var client = new HttpClient())
+                {
+                    var r = await client.GetAsync(_ConfigUrlDelegate(),cancel);
+                    r.EnsureSuccessStatusCode();
+                    var json=await r.Content.ReadAsStringAsync();
+                    config=Newtonsoft.Json.JsonConvert.DeserializeObject<UnitySpotifyConfig>(json);
+                }
+            }
+
+            if (config!=null)
+            {
+                var props = typeof(UnitySpotifyConfig).GetProperties();
+                configString = string.Join(
+                    "\n",
+                    props.Select(p => p.Name + " " + p.GetValue(config)));
+            }
+
+            
+        }catch(Exception ex)
         {
-            var value = _ConfigDelegate();
-            var props = typeof(UnitySpotifyConfig).GetProperties();
-            config = string.Join("\n", props.Select(p => p.Name + " " + p.GetValue(value)));
+            Debug.Log("Create config failed - " + ex.Message+", "+ex.StackTrace);
+            WorkCallback(cid, UnitySpotifyError.InitFailed, ex.Message);
+            return;
         }
 
-        QueueWork(false, false, (cid) => UnitySpotifyInit(config, cid, WorkCallback), callback);
+        try
+        {
+            _Api = new NativeUnitySpotifyApi();
+            //_Api = new DummyUnitySpotifyApi();
+            _Api.IsInited();
+        }
+        catch
+        {
+            Debug.Log("Fallback to web api");
+            _Api = new WebUnitySpotifyApi(config);
+        }
+
+        _Api.Init(configString, cid, WorkCallback);
     }
 
     public static void SignIn(UnitySpotifyCallback callback)
     {
-        QueueWork(true, false, (cid) => UnitySpotifySignIn(cid, WorkCallback), callback);
+        QueueWork(true, false, (cid) => _Api.SignIn(cid, WorkCallback), callback);
     }
 
     public static void Connect(UnitySpotifyCallback callback)
     {
-        QueueWork(true, false, (cid) => UnitySpotifyConnect(cid, WorkCallback), callback);
+        QueueWork(true, false, (cid) => _Api.Connect(cid, WorkCallback), callback);
     }
 
     public static void Resume(UnitySpotifyCallback callback)
     {
-        QueueWork(true, true, (cid) => UnitySpotifyResume(cid, WorkCallback), callback);
+        QueueWork(true, true, (cid) => _Api.Resume(cid, WorkCallback), callback);
     }
 
     public static void Pause(UnitySpotifyCallback callback)
     {
-        QueueWork(true, true, (cid) => UnitySpotifyPause(cid, WorkCallback), callback);
+        QueueWork(true, true, (cid) => _Api.Pause(cid, WorkCallback), callback);
     }
 
     public static void PlayUri(int positionMs, string uri, UnitySpotifyCallback callback)
     {
-        QueueWork(true, true, (cid) => UnitySpotifyPlayUri(positionMs, uri, cid, WorkCallback), callback);
+        QueueWork(true, true, (cid) => _Api.PlayUri(positionMs, uri, cid, WorkCallback), callback);
     }
 
     public static void Repeat(UnitySpotifyRepeatMode mode, UnitySpotifyCallback callback)
     {
-        QueueWork(true, true, (cid) => UnitySpotifyRepeat(mode, cid, WorkCallback), callback);
+        QueueWork(true, true, (cid) => _Api.Repeat(mode, cid, WorkCallback), callback);
     }
 
 
     private static readonly object CallbackSync = new object();
 
-    private static List<Action> _CallbackQueue = new List<Action>();
+    private static List<Action> UnitySpotifyApiCallbackQueue = new List<Action>();
 
     private static void AddCallback(Action callback)
     {
         lock (CallbackSync)
         {
-            _CallbackQueue.Add(callback);
+            UnitySpotifyApiCallbackQueue.Add(callback);
         }
     }
 
     public static void FlushQueue()
     {
-        if (_CallbackQueue.Count != 0)
+        if (UnitySpotifyApiCallbackQueue.Count != 0)
         {
             List<Action> callbacks;
 
             lock (CallbackSync)
             {
-                callbacks = _CallbackQueue;
-                _CallbackQueue = new List<Action>();
+                callbacks = UnitySpotifyApiCallbackQueue;
+                UnitySpotifyApiCallbackQueue = new List<Action>();
             }
 
             foreach (var cb in callbacks)
@@ -239,8 +307,6 @@ public static class UnitySpotify
                 WorkNext(null);
             }
         }
-
-
     }
 
 
@@ -317,13 +383,13 @@ public static class UnitySpotify
                 work.Work(work.Cid);
             }catch(Exception ex)
             {
-                Debug.Log("UnitySpotify work error - " + ex.Message);
+                Debug.Log("UnitySpotify work error - " + ex.Message+","+ex.StackTrace);
                 WorkCallback(work.Cid, UnitySpotifyError.WorkFailed, null);
             }
         }
     }
 
-    [MonoPInvokeCallback(typeof(_Callback))]
+    [MonoPInvokeCallback(typeof(UnitySpotifyApiCallback))]
     private static void WorkCallback(int cid, UnitySpotifyError err, string msg)
     {
         AddCallback(() =>
@@ -348,4 +414,14 @@ public static class UnitySpotify
         });
     }
 
+}
+
+
+
+public static class TaskHelper
+{
+    public static void _Ignore(this Task task)
+    {
+        //do nothing
+    }
 }
