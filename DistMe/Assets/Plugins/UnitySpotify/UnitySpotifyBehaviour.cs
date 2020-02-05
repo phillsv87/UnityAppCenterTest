@@ -28,12 +28,6 @@ public class UnitySpotifyBehaviour : MonoBehaviour
     }
 
 
-    public void SignIn()
-    {
-        UnitySpotify.SignIn((err, msg) => LogCallback(nameof(SignIn), err, msg));
-    }
-
-
     public void Connect()
     {
         UnitySpotify.Connect((err, msg) => LogCallback(nameof(Connect), err, msg));
