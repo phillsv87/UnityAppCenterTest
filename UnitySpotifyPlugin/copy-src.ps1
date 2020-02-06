@@ -25,8 +25,7 @@ function Copy-Content
 {
     param(
         [string]$dir,
-        [string]$file,
-        [switch]$all
+        [string]$file
     )
 
     if(!(Test-Path "$dest/$dir")){
