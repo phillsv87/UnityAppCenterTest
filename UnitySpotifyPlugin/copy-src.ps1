@@ -42,6 +42,11 @@ Copy-Content -dir "Assets/Plugins" -file "UnitySpotify"
 Copy-Content -dir "NativeAssets" -file "SpotifyiOS.framework"
 
 if($compress){
+    $zip="$PSScriptRoot/UnitySpotifyPlugin.zip"
 
-    Compress-Archive -Path "$dest" -DestinationPath "$PSScriptRoot/UnitySpotifyPlugin.zip" -CompressionLevel Optimal
+    if(Test-Path "$zip"){
+        Remove-Item -Path "$zip"
+    }
+
+    Compress-Archive -Path "$dest" -DestinationPath "$zip" -CompressionLevel Optimal
 }
