@@ -27,8 +27,8 @@ Attach the UnitySpotifyBehaviour script to a GameObject.
 The UnitySpotifyBehaviour script is located at Assets/Plugins/UnitySpotify/UnitySpotifyBehaviour.cs
 
 5. Set ConfigUrl of the UnitySpotifyBehaviour script
-- format: https://**{ApiHost}**/api/Spotify/**{ConfigToken}**
-- example: https://api.appdomain.com/api/Spotify/b4da7d89-6cb0-4a3e-8d18-13ddde1c2ceb
+- format: https://**{ApiHost}**/api/Spotify/**{ConfigToken}**/Config
+- example: https://api.appdomain.com/api/Spotify/b4da7d89-6cb0-4a3e-8d18-13ddde1c2ceb/Config
 
 ## Script Usage Examples
 Examples assume the UnitySpotifyBehaviour script has been attached and configured.
