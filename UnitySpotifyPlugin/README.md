@@ -14,10 +14,9 @@ combination of the Spotify native SDKs and the Spotify Web API.
     - Set "Supported URL schemes" to 1
     - Set "Element 0" to your applications URL scheme. ( Example - vnd.myapp )
 
-2. Add JSON.NET dependency
-- Open Asset Store. window > Asset Store
-- Search for "JSON.NET"
-- Download and Import "JSON .NET For Unity"
+2. Add "Json.NET Converters" dependency
+- Open - https://assetstore.unity.com/packages/tools/input-management/json-net-converters-simple-compatible-solution-58621
+- Download and Import
 
 3. Copy Plugin Contents
 Copy the contents of the src directory to the root of your Unity3D project.
