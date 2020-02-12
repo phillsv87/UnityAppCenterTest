@@ -1,0 +1,4 @@
+# If true code will be inserted into UnityAppController.mm to hook application callbacks
+# instead of using IMPL_APP_CONTROLLER_SUBCLASS to override the default app delegate.
+# This can be useful when an exiting plugin already overrides the default app delegate.
+HookUnityAppController true

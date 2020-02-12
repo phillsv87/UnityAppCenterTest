@@ -9,6 +9,7 @@
 #define UnitySpotify_h
 
 
+#include "UnitySpotifyConfig.h"
 #include <SpotifyiOS/SpotifyiOS.h>
 #import "UnityAppController.h"
 
@@ -65,6 +66,11 @@ extern "C" {
 
     UnitySpotifyBool UnitySpotifyIsInited();
 
+    void UnitySpotifyOnOpenURL(
+                               UIApplication * _Nullable app,
+                               NSURL * _Nullable url,
+                               NSDictionary<NSString*, id> * _Nullable options);
+
 
 }
 
@@ -108,7 +114,9 @@ withCallback:(UnitySpotifyCallback _Nullable )callback;
 @interface UnitySpotifyAppDelegate : UnityAppController
 @end
 
+#ifndef UNITYSPOTIFY_HOOKUNITYAPPCONTROLLER
 IMPL_APP_CONTROLLER_SUBCLASS(UnitySpotifyAppDelegate)
+#endif
 
 
 #endif /* UnitySpotify_h */

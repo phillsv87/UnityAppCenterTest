@@ -247,6 +247,7 @@ static UnitySpotify * _defaultInst=0;
 
 - (BOOL)application:(UIApplication*)app openURL:(NSURL*)url options:(NSDictionary<NSString*, id>*)options
 {
+    US_LOG("UnitySpotifyAppDelegate application openURL");
     if(_defaultInst){
         [_defaultInst application:app openURL:url options:options];
     }
@@ -473,4 +474,14 @@ UnitySpotifyBool UnitySpotifyIsInited()
     US_LOG("IsInited");
     
     return _defaultInst?UnitySpotifyBoolTrue:UnitySpotifyBoolFalse;
+}
+
+void UnitySpotifyOnOpenURL(
+    UIApplication * _Nullable app,
+    NSURL * _Nullable url,
+    NSDictionary<NSString*, id> * _Nullable options)
+{
+    if(_defaultInst){
+        [_defaultInst application:app openURL:url options:options];
+    }
 }
