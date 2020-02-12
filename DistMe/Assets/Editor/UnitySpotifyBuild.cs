@@ -24,7 +24,7 @@ public class UnitySpotifyBuild
 			CopyAndReplaceDirectory(dir, Path.Combine(dstPath, Path.GetFileName(dir)));
 	}
 
-	[PostProcessBuild]
+	[PostProcessBuild(1000)]
 	public static void OnPostprocessBuild(BuildTarget buildTarget, string path)
 	{
 
@@ -48,7 +48,6 @@ public class UnitySpotifyBuild
             proj.AddFrameworkToProject(target, "AssetsLibrary.framework", false /*not weak*/);
 
             // Add our framework directory to the framework include path
-            proj.SetBuildProperty(target, "FRAMEWORK_SEARCH_PATHS", "$(inherited)");
             proj.AddBuildProperty(target, "FRAMEWORK_SEARCH_PATHS", "$(PROJECT_DIR)/Frameworks");
 
             // Set a custom link flag
