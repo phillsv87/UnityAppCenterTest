@@ -99,7 +99,7 @@ namespace UnitySpotify
         /// <param name="callback"></param>
         public static void Init(UnitySpotifyCallback callback)
         {
-            QueueWork(false, false, (cid) => InitAsync(cid,CancellationToken.None)._Ignore(), callback);;
+            QueueWork(false, false, (cid) => InitAsync(cid,CancellationToken.None)._Ignore(), callback,true);
         }
 
         /// <summary>
@@ -109,7 +109,13 @@ namespace UnitySpotify
         /// <param name="callback"></param>
         public static void Connect(UnitySpotifyCallback callback)
         {
-            QueueWork(true, false, (cid) => _Api.Connect(cid, WorkCallback), callback);
+            QueueWork(true, false, (cid) => {
+                if(_Api.IsConnected()){
+                    WorkCallback(cid,UnitySpotifyError.None,null);
+                    return;
+                }
+                _Api.Connect(cid, WorkCallback);
+            }, callback,true);
         }
 
         /// <summary>
@@ -157,6 +163,11 @@ namespace UnitySpotify
 
         private static async Task InitAsync(int cid, CancellationToken cancel)
         {
+
+            if(IsInited()){
+                WorkCallback(cid,UnitySpotifyError.None,null);
+                return;
+            }
 
             string configString = null;
 
@@ -283,7 +294,7 @@ namespace UnitySpotify
                             Debug.Log("UnitySpotify WorkQueue callback error - " + ex.Message);
                         }
                     }
-                    WorkNext(null);
+                    WorkNext(null,false);
                 }
             }
         }
@@ -308,7 +319,12 @@ namespace UnitySpotify
 
         private static readonly List<WorkItem> _WorkQueue = new List<WorkItem>();
 
-        private static void QueueWork(bool ensureInited, bool ensureConnected, Action<int> work, UnitySpotifyCallback callback)
+        private static void QueueWork(
+            bool ensureInited,
+            bool ensureConnected,
+            Action<int> work,
+            UnitySpotifyCallback callback,
+            bool front=false)
         {
 
             if (work == null)
@@ -318,33 +334,39 @@ namespace UnitySpotify
 
             if(ensureInited && !IsInited())
             {
-                Init((err, msg) => {
-                    if(err==UnitySpotifyError.None){
-                        QueueWork(false, ensureConnected, work, callback);
-                    }else{
-                        callback?.Invoke(err,msg);
-                    }
-                });
+                QueueWork(false,false,(cid)=>{
+                    Init((err, msg) => {
+                        if(err==UnitySpotifyError.None){
+                            QueueWork(false, ensureConnected, work, callback,true);
+                        }else{
+                            callback?.Invoke(err,msg);
+                        }
+                    });
+                    WorkCallback(cid,UnitySpotifyError.None,null);
+                },null);
                 return;
             }
 
             if (ensureConnected && !IsConnected())
             {
-                Connect((err, msg) => {
-                    if(err==UnitySpotifyError.None){
-                        QueueWork(false,false,work,callback);
-                    }else{
-                        callback?.Invoke(err,msg);
-                    }
-                });
+                QueueWork(false,false,(cid)=>{
+                    Connect((err, msg) => {
+                        if(err==UnitySpotifyError.None){
+                            QueueWork(false,false,work,callback,true);
+                        }else{
+                            callback?.Invoke(err,msg);
+                        }
+                    });
+                    WorkCallback(cid,UnitySpotifyError.None,null);
+                },null);
                 return;
             }
 
-            WorkNext(new WorkItem(callback,work));
+            WorkNext(new WorkItem(callback,work),front);
             
         }
 
-        private static void WorkNext(WorkItem addItem)
+        private static void WorkNext(WorkItem addItem, bool front)
         {
             WorkItem work = null;
             lock (WorkSync)
@@ -358,7 +380,21 @@ namespace UnitySpotify
                     }
                     addItem.Cid = cid;
                     addItem.TTL = DateTime.UtcNow.AddSeconds(15);
-                    _WorkQueue.Add(addItem);
+                    if(front){
+                        bool inserted=false;
+                        for(int i=0;i<_WorkQueue.Count;i++){
+                            if(!_WorkQueue[i].Active){
+                                _WorkQueue.Insert(i,addItem);
+                                inserted=true;
+                                break;
+                            }
+                        }
+                        if(!inserted){
+                            _WorkQueue.Add(addItem);
+                        }
+                    }else{
+                        _WorkQueue.Add(addItem);
+                    }
                 }
 
                 if (_WorkQueue.Count != 0 && !_WorkQueue[0].Active)
@@ -401,7 +437,7 @@ namespace UnitySpotify
                 {
                     Debug.Log("UnitySpotify WorkQueue callback error - " + ex.Message);
                 }
-                WorkNext(null);
+                WorkNext(null,false);
             });
         }
 
